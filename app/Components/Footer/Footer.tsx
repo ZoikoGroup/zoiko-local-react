@@ -31,7 +31,7 @@ const footerSections: FooterSection[] = [
             { title: "European Numbers", href: "#" },
             { title: "Nigeria", href: "#" },
             { title: "South Africa", href: "#" },
-            { title: "Caribbean Numbers", href: "#" },
+            { title: "Caribbean Numbers", href: "/carabian-numbers" },
             { title: "African Numbers", href: "#" },
             { title: "All Countries", href: "#" },
         ],
