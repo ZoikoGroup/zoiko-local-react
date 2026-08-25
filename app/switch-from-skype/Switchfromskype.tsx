@@ -1,8 +1,21 @@
 "use client";
+import { Metadata } from 'next';
 import { useState } from 'react';
 import {
     FiCheck, FiPhone, FiMapPin, FiPhoneCall, FiMic, FiActivity, FiPlus, FiMinus
 } from "react-icons/fi";
+
+
+
+
+export const metadata: Metadata = {
+  title: "Switch From Skype to Modern Business Calling | Zoiko Local",
+  description:
+    "Switch from Skype to modern business calling with Zoiko Local. Get local numbers, video, and an AI Receptionist in one connected workspace for your business.",
+};
+
+
+
 
 const whyMoveNow = [
     {

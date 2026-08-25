@@ -1,7 +1,15 @@
 "use client";
 
+import { Metadata } from "next";
 import { useState, type ReactNode } from "react";
 
+
+
+export const metadata: Metadata = {
+  title: "Global Phone Number Coverage | Zoiko Local",
+  description:
+    "Access global phone number coverage with Zoiko Local. Get local business numbers worldwide and create a trusted presence in international markets.",
+};
 
 function ImageSlot({ className = "h-10 w-10 rounded-xl", label = "icon" }: { className?: string; label?: string }) {
   return (

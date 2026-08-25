@@ -1,5 +1,6 @@
 "use client";
 
+import { Metadata } from "next";
 import { useState, type ReactNode } from "react";
 
 /**
@@ -7,6 +8,13 @@ import { useState, type ReactNode } from "react";
  * (e.g. src="/icons/check.svg" → public/icons/check.svg). Swap any path.
  * Plain <img> so no next/image config is required.
  */
+
+
+export const metadata: Metadata = {
+  title: "Business Phone Numbers for Founders | Zoiko Local",
+  description:
+    "Get business phone numbers for founders with Zoiko Local. Stay connected with customers, manage calls professionally, and build stronger business presence.",
+};
 function Img({
   src,
   alt = "",

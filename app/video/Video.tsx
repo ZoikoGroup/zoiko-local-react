@@ -11,6 +11,18 @@ import {
 } from "react-icons/fi";
 import Faq from '../Components/Faq';
 
+
+
+
+
+export const metadata: Metadata = {
+  title: "Professional Business Video Meetings | Zoiko Local",
+  description:
+    "Host professional video meetings with Zoiko Local featuring meeting links, screen sharing, AI-powered notes, customer calls &amp; seamless team collaboration.",
+};
+
+
+
 const participants = [
     {
         initials: "AM",
