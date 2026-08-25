@@ -1,4 +1,6 @@
 import Image from "next/image";
+
+import type { Metadata } from "next";
 import {
   FiMapPin,
   FiPhone,
@@ -28,6 +30,16 @@ import {
   FiBriefcase,
   FiNavigation,
 } from "react-icons/fi";
+
+
+export const metadata: Metadata = {
+  title: "Global Local Phone Numbers for Business | Zoiko Local",
+  description:
+    "Get Global Local Phone Numbers for Business with AI Receptionist, HD calling, video meetings, smart voicemail, and secure telecom-grade billing worldwide.",
+};
+
+
+
 import { FaCheck, FaCircle } from "react-icons/fa";
 const features = [
   {
@@ -61,6 +73,8 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-[#F6F3EE] dark:bg-slate-950">
+
+        
         <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             {/* LEFT CONTENT */}
