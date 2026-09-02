@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import {
   FiActivity,
-  FiArrowRight,S
+  FiArrowRight,
   FiBriefcase,
   FiCheck,
   FiCode,
