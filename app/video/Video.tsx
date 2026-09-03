@@ -10,10 +10,7 @@ import {
     FiCopy, FiCalendar,
 } from "react-icons/fi";
 import Faq from '../Components/Faq';
-
-
-
-
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Professional Business Video Meetings | Zoiko Local",

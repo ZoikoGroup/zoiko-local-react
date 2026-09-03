@@ -20,7 +20,31 @@ import {
   FiTool,
   FiZap,
 } from "react-icons/fi";
-import { getPublicStatus, ApiError, type PublicStatus } from "@/lib/api";
+type PublicStatus = {
+  overall: string;
+  components: { name: string; status: string }[];
+};
+
+class ApiError extends Error {}
+
+async function getPublicStatus(): Promise<PublicStatus> {
+  const response = await fetch("/ops/status", { cache: "no-store" });
+  if (!response.ok) {
+    throw new ApiError(`Could not load service status (${response.status})`);
+  }
+
+  const data: unknown = await response.json();
+  if (
+    !data ||
+    typeof data !== "object" ||
+    !Array.isArray((data as { components?: unknown }).components) ||
+    typeof (data as { overall?: unknown }).overall !== "string"
+  ) {
+    throw new ApiError("Invalid service status response");
+  }
+
+  return data as PublicStatus;
+}
 
 // ─── STATUS VOCABULARY ───────────────────────────────────────────────────────
 // The API only emits "operational" | "degraded". The design's legend has six

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ReactNode, type SVGProps } from "react";
+import { type JSX } from "react";
 
 /**
  * All icons are inline SVG (stroke="currentColor") so they inherit color from
