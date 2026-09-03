@@ -1,6 +1,19 @@
 import React from 'react';
 import { FiCheck, FiMapPin, FiPhone, FiMic, } from "react-icons/fi";
 import Faq from '../Components/Faq';
+import { Metadata } from 'next';
+
+
+
+
+export const metadata: Metadata = {
+  title: "Get Virtual Phone Numbers for Business | Zoiko Local",
+  description:
+    "Get virtual phone numbers for business with Zoiko Local. Choose local numbers, manage calls, and stay connected with customers from anywhere.",
+};
+
+
+
 
 const howItWorks = [
     {

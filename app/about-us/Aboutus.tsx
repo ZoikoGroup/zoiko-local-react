@@ -1,16 +1,9 @@
 "use client";
 
+import { Metadata } from "next";
 import type { ReactNode } from "react";
 
-/* ────────────────────────────────────────────────────────────────────────────
-   PALETTE (Zoiko Local — warm / earthy)
-   coral     #d9603f      dark green  #163a2e      cream  #f3efe7
-   Light sections invert to gray-900/800 in dark mode; the dark-green sections
-   stay green in both modes.
 
-   NOTE: all SVG icons removed — each icon spot is now a dashed <ImageSlot />
-   placeholder. Drop your custom images in and delete the placeholder styling.
-──────────────────────────────────────────────────────────────────────────── */
 
 // ─── IMAGE / ICON SLOTS ──────────────────────────────────────────────────────
 function ImageSlot({
@@ -141,6 +134,22 @@ const focusCards = [
   { title: "Group infrastructure", desc: "Backed by ZoikoNex's platform and security." },
   { title: "Built to scale", desc: "Designed for many markets from day one." },
 ];
+
+
+
+
+
+
+
+export const metadata: Metadata = {
+  title: "About Zoiko Local | Local Numbers for Global Business",
+  description:
+    "Learn about Zoiko Local and our mission to help businesses connect globally with local phone numbers, smart calling solutions, and seamless communication.",
+};
+
+
+
+
 
 const ctaPills = ["Local numbers", "AI receptionist", "Smart routing", "Cross-border ready"];
 

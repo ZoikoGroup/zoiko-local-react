@@ -11,6 +11,20 @@ import {
     FiDollarSign, FiGlobe, FiHome,
     FiShield, FiMail, FiLock,
 } from "react-icons/fi";
+import { Metadata } from 'next';
+
+
+
+
+
+export const metadata: Metadata = {
+  title: "Start Free with Zoiko Local | Get Local Numbers",
+  description:
+    "Start free with Zoiko Local and get local phone numbers with calling, AI Receptionist, video calls, smart voicemail, and global communication features.",
+};
+
+
+
 
 const faqItems = [
   {

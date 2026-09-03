@@ -6,6 +6,17 @@ import {
     FiPhone, FiCheck, FiVideo,
 } from "react-icons/fi";
 import Faq from '../Components/Faq';
+import { Metadata } from 'next';
+
+
+
+
+export const metadata: Metadata = {
+  title: "Local Phone Number Plans &amp; Pricing | Zoiko Local",
+  description:
+    "Compare local phone number plans &amp; pricing with Zoiko Local. Discover business calling features, flexible plans, and local numbers designed for your needs.",
+};
+
 
 const pricingHighlights = [
     {
