@@ -21,6 +21,7 @@ import {
   FiVideo,
   FiX,
 } from "react-icons/fi";
+import Image from "next/image";
 
 // ─── IMAGE PLACEHOLDER ───────────────────────────────────────────────────────
 // Every photo in the design is a slot, not a hardcoded asset. Each one is
@@ -75,13 +76,13 @@ const deviceSteps = [
 ];
 
 const locations = [
-  { name: "United States", caption: "Local & toll-free numbers" },
-  { name: "United Kingdom", caption: "Local city numbers" },
-  { name: "Canada", caption: "Local numbers by region" },
-  { name: "Europe", caption: "Selected markets" },
-  { name: "Nigeria", caption: "Local business numbers" },
-  { name: "South Africa", caption: "Local numbers by region" },
-  { name: "Jamaica", caption: "Local presence" },
+  { name: "United States", caption: "Local & toll-free numbers" ,href: "/images/mobile-apps/US.png"},
+  { name: "United Kingdom", caption: "Local city numbers" ,href: "/images/mobile-apps/UK.png"},
+  { name: "Canada", caption: "Local numbers by region" ,href: "/images/mobile-apps/CA.png"},
+  { name: "Europe", caption: "Selected markets" ,href: "/images/mobile-apps/EU.png"},
+  { name: "Nigeria", caption: "Local business numbers" ,href: "/images/mobile-apps/NG.png"},
+  { name: "South Africa", caption: "Local numbers by region" ,href: "/images/mobile-apps/SA.png"},
+  { name: "Jamaica", caption: "Local presence" ,href: "/images/mobile-apps/JM.png"},
 ];
 
 const trustControls = [
@@ -339,10 +340,15 @@ export default function MobileApps() {
           </div>
 
           <div className="relative">
-            <ImageSlot
+            {/* <ImageSlot
               label="Photo — retail counter, staff serving a customer holding a phone"
               className="h-[380px] w-full"
-            />
+            /> */}
+            <Image
+              src="/images/mobile-apps/work-mobile.png" alt="Photo — retail counter, staff serving a customer holding a phone"
+              width={600} height={380}
+              className="h-[380px] w-full object-cover rounded-2xl" />
+
             <div className="absolute -bottom-5 right-4 flex items-center gap-2.5 rounded-xl bg-white px-4 py-2.5 shadow-lg">
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#E4EFE9] text-[#0E5C4E]">
                 <FiMapPin className="text-sm" aria-hidden />
@@ -373,10 +379,16 @@ export default function MobileApps() {
           <div className="mt-14 grid gap-5 lg:grid-cols-2">
             {/* Business calling — image on top */}
             <div className={`${cardBase} overflow-hidden`}>
-              <ImageSlot
+              {/* <ImageSlot
                 label="Photo — phone home screen with app icons"
                 className="h-[190px] w-full border-0 border-b border-dashed"
                 rounded="rounded-none"
+              /> */}
+              <Image
+                src="/images/mobile-apps/core-features-1.png" alt="Photo — phone home screen with app icons"
+                width={600}
+                height={190}
+                className="h-[190px] w-full object-cover"
               />
               <div className="p-6">
                 <div className="flex items-center gap-3">
@@ -425,10 +437,16 @@ export default function MobileApps() {
 
             {/* Contacts & caller context — image on top */}
             <div className={`${cardBase} overflow-hidden`}>
-              <ImageSlot
+              {/* <ImageSlot
                 label="Photo — two colleagues high-fiving in an office"
                 className="h-[150px] w-full border-0 border-b border-dashed"
                 rounded="rounded-none"
+              /> */}
+              <Image
+                src="/images/mobile-apps/core-features-2.png" alt="Photo — two colleagues high-fiving in an office"
+                width={600}
+                height={150}
+                className="h-[150px] w-full object-cover"
               />
               <div className="p-6">
                 <div className="flex items-center gap-3">
@@ -507,20 +525,25 @@ export default function MobileApps() {
             </div>
 
             <div className="mt-4 grid gap-4 md:grid-cols-3">
-              <ImageSlot
-                label="Photo — hand holding phone against colourful mural"
-                className="h-[120px] w-full border-white/20 bg-white/[0.06]"
-                rounded="rounded-xl"
+              <Image 
+              src="/images/mobile-apps/across-devices1.png" alt="Photo — person on a business call by a window"
+              width={600}
+              height={120}
+              className="h-[120px] w-full object-cover rounded-xl"
               />
-              <ImageSlot
-                label="Photo — sticky note held up"
-                className="h-[120px] w-full border-white/20 bg-white/[0.06]"
-                rounded="rounded-xl"
+              
+              <Image 
+              src="/images/mobile-apps/across-devices2.png" alt="Photo — hands gesturing near a laptop"
+              width={600}
+              height={120}
+              className="h-[120px] w-full object-cover rounded-xl"
               />
-              <ImageSlot
-                label="Photo — hands gesturing near a laptop"
-                className="h-[120px] w-full border-white/20 bg-white/[0.06]"
-                rounded="rounded-xl"
+
+              <Image 
+              src="/images/mobile-apps/across-devices3.png" alt="Photo — hands gesturing near a laptop"
+              width={600}
+              height={120}
+              className="h-[120px] w-full object-cover rounded-xl"
               />
             </div>
 
@@ -538,9 +561,11 @@ export default function MobileApps() {
       <section className="bg-[#EDE7DB] py-14 md:py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-[1fr_1.1fr]">
           <div className="relative">
-            <ImageSlot
-              label="Photo — person on a phone call, blue ambient lighting"
-              className="h-[420px] w-full"
+           <Image
+              src="/images/mobile-apps/ai-receptionist.png" alt="Photo — AI receptionist interface on a phone"
+              width={600}
+              height={380}
+              className="h-[380px] w-full object-cover rounded-2xl"
             />
             <div className="absolute -bottom-5 -left-4 flex items-center gap-2.5 rounded-xl bg-white px-4 py-2.5 shadow-lg">
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#FBEAE3] text-[#C2421F]">
@@ -636,10 +661,12 @@ export default function MobileApps() {
             {locations.map((loc) => (
               <div key={loc.name} className={`${cardBase} overflow-hidden`}>
                 <div className="relative">
-                  <ImageSlot
-                    label={`Photo — ${loc.name}`}
-                    className="h-[110px] w-full border-0"
-                    rounded="rounded-none"
+                  <Image
+                    src={loc.href}
+                    alt={`Photo — ${loc.name}`}
+                    width={600}
+                    height={140}
+                    className="h-[140px] w-full object-cover rounded-2xl"
                   />
                   <div className="pointer-events-none absolute inset-0 flex items-end gap-2.5 bg-gradient-to-t from-black/55 to-transparent p-3">
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/25 text-white backdrop-blur">
@@ -746,10 +773,14 @@ export default function MobileApps() {
               </div>
             </div>
 
-            <ImageSlot
+            {/* <ImageSlot
               label="Photo — two people shaking hands"
               className="h-[340px] w-full"
-            />
+            /> */}
+            <Image
+              src="/images/mobile-apps/plans-commercial.png" alt="Photo — two people shaking hands"
+              width={600} height={340}
+              className="h-[340px] w-full object-cover rounded-2xl" />
           </div>
         </div>
       </section>
@@ -777,9 +808,8 @@ export default function MobileApps() {
                   >
                     <span className="text-[14.5px] font-bold text-[#0E2A21]">{item.question}</span>
                     <span
-                      className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-xs transition ${
-                        open ? "bg-[#E85D3C] text-white" : "bg-[#EDE7DB] text-[#0E2A21]"
-                      }`}
+                      className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-xs transition ${open ? "bg-[#E85D3C] text-white" : "bg-[#EDE7DB] text-[#0E2A21]"
+                        }`}
                     >
                       {open ? <FiX aria-hidden /> : <FiPlus aria-hidden />}
                     </span>
