@@ -33,14 +33,14 @@ import {
 // Files live in public/images/group/ and are referenced from the web root.
 // Collected here so a rename is one edit, not a hunt through the markup.
 const IMAGES = {
-  heroHighFive: { src: "/images/group/hero-collaboration.jpg", alt: "Two colleagues celebrating at a desk" },
-  heroWindow: { src: "/images/group/hero-window-call.jpg", alt: "A person working at a window-side desk" },
-  connected: { src: "/images/group/people-connected.jpg", alt: "Four colleagues talking together in a bright room" },
-  teams: { src: "/images/group/teams-hands.jpg", alt: "A team joining hands over a table of documents" },
-  productEng: { src: "/images/group/product-engineering.jpg", alt: "Product and engineering colleagues in discussion" },
-  designCx: { src: "/images/group/design-cx.jpg", alt: "Overhead view of a shared desk with laptops and notebooks" },
-  opsSupport: { src: "/images/group/operations-support.jpg", alt: "Operations and support colleagues working together" },
-  closing: { src: "/images/group/closing-team.jpg", alt: "Colleagues with lanyards talking in an office" },
+  heroHighFive: { src: "/images/about-zoiko-group/heropic-1.png", alt: "Two colleagues celebrating at a desk" },
+  heroWindow: { src: "/images/about-zoiko-group/heropic-2.png", alt: "A person working at a window-side desk" },
+  connected: { src: "/images/about-zoiko-group/People-collaborating.png", alt: "Four colleagues talking together in a bright room" },
+  teams: { src: "/images/about-zoiko-group/teams-hands.png", alt: "A team joining hands over a table of documents" },
+  productEng: { src: "/images/about-zoiko-group/product-engineering.png", alt: "Product and engineering colleagues in discussion" },
+  designCx: { src: "/images/about-zoiko-group/design-cx.png", alt: "Overhead view of a shared desk with laptops and notebooks" },
+  opsSupport: { src: "/images/about-zoiko-group/operations-support.png", alt: "Operations and support colleagues working together" },
+  closing: { src: "/images/about-zoiko-group/closing-team.png", alt: "Colleagues with lanyards talking in an office" },
 };
 
 // Fixed-frame image. The wrapper holds the reserved space from the design, so
@@ -59,7 +59,7 @@ function Img({
   rounded?: string;
 }) {
   return (
-    <div className={`relative overflow-hidden bg-[#EDE7DB] ${rounded} ${className}`}>
+    <div className={`relative overflow-hidden ${rounded} ${className}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
@@ -317,7 +317,7 @@ export default function AboutCommunicationsGroup() {
             </div>
 
             <div className="grid grid-cols-2 gap-4">
-              <Img src={IMAGES.heroHighFive.src} alt={IMAGES.heroHighFive.alt} className="h-[190px] w-full" />
+              <Img src={IMAGES.heroHighFive.src} alt={IMAGES.heroHighFive.alt} className="h-[230px] w-full" />
               <Img src={IMAGES.heroWindow.src} alt={IMAGES.heroWindow.alt} className="h-[190px] w-full" />
             </div>
           </div>
