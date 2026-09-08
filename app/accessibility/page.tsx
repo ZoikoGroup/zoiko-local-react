@@ -242,7 +242,7 @@ const assistiveTech = [
 
 // Best-effort: severities and remediation text below the fold were partially
 // illegible; entries reflect the visible titles and status pills only.
-const limitations: { severity: string; title: string; body: string; status: string }[] = [
+const limitations: { severity: string; title: string; body: string }[] = [
   { severity: "Moderate", title: "Live captions can drift out of sync during high-latency calls", body: "Under active investigation with the calling platform team; a manual re-sync control is the interim workaround." },
   { severity: "Moderate", title: "Some legacy PDFs are not fully tagged", body: "A content remediation pass is scheduled; request a tagged or alternate-format copy in the meantime." },
   { severity: "Low", title: "A few complex data tables need better structure", body: "Contact us if a specific table is hard to navigate with a screen reader and we'll prioritise it." },

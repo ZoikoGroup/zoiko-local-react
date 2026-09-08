@@ -60,11 +60,11 @@ const DOC = { effective: "August 28, 2026", updated: "August 28, 2026", version:
 // rename is one edit, not a hunt through the markup.
 const IMAGES = {
   hero: {
-    src: "/images/recording-consent/hero-call.jpg",
+    src: "/images/Recording-consent-hero.png",
     alt: "A person sitting by a window taking a business call",
   },
   desk: {
-    src: "/images/recording-consent/desk-overhead.jpg",
+    src: "/images/Always-visible.png",
     alt: "Overhead view of a shared desk with several laptops in use",
   },
   calls: {
@@ -366,7 +366,7 @@ export default function RecordingAndConsent() {
   return (
     <main className="min-h-screen bg-[#F7F3EC]">
       {/* ═══ HERO ═══ */}
-      <section className="bg-gradient-to-br from-[#F4F1EA] via-[#F7F3EC] to-[#F6EDE7] pt-14 md:pt-20">
+      <section className="bg-gradient-to-br from-[#F4F1EA] via-[#F7F3EC] to-[#F6EDE7] pt-10 md:pt-16">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-[1.05fr_1fr]">
           <div>
             <h1 className="text-4xl font-bold tracking-tight text-[#0E2A21] md:text-[46px]">
@@ -398,7 +398,7 @@ export default function RecordingAndConsent() {
           </div>
 
           <div className="relative">
-            <Img src={IMAGES.hero.src} alt={IMAGES.hero.alt} className="h-[400px] w-full" />
+            <Img src={IMAGES.hero.src} alt={IMAGES.hero.alt} className="h-[450px] w-full center" />
             <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-2 text-[12px] font-bold text-[#0E2A21] shadow-lg">
               <span className="h-2 w-2 rounded-full bg-[#D14634]" aria-hidden />
               Recording

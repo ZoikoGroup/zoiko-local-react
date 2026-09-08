@@ -11,6 +11,7 @@ import {
     FiDollarSign, FiGlobe, FiHome,
     FiShield, FiMail, FiLock,
 } from "react-icons/fi";
+import { Metadata } from 'next';
 
 
 
