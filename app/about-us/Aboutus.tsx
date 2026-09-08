@@ -173,12 +173,12 @@ function Aboutus() {
               compliance and governance built for scale.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <button className="rounded-full bg-[#d9603f] px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
+            <a href="/contact-sales">  <button className="rounded-full bg-[#d9603f] px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
                 Get Started
-              </button>
-              <button className="rounded-full border border-[#1c2b26]/20 px-7 py-3 text-sm font-semibold text-[#1c2b26] transition-colors hover:bg-black/5 dark:border-white/20 dark:text-white dark:hover:bg-white/10">
+              </button></a>
+           <a href="/zoiko-local-ai-terms">   <button className="rounded-full border border-[#1c2b26]/20 px-7 py-3 text-sm font-semibold text-[#1c2b26] transition-colors hover:bg-black/5 dark:border-white/20 dark:text-white dark:hover:bg-white/10">
                 Learn More
-              </button>
+              </button></a>
             </div>
           </div>
 
@@ -385,9 +385,9 @@ function Aboutus() {
                 </div>
               ))}
             </div>
-            <button className="mt-8 rounded-full bg-[#d9603f] px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
+            <a href="/local-business-numbers"><button className="mt-8 rounded-full bg-[#d9603f] px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
               See how it works
-            </button>
+            </button></a>
           </div>
 
           {/* Card mock */}
@@ -419,9 +419,9 @@ function Aboutus() {
               Trust is built one line at a time. Every number, identity and routing rule is verified and monitored
               before it ever reaches your customers.
             </p>
-            <button className="mt-6 rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#0f2a21] transition-colors hover:bg-white/90">
+           <a href="/platform"> <button className="mt-6 rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#0f2a21] transition-colors hover:bg-white/90">
               Read compliance
-            </button>
+            </button></a>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {scaleItems.map((s) => (
@@ -470,12 +470,12 @@ function Aboutus() {
                 communication at scale.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <button className="rounded-full bg-[#d9603f] px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
+                <a href="https://www.zoikonex.com/"><button className="rounded-full bg-[#d9603f] px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
                   Explore ZoikoNex
-                </button>
-                <button className="rounded-full border border-white/25 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10">
+                </button></a>
+              <a href="/plans-and-pricing">  <button className="rounded-full border border-white/25 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10">
                   View pricing
-                </button>
+                </button></a>
               </div>
             </div>
             <ul className="space-y-3 lg:pt-10">
@@ -527,12 +527,12 @@ function Aboutus() {
             Build your local presence where business and life happen.
           </h2>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button className="rounded-full bg-[#d9603f] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
+            <a href="/get-a-local-number"><button className="rounded-full bg-[#d9603f] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
               Get Started
-            </button>
-            <button className="rounded-full border border-white/25 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10">
+            </button></a>
+       <a href="/contact-sales">     <button className="rounded-full border border-white/25 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10">
               Talk to Sales
-            </button>
+            </button></a>
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-2.5">
             {ctaPills.map((p) => (

@@ -132,7 +132,7 @@ export default function Contactsupport() {
 
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
 
-                                <button
+                              <a href="/customer-support">  <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -145,7 +145,7 @@ export default function Contactsupport() {
 
                                     Get Help →
 
-                                </button>
+                                </button></a>
 
                                 <button
                                     className="h-12 px-8 rounded-xl
