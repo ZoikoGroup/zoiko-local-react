@@ -81,6 +81,7 @@ export default function Header() {
                       items={platformItems}
                       buttonText="Start Free"
                       buttonlink="/start-free"
+                      onClose={() => setActiveMegaMenu(null)}
                     />
                   </div>
                 </>
@@ -107,6 +108,7 @@ export default function Header() {
                       items={solutionItems}
                       buttonText="Talk to Sales"
                       buttonlink="/contact-sales"
+                      onClose={() => setActiveMegaMenu(null)}
                     />
                   </div>
                 </>
@@ -228,13 +230,13 @@ export default function Header() {
   );
 }
 
-function MegaMenu({ title, items, buttonText, buttonlink }: { title: string; items: typeof platformItems; buttonText: string; buttonlink: string }) {
+function MegaMenu({ title, items, buttonText, buttonlink ,onClose}: { title: string; items: typeof platformItems; buttonText: string; buttonlink: string; onClose: () => void }) {
   return (
     <div className="w-[min(1000px,90vw)] overflow-hidden rounded-[28px] border border-[#E5DDD4] bg-white shadow-[0_25px_80px_rgba(0,0,0,0.08)] dark:border-slate-700 dark:bg-slate-900">
       <div className="p-8">
         <div className="mb-10 flex items-center justify-between">
           <span className="text-xs font-bold uppercase tracking-[4px] text-slate-500">{title}</span>
-          <Link href={`/${title.toLowerCase()}`}>
+          <Link href={`/${title.toLowerCase()}`} onClick={onClose}>
             <button className="font-medium text-[#F26B45]">View {title} →</button>
           </Link>
         </div>
@@ -243,7 +245,7 @@ function MegaMenu({ title, items, buttonText, buttonlink }: { title: string; ite
           {items.map((item) => {
             const Icon = item.icon;
             return (
-              <Link key={item.title} href={item.href} className="group block rounded-xl p-2 -m-2 transition hover:bg-[#F8F5F1]">
+              <Link key={item.title} href={item.href} className="group block rounded-xl p-2 -m-2 transition hover:bg-[#F8F5F1]" onClick={onClose}>
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#EEF4F2] dark:bg-slate-800">
                   <Icon size={20} className="text-[#0D5C54]" />
                 </div>
@@ -262,7 +264,7 @@ function MegaMenu({ title, items, buttonText, buttonlink }: { title: string; ite
 
       <div className="flex items-center justify-between border-t border-[#E5DDD4] bg-[#F8F5F1] px-10 py-5 dark:border-slate-700 dark:bg-slate-800">
         <p className="text-sm text-slate-600 dark:text-slate-300">Use one product or build the full stack.</p>
-        <Link href={buttonlink}>
+        <Link href={buttonlink} onClick={onClose}>
           <button className="rounded-full bg-[#F26B45] px-8 py-3 font-semibold text-white">{buttonText}</button>
         </Link>
       </div>
