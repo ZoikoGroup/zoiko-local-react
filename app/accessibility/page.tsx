@@ -318,30 +318,7 @@ export default function Accessibility() {
 
   return (
     <main className="min-h-screen bg-[#F7F3EC]">
-      {/* ═══ HEADER ═══ */}
-      <header className="border-b border-[#E8E2D5] bg-[#F7F3EC]/95 backdrop-blur">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5">
-          <Link href="/" className="flex items-center gap-2 text-[14px] font-bold tracking-tight text-[#0E2A21]">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#0E3A32] text-[11px] font-bold text-white">Z</span>
-            Zoiko Local
-          </Link>
-          <nav className="hidden items-center gap-7 text-[13px] font-semibold text-[#3F4B45] md:flex">
-            <Link href="#" className="hover:text-[#0E2A21]">Products</Link>
-            <Link href="#" className="hover:text-[#0E2A21]">For Business</Link>
-            <Link href="#" className="hover:text-[#0E2A21]">Pricing</Link>
-            <Link href="#" className="hover:text-[#0E2A21]">Switch from Skype</Link>
-          </nav>
-          <div className="flex items-center gap-3">
-            <Link href="#" className="text-[13px] font-semibold text-[#0E2A21]">Sign in</Link>
-            <Link
-              href="#"
-              className="inline-flex h-9 items-center justify-center rounded-full bg-[#E85D3C] px-4 text-[13px] font-semibold text-white transition hover:bg-[#D14C2C]"
-            >
-              Get Started
-            </Link>
-          </div>
-        </div>
-      </header>
+     
 
       <div className="mx-auto max-w-7xl px-5 py-10 lg:grid lg:grid-cols-[220px_1fr] lg:gap-10">
         {/* ═══ LEFT TOC (sticky) ═══ */}
@@ -858,51 +835,7 @@ export default function Accessibility() {
         </div>
       </div>
 
-      {/* ═══ FOOTER ═══ */}
-      <footer className="mt-20 bg-[#0B2E2A] py-14 text-white/70">
-        <div className="mx-auto max-w-7xl px-5">
-          <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
-            <div>
-              <Link href="/" className="flex items-center gap-2 text-[14px] font-bold text-white">
-                <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/10 text-[11px] font-bold text-white">Z</span>
-                Zoiko Local
-              </Link>
-              <p className="mt-4 max-w-xs text-[12.5px] leading-6">
-                Communications people and businesses can rely on.
-              </p>
-              <div className="mt-5 flex items-center gap-3 text-white/50">
-                <FiCode aria-hidden />
-                <FiMousePointer aria-hidden />
-              </div>
-            </div>
-
-            {[
-              { title: "Platform", links: ["Calling", "Messaging", "Video", "AI features"] },
-              { title: "Industries", links: ["Enterprise", "Small business", "Telecom"] },
-              { title: "Use cases", links: ["Remote teams", "Contact centers"] },
-              { title: "Legal", links: ["Accessibility Statement", "Terms of Service", "Trademarks & Copyrights"] },
-            ].map((col) => (
-              <div key={col.title}>
-                <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-white/50">{col.title}</p>
-                <ul className="mt-4 space-y-2.5 text-[12.5px]">
-                  {col.links.map((l) => (
-                    <li key={l}>
-                      <Link href="#" className="hover:text-white">{l}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-6 text-[12px] md:flex-row md:items-center">
-            <p>© {new Date().getFullYear()} Zoiko Communications Group. All rights reserved.</p>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 font-semibold text-white/80">
-              <FiCheck aria-hidden /> All Systems Operational
-            </span>
-          </div>
-        </div>
-      </footer>
+      
     </main>
   );
 }

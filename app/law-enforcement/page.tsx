@@ -438,7 +438,7 @@ export default function LawEnforcementRequests() {
               </div>
             </div>
             <Link
-              href="#"
+              href="/emergency-calling"
               className="inline-flex h-11 shrink-0 items-center gap-2 rounded-lg bg-[#B3261E] px-5 text-[13.5px] font-semibold text-white transition hover:bg-[#8E1E17]"
             >
               <FiAlertTriangle aria-hidden /> Emergency request
