@@ -106,11 +106,11 @@ const useCases: { title: string; desc: string; icon: IconType; bg: string }[] = 
   { title: "After-hours teams", desc: "Capture and route calls beyond business hours.", icon: FiClock, bg: "bg-[#fdf0db]" },
 ];
 
-const platform: { name: string; desc: string; cta: string; icon: IconType; bg: string }[] = [
-  { name: "Local Numbers", desc: "Local presence in the markets your customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]" },
-  { name: "Calling", desc: "Make and receive business calls with a professional identity.", cta: "Explore Calling", icon: FiPhone, bg: "bg-[#fbe9e3]" },
-  { name: "Video", desc: "Meet customers face-to-face to build trust.", cta: "Explore Video", icon: FiVideo, bg: "bg-[#e3f3ee]" },
-  { name: "AI Receptionist", desc: "Capture and route calls when the team is offline.", cta: "Explore AI Receptionist", icon: FiCpu, bg: "bg-[#fdf0db]" },
+const platform: { name: string; desc: string; cta: string; icon: IconType; bg: string; href: string }[] = [
+  { name: "Local Numbers", desc: "Local presence in the markets your customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]", href: "/get-a-local-number" },
+  { name: "Calling", desc: "Make and receive business calls with a professional identity.", cta: "Explore Calling", icon: FiPhone, bg: "bg-[#fbe9e3]", href: "/calling" },
+  { name: "Video", desc: "Meet customers face-to-face to build trust.", cta: "Explore Video", icon: FiVideo, bg: "bg-[#e3f3ee]", href: "/video" },
+  { name: "AI Receptionist", desc: "Capture and route calls when the team is offline.", cta: "Explore AI Receptionist", icon: FiCpu, bg: "bg-[#fdf0db]", href: "/ai-receptionist" },
 ];
 
 const compare = [
@@ -175,15 +175,15 @@ function RemoteTeams() {
             <div className="mt-8 flex flex-col items-start gap-3">
               <button className={coralBtn}>Build Your Remote Team Phone System</button>
               <div className="flex flex-wrap gap-3">
-                <button className={lightBtn}>Get a Local Number</button>
-                <a href="#" className="inline-flex items-center px-3 py-3.5 text-sm font-semibold text-[#1c2b26] hover:underline dark:text-white">
+               <a href="get-a-local-number"><button className={lightBtn}>Get a Local Number</button></a>
+                <a href="/plans-and-pricing" className="inline-flex items-center px-3 py-3.5 text-sm font-semibold text-[#1c2b26] hover:underline dark:text-white">
                   See Pricing →
                 </a>
               </div>
             </div>
             <p className="mt-5 text-sm text-gray-600 dark:text-gray-400">
               Replacing Skype Number for your remote team?{" "}
-              <a href="#" className="font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
+              <a href="/switch-from-skype" className="font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
             </p>
             <ul className="mt-6 space-y-2">
               {heroChecks.map((c) => (
@@ -304,7 +304,7 @@ function RemoteTeams() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <button className={lightBtn}>Get a Local Number</button>
+           <a href="/get-a-local-number"><button className={lightBtn}>Get a Local Number</button></a>
           </div>
         </div>
       </section>
@@ -335,7 +335,7 @@ function RemoteTeams() {
                 <IconBox icon={p.icon} bg={p.bg} />
                 <h3 className="mt-5 text-base font-bold dark:text-white">{p.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{p.desc}</p>
-                <a href="#" className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
+                <a href={p.href} className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
               </div>
             ))}
           </div>
@@ -416,7 +416,7 @@ function RemoteTeams() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <button className={coralBtn}>See Pricing</button>
+           <a href="/plans-and-pricing"><button className={coralBtn}>See Pricing</button></a>
           </div>
         </div>
       </section>
@@ -458,12 +458,12 @@ function RemoteTeams() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <button className={lightBtn}>Build Your Remote Team Phone System</button>
-            <button className={outlineDarkBtn}>Get a Local Number</button>
-            <button className={outlineDarkBtn}>See Pricing</button>
+           <a href="/get-a-local-number"><button className={outlineDarkBtn}>Get a Local Number</button></a>
+           <a href="/plans-and-pricing"><button className={outlineDarkBtn}>See Pricing</button></a>
           </div>
           <p className="mt-6 text-sm text-white/70">
             Replacing Skype Number?{" "}
-            <a href="#" className="font-semibold text-white hover:underline">Switch from Skype →</a>
+            <a href="/switch-from-skype" className="font-semibold text-white hover:underline">Switch from Skype →</a>
           </p>
         </div>
       </section>

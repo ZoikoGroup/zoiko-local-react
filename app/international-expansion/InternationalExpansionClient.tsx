@@ -128,9 +128,8 @@ function Icon({
 function Eyebrow({ children, light = false }: { children: ReactNode; light?: boolean }) {
   return (
     <span
-      className={`inline-flex items-center gap-2 rounded-full px-4 py-[7px] text-[11.5px] font-semibold uppercase tracking-[0.16em] ${
-        light ? "bg-white/10 text-[#f6b79f]" : "bg-[#e85d3c]/10 text-[#e85d3c]"
-      }`}
+      className={`inline-flex items-center gap-2 rounded-full px-4 py-[7px] text-[11.5px] font-semibold uppercase tracking-[0.16em] ${light ? "bg-white/10 text-[#f6b79f]" : "bg-[#e85d3c]/10 text-[#e85d3c]"
+        }`}
     >
       <span className={`h-[5px] w-[5px] rounded-full ${light ? "bg-[#f6b79f]" : "bg-[#e85d3c]"}`} />
       {children}
@@ -153,17 +152,15 @@ function SectionHead({
     <div className="mx-auto max-w-2xl text-center">
       <Eyebrow light={onDark}>{eyebrow}</Eyebrow>
       <h2
-        className={`mt-5 text-3xl font-extrabold leading-[1.28] tracking-tight ${
-          onDark ? "text-white" : "text-[#0b1330] dark:text-white"
-        }`}
+        className={`mt-5 text-3xl font-extrabold leading-[1.28] tracking-tight ${onDark ? "text-white" : "text-[#0b1330] dark:text-white"
+          }`}
       >
         {title}
       </h2>
       {sub && (
         <p
-          className={`mx-auto mt-4 max-w-xl text-sm leading-relaxed ${
-            onDark ? "text-white/70" : "text-[#6e7791] dark:text-gray-400"
-          }`}
+          className={`mx-auto mt-4 max-w-xl text-sm leading-relaxed ${onDark ? "text-white/70" : "text-[#6e7791] dark:text-gray-400"
+            }`}
         >
           {sub}
         </p>
@@ -294,13 +291,14 @@ const useCases: { title: string; desc: string; icon: IconName; tint: Tint }[] = 
   { title: "Pre-office campaigns", desc: "Run ads and landing pages with a local number before launch.", icon: "sparkle", tint: "amber" },
 ];
 
-const platform: { title: string; desc: string; cta: string; icon: IconName; tint: Tint }[] = [
+const platform: { title: string; desc: string; cta: string; icon: IconName; tint: Tint; href: string }[] = [
   {
     title: "Local Numbers",
     desc: "Create local presence in countries and regions you want to serve.",
     cta: "Explore Local Numbers →",
     icon: "pin",
     tint: "peach",
+    href: "/get-a-local-number"
   },
   {
     title: "Calling",
@@ -308,6 +306,7 @@ const platform: { title: string; desc: string; cta: string; icon: IconName; tint
     cta: "Explore Calling →",
     icon: "phone",
     tint: "peach",
+    href: "/calling"
   },
   {
     title: "Video",
@@ -315,6 +314,7 @@ const platform: { title: string; desc: string; cta: string; icon: IconName; tint
     cta: "Explore Video →",
     icon: "video",
     tint: "mint",
+    href: "/video"
   },
   {
     title: "AI Receptionist",
@@ -322,6 +322,7 @@ const platform: { title: string; desc: string; cta: string; icon: IconName; tint
     cta: "Explore AI Receptionist →",
     icon: "bot",
     tint: "amber",
+    href: "/ai-receptionist"
   },
 ];
 
@@ -407,12 +408,12 @@ function InternationalExpansion() {
             </p>
 
             <div className="mt-8">
-              <button className={coralBtn}>Start Expanding with a Local Number</button>
+              <a href="/get-a-local-number"><button className={coralBtn}>Start Expanding with a Local Number</button></a>
             </div>
 
             <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3">
-              <button className={whiteBtn}>Explore Global Coverage</button>
-              <a href="#" className={orangeLink}>
+              <a href="/global-coverage"><button className={whiteBtn}>Explore Global Coverage</button></a>
+              <a href="/plans-and-pricing" className={orangeLink}>
                 See Pricing →
               </a>
             </div>
@@ -421,7 +422,7 @@ function InternationalExpansion() {
               <span className="text-sm text-[#5b6480] dark:text-gray-400">
                 Replacing Skype Number for international market presence?
               </span>
-              <a href="#" className={orangeLink}>
+              <a href="/switch-from-skype" className={orangeLink}>
                 Switch from Skype →
               </a>
             </div>
@@ -553,7 +554,7 @@ function InternationalExpansion() {
             ))}
           </div>
           <div className="mt-11 text-center">
-            <button className={coralBtn}>Start Expanding with a Local Number</button>
+            <a href="/get-a-local-number"> <button className={coralBtn}>Start Expanding with a Local Number</button></a>
           </div>
         </div>
       </section>
@@ -611,7 +612,7 @@ function InternationalExpansion() {
                 <Chip name={p.icon} tint={p.tint} />
                 <h3 className={`mt-5 ${cardTitle}`}>{p.title}</h3>
                 <p className={cardBody}>{p.desc}</p>
-                <a href="#" className={`mt-4 inline-block ${orangeLink}`}>
+                <a href={p.href} className={`mt-4 inline-block ${orangeLink}`}>
                   {p.cta}
                 </a>
               </div>
@@ -657,7 +658,7 @@ function InternationalExpansion() {
               </tbody>
             </table>
             <div className="border-t border-[#f1f1f5] bg-[#fafafc] p-7 text-center dark:border-white/5 dark:bg-white/[0.02]">
-              <button className={coralBtn}>Create Local Presence Before You Open an Office</button>
+              <a href="/get-a-local-number"> <button className={coralBtn}>Create Local Presence Before You Open an Office</button></a>
             </div>
           </div>
         </div>
@@ -698,9 +699,9 @@ function InternationalExpansion() {
           </div>
 
           <div className="mt-9 flex flex-wrap justify-center gap-3">
-            <button className={whiteBtnGreen}>Explore Global Coverage</button>
-            <button className={ghostBtn}>Request a Market</button>
-            <button className={ghostBtn}>See Pricing</button>
+            <a href="/global-coverage"> <button className={whiteBtnGreen}>Explore Global Coverage</button></a>
+            <a href="/resources"> <button className={ghostBtn}>Request a Market</button></a>
+            <a href="/plans-and-pricing"> <button className={ghostBtn}>See Pricing</button></a>
           </div>
         </div>
       </section>
@@ -725,9 +726,8 @@ function InternationalExpansion() {
                   >
                     <span className="text-[15px] font-semibold text-[#0b1330] dark:text-white">{f.q}</span>
                     <span
-                      className={`flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center rounded-full transition-all ${
-                        isOpen ? "rotate-45 bg-[#e85d3c] text-white" : "text-[#e85d3c]"
-                      }`}
+                      className={`flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center rounded-full transition-all ${isOpen ? "rotate-45 bg-[#e85d3c] text-white" : "text-[#e85d3c]"
+                        }`}
                     >
                       <Icon name="plus" className="h-[13px] w-[13px]" strokeWidth={2.6} />
                     </span>
@@ -754,14 +754,14 @@ function InternationalExpansion() {
           </p>
 
           <div className="mt-9 flex flex-wrap justify-center gap-3">
-            <button className={whiteBtnGreen}>Start Expanding with a Local Number</button>
-            <button className={ghostBtn}>Explore Global Coverage</button>
-            <button className={ghostBtn}>See Pricing</button>
+            <a href="/get-a-local-number"> <button className={whiteBtnGreen}>Start Expanding with a Local Number</button></a>
+            <a href="/global-coverage"> <button className={ghostBtn}>Explore Global Coverage</button></a>
+            <a href="/plans-and-pricing"> <button className={ghostBtn}>See Pricing</button></a>
           </div>
 
           <div className="mt-7 inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-full border border-white/15 bg-white/[0.06] px-6 py-3">
             <span className="text-sm text-white/75">Replacing Skype Number?</span>
-            <a href="#" className="text-sm font-semibold text-white hover:underline">
+            <a href="/switch-from-skype" className="text-sm font-semibold text-white hover:underline">
               Switch from Skype →
             </a>
           </div>

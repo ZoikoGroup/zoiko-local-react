@@ -7,16 +7,7 @@ import {
 } from "react-icons/fi";
 import { FaBalanceScale } from "react-icons/fa";
 import Faq from '../Components/Faq';
-import { Metadata } from 'next';
-
-
-
-export const metadata: Metadata = {
-  title: "Business Phone Number Resources &amp; Guides | Zoiko Local",
-  description:
-    "Discover business phone number resources with Zoiko Local. Get practical guides, insights, and tips to improve calling, local numbers, and customer support.",
-};
-
+import Link from 'next/link';
 
 
 
@@ -51,41 +42,49 @@ const decisionPaths = [
         title: "I need a Skype Number replacement",
         badge: "Switch from Skype",
         action: "Switch from Skype →",
+        href: "/switch-from-skype"
     },
     {
         title: "I'm comparing providers",
         badge: "Alternatives & Comparisons",
         action: "Compare Options →",
+        href: "/plans-and-pricing"
     },
     {
         title: "I want to understand virtual numbers",
         badge: "Virtual Phone Number",
         action: "Learn About Virtual Numbers →",
+        href: "/virtual-phone-numbers"
     },
     {
         title: "I need a local business number",
         badge: "Local Business Number",
         action: "Get a Local Business Number →",
+        href: "/local-business-number"
     },
     {
         title: "I want to keep my existing number",
         badge: "Number Porting",
         action: "Check Porting Eligibility →",
+        href: "/number-porting"
     },
     {
         title: "I need help using Zoiko Local",
         badge: "Help Center",
         action: "Find Help →",
+        href: "/contact-support"
     },
     {
         title: "I need to contact support",
         badge: "Contact Support",
         action: "Contact Support →",
+        href: "/contact-support"
     },
     {
         title: "I need safety information",
         badge: "Emergency Calling",
         action: "Read Emergency Information →",
+        href: "/emergency-calling"
     },
 ];
 const comparisonCards = [
@@ -95,6 +94,7 @@ const comparisonCards = [
             "Move from Skype Number to Zoiko Local — local numbers, calling, video, and an AI Receptionist.",
         action: "Switch from Skype →",
         icon: FiRepeat,
+        href: "/switch-from-skype"
     },
     {
         title: "Google Voice Alternative",
@@ -102,6 +102,7 @@ const comparisonCards = [
             "Compare Zoiko Local with Google Voice for business local numbers, international reach, and communication.",
         action: "Compare Zoiko Local →",
         icon: FaBalanceScale,
+        href: "/google-voice-alternative"
     },
     {
         title: "OpenPhone Alternative",
@@ -109,6 +110,7 @@ const comparisonCards = [
             "Compare Zoiko Local for local presence, business calling, routing, and growth use cases.",
         action: "Compare Zoiko Local →",
         icon: FaBalanceScale,
+        href: "/openphone-alternative"
     },
     {
         title: "Teams Phone Alternative",
@@ -116,6 +118,7 @@ const comparisonCards = [
             "Local numbers and business calling without enterprise-telephony complexity.",
         action: "Explore Zoiko Local →",
         icon: FaBalanceScale,
+        href: "/teams-phone-alternative"
     },
 ];
 const basicsCards = [
@@ -125,6 +128,7 @@ const basicsCards = [
             "How virtual phone numbers work and how businesses use them for local presence.",
         action: "Get a Virtual Number →",
         icon: FiGlobe,
+        href: "/virtual-phone-numbers"
     },
     {
         title: "Local Business Number",
@@ -132,6 +136,7 @@ const basicsCards = [
             "Why local numbers help customers recognize, trust, and reach your company.",
         action: "Get a Local Business Number →",
         icon: FiBriefcase,
+        href: "/local-business-numbers"
     },
 ];
 const supportCards = [
@@ -141,6 +146,7 @@ const supportCards = [
             "Setup guidance, account support, billing, product help, and troubleshooting.",
         action: "Find Help →",
         icon: FiBook,
+        href: "/contact-support"
     },
     {
         title: "Contact Support",
@@ -148,6 +154,7 @@ const supportCards = [
             "Reach support for account, billing, number porting, or technical issues.",
         action: "Contact Support →",
         icon: FiMessageSquare,
+        href: "/contact-support"
     },
     {
         title: "Number Porting",
@@ -155,6 +162,7 @@ const supportCards = [
             "How transferring an existing number may work, subject to eligibility.",
         action: "Check Porting Eligibility →",
         icon: FiRepeat,
+        href: "/number-porting"
     },
     {
         title: "Emergency Calling",
@@ -162,6 +170,7 @@ const supportCards = [
             "Emergency-calling availability, limitations, and responsibilities for internet-based calling.",
         action: "Read Emergency Information →",
         icon: FiShield,
+        href: "/emergency-calling"
     },
 ];
 const buyerTypes = [
@@ -169,41 +178,49 @@ const buyerTypes = [
         buyer: "Skype Number user",
         resource: "Switch from Skype",
         action: "Start Migration →",
+        href: "/switch-from-skype"
     },
     {
         buyer: "Comparison shopper",
         resource: "Google Voice / OpenPhone / Teams Phone",
         action: "Compare Options →",
+        href: "/plans-and-pricing"
     },
     {
         buyer: "Founder",
         resource: "Local Business Number",
         action: "Get a Local Business Number →",
+        href: "/local-business-number"
     },
     {
         buyer: "Small business",
         resource: "Virtual / Local Business Number",
         action: "Get a Local Number →",
+        href: "/get-a-local-number"
     },
     {
         buyer: "Existing customer",
         resource: "Help Center",
         action: "Find Help →",
+        href: "/contact-support"
     },
     {
         buyer: "Porting customer",
         resource: "Number Porting",
         action: "Check Porting Eligibility →",
+        href: "/number-porting"
     },
     {
         buyer: "Safety / compliance reviewer",
         resource: "Emergency Calling",
         action: "Read Emergency Information →",
+        href: "/emergency-calling"
     },
     {
         buyer: "Enterprise buyer",
         resource: "Contact Support / Sales",
         action: "Talk to Sales →",
+        href: "/contact-sales"
     },
 ];
 const trustCards = [
@@ -339,32 +356,38 @@ export default function Resources() {
 
                             {/* Buttons */}
                             <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3 md:gap-4">
-                                <button
-                                    className="h-11 md:h-12 px-6 md:px-8 rounded-full
+                                <Link href="/switch-from-skype">
+                                    <button
+                                        className="h-11 md:h-12 px-6 md:px-8 rounded-full
               bg-[#EB643F] text-white font-semibold shadow-lg
               hover:bg-[#D95A37] transition-all duration-300
               text-sm md:text-base"
-                                >
-                                    Switch from Skype
-                                </button>
-                                <button
-                                    className="h-11 md:h-12 px-6 md:px-8 rounded-full
+                                    >
+                                        Switch from Skype
+                                    </button>
+                                </Link>
+                                <Link href="/get-a-local-number">
+                                    <button
+                                        className="h-11 md:h-12 px-6 md:px-8 rounded-full
               border border-[#0F6660]
               text-[#123533] dark:text-white dark:border-slate-600
               hover:bg-[#0F6660] hover:text-white
               transition-all duration-300
               text-sm md:text-base"
-                                >
-                                    Get a Local Number
-                                </button>
+                                    >
+                                        Get a Local Number
+                                    </button>
+                                </Link>
                             </div>
 
                             {/* Support */}
                             <p className="mt-6 md:mt-10 text-sm text-gray-500 dark:text-gray-400">
                                 Need help with an existing account?
-                                <span className="ml-1 text-[#EB643F] font-medium cursor-pointer hover:underline">
-                                    Contact Support →
-                                </span>
+                                <Link href="/contact-support">
+                                    <span className="ml-1 text-[#EB643F] font-medium cursor-pointer hover:underline">
+                                        Contact Support →
+                                    </span>
+                                </Link>
                             </p>
 
                             {/* Bottom checks */}
@@ -507,19 +530,19 @@ export default function Resources() {
                                 {/* CTA */}
 
                                 <div className="lg:w-[240px] lg:text-right">
-
-                                    <button
-                                        className="text-[#EB643F]
+                                    <Link href={item.href}>
+                                        <button
+                                            className="text-[#EB643F]
                             text-sm
                             font-semibold
                             hover:underline
                             transition"
-                                    >
+                                        >
 
-                                        {item.action}
+                                            {item.action}
 
-                                    </button>
-
+                                        </button>
+                                    </Link>
                                 </div>
 
                             </div>
@@ -614,19 +637,19 @@ export default function Resources() {
                                     </p>
 
                                     {/* Link */}
-
-                                    <button
-                                        className="mt-6
+                                    <Link href={card.href}>
+                                        <button
+                                            className="mt-6
                             text-[#EB643F]
                             font-semibold
                             text-sm
                             hover:underline"
-                                    >
+                                        >
 
-                                        {card.action}
+                                            {card.action}
 
-                                    </button>
-
+                                        </button>
+                                    </Link>
                                 </div>
 
                             );
@@ -716,16 +739,16 @@ export default function Resources() {
                                         {card.description}
 
                                     </p>
-
-                                    <button
-                                        className="mt-6 text-[#EB643F]
+                                    <Link href={card.href}>
+                                        <button
+                                            className="mt-6 text-[#EB643F]
                             font-semibold text-sm hover:underline"
-                                    >
+                                        >
 
-                                        {card.action}
+                                            {card.action}
 
-                                    </button>
-
+                                        </button>
+                                    </Link>
                                 </div>
 
                             );
@@ -799,16 +822,16 @@ export default function Resources() {
                                         {card.description}
 
                                     </p>
-
-                                    <button
-                                        className="mt-6 text-[#EB643F]
+                                    <Link href={card.href}>
+                                        <button
+                                            className="mt-6 text-[#EB643F]
                             font-semibold text-sm hover:underline"
-                                    >
+                                        >
 
-                                        {card.action}
+                                            {card.action}
 
-                                    </button>
-
+                                        </button>
+                                    </Link>
                                 </div>
 
                             );
@@ -886,20 +909,20 @@ export default function Resources() {
                                 {/* CTA */}
 
                                 <div className="md:text-right">
-
-                                    <button
-                                        className="text-[#EB643F]
+                                    <Link href={item.href}>
+                                        <button
+                                            className="text-[#EB643F]
                             text-sm
                             font-semibold
                             whitespace-nowrap
                             hover:underline
                             transition"
-                                    >
+                                        >
 
-                                        {item.action}
+                                            {item.action}
 
-                                    </button>
-
+                                        </button>
+                                    </Link>
                                 </div>
 
                             </div>
@@ -1031,21 +1054,21 @@ export default function Resources() {
                                 research to confident use.
 
                             </p>
-
-                            <button
-                                className="mt-10 h-12 px-8 rounded-full
+                            <Link href="/get-a-local-number">
+                                <button
+                                    className="mt-10 h-12 px-8 rounded-full
                     bg-[#EB643F]
                     text-white
                     font-semibold
                     shadow-lg
                     hover:bg-[#D95A37]
                     transition-all"
-                            >
+                                >
 
-                                Get a Local Number
+                                    Get a Local Number
 
-                            </button>
-
+                                </button>
+                            </Link>
                         </div>
 
                         {/* RIGHT */}
@@ -1175,7 +1198,7 @@ export default function Resources() {
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
 
                                 {/* Primary */}
-
+                            <Link href="/get-a-local-number">
                                 <button
                                     className="h-12 px-8 rounded-full
                         bg-[#EB643F]
@@ -1191,9 +1214,9 @@ export default function Resources() {
                                     Get a Local Number
 
                                 </button>
-
+                            </Link>
                                 {/* Secondary */}
-
+                            <Link href="/switch-from-skype">
                                 <button
                                     className="h-12 px-8 rounded-full
                         border border-white/20
@@ -1208,9 +1231,9 @@ export default function Resources() {
                                     Switch from Skype
 
                                 </button>
-
+                            </Link>
                                 {/* Outline */}
-
+                            <Link href="/contact-us">
                                 <button
                                     className="h-12 px-8 rounded-full
                         border border-white/20
@@ -1225,7 +1248,7 @@ export default function Resources() {
                                     Find Help
 
                                 </button>
-
+                            </Link>
                             </div>
 
                             {/* Bottom Link */}
@@ -1234,12 +1257,13 @@ export default function Resources() {
 
                                 Comparing options?
 
-                                <button className="ml-1 text-[#F5A48D] font-medium hover:underline">
+                                <Link href="/plans-and-pricing">
+                                    <button className="ml-1 text-[#F5A48D] font-medium hover:underline">
 
                                     See Pricing →
 
                                 </button>
-
+                                </Link>
                             </p>
 
                         </div>

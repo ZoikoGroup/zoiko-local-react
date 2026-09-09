@@ -1,15 +1,11 @@
 "use client";
 
-import { Metadata } from "next";
+
 import { useState, type ReactNode } from "react";
 
 
 
-export const metadata: Metadata = {
-  title: "Global Phone Number Coverage | Zoiko Local",
-  description:
-    "Access global phone number coverage with Zoiko Local. Get local business numbers worldwide and create a trusted presence in international markets.",
-};
+
 
 function ImageSlot({ className = "h-10 w-10 rounded-xl", label = "icon" }: { className?: string; label?: string }) {
   return (
@@ -47,12 +43,12 @@ const liveMarkets = [
 ];
 
 const marketCards = [
-  { code: "US", name: "United States", dial: "+1", desc: "Local US numbers for sales, support, and market presence.", cta: "Get a US Local Number" },
-  { code: "GB", name: "United Kingdom", dial: "+44", desc: "UK local presence for business calls and customer communication.", cta: "Get a UK Local Number" },
-  { code: "JM", name: "Jamaica", dial: "+1 876", desc: "Local presence for business, diaspora, and cross-border reach.", cta: "Get a Jamaica Local Number" },
-  { code: "CA", name: "Canada", dial: "+1", desc: "Canadian local presence for customers, teams, and expansion.", cta: "Get a Canada Local Number" },
-  { code: "NG", name: "Nigeria", dial: "+234", desc: "Local presence in one of Africa's most important markets.", cta: "Get a Nigeria Local Number" },
-  { code: "ZA", name: "South Africa", dial: "+27", desc: "Local presence to support customers and growth in South Africa.", cta: "Get a South Africa Local Number" },
+  { code: "US", name: "United States", dial: "+1", desc: "Local US numbers for sales, support, and market presence.", cta: "Get a US Local Number", href: "/zoiko-local-united-states" },
+  { code: "GB", name: "United Kingdom", dial: "+44", desc: "UK local presence for business calls and customer communication.", cta: "Get a UK Local Number", href: "/zoiko-local-united-kingdom" },
+  { code: "JM", name: "Jamaica", dial: "+1 876", desc: "Local presence for business, diaspora, and cross-border reach.", cta: "Get a Jamaica Local Number", href: "/jamaica-phone-numbers" },
+  { code: "CA", name: "Canada", dial: "+1", desc: "Canadian local presence for customers, teams, and expansion.", cta: "Get a Canada Local Number", href: "/zoiko-local-canada" },
+  { code: "NG", name: "Nigeria", dial: "+234", desc: "Local presence in one of Africa's most important markets.", cta: "Get a Nigeria Local Number", href: "/nigeria-online-number" },
+  { code: "ZA", name: "South Africa", dial: "+27", desc: "Local presence to support customers and growth in South Africa.", cta: "Get a South Africa Local Number", href: "/south-africa" },
 ];
 
 const howItWorks = [
@@ -107,12 +103,12 @@ function GlobalCoverage() {
               presence as your customer footprint grows. Sound local. Reach anywhere.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <button className={coralBtn}>Check Number Availability →</button>
-              <button className={outlineBtn}>Talk to Sales</button>
+             <a href="/get-a-local-number"><button className={coralBtn}>Check Number Availability →</button></a>
+              <a href="/contact-sales"><button className={outlineBtn}>Talk to Sales</button></a>
             </div>
             <p className="mt-5 text-sm text-gray-600 dark:text-gray-400">
               Replacing a Skype Number across markets?{" "}
-              <a href="#" className="font-semibold text-[#d9603f] hover:underline">
+              <a href="/switch-from-skype" className="font-semibold text-[#d9603f] hover:underline">
                 Switch from Skype →
               </a>
             </p>
@@ -174,7 +170,7 @@ function GlobalCoverage() {
                 <h3 className="mt-4 text-base font-bold dark:text-white">{m.name}</h3>
                 <p className="mt-0.5 text-sm text-gray-400">{m.dial}</p>
                 <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{m.desc}</p>
-                <a href="#" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">
+                <a href={m.href} className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">
                   {m.cta} →
                 </a>
               </div>
@@ -193,8 +189,8 @@ function GlobalCoverage() {
             your request helps us prioritize what&rsquo;s next.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button className={coralBtn}>Request a Market →</button>
-            <button className={outlineBtn}>Talk to Sales</button>
+           <a href="/contact-us"><button className={coralBtn}>Request a Market →</button></a>
+            <a href="/contact-sales"><button className={outlineBtn}>Talk to Sales</button></a>
           </div>
         </div>
       </section>
@@ -271,13 +267,13 @@ function GlobalCoverage() {
             Check availability, get a local number in any live market, and expand your presence as you grow.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button className={coralBtn}>Check Number Availability →</button>
-            <button className={outlineBtnDark}>Request a Market</button>
-            <button className={outlineBtnDark}>Talk to Sales</button>
+           <a href="/get-a-local-number"> <button className={coralBtn}>Check Number Availability →</button></a>
+            <a href="/contact-us"><button className={outlineBtnDark}>Request a Market →</button></a>
+            <a href="/contact-sales"><button className={outlineBtnDark}>Talk to Sales →</button></a>
           </div>
           <p className="mt-6 text-sm text-white/70">
             Replacing a Skype Number?{" "}
-            <a href="#" className="font-semibold text-[#e9a98f] hover:underline">
+            <a href="/switch-from-skype" className="font-semibold text-[#e9a98f] hover:underline">
               Switch from Skype →
             </a>
           </p>

@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 // ─────────────────────────────────────────────────────────────────────────────
 // NOTE ON `metadata`
 // This is a client component, because the Monthly/Annual toggle needs useState.
@@ -258,7 +258,7 @@ export default function PlansPricing() {
             </p>
           </div>
 
-    {/* ─── CONTROLS ─── */}
+          {/* ─── CONTROLS ─── */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <div className="relative flex items-center">
               <FiGlobe className="pointer-events-none absolute left-4 text-[#5A6660]" aria-hidden />
@@ -292,11 +292,10 @@ export default function PlansPricing() {
                 type="button"
                 aria-pressed={!annual}
                 onClick={() => setAnnual(false)}
-                className={`h-[32px] rounded-full px-4 text-sm transition ${
-                  annual
-                    ? "text-[#5A6660] dark:text-gray-400"
-                    : "bg-[#EAE4D5] dark:bg-slate-700 font-semibold text-[#16211C] dark:text-white"
-                }`}
+                className={`h-[32px] rounded-full px-4 text-sm transition ${annual
+                  ? "text-[#5A6660] dark:text-gray-400"
+                  : "bg-[#EAE4D5] dark:bg-slate-700 font-semibold text-[#16211C] dark:text-white"
+                  }`}
               >
                 Monthly
               </button>
@@ -304,11 +303,10 @@ export default function PlansPricing() {
                 type="button"
                 aria-pressed={annual}
                 onClick={() => setAnnual(true)}
-                className={`flex h-[32px] items-center gap-2 rounded-full px-4 text-sm transition ${
-                  annual
-                    ? "bg-[#EAE4D5] dark:bg-slate-700 font-semibold text-[#16211C] dark:text-white"
-                    : "text-[#5A6660] dark:text-gray-400"
-                }`}
+                className={`flex h-[32px] items-center gap-2 rounded-full px-4 text-sm transition ${annual
+                  ? "bg-[#EAE4D5] dark:bg-slate-700 font-semibold text-[#16211C] dark:text-white"
+                  : "text-[#5A6660] dark:text-gray-400"
+                  }`}
               >
                 Annual
                 <span className="rounded-full bg-[#DFF0E4] px-2 py-0.5 text-[11px] font-bold text-[#2E7D5B]">
@@ -330,11 +328,10 @@ export default function PlansPricing() {
             {corePlans.map((plan) => (
               <div
                 key={plan.title}
-                className={`relative flex h-full flex-col rounded-xl bg-white dark:bg-slate-800 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                  plan.popular
-                    ? "border-[1.5px] border-[#E2622D]"
-                    : "border border-[#E4E0D4] dark:border-slate-700"
-                }`}
+                className={`relative flex h-full flex-col rounded-xl bg-white dark:bg-slate-800 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${plan.popular
+                  ? "border-[1.5px] border-[#E2622D]"
+                  : "border border-[#E4E0D4] dark:border-slate-700"
+                  }`}
               >
                 {plan.popular && (
                   <span className="absolute -top-[11px] left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-[#E2622D] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-white">
@@ -390,11 +387,10 @@ export default function PlansPricing() {
 
                 <button
                   type="button"
-                  className={`mt-6 h-12 w-full rounded-full text-sm font-semibold transition-all duration-300 ${
-                    plan.popular
-                      ? "bg-[#E2622D] text-white shadow-lg hover:bg-[#C9521F]"
-                      : "border border-[#D5D0C2] dark:border-slate-600 bg-white dark:bg-slate-700 text-[#16211C] dark:text-white hover:border-[#0E2A21] hover:text-[#0E2A21] dark:hover:text-white"
-                  }`}
+                  className={`mt-6 h-12 w-full rounded-full text-sm font-semibold transition-all duration-300 ${plan.popular
+                    ? "bg-[#E2622D] text-white shadow-lg hover:bg-[#C9521F]"
+                    : "border border-[#D5D0C2] dark:border-slate-600 bg-white dark:bg-slate-700 text-[#16211C] dark:text-white hover:border-[#0E2A21] hover:text-[#0E2A21] dark:hover:text-white"
+                    }`}
                 >
                   Start 14-Day Free Trial
                 </button>
@@ -442,13 +438,14 @@ export default function PlansPricing() {
                 ))}
               </ul>
             </div>
-
-            <button
-              type="button"
-              className="h-12 rounded-full bg-[#E2622D] px-8 text-sm font-semibold text-white shadow-lg transition hover:bg-[#C9521F]"
-            >
-              Contact Sales
-            </button>
+            <Link href="/contact-sales" className="mt-6 lg:mt-0">
+              <button
+                type="button"
+                className="h-12 rounded-full bg-[#E2622D] px-8 text-sm font-semibold text-white shadow-lg transition hover:bg-[#C9521F]"
+              >
+                Contact Sales
+              </button>
+            </Link>
           </div>
 
           {/* ─── TRUST STRIP ─── */}
@@ -506,9 +503,8 @@ export default function PlansPricing() {
                       <th
                         key={col}
                         scope="col"
-                        className={`whitespace-nowrap px-[18px] py-3.5 text-center text-[13.5px] font-semibold ${
-                          i === FEATURED_COLUMN ? "text-[#E2622D]" : "text-white"
-                        }`}
+                        className={`whitespace-nowrap px-[18px] py-3.5 text-center text-[13.5px] font-semibold ${i === FEATURED_COLUMN ? "text-[#E2622D]" : "text-white"
+                          }`}
                       >
                         {col}
                       </th>
@@ -527,11 +523,10 @@ export default function PlansPricing() {
                       {row.values.map((value, i) => (
                         <td
                           key={comparisonColumns[i]}
-                          className={`whitespace-nowrap border-t border-[#E9F0EA]/[0.14] px-[18px] py-3.5 text-center text-[13.5px] transition group-hover:bg-white/[0.045] ${
-                            i === FEATURED_COLUMN
-                              ? "bg-[#243D35] text-[#E9F0EA]"
-                              : "text-[#E9F0EA]/70"
-                          }`}
+                          className={`whitespace-nowrap border-t border-[#E9F0EA]/[0.14] px-[18px] py-3.5 text-center text-[13.5px] transition group-hover:bg-white/[0.045] ${i === FEATURED_COLUMN
+                            ? "bg-[#243D35] text-[#E9F0EA]"
+                            : "text-[#E9F0EA]/70"
+                            }`}
                         >
                           {value}
                         </td>
@@ -557,18 +552,22 @@ export default function PlansPricing() {
             </h2>
 
             <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <button
-                type="button"
-                className="h-12 rounded-full bg-[#E2622D] px-8 text-sm font-semibold text-white shadow-lg transition hover:bg-[#C9521F]"
-              >
-                Get a Local Number →
-              </button>
-              <button
-                type="button"
-                className="h-12 rounded-full bg-white px-8 text-sm font-semibold text-[#16211C] transition hover:bg-gray-100"
-              >
-                Talk to Sales
-              </button>
+              <Link href="/get-a-local-number">
+                <button
+                  type="button"
+                  className="h-12 rounded-full bg-[#E2622D] px-8 text-sm font-semibold text-white shadow-lg transition hover:bg-[#C9521F]"
+                >
+                  Get a Local Number →
+                </button>
+              </Link>
+              <Link href="/contact-sales">
+                <button
+                  type="button"
+                  className="h-12 rounded-full bg-white px-8 text-sm font-semibold text-[#16211C] transition hover:bg-gray-100"
+                >
+                  Talk to Sales
+                </button>
+              </Link>
             </div>
 
             <div className="mt-8 flex flex-wrap justify-center gap-2.5">

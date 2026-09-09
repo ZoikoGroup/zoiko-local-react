@@ -104,11 +104,11 @@ const useCases: { title: string; desc: string; icon: IconType; bg: string }[] = 
   { title: "Market-entry founders", desc: "Test demand in a new country before forming a local office or hiring.", icon: FiTrendingUp, bg: "bg-[#fbe9e3]" },
 ];
 
-const platform: { name: string; desc: string; cta: string; icon: IconType; bg: string }[] = [
-  { name: "Local Numbers", desc: "Build local presence in markets your customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]" },
-  { name: "Calling", desc: "Make and receive business calls across borders with a professional identity.", cta: "Explore Calling", icon: FiPhone, bg: "bg-[#fbe9e3]" },
-  { name: "Video", desc: "Build trust with customers, suppliers and partners through video.", cta: "Explore Video", icon: FiVideo, bg: "bg-[#e3f3ee]" },
-  { name: "AI Receptionist", desc: "Capture and route calls when busy, traveling or in another time zone.", cta: "Explore AI Receptionist", icon: FiCpu, bg: "bg-[#fdf0db]" },
+const platform: { name: string; desc: string; cta: string; icon: IconType; bg: string; href: string }[] = [
+  { name: "Local Numbers", desc: "Build local presence in markets your customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]", href: "/get-a-local-number" },
+  { name: "Calling", desc: "Make and receive business calls across borders with a professional identity.", cta: "Explore Calling", icon: FiPhone, bg: "bg-[#fbe9e3]", href: "/calling" },
+  { name: "Video", desc: "Build trust with customers, suppliers and partners through video.", cta: "Explore Video", icon: FiVideo, bg: "bg-[#e3f3ee]", href: "/video" },
+  { name: "AI Receptionist", desc: "Capture and route calls when busy, traveling or in another time zone.", cta: "Explore AI Receptionist", icon: FiCpu, bg: "bg-[#fdf0db]", href: "/ai-receptionist" },
 ];
 
 const compare = [
@@ -182,12 +182,12 @@ function DiasporaFounders() {
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <button className={coralBtn}>Build Your Cross-Border Presence</button>
-              <button className={lightBtn}>Get a Local Number</button>
+             <a href="/get-a-local-number"><button className={lightBtn}>Get a Local Number</button></a>
             </div>
-            <a href="#" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">See Pricing →</a>
+            <a href="/plans-and-pricing" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">See Pricing →</a>
             <div className="mt-5 flex max-w-md items-center justify-between gap-4 rounded-2xl bg-white px-5 py-4 text-sm shadow-sm ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
               <span className="text-gray-600 dark:text-gray-400">Replacing Skype Number for international business calls?</span>
-              <a href="#" className="shrink-0 font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
+              <a href="/switch-from-skype" className="shrink-0 font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
             </div>
             <ul className="mt-6 space-y-2">
               {heroChecks.map((c) => (
@@ -334,7 +334,7 @@ function DiasporaFounders() {
                 <IconBox icon={p.icon} bg={p.bg} />
                 <h3 className="mt-5 text-base font-bold dark:text-white">{p.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{p.desc}</p>
-                <a href="#" className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
+                <a href={p.href} className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
               </div>
             ))}
           </div>
@@ -359,7 +359,7 @@ function DiasporaFounders() {
               </div>
             ))}
             <div className="bg-[#f3efe7] py-6 text-center dark:bg-gray-800">
-              <button className={coralBtn}>Upgrade to a Professional Local Presence</button>
+             <a href="/plans-and-pricing"><button className={coralBtn}>Upgrade to a Professional Local Presence</button></a>
             </div>
           </div>
         </div>
@@ -406,8 +406,8 @@ function DiasporaFounders() {
             ))}
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button className={lightBtn}>Explore Global Coverage</button>
-            <button className={outlineDarkBtn}>Request a Market</button>
+           <a href="/global-coverage"> <button className={lightBtn}>Explore Global Coverage</button></a>
+           <a href="/resources"> <button className={outlineDarkBtn}>Request a Market</button></a>
           </div>
         </div>
       </section>
@@ -430,7 +430,7 @@ function DiasporaFounders() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <button className={coralBtn}>See Pricing</button>
+           <a href="/plans-and-pricing"> <button className={coralBtn}>See Pricing</button></a>
           </div>
         </div>
       </section>
@@ -473,12 +473,12 @@ function DiasporaFounders() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <button className={lightBtn}>Build Your Cross-Border Presence</button>
-            <button className={outlineDarkBtn}>Get a Local Number</button>
-            <button className={outlineDarkBtn}>See Pricing</button>
+           <a href="/get-a-local-number"> <button className={outlineDarkBtn}>Get a Local Number</button></a>
+           <a href="/plans-and-pricing"> <button className={outlineDarkBtn}>See Pricing</button></a>
           </div>
           <p className="mt-6 text-sm text-white/70">
             Replacing Skype Number?{" "}
-            <a href="#" className="font-semibold text-white hover:underline">Switch from Skype →</a>
+            <a href="/switch-from-skype" className="font-semibold text-white hover:underline">Switch from Skype →</a>
           </p>
         </div>
       </section>

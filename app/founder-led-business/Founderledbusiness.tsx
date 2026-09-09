@@ -104,11 +104,11 @@ const useCases: { title: string; desc: string; icon: IconType; bg: string }[] = 
   { title: "Founder entering a new market", desc: "Create local presence before opening an office or hiring locally.", icon: FiGlobe, bg: "bg-[#fbe9e3]" },
 ];
 
-const platform: { name: string; desc: string; cta: string; icon: IconType; bg: string }[] = [
-  { name: "Local Numbers", desc: "A local business number in the market your customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]" },
-  { name: "Calling", desc: "Make and receive business calls with a professional caller identity.", cta: "Explore Calling", icon: FiPhone, bg: "bg-[#fbe9e3]" },
-  { name: "Video", desc: "Meet customers, partners, investors and suppliers through secure video.", cta: "Explore Video", icon: FiVideo, bg: "bg-[#e3f3ee]" },
-  { name: "AI Receptionist", desc: "Capture and route inquiries when you are busy or unavailable.", cta: "Explore AI Receptionist", icon: FiCpu, bg: "bg-[#fdf0db]" },
+const platform: { name: string; desc: string; cta: string; icon: IconType; bg: string; href: string }[] = [
+  { name: "Local Numbers", desc: "A local business number in the market your customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]", href: "/local-business-number" },
+  { name: "Calling", desc: "Make and receive business calls with a professional caller identity.", cta: "Explore Calling", icon: FiPhone, bg: "bg-[#fbe9e3]", href: "/calling" },
+  { name: "Video", desc: "Meet customers, partners, investors and suppliers through secure video.", cta: "Explore Video", icon: FiVideo, bg: "bg-[#e3f3ee]", href: "/video" },
+  { name: "AI Receptionist", desc: "Capture and route inquiries when you are busy or unavailable.", cta: "Explore AI Receptionist", icon: FiCpu, bg: "bg-[#fdf0db]", href: "/ai-receptionist" },
 ];
 
 const compare = [
@@ -171,13 +171,13 @@ function FounderLedBusiness() {
               with the company.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <button className={coralBtn}>Get Your Business Number</button>
-              <button className={lightBtn}>See Pricing</button>
+             <a href="/local-business-number"> <button className={coralBtn}>Get Your Business Number</button></a>
+             <a href="/plans-and-pricing"> <button className={lightBtn}>See Pricing</button></a>
             </div>
-            <a href="#" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">Explore AI Receptionist →</a>
+            <a href="/ai-receptionist" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">Explore AI Receptionist →</a>
             <div className="mt-5 flex max-w-md items-center justify-between gap-4 rounded-2xl bg-white px-5 py-4 text-sm shadow-sm ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
               <span className="text-gray-600 dark:text-gray-400">Replacing Skype Number for your business?</span>
-              <a href="#" className="shrink-0 font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
+              <a href="/switch-from-skype" className="shrink-0 font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
             </div>
             <ul className="mt-6 space-y-2">
               {heroChecks.map((c) => (
@@ -276,7 +276,7 @@ function FounderLedBusiness() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <button className={coralBtn}>Get Your Business Number</button>
+            <a href="/local-business-number"> <button className={coralBtn}>Get Your Business Number</button></a>
           </div>
         </div>
       </section>
@@ -323,7 +323,7 @@ function FounderLedBusiness() {
                 <IconBox icon={p.icon} bg={p.bg} />
                 <h3 className="mt-5 text-base font-bold dark:text-white">{p.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{p.desc}</p>
-                <a href="#" className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
+                <a href={p.href} className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
               </div>
             ))}
           </div>
@@ -348,7 +348,7 @@ function FounderLedBusiness() {
               </div>
             ))}
             <div className="bg-[#f3efe7] py-6 text-center dark:bg-gray-800">
-              <button className={coralBtn}>Separate Personal and Business Calls</button>
+              <a href="/local-business-number"> <button className={coralBtn}>Separate Personal and Business Calls</button></a>
             </div>
           </div>
         </div>
@@ -367,7 +367,7 @@ function FounderLedBusiness() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <button className={coralBtn}>See Pricing</button>
+            <a href="/plans-and-pricing"> <button className={coralBtn}>See Pricing</button></a>
           </div>
         </div>
       </section>
@@ -394,7 +394,7 @@ function FounderLedBusiness() {
             ))}
           </div>
           <div className="mt-8 flex justify-center">
-            <button className={lightBtn}>Explore Global Coverage</button>
+            <a href="/global-coverage"> <button className={lightBtn}>Explore Global Coverage</button></a>
           </div>
         </div>
       </section>
@@ -434,13 +434,13 @@ function FounderLedBusiness() {
             Get a professional business number, separate personal and work calls, and give customers a trusted way to reach you from day one.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button className={lightBtn}>Get Your Business Number</button>
-            <button className={outlineDarkBtn}>See Pricing</button>
-            <button className={outlineDarkBtn}>Explore AI Receptionist</button>
+            <a href="/local-business-number"> <button className={lightBtn}>Get Your Business Number</button></a>
+            <a href="/plans-and-pricing"> <button className={outlineDarkBtn}>See Pricing</button></a>
+            <a href="/ai-receptionist"> <button className={outlineDarkBtn}>Explore AI Receptionist</button></a>
           </div>
           <p className="mt-6 text-sm text-white/70">
             Replacing Skype Number?{" "}
-            <a href="#" className="font-semibold text-white hover:underline">Switch from Skype →</a>
+            <a href="/switch-from-skype" className="font-semibold text-white hover:underline">Switch from Skype →</a>
           </p>
         </div>
       </section>
