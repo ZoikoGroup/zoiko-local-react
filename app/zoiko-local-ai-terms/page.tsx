@@ -1,31 +1,5 @@
 "use client";
 
-// ─────────────────────────────────────────────────────────────────────────────
-// ZOIKO LOCAL — AI TERMS
-//
-// Same document system as Terms / AUP / DPA (sections as data, so the TOC,
-// anchors and cross-links can't drift from the headings) with ONE deliberate
-// difference: this page's accent is VIOLET (#5B4B8A), not the orange used on
-// the other legal pages. Sampled from the mockup — the callout bars, the
-// disclosure banner, the letter chips and the report panel are all violet.
-// The eyebrow stays orange. If that's a mistake rather than an intentional
-// "AI" accent, swap VIOLET below for #E85D3C and it matches the others.
-//
-// ⚠ TWO CLAIMS HERE ARE PRODUCT FACTS, NOT COPY — verify before shipping:
-//
-//   1. FEATURE STATUS (aiFeatures). The section header promises "Status
-//      reflects real availability." Available / Preview / Restricted must
-//      match what's actually shipped per plan, or the page is misleading.
-//      Ideally serve this from the same source your plan gating reads.
-//
-//   2. THE DISCLOSURE GUARANTEE. The banner states AI disclosure "can't be
-//      turned off through scripting or configuration." That is a technical
-//      commitment with regulatory weight in several markets — confirm the
-//      product actually enforces it before publishing.
-//
-// NOTE ON `metadata`: client component (scroll-spy + archive toggle), so it
-// can't be exported here. Add a sibling layout.tsx for it.
-// ─────────────────────────────────────────────────────────────────────────────
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -458,7 +432,7 @@ export default function AiTerms() {
                   </p>
                 </div>
                 <Link
-                  href="#"
+                  href="/ai-receptionist"
                   className="inline-flex h-11 shrink-0 items-center rounded-full bg-white px-6 text-[13.5px] font-semibold text-[#5B4B8A] transition hover:bg-[#F2EFF8]"
                 >
                   Report AI output

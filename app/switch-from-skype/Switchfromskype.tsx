@@ -155,7 +155,7 @@ export default function Switchfromskype() {
                             {/* Buttons */}
 
                             <div className="mt-4 flex flex-col sm:flex-row gap-4">
-                                <button
+                             <a href="/number-porting">   <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -166,8 +166,8 @@ export default function Switchfromskype() {
                                 >
                                     Switch from Skype →
                                 </button>
-
-                                <button
+</a>
+                              <a href="/get-a-local-number">  <button
                                     className="h-12 px-8 rounded-xl
                         border border-[#0F6660]
                         dark:border-slate-600
@@ -181,7 +181,7 @@ export default function Switchfromskype() {
                         transition-all duration-300"
                                 >
                                     Get a Local Number
-                                </button>
+                                </button></a>
                             </div>
 
                             {/* Small Link */}
@@ -418,7 +418,7 @@ export default function Switchfromskype() {
 
                     {/* Buttons */}
                     <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
-                        <button
+                       <a href="/number-porting"><button
                             className="h-12 px-8 rounded-xl
                 bg-[#EB643F]
                 text-white
@@ -430,7 +430,9 @@ export default function Switchfromskype() {
 
                             Switch from Skype →
                         </button>
-
+</a> 
+                        <a href="/get-a-local-number">
+                        
                         <button
                             className="h-12 px-8 rounded-xl
                 border border-[#0F6660]
@@ -446,6 +448,9 @@ export default function Switchfromskype() {
                         >
                             Get a Local Number
                         </button>
+
+                        
+                        </a>
                     </div>
                 </div>
             </section>
@@ -623,7 +628,10 @@ export default function Switchfromskype() {
 
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
                                 {/* Primary */}
-                                <button
+                                    <a href="/get-a-local-number">
+                                    
+                                    
+                                    <button
                                     className="h-12 px-8 rounded-xl
                                     bg-[#EB643F]
                                     text-white
@@ -636,9 +644,12 @@ export default function Switchfromskype() {
 
                                     Get a Local Number →
                                 </button>
+                                    
+                                    </a>
 
                                 {/* Secondary */}
-                                <button
+                               <a href="/plans-and-pricing">
+                                 <button
                                     className="h-12 px-8 rounded-xl
                                     bg-white
                                     text-[#123533]
@@ -651,8 +662,9 @@ export default function Switchfromskype() {
                                     See Pricing
                                 </button>
 
+                               </a>
                                 {/* Outline */}
-                                <button
+                               <a href="/contact-sales"> <button
                                     className="h-12 px-8 rounded-xl
                                     border border-white/25
                                     text-white
@@ -664,17 +676,17 @@ export default function Switchfromskype() {
                                 >
 
                                     Talk to Sales
-                                </button>
+                                </button></a>
                             </div>
 
                             {/* Footer Text */}
                             <p className="mt-8 text-sm text-white/60">
 
                                 Replacing a Skype Number too?
-
+<a href="/number-porting">
                                 <span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
                                     Switch from Skype →
-                                </span>
+                                </span></a>
                             </p>
                         </div>
                     </div>
