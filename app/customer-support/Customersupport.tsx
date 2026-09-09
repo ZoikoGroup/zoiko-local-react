@@ -115,11 +115,11 @@ const useCases: { title: string; desc: string; icon: IconType; bg: string }[] = 
   { title: "After-hours intake", desc: "Capture calls outside business hours.", icon: FiClock, bg: "bg-[#fdf0db]" },
 ];
 
-const platform: { name: string; desc: string; cta: string; icon: IconType; bg: string }[] = [
-  { name: "Local Numbers", desc: "Local support numbers customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]" },
-  { name: "Calling", desc: "Direct inbound calling with a professional identity.", cta: "Explore Calling", icon: FiPhone, bg: "bg-[#fbe9e3]" },
-  { name: "Video", desc: "Escalate to video when an issue needs clarity.", cta: "Explore Video", icon: FiVideo, bg: "bg-[#e3f3ee]" },
-  { name: "AI Receptionist", desc: "Capture inquiries when no one is available.", cta: "Explore AI Receptionist", icon: FiCpu, bg: "bg-[#fdf0db]" },
+const platform: { name: string; desc: string; cta: string; icon: IconType; bg: string; href: string }[] = [
+  { name: "Local Numbers", desc: "Local support numbers customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]", href: "/get-a-local-number" },
+  { name: "Calling", desc: "Direct inbound calling with a professional identity.", cta: "Explore Calling", icon: FiPhone, bg: "bg-[#fbe9e3]", href: "/calling" },
+  { name: "Video", desc: "Escalate to video when an issue needs clarity.", cta: "Explore Video", icon: FiVideo, bg: "bg-[#e3f3ee]", href: "/video" },
+  { name: "AI Receptionist", desc: "Capture inquiries when no one is available.", cta: "Explore AI Receptionist", icon: FiCpu, bg: "bg-[#fdf0db]", href: "/ai-receptionist" },
 ];
 
 const compare = [
@@ -192,13 +192,13 @@ function CustomerSupport() {
               support when no one is available.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <button className={coralBtn}>Set Up a Support Number</button>
-              <button className={lightBtn}>Explore AI Receptionist</button>
+              <a href="local-business-number"> <button className={coralBtn}>Set Up a Support Number</button></a>
+              <a href="ai-receptionist"> <button className={lightBtn}>Explore AI Receptionist</button></a>
             </div>
-            <a href="#" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">See Pricing →</a>
+            <a href="/plans-and-pricing" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">See Pricing →</a>
             <div className="mt-5 flex max-w-md items-center justify-between gap-4 rounded-2xl bg-white px-5 py-4 text-sm shadow-sm ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
               <span className="text-gray-600 dark:text-gray-400">Replacing Skype Number for customer support?</span>
-              <a href="#" className="shrink-0 font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
+              <a href="/switch-from-skype" className="shrink-0 font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
             </div>
             <ul className="mt-6 space-y-2">
               {heroChecks.map((c) => (
@@ -236,9 +236,8 @@ function CustomerSupport() {
                 {heroRouting.map((r) => (
                   <div
                     key={r.label}
-                    className={`flex items-center justify-between rounded-xl px-4 py-3 ${
-                      r.highlight ? "bg-[#e3f3ee] dark:bg-[#34d39e]/10" : "border border-gray-100 dark:border-gray-700"
-                    }`}
+                    className={`flex items-center justify-between rounded-xl px-4 py-3 ${r.highlight ? "bg-[#e3f3ee] dark:bg-[#34d39e]/10" : "border border-gray-100 dark:border-gray-700"
+                      }`}
                   >
                     <span className="flex items-center gap-2.5 text-sm font-medium dark:text-white">
                       <span className={`h-2 w-2 rounded-full ${r.dot}`} /> {r.label}
@@ -298,7 +297,7 @@ function CustomerSupport() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <button className={coralBtn}>Set Up a Support Number</button>
+           <a href="/local-business-number"> <button className={coralBtn}>Set Up a Support Number</button></a>
           </div>
         </div>
       </section>
@@ -317,7 +316,7 @@ function CustomerSupport() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <button className={lightBtn}>Explore AI Receptionist</button>
+           <a href="/ai-receptionist"> <button className={lightBtn}>Explore AI Receptionist</button></a>
           </div>
         </div>
       </section>
@@ -348,7 +347,7 @@ function CustomerSupport() {
                 <IconBox icon={p.icon} bg={p.bg} />
                 <h3 className="mt-5 text-base font-bold dark:text-white">{p.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{p.desc}</p>
-                <a href="#" className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
+                <a href={p.href} className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
               </div>
             ))}
           </div>
@@ -375,7 +374,7 @@ function CustomerSupport() {
               </div>
             ))}
             <div className="bg-[#f3efe7] py-6 text-center dark:bg-gray-800">
-              <button className={coralBtn}>Give Customers a Support Number They Can Trust</button>
+             <a href="/local-business-number"><button className={coralBtn}>Give Customers a Support Number They Can Trust</button></a>
             </div>
           </div>
         </div>
@@ -418,8 +417,8 @@ function CustomerSupport() {
             ))}
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button className={lightBtn}>Explore Global Coverage</button>
-            <button className={outlineDarkBtn}>Request a Market</button>
+            <a href="/global-coverage"> <button className={lightBtn}>Explore Global Coverage</button></a>
+            <a href="/resources"> <button className={outlineDarkBtn}>Request a Market</button></a>
           </div>
         </div>
       </section>
@@ -441,7 +440,7 @@ function CustomerSupport() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <button className={coralBtn}>See Pricing</button>
+            <a href="/plans-and-pricing"> <button className={coralBtn}>See Pricing</button></a>
           </div>
         </div>
       </section>
@@ -481,13 +480,13 @@ function CustomerSupport() {
             Give customers a trusted support number, route calls to the right team, and capture inquiries when no one is available.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button className={lightBtn}>Set Up a Support Number</button>
-            <button className={outlineDarkBtn}>Explore AI Receptionist</button>
-            <button className={outlineDarkBtn}>See Pricing</button>
+           <a href="/local-business-number"> <button className={lightBtn}>Set Up a Support Number</button></a>
+            <a href="/ai-receptionist"> <button className={outlineDarkBtn}>Explore AI Receptionist</button></a>
+            <a href="/plans-and-pricing"> <button className={outlineDarkBtn}>See Pricing</button></a>
           </div>
           <p className="mt-6 text-sm text-white/70">
             Replacing Skype Number?{" "}
-            <a href="#" className="font-semibold text-white hover:underline">Switch from Skype →</a>
+            <a href="/switch-from-skype" className="font-semibold text-white hover:underline">Switch from Skype →</a>
           </p>
         </div>
       </section>

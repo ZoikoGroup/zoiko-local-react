@@ -239,6 +239,7 @@ const salesPaths: {
   desc: string;
   cta: string;
   selected?: boolean;
+  href?: string;
 }[] = [
   {
     icon: Icons.pin,
@@ -246,24 +247,28 @@ const salesPaths: {
     desc: "Local presence, new markets, availability, porting.",
     cta: "Check Number Options",
     selected: true,
+    href: "/local-business-number",
   },
   {
     icon: Icons.externalLink,
     title: "I'm switching from Skype",
     desc: "Continuity and workflows without disruption.",
     cta: "Build Migration Plan",
+    href: "/switch-from-skype",
   },
   {
     icon: Icons.mic,
     title: "I need AI call handling",
     desc: "Missed calls, after-hours, intake, routing.",
     cta: "Plan AI Receptionist",
+    href: "/ai-receptionist",
   },
   {
     icon: Icons.building,
     title: "I manage teams or locations",
     desc: "SMB, enterprise, franchises, multi-office.",
     cta: "Talk to Sales",
+    href: "/contact-sales",
   },
 ];
 
@@ -459,11 +464,11 @@ function ContactSales() {
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button className={coralBtn}>
+            <a href="#request-sales-consultation"> <button className={coralBtn}>
               Request Sales Consultation <Icons.arrowRight className="h-4 w-4" />
-            </button>
-            <button className={lightBtn}>Build My Migration Plan</button>
-            <button className={lightBtn}>Check Number Availability</button>
+            </button></a>
+           <a href="/switch-from-skype"><button className={lightBtn}>Build My Migration Plan</button></a>
+           <a href="/get-a-local-number">  <button className={lightBtn}>Check Number Availability</button> </a>
           </div>
 
           <ul className="mx-auto mt-7 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-2">
@@ -505,7 +510,7 @@ function ContactSales() {
                 <IconChip icon={p.icon} />
                 <h3 className="mt-5 text-base font-bold dark:text-white">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{p.desc}</p>
-                <a href="#" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#d9603f] hover:underline">
+                <a href={p.href} className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#d9603f] hover:underline">
                   {p.cta} <Icons.arrowRight className="h-3.5 w-3.5" />
                 </a>
               </div>
@@ -594,7 +599,7 @@ function ContactSales() {
             ))}
           </div>
 
-          <button className={`${coralBtn} mt-10`}>Build My Migration Plan</button>
+         <a href="/switch-from-skype"><button className={`${coralBtn} mt-10`}>Build My Migration Plan</button></a>
         </div>
       </section>
 
@@ -649,7 +654,7 @@ function ContactSales() {
 
           <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_380px]">
             {/* Form card */}
-            <form className="rounded-3xl bg-white p-8 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
+            <form id="request-sales-consultation" className="rounded-3xl bg-white p-8 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
               <p className="text-xs font-bold uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400">
                 Contact details
               </p>
@@ -841,7 +846,7 @@ function ContactSales() {
                 </ul>
                 <p className="mt-5 text-xs leading-relaxed text-gray-500 dark:text-gray-400">
                   Have an existing account issue?{" "}
-                  <a href="#" className="font-semibold text-[#d9603f] hover:underline">
+                  <a href="/contact-support" className="font-semibold text-[#d9603f] hover:underline">
                     Help & Support
                   </a>{" "}
                   may be faster.
@@ -929,9 +934,9 @@ function ContactSales() {
             workflow, Zoiko Local Sales can help you choose the right path.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button className={coralBtn}>Request Sales Consultation</button>
-            <button className={lightBtn}>Build My Migration Plan</button>
-            <button className={outlineDarkBtn}>Check Number Availability</button>
+           <a href="/contact-sales"><button className={coralBtn}>Request Sales Consultation</button></a>
+            <a href="/switch-from-skype"><button className={lightBtn}>Build My Migration Plan</button></a>
+            <a href="/get-a-local-number"><button className={outlineDarkBtn}>Check Number Availability</button></a>
           </div>
         </div>
       </section>

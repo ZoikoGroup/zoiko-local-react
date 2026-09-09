@@ -126,8 +126,8 @@ function Localbusinessnumbers() {
               the markets you serve. Sound local. Reach anywhere.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="/get-a-local-number"><button className={coralBtn}>Get a Local Number →</button></a>
-             <a href="/about-us"> <button className={outlineBtn}>How it works</button></a>
+             <a href="/get-a-local-number"></a> <button className={coralBtn}>Get a Local Number →</button>
+             <a href="#"></a> <button className={outlineBtn}>How it works</button>
             </div>
             <p className="mt-5 text-sm text-gray-600 dark:text-gray-400">
               Replacing a Skype Number?{" "}
@@ -188,7 +188,7 @@ function Localbusinessnumbers() {
                 </li>
               ))}
             </ul>
-              <a href="/get-a-local-number"><button className={`${coralBtn} mt-8`}>Get a Local Number →</button></a>
+           <a href="/get-a-local-number"><button className={`${coralBtn} mt-8`}>Get a Local Number →</button></a>
           </div>
 
           {/* What you get card */}
@@ -245,13 +245,13 @@ function Localbusinessnumbers() {
               reachable from anywhere.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-                 <a href="/get-a-local-number"> <button className={coralBtn}>Get a Local Number →</button></a>
-             <a href="/plans-and-pricing"> <button className={outlineBtnDark}>See Pricing</button></a>
-             <a href="/contact-sales"> <button className={outlineBtnDark}>Talk to Sales</button></a>
+             <a href="/get-a-local-number"><button className={coralBtn}>Get a Local Number →</button></a>
+             <a href="/plans-and-pricing"><button className={outlineBtnDark}>See Pricing</button></a>
+             <a href="/contact-sales"><button className={outlineBtnDark}>Talk to Sales</button></a>
             </div>
             <p className="mt-6 text-sm text-white/70">
               Replacing a Skype Number?{" "}
-              <a href="#" className="font-semibold text-[#e9a98f] hover:underline">Switch from Skype →</a>
+              <a href="/switch-from-skype" className="font-semibold text-[#e9a98f] hover:underline">Switch from Skype →</a>
             </p>
           </div>
         </div>

@@ -22,6 +22,7 @@ import {
   FiX,
 } from "react-icons/fi";
 import Image from "next/image";
+import Link from "next/link";
 
 // ─── IMAGE PLACEHOLDER ───────────────────────────────────────────────────────
 // Every photo in the design is a slot, not a hardcoded asset. Each one is
@@ -76,13 +77,13 @@ const deviceSteps = [
 ];
 
 const locations = [
-  { name: "United States", caption: "Local & toll-free numbers" ,href: "/images/mobile-apps/US.png"},
-  { name: "United Kingdom", caption: "Local city numbers" ,href: "/images/mobile-apps/UK.png"},
-  { name: "Canada", caption: "Local numbers by region" ,href: "/images/mobile-apps/CA.png"},
-  { name: "Europe", caption: "Selected markets" ,href: "/images/mobile-apps/EU.png"},
-  { name: "Nigeria", caption: "Local business numbers" ,href: "/images/mobile-apps/NG.png"},
-  { name: "South Africa", caption: "Local numbers by region" ,href: "/images/mobile-apps/SA.png"},
-  { name: "Jamaica", caption: "Local presence" ,href: "/images/mobile-apps/JM.png"},
+  { name: "United States", caption: "Local & toll-free numbers", href: "/images/mobile-apps/US.png" },
+  { name: "United Kingdom", caption: "Local city numbers", href: "/images/mobile-apps/UK.png" },
+  { name: "Canada", caption: "Local numbers by region", href: "/images/mobile-apps/CA.png" },
+  { name: "Europe", caption: "Selected markets", href: "/images/mobile-apps/EU.png" },
+  { name: "Nigeria", caption: "Local business numbers", href: "/images/mobile-apps/NG.png" },
+  { name: "South Africa", caption: "Local numbers by region", href: "/images/mobile-apps/SA.png" },
+  { name: "Jamaica", caption: "Local presence", href: "/images/mobile-apps/JM.png" },
 ];
 
 const trustControls = [
@@ -92,6 +93,7 @@ const trustControls = [
     description:
       "Request only the device permissions needed for the features you choose to use — nothing more.",
     link: null,
+    href: null,
   },
   {
     icon: <FiMic />,
@@ -99,6 +101,7 @@ const trustControls = [
     description:
       "Recording and transcription behavior follows configured controls and applicable requirements in your market.",
     link: "Recording & Consent",
+    href: "/recording-and-consent",
   },
   {
     icon: <FiShield />,
@@ -106,6 +109,7 @@ const trustControls = [
     description:
       "Learn how Zoiko Local handles personal data and account information across your workspace.",
     link: "Privacy Policy",
+    href: "/zoiko-local-privacy-policy",
   },
 ];
 
@@ -330,13 +334,14 @@ export default function MobileApps() {
                 </li>
               ))}
             </ul>
-
-            <button
-              type="button"
-              className="mt-8 inline-flex h-11 items-center gap-2 rounded-full border border-[#D9D2C4] bg-white px-6 text-sm font-semibold text-[#0E2A21] transition hover:border-[#0E2A21]"
-            >
-              Explore local numbers <FiArrowRight aria-hidden />
-            </button>
+            <Link href="/get-a-local-number">
+              <button
+                type="button"
+                className="mt-8 inline-flex h-11 items-center gap-2 rounded-full border border-[#D9D2C4] bg-white px-6 text-sm font-semibold text-[#0E2A21] transition hover:border-[#0E2A21]"
+              >
+                Explore local numbers <FiArrowRight aria-hidden />
+              </button>
+            </Link>
           </div>
 
           <div className="relative">
@@ -525,25 +530,25 @@ export default function MobileApps() {
             </div>
 
             <div className="mt-4 grid gap-4 md:grid-cols-3">
-              <Image 
-              src="/images/mobile-apps/across-devices1.png" alt="Photo — person on a business call by a window"
-              width={600}
-              height={120}
-              className="h-[120px] w-full object-cover rounded-xl"
-              />
-              
-              <Image 
-              src="/images/mobile-apps/across-devices2.png" alt="Photo — hands gesturing near a laptop"
-              width={600}
-              height={120}
-              className="h-[120px] w-full object-cover rounded-xl"
+              <Image
+                src="/images/mobile-apps/across-devices1.png" alt="Photo — person on a business call by a window"
+                width={600}
+                height={120}
+                className="h-[120px] w-full object-cover rounded-xl"
               />
 
-              <Image 
-              src="/images/mobile-apps/across-devices3.png" alt="Photo — hands gesturing near a laptop"
-              width={600}
-              height={120}
-              className="h-[120px] w-full object-cover rounded-xl"
+              <Image
+                src="/images/mobile-apps/across-devices2.png" alt="Photo — hands gesturing near a laptop"
+                width={600}
+                height={120}
+                className="h-[120px] w-full object-cover rounded-xl"
+              />
+
+              <Image
+                src="/images/mobile-apps/across-devices3.png" alt="Photo — hands gesturing near a laptop"
+                width={600}
+                height={120}
+                className="h-[120px] w-full object-cover rounded-xl"
               />
             </div>
 
@@ -561,7 +566,7 @@ export default function MobileApps() {
       <section className="bg-[#EDE7DB] py-14 md:py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-[1fr_1.1fr]">
           <div className="relative">
-           <Image
+            <Image
               src="/images/mobile-apps/ai-receptionist.png" alt="Photo — AI receptionist interface on a phone"
               width={600}
               height={380}
@@ -601,12 +606,16 @@ export default function MobileApps() {
             </div>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <button type="button" className={btnOrange}>
-                Explore AI Receptionist
-              </button>
-              <button type="button" className={btnOutline}>
-                Compare plans
-              </button>
+              <Link href="/ai-receptionist">
+                <button type="button" className={btnOrange}>
+                  Explore AI Receptionist
+                </button>
+              </Link>
+              <Link href="/plans-and-pricing">
+                <button type="button" className={btnOutline}>
+                  Compare plans
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -725,7 +734,7 @@ export default function MobileApps() {
                 </p>
                 {item.link && (
                   <a
-                    href="#"
+                    href={item.href}
                     className="mt-5 inline-flex items-center gap-2 text-[13px] font-semibold text-[#E85D3C] hover:underline"
                   >
                     {item.link} <FiArrowRight aria-hidden />
@@ -764,12 +773,16 @@ export default function MobileApps() {
               </ul>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <button type="button" className={btnOrange}>
-                  Compare plans
-                </button>
-                <button type="button" className={btnOutline}>
-                  Start free
-                </button>
+                <Link href="/plans-and-pricing">
+                  <button type="button" className={btnOrange}>
+                    Compare plans
+                  </button>
+                </Link>
+                <Link href="/start-free">
+                  <button type="button" className={btnOutline}>
+                    Start free
+                  </button>
+                </Link>
               </div>
             </div>
 
@@ -843,12 +856,14 @@ export default function MobileApps() {
               <button type="button" className={btnOrange}>
                 <FiBell aria-hidden /> Get mobile app updates
               </button>
-              <button
-                type="button"
-                className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-sm font-semibold text-[#0E2A21] transition hover:bg-[#F1EDE6]"
-              >
-                Compare plans
-              </button>
+              <Link href="/plans-and-pricing">
+                <button
+                  type="button"
+                  className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-sm font-semibold text-[#0E2A21] transition hover:bg-[#F1EDE6]"
+                >
+                  Compare plans
+                </button>
+              </Link>
             </div>
           </div>
         </div>

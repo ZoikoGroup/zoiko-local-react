@@ -1,5 +1,6 @@
 "use client";
 
+import { Link } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import type { IconType } from "react-icons";
 import {
@@ -87,11 +88,11 @@ const problemCards: { title: string; desc: string; icon: IconType }[] = [
   { title: "No single context", desc: "Nobody sees the full customer story.", icon: FiUser },
 ];
 
-const products: { name: string; desc: string; tags: string[]; icon: IconType; diff?: boolean }[] = [
-  { name: "Local Numbers", desc: "Create presence in the markets you serve.", tags: ["Local", "Toll-free", "Porting"], icon: FiMapPin },
-  { name: "Calling", desc: "Connect customers and teams.", tags: ["Inbound", "Outbound", "Routing"], icon: FiPhone },
-  { name: "Video", desc: "Move conversations face-to-face.", tags: ["Meetings", "Links", "Screen share"], icon: FiVideo },
-  { name: "AI Receptionist", desc: "Capture, qualify and route.", tags: ["Answer", "Qualify", "Handoff"], diff: true, icon: FiMic },
+const products: { name: string; desc: string; tags: string[]; icon: IconType; diff?: boolean; href?: string }[] = [
+  { name: "Local Numbers", desc: "Create presence in the markets you serve.", tags: ["Local", "Toll-free", "Porting"], icon: FiMapPin ,href: "/get-a-local-number"},
+  { name: "Calling", desc: "Connect customers and teams.", tags: ["Inbound", "Outbound", "Routing"], icon: FiPhone ,href: "/calling"},
+  { name: "Video", desc: "Move conversations face-to-face.", tags: ["Meetings", "Links", "Screen share"], icon: FiVideo ,href: "/video"},
+  { name: "AI Receptionist", desc: "Capture, qualify and route.", tags: ["Answer", "Qualify", "Handoff"], diff: true, icon: FiMic ,href: "/ai-receptionist"},
 ];
 
 const localPresence: { title: string; desc: string; icon: IconType }[] = [
@@ -167,9 +168,9 @@ const comparison = [
 ];
 
 const plans = [
-  { title: "Business Starter", desc: "Simple local presence and essential calling.", cta: "View Pricing", popular: false },
-  { title: "Business Growth", desc: "Teams that need routing, video and collaboration.", cta: "Compare Plans", popular: true },
-  { title: "Business Advanced", desc: "AI Receptionist, multi-location and higher-control workflows.", cta: "Talk to Sales", popular: false },
+  { title: "Business Starter", desc: "Simple local presence and essential calling.", cta: "View Pricing", popular: false, href: "/plans-and-pricing" },
+  { title: "Business Growth", desc: "Teams that need routing, video and collaboration.", cta: "Compare Plans", popular: true, href: "/plans-and-pricing" },
+  { title: "Business Advanced", desc: "AI Receptionist, multi-location and higher-control workflows.", cta: "Talk to Sales", popular: false, href: "/contact-sales" },
 ];
 
 const proof: { title: string; desc: string; icon: IconType }[] = [
@@ -213,9 +214,15 @@ function Business() {
             business can answer faster, look local, route smarter and never let valuable enquiries fall through the cracks.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button className={coralBtn}>Start Free →</button>
-            <button className={outlineBtn}>Talk to Sales</button>
-            <button className={outlineBtn}>Switch from Skype</button>
+            <a href="/start-free" >
+              <button className={coralBtn}>Start Free →</button>
+            </a>
+            <a href="/contact-sales" >
+              <button className={outlineBtn}>Talk to Sales</button>
+            </a>
+            <a href="/switch-from-skype" >
+              <button className={outlineBtn}>Switch from Skype</button>
+            </a>
           </div>
           <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
             {heroChecks.map((c) => (
@@ -322,14 +329,14 @@ function Business() {
                       </span>
                     ))}
                   </div>
-                  <a href="#" className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">Explore →</a>
+                  <a href={p.href} className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">Explore →</a>
                 </div>
               );
             })}
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <button className={outlineBtn}>Compare Plans</button>
-            <button className={outlineBtn}>Talk to Sales</button>
+           <a href="/plans-pricing"> <button className={outlineBtn}>Compare Plans</button></a>
+           <a href="/contact-sales"> <button className={outlineBtn}>Talk to Sales</button></a>
           </div>
         </div>
       </section>
@@ -359,7 +366,7 @@ function Business() {
             capabilities are not implied without confirmation.
           </p>
           <div className="mt-8 flex justify-center">
-            <button className={coralBtn}>Explore Local Numbers</button>
+           <a href="/get-a-local-number"> <button className={coralBtn}>Explore Local Numbers</button></a>
           </div>
         </div>
       </section>
@@ -383,7 +390,7 @@ function Business() {
                 </li>
               ))}
             </ul>
-            <button className={`${coralBtn} mt-7`}>Explore Calling</button>
+           <a href="/calling"> <button className={`${coralBtn} mt-7`}>Explore Calling</button></a>
           </div>
           <div className={card}>
             <div className="mb-4 flex items-center gap-2 text-sm font-bold dark:text-white">
@@ -447,7 +454,9 @@ function Business() {
                 </li>
               ))}
             </ul>
-            <button className={`${coralBtn} mt-7`}>Explore Video</button>
+            <a href="/video">
+              <button className={`${coralBtn} mt-7`}>Explore Video</button>
+            </a>
           </div>
         </div>
       </section>
@@ -471,7 +480,7 @@ function Business() {
                 </li>
               ))}
             </ul>
-            <button className={`${coralBtn} mt-7`}>Explore AI Receptionist</button>
+           <a href="/ai-receptionist"><button className={`${coralBtn} mt-7`}>Explore AI Receptionist</button></a>
           </div>
           <div className={card}>
             <div className="mb-4 flex items-center gap-2 text-sm font-bold dark:text-white">
@@ -537,7 +546,7 @@ function Business() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <button className={outlineBtn}>Find My Business Use Case</button>
+           <a href="usecase"><button className={outlineBtn}>Find My Business Use Case</button></a>
           </div>
         </div>
       </section>
@@ -614,7 +623,9 @@ function Business() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <button className={outlineBtn}>Review Business Controls</button>
+            <a href="/contact-support">
+              <button className={outlineBtn}>Review Business Controls</button>
+            </a>
           </div>
         </div>
       </section>
@@ -652,8 +663,12 @@ function Business() {
             by Microsoft.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <button className={coralBtn}>Switch from Skype</button>
-            <button className={outlineBtn}>Talk to Migration Specialist</button>
+            <a href="/switch-from-skype">
+              <button className={coralBtn}>Switch from Skype</button>
+            </a>
+            <a href="/contact-support">
+              <button className={outlineBtn}>Talk to Migration Specialist</button>
+            </a>
           </div>
         </div>
       </section>
@@ -681,7 +696,7 @@ function Business() {
                 )}
                 <h3 className="text-xl font-bold dark:text-white">{p.title}</h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{p.desc}</p>
-                <button className={`mt-7 w-full text-center ${p.popular ? coralBtn + " justify-center" : outlineBtn}`}>{p.cta}</button>
+               <a href={p.href}><button className={`mt-7 w-full text-center ${p.popular ? coralBtn + " justify-center" : outlineBtn}`}>{p.cta}</button></a>
               </div>
             ))}
           </div>
@@ -757,9 +772,9 @@ function Business() {
             give your team one smarter way to manage customer conversations.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button className={coralBtn}>Start Free</button>
-            <button className={outlineBtnDark}>Talk to Sales</button>
-            <button className={outlineBtnDark}>Switch from Skype</button>
+            <a href="/start-free"><button className={coralBtn}>Start Free</button></a>
+            <a href="/contact-sales"><button className={outlineBtnDark}>Talk to Sales</button></a>
+            <a href="/switch-from-skype"><button className={outlineBtnDark}>Switch from Skype</button></a>
           </div>
         </div>
       </section>

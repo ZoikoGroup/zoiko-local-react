@@ -7,14 +7,15 @@ import {
 } from "react-icons/fi";
 import Faq from '../Components/Faq';
 import { Metadata } from 'next';
+import Link from 'next/link';
 
 
 
 
 export const metadata: Metadata = {
-  title: "Local Phone Number Plans &amp; Pricing | Zoiko Local",
-  description:
-    "Compare local phone number plans &amp; pricing with Zoiko Local. Discover business calling features, flexible plans, and local numbers designed for your needs.",
+    title: "Local Phone Number Plans &amp; Pricing | Zoiko Local",
+    description:
+        "Compare local phone number plans &amp; pricing with Zoiko Local. Discover business calling features, flexible plans, and local numbers designed for your needs.",
 };
 
 
@@ -1404,17 +1405,17 @@ export default function Planspricing() {
                     {/* CTA */}
 
                     <div className="mt-12">
-
-                        <button
-                            className="inline-flex items-center justify-center h-12 px-10 rounded-full
+                        <Link href="/contact-sales">
+                            <button
+                                className="inline-flex items-center justify-center h-12 px-10 rounded-full
                 bg-[#EB643F] text-white text-sm font-semibold shadow-lg
                 hover:bg-[#D95A37] hover:shadow-xl transition-all duration-300"
-                        >
+                            >
 
-                            Contact Sales
+                                Contact Sales
 
-                        </button>
-
+                            </button>
+                        </Link>
                     </div>
 
                 </div>

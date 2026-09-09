@@ -25,7 +25,7 @@ type PublicStatus = {
   components: { name: string; status: string }[];
 };
 
-class ApiError extends Error {}
+class ApiError extends Error { }
 
 async function getPublicStatus(): Promise<PublicStatus> {
   const response = await fetch("/ops/status", { cache: "no-store" });
@@ -201,8 +201,7 @@ function UptimeBars({ days, dense = false }: { days: StatusKey[]; dense?: boolea
       {days.map((d, i) => (
         <span
           key={i}
-          className={`flex-1 rounded-[1px] ${
-            d === "operational"
+          className={`flex-1 rounded-[1px] ${d === "operational"
               ? dense
                 ? "bg-[#BEDDCF]"
                 : "bg-[#1E7A5A]"
@@ -211,7 +210,7 @@ function UptimeBars({ days, dense = false }: { days: StatusKey[]; dense?: boolea
                 : d === "delayed"
                   ? "bg-[#DED8CB]"
                   : "bg-[#D14634]"
-          }`}
+            }`}
         />
       ))}
     </div>
@@ -321,20 +320,18 @@ export default function StatusPage() {
       <div className="mx-auto max-w-5xl px-5">
         {/* ═══ OVERALL BANNER ═══ */}
         <div
-          className={`overflow-hidden rounded-xl border border-[#E4DED0] bg-white border-l-[5px] ${
-            overallKey === "operational"
+          className={`overflow-hidden rounded-xl border border-[#E4DED0] bg-white border-l-[5px] ${overallKey === "operational"
               ? "border-l-[#0E5C4E]"
               : overallKey === "delayed"
                 ? "border-l-[#B4AC9C]"
                 : "border-l-[#E0A93B]"
-          }`}
+            }`}
         >
           <div className="flex flex-col gap-5 p-6 md:flex-row md:items-start md:justify-between">
             <div className="flex items-start gap-4">
               <span
-                className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl ${
-                  STATUS_META[overallKey].pill
-                }`}
+                className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl ${STATUS_META[overallKey].pill
+                  }`}
               >
                 <FiCheckCircle aria-hidden />
               </span>
@@ -346,9 +343,8 @@ export default function StatusPage() {
                   Zoiko Local Service Status
                 </h1>
                 <p
-                  className={`mt-2 text-[16px] font-semibold ${
-                    overallKey === "operational" ? "text-[#0E5C4E]" : "text-[#8A6114]"
-                  }`}
+                  className={`mt-2 text-[16px] font-semibold ${overallKey === "operational" ? "text-[#0E5C4E]" : "text-[#8A6114]"
+                    }`}
                 >
                   {overallLine}
                 </p>
@@ -404,9 +400,8 @@ export default function StatusPage() {
                       type="button"
                       onClick={() => setClock(c)}
                       aria-pressed={clock === c}
-                      className={`px-4 text-[13px] font-semibold transition ${
-                        clock === c ? "bg-[#0E3A36] text-white" : "bg-white text-[#5C6660]"
-                      }`}
+                      className={`px-4 text-[13px] font-semibold transition ${clock === c ? "bg-[#0E3A36] text-white" : "bg-white text-[#5C6660]"
+                        }`}
                     >
                       {c}
                     </button>
@@ -629,11 +624,10 @@ export default function StatusPage() {
                 type="button"
                 onClick={() => setIncidentRange(r)}
                 aria-pressed={incidentRange === r}
-                className={`h-9 rounded-full px-4 text-[13px] font-semibold transition ${
-                  incidentRange === r
+                className={`h-9 rounded-full px-4 text-[13px] font-semibold transition ${incidentRange === r
                     ? "bg-[#0E3A36] text-white"
                     : "border border-[#E4DED0] bg-white text-[#5C6660] hover:border-[#0E2A21]"
-                }`}
+                  }`}
               >
                 {r}
               </button>
@@ -719,11 +713,10 @@ export default function StatusPage() {
                     type="button"
                     onClick={() => setChannel(c.key)}
                     aria-pressed={channel === c.key}
-                    className={`inline-flex h-10 items-center gap-2 rounded-lg border px-3.5 text-[13px] font-semibold transition ${
-                      channel === c.key
+                    className={`inline-flex h-10 items-center gap-2 rounded-lg border px-3.5 text-[13px] font-semibold transition ${channel === c.key
                         ? "border-[#0E5C4E] bg-[#E4EFE9] text-[#0E5C4E]"
                         : "border-[#E4DED0] bg-white text-[#5C6660] hover:border-[#0E2A21]"
-                    }`}
+                      }`}
                   >
                     {c.icon}
                     {c.key}
@@ -842,12 +835,14 @@ export default function StatusPage() {
               </p>
             </div>
           </div>
-          <button
-            type="button"
-            className="h-11 shrink-0 rounded-lg border border-[#0E2A21] bg-white px-5 text-[13.5px] font-semibold text-[#0E2A21] transition hover:bg-white/60"
-          >
-            Contact support
-          </button>
+          <a href="/contact-support">
+            <button
+              type="button"
+              className="h-11 shrink-0 rounded-lg border border-[#0E2A21] bg-white px-5 text-[13.5px] font-semibold text-[#0E2A21] transition hover:bg-white/60"
+            >
+              Contact support
+            </button>
+          </a>
         </div>
       </div>
     </main>
