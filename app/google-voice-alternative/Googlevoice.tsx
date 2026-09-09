@@ -112,7 +112,10 @@ export default function Googlevoice() {
                             {/* Buttons */}
 
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                                <button
+                               <a href="/get-a-local-number">
+                               
+                               
+                               <button
                                     className="h-12 px-8 rounded-xl
                               bg-[#EB643F]
                               text-white
@@ -124,8 +127,10 @@ export default function Googlevoice() {
 
                                     Get a Local Number →
                                 </button>
+                               
+                               </a> 
 
-                                <button
+                                <a href="/zoiko-local-acceptable-use"><button
                                     className="h-12 px-8 rounded-xl
                               border border-[#0F6660]
                               dark:border-slate-600
@@ -140,7 +145,7 @@ export default function Googlevoice() {
                                 >
 
                                     See if Zoiko Local Fits
-                                </button>
+                                </button></a>
                             </div>
 
                             {/* Migration */}
@@ -148,9 +153,9 @@ export default function Googlevoice() {
                             <p className="mt-8 text-sm text-gray-500 dark:text-gray-400">
                                 Also replacing a Skype Number?
 
-                                <span className="ml-1 text-[#EB643F] font-medium cursor-pointer hover:underline">
+                               <a href="/switch-from-skype"> <span className="ml-1 text-[#EB643F] font-medium cursor-pointer hover:underline">
                                     Switch from Skype →
-                                </span>
+                                </span></a>
                             </p>
 
                             {/* Bottom Features */}
@@ -254,7 +259,7 @@ export default function Googlevoice() {
                                 ))}
                             </div>
 
-                            <button
+                           <a href="/get-a-local-number"> <button
                                 className="mt-10 h-12 px-8 rounded-xl
                                 bg-[#EB643F]
                                 text-white
@@ -265,7 +270,7 @@ export default function Googlevoice() {
                             >
 
                                 Get a Local Number →
-                            </button>
+                            </button></a>
                         </div>
 
                         {/* RIGHT */}
@@ -481,7 +486,7 @@ export default function Googlevoice() {
 
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
                                 {/* Primary */}
-                                <button
+                               <a href="/get-a-local-number"> <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -493,7 +498,7 @@ export default function Googlevoice() {
                                 >
 
                                     Get a Local Number →
-                                </button>
+                                </button></a>
 
                                 {/* Secondary */}
                                 <button
@@ -530,9 +535,9 @@ export default function Googlevoice() {
 
                                 Replacing a Skype Number too?
 
-                                <span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
+                              <a href="/switch-from-skype">  <span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
                                     Switch from Skype →
-                                </span>
+                                </span></a>
                             </p>
                         </div>
                     </div>
