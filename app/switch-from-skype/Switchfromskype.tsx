@@ -1,21 +1,8 @@
 "use client";
-import { Metadata } from 'next';
 import { useState } from 'react';
 import {
     FiCheck, FiPhone, FiMapPin, FiPhoneCall, FiMic, FiActivity, FiPlus, FiMinus
 } from "react-icons/fi";
-
-
-
-
-export const metadata: Metadata = {
-  title: "Switch From Skype to Modern Business Calling | Zoiko Local",
-  description:
-    "Switch from Skype to modern business calling with Zoiko Local. Get local numbers, video, and an AI Receptionist in one connected workspace for your business.",
-};
-
-
-
 
 const whyMoveNow = [
     {
@@ -155,7 +142,7 @@ export default function Switchfromskype() {
                             {/* Buttons */}
 
                             <div className="mt-4 flex flex-col sm:flex-row gap-4">
-                             <a href="/number-porting">   <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -166,8 +153,8 @@ export default function Switchfromskype() {
                                 >
                                     Switch from Skype →
                                 </button>
-</a>
-                              <a href="/get-a-local-number">  <button
+
+                                <button
                                     className="h-12 px-8 rounded-xl
                         border border-[#0F6660]
                         dark:border-slate-600
@@ -181,7 +168,7 @@ export default function Switchfromskype() {
                         transition-all duration-300"
                                 >
                                     Get a Local Number
-                                </button></a>
+                                </button>
                             </div>
 
                             {/* Small Link */}
@@ -418,7 +405,7 @@ export default function Switchfromskype() {
 
                     {/* Buttons */}
                     <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
-                       <a href="/number-porting"><button
+                        <button
                             className="h-12 px-8 rounded-xl
                 bg-[#EB643F]
                 text-white
@@ -430,9 +417,7 @@ export default function Switchfromskype() {
 
                             Switch from Skype →
                         </button>
-</a> 
-                        <a href="/get-a-local-number">
-                        
+
                         <button
                             className="h-12 px-8 rounded-xl
                 border border-[#0F6660]
@@ -448,9 +433,6 @@ export default function Switchfromskype() {
                         >
                             Get a Local Number
                         </button>
-
-                        
-                        </a>
                     </div>
                 </div>
             </section>
@@ -628,10 +610,7 @@ export default function Switchfromskype() {
 
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
                                 {/* Primary */}
-                                    <a href="/get-a-local-number">
-                                    
-                                    
-                                    <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                                     bg-[#EB643F]
                                     text-white
@@ -644,12 +623,9 @@ export default function Switchfromskype() {
 
                                     Get a Local Number →
                                 </button>
-                                    
-                                    </a>
 
                                 {/* Secondary */}
-                               <a href="/plans-and-pricing">
-                                 <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                                     bg-white
                                     text-[#123533]
@@ -662,9 +638,8 @@ export default function Switchfromskype() {
                                     See Pricing
                                 </button>
 
-                               </a>
                                 {/* Outline */}
-                               <a href="/contact-sales"> <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                                     border border-white/25
                                     text-white
@@ -676,17 +651,17 @@ export default function Switchfromskype() {
                                 >
 
                                     Talk to Sales
-                                </button></a>
+                                </button>
                             </div>
 
                             {/* Footer Text */}
                             <p className="mt-8 text-sm text-white/60">
 
                                 Replacing a Skype Number too?
-<a href="/number-porting">
+
                                 <span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
                                     Switch from Skype →
-                                </span></a>
+                                </span>
                             </p>
                         </div>
                     </div>

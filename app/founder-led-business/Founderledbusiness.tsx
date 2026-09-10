@@ -1,28 +1,27 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import {
-  FiCheck, FiPhone, FiMapPin, FiUsers, FiClock, FiGlobe,
-  FiShield, FiVideo, FiCornerDownRight, FiTrendingUp,
-  FiCpu, FiBriefcase, FiZap, FiCheckCircle, FiChevronDown,
-  FiUser,
-} from "react-icons/fi";
-import type { IconType } from "react-icons";
 
-// ─── ICON BOX ────────────────────────────────────────────────────────────────
-function IconBox({ icon: Icon, bg = "bg-[#fbe1da]", size = 18, className = "h-11 w-11" }: {
-  icon: IconType; bg?: string; size?: number; className?: string;
+/**
+ * Drop your own assets in /public; paths below resolve from there
+ * (e.g. src="/icons/check.svg" → public/icons/check.svg). Swap any path.
+ * Plain <img> so no next/image config is required.
+ */
+function Img({
+  src,
+  alt = "",
+  className = "h-10 w-10 rounded-xl",
+  cover = false,
+}: {
+  src: string;
+  alt?: string;
+  className?: string;
+  cover?: boolean;
 }) {
   return (
-    <span className={`inline-flex shrink-0 items-center justify-center rounded-xl ${bg} dark:bg-white/5 ${className}`}>
-      <Icon size={size} className="text-[#d9603f]" />
-    </span>
+    <img src={src} alt={alt} loading="lazy" className={`${cover ? "object-cover" : "object-contain"} ${className}`} />
   );
 }
-
-const FLAGS: Record<string, string> = {
-  us: "🇺🇸", gb: "🇬🇧", jm: "🇯🇲", ca: "🇨🇦", ng: "🇳🇬", za: "🇿🇦",
-};
 
 function Eyebrow({ children, pill = false }: { children: ReactNode; pill?: boolean }) {
   const inner = (
@@ -35,8 +34,16 @@ function Eyebrow({ children, pill = false }: { children: ReactNode; pill?: boole
   return <p className="inline-flex rounded-full bg-[#f6e4dc] px-4 py-1.5 dark:bg-[#d9603f]/15">{inner}</p>;
 }
 
-function SectionHead({ eyebrow, title, sub, onDark = false }: {
-  eyebrow: string; title: ReactNode; sub?: string; onDark?: boolean;
+function SectionHead({
+  eyebrow,
+  title,
+  sub,
+  onDark = false,
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  sub?: string;
+  onDark?: boolean;
 }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
@@ -53,17 +60,19 @@ function SectionHead({ eyebrow, title, sub, onDark = false }: {
   );
 }
 
-const coralBtn = "inline-flex items-center gap-2 rounded-full bg-[#d9603f] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]";
-const lightBtn = "inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#1c2b26] shadow-sm ring-1 ring-black/5 transition-colors hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:ring-white/10";
-const outlineDarkBtn = "inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10";
+const coralBtn =
+  "inline-flex items-center gap-2 rounded-full bg-[#d9603f] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]";
+const lightBtn =
+  "inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#1c2b26] shadow-sm ring-1 ring-black/5 transition-colors hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:ring-white/10";
+const outlineDarkBtn =
+  "inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10";
 const featureCard = "rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10";
 
+// ─── SHARED IMAGE PATHS ───────────────────────────────────────────────────────
+const IC = { check: "/icons/check.svg" };
+
 // ─── DATA ────────────────────────────────────────────────────────────────────
-const heroChecks = [
-  "Local business numbers without office complexity",
-  "Separate personal and business communication",
-  "AI Receptionist support when you are unavailable",
-];
+const heroChecks = ["Local business numbers without office complexity", "Separate personal and business communication", "AI Receptionist support when you are unavailable"];
 
 const heroRouting = [
   { label: "Founder", status: "Mobile", dot: "bg-[#d9603f]" },
@@ -71,20 +80,20 @@ const heroRouting = [
   { label: "AI Receptionist", status: "Busy", dot: "bg-[#e8a03b]", highlight: true },
 ];
 
-const gapCards: { title: string; desc: string; icon: IconType }[] = [
-  { title: "Personal numbers blur boundaries", desc: "Business calls interrupt personal life and become difficult to manage.", icon: FiPhone },
-  { title: "Customers expect professionalism", desc: "A dedicated business number makes the company feel more established.", icon: FiShield },
-  { title: "Missed calls lose momentum", desc: "Founders are often building, selling, meeting or traveling when customers call.", icon: FiClock },
-  { title: "Growth creates complexity", desc: "As customers, markets and team members are added, communication needs structure.", icon: FiTrendingUp },
+const gapCards = [
+  { title: "Personal numbers blur boundaries", desc: "Business calls interrupt personal life and become difficult to manage.", icon: "/icons/phone.svg" },
+  { title: "Customers expect professionalism", desc: "A dedicated business number makes the company feel more established.", icon: "/icons/shield-check.svg" },
+  { title: "Missed calls lose momentum", desc: "Founders are often building, selling, meeting or traveling when customers call.", icon: "/icons/clock.svg" },
+  { title: "Growth creates complexity", desc: "As customers, markets and team members are added, communication needs structure.", icon: "/icons/trend.svg" },
 ];
 
-const solution: { title: string; desc: string; icon: IconType; bg: string }[] = [
-  { title: "Professional business number", desc: "A dedicated number for customers, partners, suppliers and prospects.", icon: FiMapPin, bg: "bg-[#fbe9e3]" },
-  { title: "Local presence", desc: "Give customers a familiar number in the market they recognize.", icon: FiGlobe, bg: "bg-[#fbe9e3]" },
-  { title: "Business calling", desc: "Make and receive calls using your business identity, not your personal mobile.", icon: FiPhone, bg: "bg-[#fbe9e3]" },
-  { title: "AI Receptionist fallback", desc: "Capture inquiries when busy, unavailable or outside business hours.", icon: FiCpu, bg: "bg-[#fdf0db]" },
-  { title: "Video conversations", desc: "Build trust through face-to-face customer, investor and partner calls.", icon: FiVideo, bg: "bg-[#e3f3ee]" },
-  { title: "Growth-ready routing", desc: "Add team members, assistants, departments or markets when you expand.", icon: FiCornerDownRight, bg: "bg-[#fbe9e3]" },
+const solution = [
+  { title: "Professional business number", desc: "A dedicated number for customers, partners, suppliers and prospects.", icon: "/icons/pin.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Local presence", desc: "Give customers a familiar number in the market they recognize.", icon: "/icons/globe.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Business calling", desc: "Make and receive calls using your business identity, not your personal mobile.", icon: "/icons/phone.svg", tint: "bg-[#fbe9e3]" },
+  { title: "AI Receptionist fallback", desc: "Capture inquiries when busy, unavailable or outside business hours.", icon: "/icons/ai-bot.svg", tint: "bg-[#fdf0db]" },
+  { title: "Video conversations", desc: "Build trust through face-to-face customer, investor and partner calls.", icon: "/icons/video.svg", tint: "bg-[#e3f3ee]" },
+  { title: "Growth-ready routing", desc: "Add team members, assistants, departments or markets when you expand.", icon: "/icons/route.svg", tint: "bg-[#fbe9e3]" },
 ];
 
 const steps = [
@@ -95,20 +104,20 @@ const steps = [
   { n: 5, title: "Scale when ready", desc: "Add users, numbers, markets, video or team routing." },
 ];
 
-const useCases: { title: string; desc: string; icon: IconType; bg: string }[] = [
-  { title: "Solo founder", desc: "Separate customer calls from your personal mobile.", icon: FiUser, bg: "bg-[#fbe9e3]" },
-  { title: "Startup founder", desc: "Create a professional line before hiring an operations team.", icon: FiZap, bg: "bg-[#fbe9e3]" },
-  { title: "Consultant or advisor", desc: "Give clients a trusted number for calls, follow-ups and scheduling.", icon: FiUsers, bg: "bg-[#fbe9e3]" },
-  { title: "Service business owner", desc: "Handle inquiries, bookings and questions through one business number.", icon: FiCheckCircle, bg: "bg-[#fbe9e3]" },
-  { title: "Side-hustle becoming a company", desc: "Move from informal contact to a credible communication setup.", icon: FiTrendingUp, bg: "bg-[#fbe9e3]" },
-  { title: "Founder entering a new market", desc: "Create local presence before opening an office or hiring locally.", icon: FiGlobe, bg: "bg-[#fbe9e3]" },
+const useCases = [
+  { title: "Solo founder", desc: "Separate customer calls from your personal mobile.", icon: "/icons/briefcase.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Startup founder", desc: "Create a professional line before hiring an operations team.", icon: "/icons/spark.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Consultant or advisor", desc: "Give clients a trusted number for calls, follow-ups and scheduling.", icon: "/icons/users.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Service business owner", desc: "Handle inquiries, bookings and questions through one business number.", icon: "/icons/hand.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Side-hustle becoming a company", desc: "Move from informal contact to a credible communication setup.", icon: "/icons/trend.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Founder entering a new market", desc: "Create local presence before opening an office or hiring locally.", icon: "/icons/globe.svg", tint: "bg-[#fbe9e3]" },
 ];
 
-const platform: { name: string; desc: string; cta: string; icon: IconType; bg: string; href: string }[] = [
-  { name: "Local Numbers", desc: "A local business number in the market your customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]", href: "/local-business-number" },
-  { name: "Calling", desc: "Make and receive business calls with a professional caller identity.", cta: "Explore Calling", icon: FiPhone, bg: "bg-[#fbe9e3]", href: "/calling" },
-  { name: "Video", desc: "Meet customers, partners, investors and suppliers through secure video.", cta: "Explore Video", icon: FiVideo, bg: "bg-[#e3f3ee]", href: "/video" },
-  { name: "AI Receptionist", desc: "Capture and route inquiries when you are busy or unavailable.", cta: "Explore AI Receptionist", icon: FiCpu, bg: "bg-[#fdf0db]", href: "/ai-receptionist" },
+const platform = [
+  { name: "Local Numbers", desc: "A local business number in the market your customers recognize.", cta: "Explore Local Numbers", icon: "/icons/pin.svg", tint: "bg-[#fbe9e3]" },
+  { name: "Calling", desc: "Make and receive business calls with a professional caller identity.", cta: "Explore Calling", icon: "/icons/phone.svg", tint: "bg-[#fbe9e3]" },
+  { name: "Video", desc: "Meet customers, partners, investors and suppliers through secure video.", cta: "Explore Video", icon: "/icons/video.svg", tint: "bg-[#e3f3ee]" },
+  { name: "AI Receptionist", desc: "Capture and route inquiries when you are busy or unavailable.", cta: "Explore AI Receptionist", icon: "/icons/ai-bot.svg", tint: "bg-[#fdf0db]" },
 ];
 
 const compare = [
@@ -130,12 +139,12 @@ const growth = [
 ];
 
 const markets = [
-  { name: "United States", flag: "us" },
-  { name: "United Kingdom", flag: "gb" },
-  { name: "Jamaica", flag: "jm" },
-  { name: "Canada", flag: "ca" },
-  { name: "Nigeria", flag: "ng" },
-  { name: "South Africa", flag: "za" },
+  { name: "United States", flag: "/flags/us.svg" },
+  { name: "United Kingdom", flag: "/flags/gb.svg" },
+  { name: "Jamaica", flag: "/flags/jm.svg" },
+  { name: "Canada", flag: "/flags/ca.svg" },
+  { name: "Nigeria", flag: "/flags/ng.svg" },
+  { name: "South Africa", flag: "/flags/za.svg" },
 ];
 const regions = ["Caribbean", "Europe", "Africa", "North America"];
 
@@ -156,7 +165,6 @@ function FounderLedBusiness() {
 
   return (
     <main className="bg-white font-sans text-[#1c2b26] dark:bg-gray-900 dark:text-gray-100">
-
       {/* ─── HERO ─── */}
       <section className="bg-[#f6ece5] px-4 py-20 sm:px-6 lg:px-8 dark:bg-gray-950">
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
@@ -171,18 +179,18 @@ function FounderLedBusiness() {
               with the company.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-             <a href="/local-business-number"> <button className={coralBtn}>Get Your Business Number</button></a>
-             <a href="/plans-and-pricing"> <button className={lightBtn}>See Pricing</button></a>
+              <button className={coralBtn}>Get Your Business Number</button>
+              <button className={lightBtn}>See Pricing</button>
             </div>
-            <a href="/ai-receptionist" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">Explore AI Receptionist →</a>
+            <a href="#" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">Explore AI Receptionist →</a>
             <div className="mt-5 flex max-w-md items-center justify-between gap-4 rounded-2xl bg-white px-5 py-4 text-sm shadow-sm ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
               <span className="text-gray-600 dark:text-gray-400">Replacing Skype Number for your business?</span>
-              <a href="/switch-from-skype" className="shrink-0 font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
+              <a href="#" className="shrink-0 font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
             </div>
             <ul className="mt-6 space-y-2">
               {heroChecks.map((c) => (
                 <li key={c} className="flex items-center gap-2 text-sm font-medium dark:text-gray-300">
-                  <FiCheck size={14} className="shrink-0 text-[#d9603f]" strokeWidth={3} /> {c}
+                  <Img src={IC.check} alt="" className="h-4 w-4" /> {c}
                 </li>
               ))}
             </ul>
@@ -191,7 +199,7 @@ function FounderLedBusiness() {
           {/* Business number card */}
           <div className="relative">
             <div className="absolute -top-6 left-6 z-10 flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold shadow-lg ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-              <FiMapPin size={14} className="text-[#d9603f]" /> Personal vs business
+              <Img src="/icons/pin.svg" alt="" className="h-4 w-4" /> Personal vs business
             </div>
             <div className="rounded-3xl bg-white p-5 shadow-xl ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
               <div className="flex items-start justify-between rounded-2xl bg-[#16233a] p-5 text-white">
@@ -199,11 +207,11 @@ function FounderLedBusiness() {
                   <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Business number</p>
                   <p className="mt-1 text-xl font-extrabold">+1 (415) 555-0163</p>
                 </div>
-                <span className="text-2xl">🇺🇸</span>
+                <Img src="/flags/us.svg" alt="US" cover className="h-7 w-9 rounded-md" />
               </div>
               <div className="mt-3 flex items-center gap-3 rounded-2xl bg-[#fbf2ee] p-4 dark:bg-gray-900/40">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#d9603f]">
-                  <FiPhone size={16} className="text-white" />
+                  <Img src="/icons/phone.svg" alt="" className="h-5 w-5" />
                 </span>
                 <div>
                   <p className="text-sm font-bold dark:text-white">Incoming · New prospect</p>
@@ -233,7 +241,7 @@ function FounderLedBusiness() {
               </p>
             </div>
             <div className="absolute -bottom-5 right-4 flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold shadow-lg ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-              <FiShield size={14} className="text-[#d9603f]" /> Presence active
+              <Img src="/icons/shield-check.svg" alt="" className="h-4 w-4" /> Presence active
             </div>
           </div>
         </div>
@@ -250,7 +258,9 @@ function FounderLedBusiness() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {gapCards.map((g) => (
               <div key={g.title} className={featureCard}>
-                <IconBox icon={g.icon} bg="bg-[#fbe1da]" />
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#fbe1da] dark:bg-[#d9603f]/15">
+                  <Img src={g.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{g.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{g.desc}</p>
               </div>
@@ -269,14 +279,16 @@ function FounderLedBusiness() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {solution.map((s) => (
               <div key={s.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBox icon={s.icon} bg={s.bg} />
+                <span className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${s.tint} dark:bg-white/5`}>
+                  <Img src={s.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{s.desc}</p>
               </div>
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <a href="/local-business-number"> <button className={coralBtn}>Get Your Business Number</button></a>
+            <button className={coralBtn}>Get Your Business Number</button>
           </div>
         </div>
       </section>
@@ -304,7 +316,9 @@ function FounderLedBusiness() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {useCases.map((u) => (
               <div key={u.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBox icon={u.icon} bg={u.bg} />
+                <span className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${u.tint} dark:bg-white/5`}>
+                  <Img src={u.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{u.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{u.desc}</p>
               </div>
@@ -320,17 +334,19 @@ function FounderLedBusiness() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {platform.map((p) => (
               <div key={p.name} className="flex flex-col rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBox icon={p.icon} bg={p.bg} />
+                <span className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${p.tint} dark:bg-white/5`}>
+                  <Img src={p.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{p.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{p.desc}</p>
-                <a href={p.href} className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
+                <a href="#" className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── WHY UPGRADE ─── */}
+      {/* ─── WHY UPGRADE (comparison) ─── */}
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8 dark:bg-gray-900">
         <div className="mx-auto max-w-5xl">
           <SectionHead eyebrow="Why upgrade" title="Your personal phone should not be your company's front desk." />
@@ -338,7 +354,7 @@ function FounderLedBusiness() {
             <div className="grid grid-cols-2">
               <div className="bg-[#f3efe7] px-5 py-4 text-sm font-bold dark:bg-gray-800 dark:text-white">Personal Mobile Number</div>
               <div className="flex items-center gap-2 bg-[#d9603f] px-5 py-4 text-sm font-bold text-white">
-                <FiZap size={14} /> Zoiko Local
+                <Img src="/icons/spark.svg" alt="" className="h-4 w-4" /> Zoiko Local
               </div>
             </div>
             {compare.map((row, i) => (
@@ -348,7 +364,7 @@ function FounderLedBusiness() {
               </div>
             ))}
             <div className="bg-[#f3efe7] py-6 text-center dark:bg-gray-800">
-              <a href="/local-business-number"> <button className={coralBtn}>Separate Personal and Business Calls</button></a>
+              <button className={coralBtn}>Separate Personal and Business Calls</button>
             </div>
           </div>
         </div>
@@ -367,7 +383,7 @@ function FounderLedBusiness() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <a href="/plans-and-pricing"> <button className={coralBtn}>See Pricing</button></a>
+            <button className={coralBtn}>See Pricing</button>
           </div>
         </div>
       </section>
@@ -384,7 +400,7 @@ function FounderLedBusiness() {
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {markets.map((m) => (
               <span key={m.name} className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white">
-                <span className="text-base leading-none">{FLAGS[m.flag]}</span> {m.name}
+                <Img src={m.flag} alt="" cover className="h-4 w-5 rounded-sm" /> {m.name}
               </span>
             ))}
           </div>
@@ -394,7 +410,7 @@ function FounderLedBusiness() {
             ))}
           </div>
           <div className="mt-8 flex justify-center">
-            <a href="/global-coverage"> <button className={lightBtn}>Explore Global Coverage</button></a>
+            <button className={lightBtn}>Explore Global Coverage</button>
           </div>
         </div>
       </section>
@@ -414,8 +430,12 @@ function FounderLedBusiness() {
                     aria-expanded={isOpen}
                   >
                     <span className="text-sm font-semibold text-[#1c2b26] dark:text-white">{f.q}</span>
-                    <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition ${isOpen ? "bg-[#d9603f] text-white" : "text-[#d9603f]"}`}>
-                      <FiChevronDown size={16} className={`transition-transform ${isOpen ? "rotate-180" : ""}`} />
+                    <span
+                      className={`flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full text-lg leading-none ${
+                        isOpen ? "bg-[#d9603f] text-white" : "text-[#d9603f]"
+                      }`}
+                    >
+                      {isOpen ? "×" : "+"}
                     </span>
                   </button>
                   {isOpen && <p className="px-5 pb-5 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{f.a}</p>}
@@ -425,22 +445,22 @@ function FounderLedBusiness() {
           </div>
         </div>
       </section>
-
       {/* ─── FINAL CTA ─── */}
       <section className="bg-[#0f4338] px-4 py-20 text-center sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Start sounding like the business you are building.</h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/70">
-            Get a professional business number, separate personal and work calls, and give customers a trusted way to reach you from day one.
+            Get a professional business number, separate personal and work calls, and give customers a trusted way to
+            reach you from day one.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="/local-business-number"> <button className={lightBtn}>Get Your Business Number</button></a>
-            <a href="/plans-and-pricing"> <button className={outlineDarkBtn}>See Pricing</button></a>
-            <a href="/ai-receptionist"> <button className={outlineDarkBtn}>Explore AI Receptionist</button></a>
+            <button className={lightBtn}>Get Your Business Number</button>
+            <button className={outlineDarkBtn}>See Pricing</button>
+            <button className={outlineDarkBtn}>Explore AI Receptionist</button>
           </div>
           <p className="mt-6 text-sm text-white/70">
             Replacing Skype Number?{" "}
-            <a href="/switch-from-skype" className="font-semibold text-white hover:underline">Switch from Skype →</a>
+            <a href="#" className="font-semibold text-white hover:underline">Switch from Skype →</a>
           </p>
         </div>
       </section>

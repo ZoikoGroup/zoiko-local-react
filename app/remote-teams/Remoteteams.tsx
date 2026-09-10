@@ -1,27 +1,27 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import {
-  FiCheck, FiPhone, FiMapPin, FiUsers, FiClock, FiGlobe,
-  FiShield, FiVideo, FiCornerDownRight, FiTrendingUp,
-  FiCpu, FiBriefcase, FiZap, FiChevronDown, FiHome,
-} from "react-icons/fi";
-import type { IconType } from "react-icons";
 
-// ─── ICON BOX ────────────────────────────────────────────────────────────────
-function IconBox({ icon: Icon, bg = "bg-[#fbe1da]", size = 18, className = "h-11 w-11" }: {
-  icon: IconType; bg?: string; size?: number; className?: string;
+/**
+ * Drop your own assets in /public; paths below resolve from there
+ * (e.g. src="/icons/check.svg" → public/icons/check.svg). Swap any path.
+ * Plain <img> so no next/image config is required.
+ */
+function Img({
+  src,
+  alt = "",
+  className = "h-10 w-10 rounded-xl",
+  cover = false,
+}: {
+  src: string;
+  alt?: string;
+  className?: string;
+  cover?: boolean;
 }) {
   return (
-    <span className={`inline-flex shrink-0 items-center justify-center rounded-xl ${bg} dark:bg-white/5 ${className}`}>
-      <Icon size={size} className="text-[#d9603f]" />
-    </span>
+    <img src={src} alt={alt} loading="lazy" className={`${cover ? "object-cover" : "object-contain"} ${className}`} />
   );
 }
-
-const FLAGS: Record<string, string> = {
-  us: "🇺🇸", gb: "🇬🇧", jm: "🇯🇲", ca: "🇨🇦", ng: "🇳🇬", za: "🇿🇦",
-};
 
 function Eyebrow({ children, pill = false }: { children: ReactNode; pill?: boolean }) {
   const inner = (
@@ -31,11 +31,21 @@ function Eyebrow({ children, pill = false }: { children: ReactNode; pill?: boole
     </span>
   );
   if (!pill) return <p>{inner}</p>;
-  return <p className="inline-flex rounded-full bg-[#f6e4dc] px-4 py-1.5 dark:bg-[#d9603f]/15">{inner}</p>;
+  return (
+    <p className="inline-flex rounded-full bg-[#f6e4dc] px-4 py-1.5 dark:bg-[#d9603f]/15">{inner}</p>
+  );
 }
 
-function SectionHead({ eyebrow, title, sub, onDark = false }: {
-  eyebrow: string; title: ReactNode; sub?: string; onDark?: boolean;
+function SectionHead({
+  eyebrow,
+  title,
+  sub,
+  onDark = false,
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  sub?: string;
+  onDark?: boolean;
 }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
@@ -52,17 +62,21 @@ function SectionHead({ eyebrow, title, sub, onDark = false }: {
   );
 }
 
-const coralBtn = "inline-flex items-center gap-2 rounded-full bg-[#d9603f] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]";
-const lightBtn = "inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#1c2b26] shadow-sm ring-1 ring-black/5 transition-colors hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:ring-white/10";
-const outlineDarkBtn = "inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10";
+const coralBtn =
+  "inline-flex items-center gap-2 rounded-full bg-[#d9603f] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]";
+const lightBtn =
+  "inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#1c2b26] shadow-sm ring-1 ring-black/5 transition-colors hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:ring-white/10";
+const outlineDarkBtn =
+  "inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10";
 const featureCard = "rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10";
 
+// ─── SHARED IMAGE PATHS ───────────────────────────────────────────────────────
+const IC = {
+  check: "/icons/check.svg", // teal tick (hero list)
+};
+
 // ─── DATA ────────────────────────────────────────────────────────────────────
-const heroChecks = [
-  "Local numbers for remote teams",
-  "Calling, video, and routing in one platform",
-  "AI Receptionist support for missed calls",
-];
+const heroChecks = ["Local numbers for remote teams", "Calling, video, and routing in one platform", "AI Receptionist support for missed calls"];
 
 const heroRouting = [
   { label: "Sales · London", status: "Online", dot: "bg-[#d9603f]" },
@@ -70,20 +84,20 @@ const heroRouting = [
   { label: "AI Receptionist", status: "Fallback", dot: "bg-[#e8a03b]", highlight: true },
 ];
 
-const gapCards: { title: string; desc: string; icon: IconType }[] = [
-  { title: "Personal numbers create risk", desc: "Business calls land on private mobiles, blurring boundaries and exposing personal numbers.", icon: FiPhone },
-  { title: "Customers want local trust", desc: "Unfamiliar or foreign numbers can make a capable team feel distant or hard to verify.", icon: FiShield },
-  { title: "Calls need proper routing", desc: "Without routing, inquiries bounce between people, apps and inboxes — or go unanswered.", icon: FiCornerDownRight },
-  { title: "Time zones create missed calls", desc: "Customers call during their hours while the right teammate is offline somewhere else.", icon: FiClock },
+const gapCards = [
+  { title: "Personal numbers create risk", desc: "Business calls land on private mobiles, blurring boundaries and exposing personal numbers.", icon: "/icons/phone.svg" },
+  { title: "Customers want local trust", desc: "Unfamiliar or foreign numbers can make a capable team feel distant or hard to verify.", icon: "/icons/shield.svg" },
+  { title: "Calls need proper routing", desc: "Without routing, inquiries bounce between people, apps and inboxes — or go unanswered.", icon: "/icons/route.svg" },
+  { title: "Time zones create missed calls", desc: "Customers call during their hours while the right teammate is offline somewhere else.", icon: "/icons/clock.svg" },
 ];
 
-const solution: { title: string; desc: string; icon: IconType; bg: string }[] = [
-  { title: "Local numbers for remote companies", desc: "Give customers a familiar number to call in the markets you serve.", icon: FiMapPin, bg: "bg-[#fbe9e3]" },
-  { title: "Shared business calling", desc: "Make and receive calls through one business identity, not private mobiles.", icon: FiPhone, bg: "bg-[#fbe9e3]" },
-  { title: "Team routing", desc: "Route calls by team, role, business hours or availability.", icon: FiCornerDownRight, bg: "bg-[#fbe9e3]" },
-  { title: "Video for customer conversations", desc: "Move important conversations to face-to-face when trust matters.", icon: FiVideo, bg: "bg-[#e3f3ee]" },
-  { title: "AI Receptionist fallback", desc: "Capture and route inquiries when no one is available.", icon: FiCpu, bg: "bg-[#fdf0db]" },
-  { title: "Global coverage support", desc: "Add presence across supported markets as the team grows.", icon: FiGlobe, bg: "bg-[#fbe9e3]" },
+const solution = [
+  { title: "Local numbers for remote companies", desc: "Give customers a familiar number to call in the markets you serve.", icon: "/icons/pin.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Shared business calling", desc: "Make and receive calls through one business identity, not private mobiles.", icon: "/icons/phone.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Team routing", desc: "Route calls by team, role, business hours or availability.", icon: "/icons/route.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Video for customer conversations", desc: "Move important conversations to face-to-face when trust matters.", icon: "/icons/video.svg", tint: "bg-[#e3f3ee]" },
+  { title: "AI Receptionist fallback", desc: "Capture and route inquiries when no one is available.", icon: "/icons/ai-bot.svg", tint: "bg-[#fdf0db]" },
+  { title: "Global coverage support", desc: "Add presence across supported markets as the team grows.", icon: "/icons/globe.svg", tint: "bg-[#fbe9e3]" },
 ];
 
 const steps = [
@@ -95,22 +109,22 @@ const steps = [
   { n: 6, title: "Start communicating", desc: "Answer professionally from anywhere, on any device." },
 ];
 
-const useCases: { title: string; desc: string; icon: IconType; bg: string }[] = [
-  { title: "Remote-first startups", desc: "Look established from day one without an office.", icon: FiZap, bg: "bg-[#fbe9e3]" },
-  { title: "Distributed sales teams", desc: "Local presence for prospects in every market.", icon: FiTrendingUp, bg: "bg-[#fbe9e3]" },
-  { title: "Remote customer support", desc: "Shared support line with smart routing.", icon: FiPhone, bg: "bg-[#e3f3ee]" },
-  { title: "Virtual agencies", desc: "One professional front door for clients.", icon: FiUsers, bg: "bg-[#fbe9e3]" },
-  { title: "International teams", desc: "Coordinate calls across regions and hours.", icon: FiGlobe, bg: "bg-[#fbe9e3]" },
-  { title: "Founder-led remote companies", desc: "Separate the founder's mobile from the business.", icon: FiBriefcase, bg: "bg-[#fbe9e3]" },
-  { title: "Hybrid offices", desc: "Consistent presence across home and office.", icon: FiHome, bg: "bg-[#fbe9e3]" },
-  { title: "After-hours teams", desc: "Capture and route calls beyond business hours.", icon: FiClock, bg: "bg-[#fdf0db]" },
+const useCases = [
+  { title: "Remote-first startups", desc: "Look established from day one without an office.", icon: "/icons/spark.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Distributed sales teams", desc: "Local presence for prospects in every market.", icon: "/icons/trend.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Remote customer support", desc: "Shared support line with smart routing.", icon: "/icons/phone.svg", tint: "bg-[#e3f3ee]" },
+  { title: "Virtual agencies", desc: "One professional front door for clients.", icon: "/icons/users.svg", tint: "bg-[#fbe9e3]" },
+  { title: "International teams", desc: "Coordinate calls across regions and hours.", icon: "/icons/globe.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Founder-led remote companies", desc: "Separate the founder's mobile from the business.", icon: "/icons/briefcase.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Hybrid offices", desc: "Consistent presence across home and office.", icon: "/icons/building.svg", tint: "bg-[#fbe9e3]" },
+  { title: "After-hours teams", desc: "Capture and route calls beyond business hours.", icon: "/icons/clock.svg", tint: "bg-[#fdf0db]" },
 ];
 
-const platform: { name: string; desc: string; cta: string; icon: IconType; bg: string; href: string }[] = [
-  { name: "Local Numbers", desc: "Local presence in the markets your customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]", href: "/get-a-local-number" },
-  { name: "Calling", desc: "Make and receive business calls with a professional identity.", cta: "Explore Calling", icon: FiPhone, bg: "bg-[#fbe9e3]", href: "/calling" },
-  { name: "Video", desc: "Meet customers face-to-face to build trust.", cta: "Explore Video", icon: FiVideo, bg: "bg-[#e3f3ee]", href: "/video" },
-  { name: "AI Receptionist", desc: "Capture and route calls when the team is offline.", cta: "Explore AI Receptionist", icon: FiCpu, bg: "bg-[#fdf0db]", href: "/ai-receptionist" },
+const platform = [
+  { name: "Local Numbers", desc: "Local presence in the markets your customers recognize.", cta: "Explore Local Numbers", icon: "/icons/pin.svg", tint: "bg-[#fbe9e3]" },
+  { name: "Calling", desc: "Make and receive business calls with a professional identity.", cta: "Explore Calling", icon: "/icons/phone.svg", tint: "bg-[#fbe9e3]" },
+  { name: "Video", desc: "Meet customers face-to-face to build trust.", cta: "Explore Video", icon: "/icons/video.svg", tint: "bg-[#e3f3ee]" },
+  { name: "AI Receptionist", desc: "Capture and route calls when the team is offline.", cta: "Explore AI Receptionist", icon: "/icons/ai-bot.svg", tint: "bg-[#fdf0db]" },
 ];
 
 const compare = [
@@ -124,22 +138,22 @@ const compare = [
 ];
 
 const markets = [
-  { name: "United States", flag: "us" },
-  { name: "United Kingdom", flag: "gb" },
-  { name: "Jamaica", flag: "jm" },
-  { name: "Canada", flag: "ca" },
-  { name: "Nigeria", flag: "ng" },
-  { name: "South Africa", flag: "za" },
+  { name: "United States", flag: "/flags/us.svg" },
+  { name: "United Kingdom", flag: "/flags/gb.svg" },
+  { name: "Jamaica", flag: "/flags/jm.svg" },
+  { name: "Canada", flag: "/flags/ca.svg" },
+  { name: "Nigeria", flag: "/flags/ng.svg" },
+  { name: "South Africa", flag: "/flags/za.svg" },
 ];
 const regions = ["Caribbean", "Europe", "Africa", "North America"];
 
-const scaling: { title: string; desc: string; icon: IconType }[] = [
-  { title: "Add numbers by market", desc: "Expand local presence as you enter new regions.", icon: FiMapPin },
-  { title: "Add users by role or team", desc: "Bring sales, support and operations onto the line.", icon: FiUsers },
-  { title: "Add routing as volume grows", desc: "Introduce rules as call patterns mature.", icon: FiCornerDownRight },
-  { title: "Add AI Receptionist", desc: "Protect against missed-call leakage.", icon: FiCpu },
-  { title: "Add video", desc: "Bring high-trust conversations face-to-face.", icon: FiVideo },
-  { title: "Add global coverage", desc: "Scale into additional markets over time.", icon: FiGlobe },
+const scaling = [
+  { title: "Add numbers by market", desc: "Expand local presence as you enter new regions.", icon: "/icons/pin.svg" },
+  { title: "Add users by role or team", desc: "Bring sales, support and operations onto the line.", icon: "/icons/users.svg" },
+  { title: "Add routing as volume grows", desc: "Introduce rules as call patterns mature.", icon: "/icons/route.svg" },
+  { title: "Add AI Receptionist", desc: "Protect against missed-call leakage.", icon: "/icons/ai-bot.svg" },
+  { title: "Add video", desc: "Bring high-trust conversations face-to-face.", icon: "/icons/video.svg" },
+  { title: "Add global coverage", desc: "Scale into additional markets over time.", icon: "/icons/globe.svg" },
 ];
 
 const faqs = [
@@ -154,12 +168,11 @@ const faqs = [
 ];
 
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
-function RemoteTeams() {
+function Remoteteams() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
     <main className="bg-white font-sans text-[#1c2b26] dark:bg-gray-900 dark:text-gray-100">
-
       {/* ─── HERO ─── */}
       <section className="bg-[#f6ece5] px-4 py-20 sm:px-6 lg:px-8 dark:bg-gray-950">
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
@@ -170,25 +183,26 @@ function RemoteTeams() {
             </h1>
             <p className="mt-5 max-w-md text-sm leading-relaxed text-gray-600 dark:text-gray-400">
               Give your remote team a professional local presence, even when everyone works from different locations.
-              Zoiko Local helps distributed teams answer calls, route inquiries, meet customers, and stay reachable from anywhere.
+              Zoiko Local helps distributed teams answer calls, route inquiries, meet customers, and stay reachable from
+              anywhere.
             </p>
             <div className="mt-8 flex flex-col items-start gap-3">
               <button className={coralBtn}>Build Your Remote Team Phone System</button>
               <div className="flex flex-wrap gap-3">
-               <a href="get-a-local-number"><button className={lightBtn}>Get a Local Number</button></a>
-                <a href="/plans-and-pricing" className="inline-flex items-center px-3 py-3.5 text-sm font-semibold text-[#1c2b26] hover:underline dark:text-white">
+                <button className={lightBtn}>Get a Local Number</button>
+                <a href="#" className="inline-flex items-center px-3 py-3.5 text-sm font-semibold text-[#1c2b26] hover:underline dark:text-white">
                   See Pricing →
                 </a>
               </div>
             </div>
             <p className="mt-5 text-sm text-gray-600 dark:text-gray-400">
               Replacing Skype Number for your remote team?{" "}
-              <a href="/switch-from-skype" className="font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
+              <a href="#" className="font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
             </p>
             <ul className="mt-6 space-y-2">
               {heroChecks.map((c) => (
                 <li key={c} className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                  <FiCheck size={14} className="shrink-0 text-[#d9603f]" strokeWidth={3} /> {c}
+                  <Img src={IC.check} alt="" className="h-4 w-4" /> {c}
                 </li>
               ))}
             </ul>
@@ -197,7 +211,7 @@ function RemoteTeams() {
           {/* Routing card */}
           <div className="relative">
             <div className="absolute -top-6 left-6 z-10 flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold shadow-lg ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-              <FiMapPin size={14} className="text-[#d9603f]" /> Team in 4 locations
+              <Img src="/icons/pin.svg" alt="" className="h-4 w-4" /> Team in 4 locations
             </div>
             <div className="rounded-3xl bg-white p-5 shadow-xl ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
               <div className="rounded-2xl bg-[#16233a] p-5 text-white">
@@ -206,12 +220,12 @@ function RemoteTeams() {
                     <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Shared business line</p>
                     <p className="mt-1 text-xl font-extrabold">+1 (212) 555-0140</p>
                   </div>
-                  <span className="text-2xl">🇺🇸</span>
+                  <Img src="/flags/us.svg" alt="US" cover className="h-7 w-9 rounded-md" />
                 </div>
               </div>
               <div className="mt-3 flex items-center gap-3 rounded-2xl bg-[#fbf2ee] p-4 dark:bg-gray-900/40">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#d9603f]">
-                  <FiPhone size={16} className="text-white" />
+                  <Img src="/icons/phone.svg" alt="" className="h-5 w-5" />
                 </span>
                 <div>
                   <p className="text-sm font-bold dark:text-white">Incoming · Priority market</p>
@@ -241,7 +255,7 @@ function RemoteTeams() {
               </p>
             </div>
             <div className="absolute -bottom-5 right-4 flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold shadow-lg ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-              <FiShield size={14} className="text-[#d9603f]" /> No lead lost
+              <Img src="/icons/shield-check.svg" alt="" className="h-4 w-4" /> No lead lost
             </div>
           </div>
         </div>
@@ -258,7 +272,9 @@ function RemoteTeams() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {gapCards.map((g) => (
               <div key={g.title} className={featureCard}>
-                <IconBox icon={g.icon} bg="bg-[#fbe1da]" />
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#fbe1da] dark:bg-[#d9603f]/15">
+                  <Img src={g.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{g.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{g.desc}</p>
               </div>
@@ -278,7 +294,9 @@ function RemoteTeams() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {solution.map((s) => (
               <div key={s.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBox icon={s.icon} bg={s.bg} />
+                <span className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${s.tint} dark:bg-white/5`}>
+                  <Img src={s.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{s.desc}</p>
               </div>
@@ -304,7 +322,7 @@ function RemoteTeams() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-           <a href="/get-a-local-number"><button className={lightBtn}>Get a Local Number</button></a>
+            <button className={lightBtn}>Get a Local Number</button>
           </div>
         </div>
       </section>
@@ -316,7 +334,9 @@ function RemoteTeams() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {useCases.map((u) => (
               <div key={u.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBox icon={u.icon} bg={u.bg} />
+                <span className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${u.tint} dark:bg-white/5`}>
+                  <Img src={u.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{u.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{u.desc}</p>
               </div>
@@ -332,17 +352,19 @@ function RemoteTeams() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {platform.map((p) => (
               <div key={p.name} className="flex flex-col rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBox icon={p.icon} bg={p.bg} />
+                <span className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${p.tint} dark:bg-white/5`}>
+                  <Img src={p.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{p.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{p.desc}</p>
-                <a href={p.href} className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
+                <a href="#" className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── WHY UPGRADE ─── */}
+      {/* ─── WHY UPGRADE (comparison) ─── */}
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8 dark:bg-gray-900">
         <div className="mx-auto max-w-5xl">
           <SectionHead
@@ -354,7 +376,7 @@ function RemoteTeams() {
             <div className="grid grid-cols-2">
               <div className="bg-[#f3efe7] px-5 py-4 text-sm font-bold dark:bg-gray-800 dark:text-white">Personal Mobiles &amp; Disconnected Apps</div>
               <div className="flex items-center gap-2 bg-[#d9603f] px-5 py-4 text-sm font-bold text-white">
-                <FiZap size={14} /> Zoiko Local
+                <Img src="/icons/spark.svg" alt="" className="h-4 w-4" /> Zoiko Local
               </div>
             </div>
             {compare.map((row, i) => (
@@ -382,7 +404,7 @@ function RemoteTeams() {
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {markets.map((m) => (
               <span key={m.name} className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white">
-                <span className="text-base leading-none">{FLAGS[m.flag]}</span> {m.name}
+                <Img src={m.flag} alt="" cover className="h-4 w-5 rounded-sm" /> {m.name}
               </span>
             ))}
           </div>
@@ -409,14 +431,16 @@ function RemoteTeams() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {scaling.map((s) => (
               <div key={s.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBox icon={s.icon} bg="bg-[#fbe9e3]" />
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#fbe9e3] dark:bg-white/5">
+                  <Img src={s.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{s.desc}</p>
               </div>
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-           <a href="/plans-and-pricing"><button className={coralBtn}>See Pricing</button></a>
+            <button className={coralBtn}>See Pricing</button>
           </div>
         </div>
       </section>
@@ -436,8 +460,12 @@ function RemoteTeams() {
                     aria-expanded={isOpen}
                   >
                     <span className="text-sm font-semibold text-[#1c2b26] dark:text-white">{f.q}</span>
-                    <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition ${isOpen ? "bg-[#d9603f] text-white" : "text-[#d9603f]"}`}>
-                      <FiChevronDown size={16} className={`transition-transform ${isOpen ? "rotate-180" : ""}`} />
+                    <span
+                      className={`flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full text-lg leading-none ${
+                        isOpen ? "bg-[#d9603f] text-white" : "text-[#d9603f]"
+                      }`}
+                    >
+                      {isOpen ? "×" : "+"}
                     </span>
                   </button>
                   {isOpen && <p className="px-5 pb-5 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{f.a}</p>}
@@ -458,12 +486,12 @@ function RemoteTeams() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <button className={lightBtn}>Build Your Remote Team Phone System</button>
-           <a href="/get-a-local-number"><button className={outlineDarkBtn}>Get a Local Number</button></a>
-           <a href="/plans-and-pricing"><button className={outlineDarkBtn}>See Pricing</button></a>
+            <button className={outlineDarkBtn}>Get a Local Number</button>
+            <button className={outlineDarkBtn}>See Pricing</button>
           </div>
           <p className="mt-6 text-sm text-white/70">
             Replacing Skype Number?{" "}
-            <a href="/switch-from-skype" className="font-semibold text-white hover:underline">Switch from Skype →</a>
+            <a href="#" className="font-semibold text-white hover:underline">Switch from Skype →</a>
           </p>
         </div>
       </section>
@@ -471,5 +499,5 @@ function RemoteTeams() {
   );
 }
 
-export default RemoteTeams;
-export { RemoteTeams };
+export default Remoteteams;
+export { Remoteteams };

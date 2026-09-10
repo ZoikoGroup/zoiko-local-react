@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useRef, useCallback } from "react";
+import { useState } from "react";
 import {
   FiActivity, FiMenu, FiX, FiMapPin, FiPhone, FiVideo, FiMic,
   FiSmartphone, FiGrid, FiBriefcase, FiHash, FiUsers, FiGlobe,
@@ -10,43 +10,29 @@ import {
 } from "react-icons/fi";
 
 const platformItems = [
-  { title: "Local Numbers", desc: "Search, reserve & manage local presence", icon: FiMapPin, href: "/get-a-local-number" },
-  { title: "Calling", desc: "Business-grade inbound & outbound voice", icon: FiPhone, href: "/calling" },
-  { title: "Video", desc: "Meetings & customer video calls", icon: FiVideo, href: "/video" },
-  { title: "AI Receptionist", desc: "Answer, qualify & route missed calls", icon: FiMic, badge: "NEW", href: "/ai-receptionist" },
-  { title: "Mobile Apps", desc: "Take your number anywhere", icon: FiSmartphone, href: "/zoiko-local-mobile-apps" },
-  { title: "Business Workspace", desc: "Teams, roles, routing & billing", icon: FiGrid, href: "/business" },
-  { title: "Status Page", desc: "Live service & uptime status", icon: FiActivity, href: "/status" },
+  { title: "Local Numbers", desc: "Search, reserve & manage local presence", icon: FiMapPin },
+  { title: "Calling", desc: "Business-grade inbound & outbound voice", icon: FiPhone },
+  { title: "Video", desc: "Meetings & customer video calls", icon: FiVideo },
+  { title: "AI Receptionist", desc: "Answer, qualify & route missed calls", icon: FiMic, badge: "NEW" },
+  { title: "Mobile Apps", desc: "Take your number anywhere", icon: FiSmartphone },
+  { title: "Business Workspace", desc: "Teams, roles, routing & billing", icon: FiGrid },
+  { title: "Status Page", desc: "Live service & uptime status", icon: FiActivity },
 ];
 
 const solutionItems = [
-  { title: "For Business", desc: "One communication layer for every team", icon: FiBriefcase, href: "/business" },
-  { title: "Business Numbers", desc: "Local & toll-free numbers for work", icon: FiHash, href: "/local-business-numbers" },
-  { title: "Remote Teams", desc: "Connect distributed teams anywhere", icon: FiUsers, href: "/remote-teams" },
-  { title: "Diaspora Founders", desc: "Stay local in home & host markets", icon: FiGlobe, href: "/diaspora-founders" },
-  { title: "International Expansion", desc: "Local presence in new markets", icon: FiTrendingUp, href: "/international-expansion" },
-  { title: "Customer Support", desc: "Route, capture & resolve enquiries", icon: FiHeadphones, href: "/customer-support" },
-  { title: "Founder-Led Business", desc: "A professional front desk for one", icon: FiUser, href: "/founder-led-business" },
+  { title: "For Business", desc: "One communication layer for every team", icon: FiBriefcase },
+  { title: "Business Numbers", desc: "Local & toll-free numbers for work", icon: FiHash },
+  { title: "Remote Teams", desc: "Connect distributed teams anywhere", icon: FiUsers },
+  { title: "Diaspora Founders", desc: "Stay local in home & host markets", icon: FiGlobe },
+  { title: "International Expansion", desc: "Local presence in new markets", icon: FiTrendingUp },
+  { title: "Customer Support", desc: "Route, capture & resolve enquiries", icon: FiHeadphones },
+  { title: "Founder-Led Business", desc: "A professional front desk for one", icon: FiUser },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<"platform" | "solutions" | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<"platform" | "solutions" | null>(null);
-  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  // Small delay on leave so the menu doesn't vanish during fast mouse movement
-  const handleEnter = useCallback((menu: "platform" | "solutions") => {
-    if (closeTimer.current) {
-      clearTimeout(closeTimer.current);
-      closeTimer.current = null;
-    }
-    setActiveMegaMenu(menu);
-  }, []);
-
-  const handleLeave = useCallback(() => {
-    closeTimer.current = setTimeout(() => setActiveMegaMenu(null), 150);
-  }, []);
 
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md relative">
@@ -60,59 +46,28 @@ export default function Header() {
         <nav className="hidden lg:block">
           <ul className="flex items-center gap-8 list-none m-0 p-0">
 
-            {/* Platform — dropdown positions relative to header, not li */}
+            {/* Platform */}
             <li
-              className="static"
-              onMouseEnter={() => handleEnter("platform")}
-              onMouseLeave={handleLeave}
+              className="relative"
+              onMouseEnter={() => setActiveMegaMenu("platform")}
+              onMouseLeave={() => setActiveMegaMenu(null)}
             >
-              <button className="flex items-center gap-2 text-base font-medium py-7">
+              <button className="flex items-center gap-2 text-base font-medium">
                 Platform
                 <FiChevronDown className={`transition-transform ${activeMegaMenu === "platform" ? "rotate-180" : ""}`} />
               </button>
-
-              {activeMegaMenu === "platform" && (
-                <>
-                  {/* Invisible bridge — full width, covers gap between nav and dropdown */}
-                  <div className="absolute inset-x-0 top-20 h-4" />
-                  <div className="absolute left-1/2 -translate-x-1/2 top-[calc(5rem+16px)]">
-                    <MegaMenu
-                      title="Platform"
-                      items={platformItems}
-                      buttonText="Start Free"
-                      buttonlink="/start-free"
-                      onClose={() => setActiveMegaMenu(null)}
-                    />
-                  </div>
-                </>
-              )}
             </li>
 
-            {/* Solutions — dropdown positions relative to header, not li */}
+            {/* Solutions */}
             <li
-              className="static"
-              onMouseEnter={() => handleEnter("solutions")}
-              onMouseLeave={handleLeave}
+              className="relative"
+              onMouseEnter={() => setActiveMegaMenu("solutions")}
+              onMouseLeave={() => setActiveMegaMenu(null)}
             >
-              <button className="flex items-center gap-2 text-base font-medium py-7">
+              <button className="flex items-center gap-2 text-base font-medium">
                 Solutions
                 <FiChevronDown className={`transition-transform ${activeMegaMenu === "solutions" ? "rotate-180" : ""}`} />
               </button>
-
-              {activeMegaMenu === "solutions" && (
-                <>
-                  <div className="absolute inset-x-0 top-20 h-4" />
-                  <div className="absolute left-1/2 -translate-x-1/2 top-[calc(5rem+16px)]">
-                    <MegaMenu
-                      title="Solutions"
-                      items={solutionItems}
-                      buttonText="Talk to Sales"
-                      buttonlink="/contact-sales"
-                      onClose={() => setActiveMegaMenu(null)}
-                    />
-                  </div>
-                </>
-              )}
             </li>
 
             {[
@@ -145,7 +100,7 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* FIX 3: Mobile Menu with accordion dropdowns */}
       {open && (
         <div className="border-t border-border bg-background lg:hidden">
           <div className="space-y-1 px-4 py-6">
@@ -164,7 +119,7 @@ export default function Header() {
                   {platformItems.map((item) => {
                     const Icon = item.icon;
                     return (
-                      <Link key={item.title} href={item.href} onClick={() => setOpen(false)} className="flex items-start gap-2">
+                      <div key={item.title} className="flex items-start gap-2">
                         <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EEF4F2]">
                           <Icon size={16} className="text-[#0D5C54]" />
                         </div>
@@ -172,7 +127,7 @@ export default function Header() {
                           <p className="text-sm font-semibold leading-tight">{item.title}</p>
                           <p className="text-xs text-muted-foreground">{item.desc}</p>
                         </div>
-                      </Link>
+                      </div>
                     );
                   })}
                 </div>
@@ -193,7 +148,7 @@ export default function Header() {
                   {solutionItems.map((item) => {
                     const Icon = item.icon;
                     return (
-                      <Link key={item.title} href={item.href} onClick={() => setOpen(false)} className="flex items-start gap-2">
+                      <div key={item.title} className="flex items-start gap-2">
                         <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EEF4F2]">
                           <Icon size={16} className="text-[#0D5C54]" />
                         </div>
@@ -201,7 +156,7 @@ export default function Header() {
                           <p className="text-sm font-semibold leading-tight">{item.title}</p>
                           <p className="text-xs text-muted-foreground">{item.desc}</p>
                         </div>
-                      </Link>
+                      </div>
                     );
                   })}
                 </div>
@@ -226,17 +181,32 @@ export default function Header() {
           </div>
         </div>
       )}
+      {activeMegaMenu && (
+        <div
+          className="absolute left-1/2 -translate-x-1/2 z-50"
+          style={{ top: "80px" }}
+          onMouseEnter={() => setActiveMegaMenu(activeMegaMenu)}
+          onMouseLeave={() => setActiveMegaMenu(null)}
+        >
+          {activeMegaMenu === "platform" && (
+            <MegaMenu title="Platform" items={platformItems} buttonText="Start Free" buttonlink="/start-free" />
+          )}
+          {activeMegaMenu === "solutions" && (
+            <MegaMenu title="Solutions" items={solutionItems} buttonText="Talk to Sales" buttonlink="/contact-sales" />
+          )}
+        </div>
+      )}
     </header>
   );
 }
 
-function MegaMenu({ title, items, buttonText, buttonlink ,onClose}: { title: string; items: typeof platformItems; buttonText: string; buttonlink: string; onClose: () => void }) {
+function MegaMenu({ title, items, buttonText, buttonlink }: { title: string; items: any[]; buttonText: string; buttonlink: string }) {
   return (
     <div className="w-[min(1000px,90vw)] overflow-hidden rounded-[28px] border border-[#E5DDD4] bg-white shadow-[0_25px_80px_rgba(0,0,0,0.08)] dark:border-slate-700 dark:bg-slate-900">
       <div className="p-8">
         <div className="mb-10 flex items-center justify-between">
           <span className="text-xs font-bold uppercase tracking-[4px] text-slate-500">{title}</span>
-          <Link href={`/${title.toLowerCase()}`} onClick={onClose}>
+          <Link href={`/${title.toLowerCase()}`}>
             <button className="font-medium text-[#F26B45]">View {title} →</button>
           </Link>
         </div>
@@ -245,18 +215,18 @@ function MegaMenu({ title, items, buttonText, buttonlink ,onClose}: { title: str
           {items.map((item) => {
             const Icon = item.icon;
             return (
-              <Link key={item.title} href={item.href} className="group block rounded-xl p-2 -m-2 transition hover:bg-[#F8F5F1]" onClick={onClose}>
+              <div key={item.title} className="group cursor-pointer">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#EEF4F2] dark:bg-slate-800">
                   <Icon size={20} className="text-[#0D5C54]" />
                 </div>
                 <h4 className="mb-2 flex items-center gap-2 text-lg font-semibold">
                   {item.title}
-                  {"badge" in item && item.badge && (
-                    <span className="rounded-full bg-[#F26B45] px-2 py-0.5 text-[10px] text-white">{item.badge}</span>
+                  {item.badge && (
+                    <span className="rounded-full bg-[#F26B45] px-2 py-0.5 text-[10px] text-white">NEW</span>
                   )}
                 </h4>
                 <p className="text-sm text-slate-500">{item.desc}</p>
-              </Link>
+              </div>
             );
           })}
         </div>
@@ -264,7 +234,7 @@ function MegaMenu({ title, items, buttonText, buttonlink ,onClose}: { title: str
 
       <div className="flex items-center justify-between border-t border-[#E5DDD4] bg-[#F8F5F1] px-10 py-5 dark:border-slate-700 dark:bg-slate-800">
         <p className="text-sm text-slate-600 dark:text-slate-300">Use one product or build the full stack.</p>
-        <Link href={buttonlink} onClick={onClose}>
+        <Link href={buttonlink}>
           <button className="rounded-full bg-[#F26B45] px-8 py-3 font-semibold text-white">{buttonText}</button>
         </Link>
       </div>

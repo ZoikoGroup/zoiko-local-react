@@ -1,20 +1,7 @@
 "use client";
-import { Metadata } from 'next';
 import { useState } from 'react';
 import { FiCheck, FiMapPin, FiMic, FiPlus, FiMinus } from "react-icons/fi";
 import { PiPaintBrush } from 'react-icons/pi';
-
-
-
-
-export const metadata: Metadata = {
-  title: "Best Google Voice Alternative for Business | Zoiko Local",
-  description:
-    "Looking for the best Google Voice alternative for business? Zoiko Local offers local numbers, calling, video, and an AI Receptionist in one modern platform.",
-};
-
-
-
 
 const fitChecklist = [
     "You need local numbers in more than one country",
@@ -112,10 +99,7 @@ export default function Googlevoice() {
                             {/* Buttons */}
 
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                               <a href="/get-a-local-number">
-                               
-                               
-                               <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                               bg-[#EB643F]
                               text-white
@@ -127,10 +111,8 @@ export default function Googlevoice() {
 
                                     Get a Local Number →
                                 </button>
-                               
-                               </a> 
 
-                                <a href="/zoiko-local-acceptable-use"><button
+                                <button
                                     className="h-12 px-8 rounded-xl
                               border border-[#0F6660]
                               dark:border-slate-600
@@ -145,7 +127,7 @@ export default function Googlevoice() {
                                 >
 
                                     See if Zoiko Local Fits
-                                </button></a>
+                                </button>
                             </div>
 
                             {/* Migration */}
@@ -153,9 +135,9 @@ export default function Googlevoice() {
                             <p className="mt-8 text-sm text-gray-500 dark:text-gray-400">
                                 Also replacing a Skype Number?
 
-                               <a href="/switch-from-skype"> <span className="ml-1 text-[#EB643F] font-medium cursor-pointer hover:underline">
+                                <span className="ml-1 text-[#EB643F] font-medium cursor-pointer hover:underline">
                                     Switch from Skype →
-                                </span></a>
+                                </span>
                             </p>
 
                             {/* Bottom Features */}
@@ -259,7 +241,7 @@ export default function Googlevoice() {
                                 ))}
                             </div>
 
-                           <a href="/get-a-local-number"> <button
+                            <button
                                 className="mt-10 h-12 px-8 rounded-xl
                                 bg-[#EB643F]
                                 text-white
@@ -270,7 +252,7 @@ export default function Googlevoice() {
                             >
 
                                 Get a Local Number →
-                            </button></a>
+                            </button>
                         </div>
 
                         {/* RIGHT */}
@@ -486,7 +468,7 @@ export default function Googlevoice() {
 
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
                                 {/* Primary */}
-                               <a href="/get-a-local-number"> <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -498,7 +480,7 @@ export default function Googlevoice() {
                                 >
 
                                     Get a Local Number →
-                                </button></a>
+                                </button>
 
                                 {/* Secondary */}
                                 <button
@@ -535,9 +517,9 @@ export default function Googlevoice() {
 
                                 Replacing a Skype Number too?
 
-                              <a href="/switch-from-skype">  <span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
+                                <span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
                                     Switch from Skype →
-                                </span></a>
+                                </span>
                             </p>
                         </div>
                     </div>

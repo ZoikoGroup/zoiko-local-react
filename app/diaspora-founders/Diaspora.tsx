@@ -1,27 +1,27 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import {
-  FiCheck, FiPhone, FiMapPin, FiUsers, FiClock, FiGlobe,
-  FiShield, FiVideo, FiCornerDownRight, FiTrendingUp,
-  FiCpu, FiBriefcase, FiShoppingCart, FiZap, FiChevronDown,
-} from "react-icons/fi";
-import type { IconType } from "react-icons";
 
-// ─── ICON BOX ────────────────────────────────────────────────────────────────
-function IconBox({ icon: Icon, bg = "bg-[#fbe1da]", size = 18, className = "h-11 w-11" }: {
-  icon: IconType; bg?: string; size?: number; className?: string;
+/**
+ * Drop your own assets in /public; paths below resolve from there
+ * (e.g. src="/icons/check.svg" → public/icons/check.svg). Swap any path.
+ * Plain <img> so no next/image config is required.
+ */
+function Img({
+  src,
+  alt = "",
+  className = "h-10 w-10 rounded-xl",
+  cover = false,
+}: {
+  src: string;
+  alt?: string;
+  className?: string;
+  cover?: boolean;
 }) {
   return (
-    <span className={`inline-flex shrink-0 items-center justify-center rounded-xl ${bg} dark:bg-white/5 ${className}`}>
-      <Icon size={size} className="text-[#d9603f]" />
-    </span>
+    <img src={src} alt={alt} loading="lazy" className={`${cover ? "object-cover" : "object-contain"} ${className}`} />
   );
 }
-
-const FLAGS: Record<string, string> = {
-  us: "🇺🇸", gb: "🇬🇧", jm: "🇯🇲", ca: "🇨🇦", ng: "🇳🇬", za: "🇿🇦",
-};
 
 function Eyebrow({ children, pill = false }: { children: ReactNode; pill?: boolean }) {
   const inner = (
@@ -34,8 +34,16 @@ function Eyebrow({ children, pill = false }: { children: ReactNode; pill?: boole
   return <p className="inline-flex rounded-full bg-[#f6e4dc] px-4 py-1.5 dark:bg-[#d9603f]/15">{inner}</p>;
 }
 
-function SectionHead({ eyebrow, title, sub, onDark = false }: {
-  eyebrow: string; title: ReactNode; sub?: string; onDark?: boolean;
+function SectionHead({
+  eyebrow,
+  title,
+  sub,
+  onDark = false,
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  sub?: string;
+  onDark?: boolean;
 }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
@@ -52,17 +60,19 @@ function SectionHead({ eyebrow, title, sub, onDark = false }: {
   );
 }
 
-const coralBtn = "inline-flex items-center gap-2 rounded-full bg-[#d9603f] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]";
-const lightBtn = "inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#1c2b26] shadow-sm ring-1 ring-black/5 transition-colors hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:ring-white/10";
-const outlineDarkBtn = "inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10";
+const coralBtn =
+  "inline-flex items-center gap-2 rounded-full bg-[#d9603f] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]";
+const lightBtn =
+  "inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#1c2b26] shadow-sm ring-1 ring-black/5 transition-colors hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:ring-white/10";
+const outlineDarkBtn =
+  "inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10";
 const featureCard = "rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10";
 
+// ─── SHARED IMAGE PATHS ───────────────────────────────────────────────────────
+const IC = { check: "/icons/check.svg" };
+
 // ─── DATA ────────────────────────────────────────────────────────────────────
-const heroChecks = [
-  "Local numbers for home and growth markets",
-  "Business calling across borders",
-  "AI Receptionist support across time zones",
-];
+const heroChecks = ["Local numbers for home and growth markets", "Business calling across borders", "AI Receptionist support across time zones"];
 
 const heroRouting = [
   { label: "Founder · abroad", status: "Mobile", dot: "bg-[#d9603f]" },
@@ -70,20 +80,20 @@ const heroRouting = [
   { label: "AI Receptionist", status: "Time-zone", dot: "bg-[#e8a03b]", highlight: true },
 ];
 
-const gapCards: { title: string; desc: string; icon: IconType }[] = [
-  { title: "Foreign numbers create hesitation", desc: "Customers may ignore unfamiliar international numbers or doubt whether the business is truly reachable.", icon: FiGlobe },
-  { title: "Personal numbers do not scale", desc: "Mobile- or WhatsApp-only communication feels informal and gets harder to manage as you grow.", icon: FiPhone },
-  { title: "Time zones create missed opportunities", desc: "Customers call during their local hours while the founder is offline elsewhere.", icon: FiClock },
-  { title: "Local trust matters", desc: "Customers, suppliers and partners feel more confident reaching a familiar local number.", icon: FiShield },
+const gapCards = [
+  { title: "Foreign numbers create hesitation", desc: "Customers may ignore unfamiliar international numbers or doubt whether the business is truly reachable.", icon: "/icons/globe.svg" },
+  { title: "Personal numbers do not scale", desc: "Mobile- or WhatsApp-only communication feels informal and gets harder to manage as you grow.", icon: "/icons/phone.svg" },
+  { title: "Time zones create missed opportunities", desc: "Customers call during their local hours while the founder is offline elsewhere.", icon: "/icons/clock.svg" },
+  { title: "Local trust matters", desc: "Customers, suppliers and partners feel more confident reaching a familiar local number.", icon: "/icons/shield.svg" },
 ];
 
-const solution: { title: string; desc: string; icon: IconType; bg: string }[] = [
-  { title: "Local numbers in key markets", desc: "Give customers a familiar number in the country or region they know.", icon: FiMapPin, bg: "bg-[#fbe9e3]" },
-  { title: "Business calling from anywhere", desc: "Make and receive calls without exposing your personal mobile.", icon: FiPhone, bg: "bg-[#fbe9e3]" },
-  { title: "Cross-border call routing", desc: "Route to founders, team members, departments or fallback paths.", icon: FiCornerDownRight, bg: "bg-[#fbe9e3]" },
-  { title: "Video for trust-building", desc: "Move from voice to video when partners or suppliers need face-to-face confidence.", icon: FiVideo, bg: "bg-[#e3f3ee]" },
-  { title: "AI Receptionist for missed calls", desc: "Capture inquiries when unavailable, traveling, or in another time zone.", icon: FiCpu, bg: "bg-[#fdf0db]" },
-  { title: "Global coverage support", desc: "Build presence across priority markets as the business grows.", icon: FiGlobe, bg: "bg-[#fbe9e3]" },
+const solution = [
+  { title: "Local numbers in key markets", desc: "Give customers a familiar number in the country or region they know.", icon: "/icons/pin.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Business calling from anywhere", desc: "Make and receive calls without exposing your personal mobile.", icon: "/icons/phone.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Cross-border call routing", desc: "Route to founders, team members, departments or fallback paths.", icon: "/icons/route.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Video for trust-building", desc: "Move from voice to video when partners or suppliers need face-to-face confidence.", icon: "/icons/video.svg", tint: "bg-[#e3f3ee]" },
+  { title: "AI Receptionist for missed calls", desc: "Capture inquiries when unavailable, traveling, or in another time zone.", icon: "/icons/ai-bot.svg", tint: "bg-[#fdf0db]" },
+  { title: "Global coverage support", desc: "Build presence across priority markets as the business grows.", icon: "/icons/globe.svg", tint: "bg-[#fbe9e3]" },
 ];
 
 const steps = [
@@ -95,20 +105,20 @@ const steps = [
   { n: 6, title: "Serve customers across borders", desc: "Use presence, calling, video and routing from anywhere." },
 ];
 
-const useCases: { title: string; desc: string; icon: IconType; bg: string }[] = [
-  { title: "Home-market businesses", desc: "Serve customers in your country of origin while operating from abroad.", icon: FiMapPin, bg: "bg-[#fbe9e3]" },
-  { title: "Cross-border consultants", desc: "Support clients across countries with a professional local calling identity.", icon: FiBriefcase, bg: "bg-[#fbe9e3]" },
-  { title: "Community-led businesses", desc: "Stay reachable to customers, families, suppliers and community networks.", icon: FiUsers, bg: "bg-[#fbe9e3]" },
-  { title: "Import and export operators", desc: "Maintain local presence for suppliers, customers and logistics partners.", icon: FiShoppingCart, bg: "bg-[#fbe9e3]" },
-  { title: "Diaspora service providers", desc: "Support legal, financial, travel, education, property or business services across borders.", icon: FiShield, bg: "bg-[#fbe9e3]" },
-  { title: "Market-entry founders", desc: "Test demand in a new country before forming a local office or hiring.", icon: FiTrendingUp, bg: "bg-[#fbe9e3]" },
+const useCases = [
+  { title: "Home-market businesses", desc: "Serve customers in your country of origin while operating from abroad.", icon: "/icons/pin.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Cross-border consultants", desc: "Support clients across countries with a professional local calling identity.", icon: "/icons/briefcase.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Community-led businesses", desc: "Stay reachable to customers, families, suppliers and community networks.", icon: "/icons/users.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Import and export operators", desc: "Maintain local presence for suppliers, customers and logistics partners.", icon: "/icons/cart.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Diaspora service providers", desc: "Support legal, financial, travel, education, property or business services across borders.", icon: "/icons/shield-check.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Market-entry founders", desc: "Test demand in a new country before forming a local office or hiring.", icon: "/icons/trend.svg", tint: "bg-[#fbe9e3]" },
 ];
 
-const platform: { name: string; desc: string; cta: string; icon: IconType; bg: string; href: string }[] = [
-  { name: "Local Numbers", desc: "Build local presence in markets your customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]", href: "/get-a-local-number" },
-  { name: "Calling", desc: "Make and receive business calls across borders with a professional identity.", cta: "Explore Calling", icon: FiPhone, bg: "bg-[#fbe9e3]", href: "/calling" },
-  { name: "Video", desc: "Build trust with customers, suppliers and partners through video.", cta: "Explore Video", icon: FiVideo, bg: "bg-[#e3f3ee]", href: "/video" },
-  { name: "AI Receptionist", desc: "Capture and route calls when busy, traveling or in another time zone.", cta: "Explore AI Receptionist", icon: FiCpu, bg: "bg-[#fdf0db]", href: "/ai-receptionist" },
+const platform = [
+  { name: "Local Numbers", desc: "Build local presence in markets your customers recognize.", cta: "Explore Local Numbers", icon: "/icons/pin.svg", tint: "bg-[#fbe9e3]" },
+  { name: "Calling", desc: "Make and receive business calls across borders with a professional identity.", cta: "Explore Calling", icon: "/icons/phone.svg", tint: "bg-[#fbe9e3]" },
+  { name: "Video", desc: "Build trust with customers, suppliers and partners through video.", cta: "Explore Video", icon: "/icons/video.svg", tint: "bg-[#e3f3ee]" },
+  { name: "AI Receptionist", desc: "Capture and route calls when busy, traveling or in another time zone.", cta: "Explore AI Receptionist", icon: "/icons/ai-bot.svg", tint: "bg-[#fdf0db]" },
 ];
 
 const compare = [
@@ -131,22 +141,22 @@ const presence = [
 ];
 
 const markets = [
-  { name: "United States", flag: "us" },
-  { name: "United Kingdom", flag: "gb" },
-  { name: "Jamaica", flag: "jm" },
-  { name: "Canada", flag: "ca" },
-  { name: "Nigeria", flag: "ng" },
-  { name: "South Africa", flag: "za" },
+  { name: "United States", flag: "/flags/us.svg" },
+  { name: "United Kingdom", flag: "/flags/gb.svg" },
+  { name: "Jamaica", flag: "/flags/jm.svg" },
+  { name: "Canada", flag: "/flags/ca.svg" },
+  { name: "Nigeria", flag: "/flags/ng.svg" },
+  { name: "South Africa", flag: "/flags/za.svg" },
 ];
 const regions = ["Caribbean", "Europe", "Africa", "North America"];
 
-const scaling: { title: string; desc: string; icon: IconType }[] = [
-  { title: "Add local numbers by market", desc: "Expand presence as customer demand grows.", icon: FiMapPin },
-  { title: "Separate inquiry types", desc: "Separate sales, support, partnerships and general inquiries.", icon: FiCornerDownRight },
-  { title: "Add team members or assistants", desc: "Route calls beyond the founder as operations mature.", icon: FiUsers },
-  { title: "Route by time zone or region", desc: "Support customers across business hours and regions.", icon: FiGlobe },
-  { title: "Add AI Receptionist", desc: "Protect against missed-call leakage.", icon: FiCpu },
-  { title: "Use video for high-trust conversations", desc: "Build confidence with customers, suppliers and partners.", icon: FiVideo },
+const scaling = [
+  { title: "Add local numbers by market", desc: "Expand presence as customer demand grows.", icon: "/icons/pin.svg" },
+  { title: "Separate inquiry types", desc: "Separate sales, support, partnerships and general inquiries.", icon: "/icons/route.svg" },
+  { title: "Add team members or assistants", desc: "Route calls beyond the founder as operations mature.", icon: "/icons/users.svg" },
+  { title: "Route by time zone or region", desc: "Support customers across business hours and regions.", icon: "/icons/globe.svg" },
+  { title: "Add AI Receptionist", desc: "Protect against missed-call leakage.", icon: "/icons/ai-bot.svg" },
+  { title: "Use video for high-trust conversations", desc: "Build confidence with customers, suppliers and partners.", icon: "/icons/video.svg" },
 ];
 
 const faqs = [
@@ -161,12 +171,11 @@ const faqs = [
 ];
 
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
-function DiasporaFounders() {
+function Diasporafounders() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
     <main className="bg-white font-sans text-[#1c2b26] dark:bg-gray-900 dark:text-gray-100">
-
       {/* ─── HERO ─── */}
       <section className="bg-[#f6ece5] px-4 py-20 sm:px-6 lg:px-8 dark:bg-gray-950">
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
@@ -182,17 +191,17 @@ function DiasporaFounders() {
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <button className={coralBtn}>Build Your Cross-Border Presence</button>
-             <a href="/get-a-local-number"><button className={lightBtn}>Get a Local Number</button></a>
+              <button className={lightBtn}>Get a Local Number</button>
             </div>
-            <a href="/plans-and-pricing" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">See Pricing →</a>
+            <a href="#" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">See Pricing →</a>
             <div className="mt-5 flex max-w-md items-center justify-between gap-4 rounded-2xl bg-white px-5 py-4 text-sm shadow-sm ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
               <span className="text-gray-600 dark:text-gray-400">Replacing Skype Number for international business calls?</span>
-              <a href="/switch-from-skype" className="shrink-0 font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
+              <a href="#" className="shrink-0 font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
             </div>
             <ul className="mt-6 space-y-2">
               {heroChecks.map((c) => (
                 <li key={c} className="flex items-center gap-2 text-sm font-medium dark:text-gray-300">
-                  <FiCheck size={14} className="shrink-0 text-[#d9603f]" strokeWidth={3} /> {c}
+                  <Img src={IC.check} alt="" className="h-4 w-4" /> {c}
                 </li>
               ))}
             </ul>
@@ -201,7 +210,7 @@ function DiasporaFounders() {
           {/* Presence card */}
           <div className="relative">
             <div className="absolute -top-6 left-6 z-10 flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold shadow-lg ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-              <FiMapPin size={14} className="text-[#d9603f]" /> Presence in 3 markets
+              <Img src="/icons/pin.svg" alt="" className="h-4 w-4" /> Presence in 3 markets
             </div>
             <div className="rounded-3xl bg-white p-5 shadow-xl ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
               <div className="flex items-start justify-between rounded-2xl bg-[#16233a] p-5 text-white">
@@ -209,11 +218,11 @@ function DiasporaFounders() {
                   <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Home-market number</p>
                   <p className="mt-1 text-xl font-extrabold">+1 (876) 555-0117</p>
                 </div>
-                <span className="text-2xl">🇯🇲</span>
+                <Img src="/flags/jm.svg" alt="Jamaica" cover className="h-7 w-9 rounded-md" />
               </div>
               <div className="mt-3 flex items-center gap-3 rounded-2xl bg-[#fbf2ee] p-4 dark:bg-gray-900/40">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#d9603f]">
-                  <FiPhone size={16} className="text-white" />
+                  <Img src="/icons/phone.svg" alt="" className="h-5 w-5" />
                 </span>
                 <div>
                   <p className="text-sm font-bold dark:text-white">Incoming · Customer market</p>
@@ -243,7 +252,7 @@ function DiasporaFounders() {
               </p>
             </div>
             <div className="absolute -bottom-5 right-4 flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold shadow-lg ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-              <FiShield size={14} className="text-[#d9603f]" /> Familiar local line
+              <Img src="/icons/shield-check.svg" alt="" className="h-4 w-4" /> Familiar local line
             </div>
           </div>
         </div>
@@ -260,7 +269,9 @@ function DiasporaFounders() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {gapCards.map((g) => (
               <div key={g.title} className={featureCard}>
-                <IconBox icon={g.icon} bg="bg-[#fbe1da]" />
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#fbe1da] dark:bg-[#d9603f]/15">
+                  <Img src={g.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{g.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{g.desc}</p>
               </div>
@@ -280,7 +291,9 @@ function DiasporaFounders() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {solution.map((s) => (
               <div key={s.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBox icon={s.icon} bg={s.bg} />
+                <span className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${s.tint} dark:bg-white/5`}>
+                  <Img src={s.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{s.desc}</p>
               </div>
@@ -315,7 +328,9 @@ function DiasporaFounders() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {useCases.map((u) => (
               <div key={u.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBox icon={u.icon} bg={u.bg} />
+                <span className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${u.tint} dark:bg-white/5`}>
+                  <Img src={u.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{u.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{u.desc}</p>
               </div>
@@ -331,25 +346,30 @@ function DiasporaFounders() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {platform.map((p) => (
               <div key={p.name} className="flex flex-col rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBox icon={p.icon} bg={p.bg} />
+                <span className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${p.tint} dark:bg-white/5`}>
+                  <Img src={p.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{p.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{p.desc}</p>
-                <a href={p.href} className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
+                <a href="#" className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── WHY UPGRADE ─── */}
+      {/* ─── WHY UPGRADE (comparison) ─── */}
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8 dark:bg-gray-900">
         <div className="mx-auto max-w-5xl">
-          <SectionHead eyebrow="Why upgrade" title="Personal numbers and informal apps are not enough for a cross-border business." />
+          <SectionHead
+            eyebrow="Why upgrade"
+            title="Personal numbers and informal apps are not enough for a cross-border business."
+          />
           <div className="mt-12 overflow-hidden rounded-2xl ring-1 ring-black/5 dark:ring-white/10">
             <div className="grid grid-cols-2">
               <div className="bg-[#f3efe7] px-5 py-4 text-sm font-bold dark:bg-gray-800 dark:text-white">Personal Numbers &amp; Informal Apps</div>
               <div className="flex items-center gap-2 bg-[#d9603f] px-5 py-4 text-sm font-bold text-white">
-                <FiZap size={14} /> Zoiko Local
+                <Img src="/icons/spark.svg" alt="" className="h-4 w-4" /> Zoiko Local
               </div>
             </div>
             {compare.map((row, i) => (
@@ -359,7 +379,7 @@ function DiasporaFounders() {
               </div>
             ))}
             <div className="bg-[#f3efe7] py-6 text-center dark:bg-gray-800">
-             <a href="/plans-and-pricing"><button className={coralBtn}>Upgrade to a Professional Local Presence</button></a>
+              <button className={coralBtn}>Upgrade to a Professional Local Presence</button>
             </div>
           </div>
         </div>
@@ -396,7 +416,7 @@ function DiasporaFounders() {
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {markets.map((m) => (
               <span key={m.name} className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white">
-                <span className="text-base leading-none">{FLAGS[m.flag]}</span> {m.name}
+                <Img src={m.flag} alt="" cover className="h-4 w-5 rounded-sm" /> {m.name}
               </span>
             ))}
           </div>
@@ -406,8 +426,8 @@ function DiasporaFounders() {
             ))}
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-           <a href="/global-coverage"> <button className={lightBtn}>Explore Global Coverage</button></a>
-           <a href="/resources"> <button className={outlineDarkBtn}>Request a Market</button></a>
+            <button className={lightBtn}>Explore Global Coverage</button>
+            <button className={outlineDarkBtn}>Request a Market</button>
           </div>
         </div>
       </section>
@@ -423,14 +443,16 @@ function DiasporaFounders() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {scaling.map((s) => (
               <div key={s.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBox icon={s.icon} bg="bg-[#fbe9e3]" />
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#fbe9e3] dark:bg-white/5">
+                  <Img src={s.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{s.desc}</p>
               </div>
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-           <a href="/plans-and-pricing"> <button className={coralBtn}>See Pricing</button></a>
+            <button className={coralBtn}>See Pricing</button>
           </div>
         </div>
       </section>
@@ -450,8 +472,12 @@ function DiasporaFounders() {
                     aria-expanded={isOpen}
                   >
                     <span className="text-sm font-semibold text-[#1c2b26] dark:text-white">{f.q}</span>
-                    <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition ${isOpen ? "bg-[#d9603f] text-white" : "text-[#d9603f]"}`}>
-                      <FiChevronDown size={16} className={`transition-transform ${isOpen ? "rotate-180" : ""}`} />
+                    <span
+                      className={`flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full text-lg leading-none ${
+                        isOpen ? "bg-[#d9603f] text-white" : "text-[#d9603f]"
+                      }`}
+                    >
+                      {isOpen ? "×" : "+"}
                     </span>
                   </button>
                   {isOpen && <p className="px-5 pb-5 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{f.a}</p>}
@@ -469,16 +495,17 @@ function DiasporaFounders() {
             Your business can sound local, even when you build globally.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/70">
-            Give customers a familiar number, a professional calling experience, and a trusted way to reach your business across borders.
+            Give customers a familiar number, a professional calling experience, and a trusted way to reach your business
+            across borders.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <button className={lightBtn}>Build Your Cross-Border Presence</button>
-           <a href="/get-a-local-number"> <button className={outlineDarkBtn}>Get a Local Number</button></a>
-           <a href="/plans-and-pricing"> <button className={outlineDarkBtn}>See Pricing</button></a>
+            <button className={outlineDarkBtn}>Get a Local Number</button>
+            <button className={outlineDarkBtn}>See Pricing</button>
           </div>
           <p className="mt-6 text-sm text-white/70">
             Replacing Skype Number?{" "}
-            <a href="/switch-from-skype" className="font-semibold text-white hover:underline">Switch from Skype →</a>
+            <a href="#" className="font-semibold text-white hover:underline">Switch from Skype →</a>
           </p>
         </div>
       </section>
@@ -486,5 +513,5 @@ function DiasporaFounders() {
   );
 }
 
-export default DiasporaFounders;
-export { DiasporaFounders };
+export default Diasporafounders;
+export { Diasporafounders };

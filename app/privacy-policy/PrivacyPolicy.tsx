@@ -439,7 +439,7 @@ const sections: Section[] = [
             <FiMail size={16} /> privacy@zoikolocal.com
           </a>
           <a
-            href="#"
+            href="/contact-us"
             className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3.5 text-[13.5px] font-semibold text-[#1c2b26] transition hover:border-gray-400 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
           >
             <FiExternalLink size={16} /> Submit a privacy request

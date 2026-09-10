@@ -106,7 +106,7 @@ export default function Emergencycalling() {
                         <div className="mt-10 flex flex-col sm:flex-row gap-4">
 
                             {/* Primary */}
-                       <a href="/virtual-phone-numbers">
+
                             <button
                                 className="h-12 px-8 rounded-xl
                     bg-[#EB643F]
@@ -121,10 +121,10 @@ export default function Emergencycalling() {
 
                                 Read the details →
 
-                            </button></a>
+                            </button>
 
                             {/* Secondary */}
-                          <a href="/contact-support">
+
                             <button
                                 className="h-12 px-8 rounded-xl
                     border border-[#0F6660]
@@ -142,7 +142,7 @@ export default function Emergencycalling() {
 
                                 Contact Support
 
-                            </button></a>
+                            </button>
 
                         </div>
 
@@ -252,7 +252,7 @@ export default function Emergencycalling() {
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
 
                                 {/* Primary */}
-                          <a href="/contact-support">      <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -265,10 +265,10 @@ export default function Emergencycalling() {
                                 >
 
                                     Contact Support →
-                                </button></a>
+                                </button>
 
                                 {/* Secondary */}
-                            <a href="/contact-us">    <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                         border border-white/25
                         text-white
@@ -280,7 +280,7 @@ export default function Emergencycalling() {
                                 >
 
                                     Find Help
-                                </button></a>
+                                </button>
                             </div>
                         </div>
                     </div>
