@@ -1,12 +1,11 @@
-// import { Business } from "./Buisiness";
-import Business from "./Buisiness";
+import { Buisiness } from "./Buisiness";
 
 export default function page(){
 return(
 
 
     <>
-    <Business/>
+    <Buisiness/>
     </>
 );
 

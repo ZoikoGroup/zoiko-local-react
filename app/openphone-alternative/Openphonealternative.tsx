@@ -101,7 +101,7 @@ export default function Openphonealternative() {
                             {/* Buttons */}
 
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                                <a href="/get-a-local-number"><button
+                                <button
                                     className="h-12 px-8 rounded-xl
                               bg-[#EB643F]
                               text-white
@@ -112,9 +112,9 @@ export default function Openphonealternative() {
                                 >
 
                                     Get a Local Number →
-                                </button></a>
+                                </button>
 
-                                <a href=""><button
+                                <button
                                     className="h-12 px-8 rounded-xl
                               border border-[#0F6660]
                               dark:border-slate-600
@@ -129,7 +129,7 @@ export default function Openphonealternative() {
                                 >
 
                                     See if Zoiko Local Fits
-                                </button></a>
+                                </button>
                             </div>
 
                             {/* Migration */}
@@ -243,7 +243,7 @@ export default function Openphonealternative() {
                                 ))}
                             </div>
 
-                         <a href="get-a-local-number">   <button
+                            <button
                                 className="mt-10 h-12 px-8 rounded-xl
                                 bg-[#EB643F]
                                 text-white
@@ -254,7 +254,7 @@ export default function Openphonealternative() {
                             >
 
                                 Get a Local Number →
-                            </button></a>
+                            </button>
                         </div>
 
                         {/* RIGHT */}
@@ -470,7 +470,7 @@ export default function Openphonealternative() {
 
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
                                 {/* Primary */}
-       <a href="/get-a-local-number"> <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -483,9 +483,9 @@ export default function Openphonealternative() {
 
                                     Get a Local Number →
                                 </button>
-</a>
+
                                 {/* Secondary */}
-                                <a href="/plans-and-pricing"><button
+                                <button
                                     className="h-12 px-8 rounded-xl
                         bg-white
                         text-[#123533]
@@ -496,10 +496,10 @@ export default function Openphonealternative() {
                                 >
 
                                     See Pricing
-                                </button></a>
+                                </button>
 
                                 {/* Outline */}
-                               <a href="/contact-sales"> <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                         border border-white/25
                         text-white
@@ -511,7 +511,7 @@ export default function Openphonealternative() {
                                 >
 
                                     Talk to Sales
-                                </button></a>
+                                </button>
                             </div>
 
                             {/* Footer Text */}

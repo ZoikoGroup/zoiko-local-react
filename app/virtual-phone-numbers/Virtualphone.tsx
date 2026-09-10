@@ -1,19 +1,6 @@
 import React from 'react';
 import { FiCheck, FiMapPin, FiPhone, FiMic, } from "react-icons/fi";
 import Faq from '../Components/Faq';
-import { Metadata } from 'next';
-
-
-
-
-export const metadata: Metadata = {
-  title: "Get Virtual Phone Numbers for Business | Zoiko Local",
-  description:
-    "Get virtual phone numbers for business with Zoiko Local. Choose local numbers, manage calls, and stay connected with customers from anywhere.",
-};
-
-
-
 
 const howItWorks = [
     {
@@ -112,7 +99,7 @@ export default function Virtualphone() {
                             {/* Buttons */}
 
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                                   <a href="/get-a-local-number"> <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -124,8 +111,8 @@ export default function Virtualphone() {
                                 >
                                     Get a Local Number →
                                 </button>
-</a>
-                                <a href="/about-us"><button
+
+                                <button
                                     className="h-12 px-8 rounded-xl
                         border border-[#0F6660]
                         dark:border-slate-600
@@ -140,7 +127,7 @@ export default function Virtualphone() {
                         transition-all duration-300"
                                 >
                                     How it works
-                                </button></a>
+                                </button>
                             </div>
 
                             {/* Helper */}
@@ -148,9 +135,9 @@ export default function Virtualphone() {
                             <p className="mt-8 text-sm text-gray-500 dark:text-gray-400">
 
                                 Replacing a Skype Number?
-                              <a href="/switch-from-skype">  <span className="ml-1 text-[#EB643F] font-medium hover:underline cursor-pointer">
+                                <span className="ml-1 text-[#EB643F] font-medium hover:underline cursor-pointer">
                                     Switch from Skype →
-                                </span></a>
+                                </span>
                             </p>
 
                             {/* Features */}
@@ -308,7 +295,7 @@ export default function Virtualphone() {
 
                             {/* Button */}
 
-                               <a href="/get-a-local-number"> <button
+                            <button
                                 className="mt-10 h-12 px-8 rounded-xl
                     bg-[#EB643F]
                     text-white
@@ -320,7 +307,7 @@ export default function Virtualphone() {
                     transition-all duration-300"
                             >
                                 Get a Local Number →
-                            </button></a>
+                            </button>
                         </div>
 
                         {/* Right */}
@@ -416,7 +403,7 @@ export default function Virtualphone() {
 
                                 {/* Primary */}
 
-                                   <a href="/get-a-local-number"><button
+                                <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -431,9 +418,9 @@ export default function Virtualphone() {
                                     Get a Local Number →
 
                                 </button>
-</a> 
+
                                 {/* Secondary */}
-<a href="/plans-and-pricing">
+
                                 <button
                                     className="h-12 px-8 rounded-xl
                         border border-white/20
@@ -447,11 +434,11 @@ export default function Virtualphone() {
 
                                     See Pricing
 
-                                </button></a>
+                                </button>
 
                                 {/* Third */}
 
-                             <a href="/contact-sales">   <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                         border border-white/20
                         text-white
@@ -464,7 +451,7 @@ export default function Virtualphone() {
 
                                     Talk to Sales
 
-                                </button></a>
+                                </button>
 
                             </div>
 
@@ -474,11 +461,11 @@ export default function Virtualphone() {
 
                                 Replacing a Skype Number?
 
-                             <a href="/switch-from-skype">   <span className="ml-1 text-[#F4A58E] font-medium cursor-pointer hover:underline">
+                                <span className="ml-1 text-[#F4A58E] font-medium cursor-pointer hover:underline">
 
                                     Switch from Skype →
 
-                                </span></a>
+                                </span>
 
                             </p>
 

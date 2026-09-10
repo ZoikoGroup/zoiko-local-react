@@ -1,17 +1,6 @@
 "use client";
-import { Metadata } from 'next';
 import { useState } from 'react';
 import { FiCheck, FiMapPin, FiMic, FiPlus, FiMinus } from "react-icons/fi";
-
-
-export const metadata: Metadata = {
-  title: "Best Teams Phone Alternative for Business | Zoiko Local",
-  description:
-    "Looking for a Teams Phone alternative for business? Zoiko Local offers local numbers, calling, video, and an AI Receptionist in one modern platform.",
-};
-
-
-
 
 
 const fitChecklist = [
@@ -123,7 +112,7 @@ export default function Teamsphone() {
                             {/* Buttons */}
 
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                                   <a href="/get-a-local-number"> <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -136,9 +125,7 @@ export default function Teamsphone() {
                                     Get a Local Number →
                                 </button>
 
-                                </a>
-
-                                <a href="/zoiko-local-terms"><button
+                                <button
                                     className="h-12 px-8 rounded-xl
                         border border-[#0F6660]
                         dark:border-slate-600
@@ -153,7 +140,7 @@ export default function Teamsphone() {
                                 >
 
                                     See if Zoiko Local Fits
-                                </button></a>
+                                </button>
                             </div>
 
                             {/* Migration */}
@@ -274,7 +261,7 @@ export default function Teamsphone() {
                                 ))}
                             </div>
 
-                               <a href="/get-a-local-number"> <button
+                            <button
                                 className="mt-10 h-12 px-8 rounded-xl
                     bg-[#EB643F]
                     text-white
@@ -286,8 +273,6 @@ export default function Teamsphone() {
 
                                 Get a Local Number →
                             </button>
-
-                            </a>
                         </div>
 
                         {/* RIGHT */}
@@ -502,7 +487,7 @@ export default function Teamsphone() {
 
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
                                 {/* Primary */}
-                                   <a href="/get-a-local-number"> <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -514,10 +499,10 @@ export default function Teamsphone() {
                                 >
 
                                     Get a Local Number →
-                                </button></a>
+                                </button>
 
                                 {/* Secondary */}
-                              <a href="/plans-and-pricing">    <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                         bg-white
                         text-[#123533]
@@ -528,10 +513,10 @@ export default function Teamsphone() {
                                 >
 
                                     See Pricing
-                                </button></a>
+                                </button>
 
                                 {/* Outline */}
-                              <a href="/contact-sales">  <button
+                                <button
                                     className="h-12 px-8 rounded-xl
                         border border-white/25
                         text-white
@@ -543,7 +528,7 @@ export default function Teamsphone() {
                                 >
 
                                     Talk to Sales
-                                </button></a>
+                                </button>
                             </div>
 
                             {/* Footer Text */}
@@ -551,9 +536,9 @@ export default function Teamsphone() {
 
                                 Replacing a Skype Number too?
 
-                                <a href="/switch-from-skype"><span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
+                                <span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
                                     Switch from Skype →
-                                </span></a>
+                                </span>
                             </p>
                         </div>
                     </div>

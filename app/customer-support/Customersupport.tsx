@@ -1,37 +1,27 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import {
-  FiCheck, FiPhone, FiMapPin, FiUsers, FiClock, FiGlobe,
-  FiShield, FiVideo, FiCornerDownRight, FiTrendingUp,
-  FiCpu, FiBriefcase, FiShoppingCart, FiZap,
-  FiCheckCircle, FiChevronDown,
-} from "react-icons/fi";
-import type { IconType } from "react-icons";
 
-// ─── ICON BOX ────────────────────────────────────────────────────────────────
-function IconBox({
-  icon: Icon,
-  bg = "bg-[#fbe1da]",
-  size = 18,
-  className = "h-11 w-11",
+/**
+ * Drop your own assets in /public; paths below resolve from there
+ * (e.g. src="/icons/check.svg" → public/icons/check.svg). Swap any path.
+ * Plain <img> so no next/image config is required.
+ */
+function Img({
+  src,
+  alt = "",
+  className = "h-10 w-10 rounded-xl",
+  cover = false,
 }: {
-  icon: IconType;
-  bg?: string;
-  size?: number;
+  src: string;
+  alt?: string;
   className?: string;
+  cover?: boolean;
 }) {
   return (
-    <span className={`inline-flex shrink-0 items-center justify-center rounded-xl ${bg} dark:bg-white/5 ${className}`}>
-      <Icon size={size} className="text-[#d9603f]" />
-    </span>
+    <img src={src} alt={alt} loading="lazy" className={`${cover ? "object-cover" : "object-contain"} ${className}`} />
   );
 }
-
-// Flag emoji map — replaces /flags/*.svg
-const FLAGS: Record<string, string> = {
-  us: "🇺🇸", gb: "🇬🇧", jm: "🇯🇲", ca: "🇨🇦", ng: "🇳🇬", za: "🇿🇦",
-};
 
 function Eyebrow({ children, pill = false }: { children: ReactNode; pill?: boolean }) {
   const inner = (
@@ -44,8 +34,16 @@ function Eyebrow({ children, pill = false }: { children: ReactNode; pill?: boole
   return <p className="inline-flex rounded-full bg-[#f6e4dc] px-4 py-1.5 dark:bg-[#d9603f]/15">{inner}</p>;
 }
 
-function SectionHead({ eyebrow, title, sub, onDark = false }: {
-  eyebrow: string; title: ReactNode; sub?: string; onDark?: boolean;
+function SectionHead({
+  eyebrow,
+  title,
+  sub,
+  onDark = false,
+}: {
+  eyebrow: string;
+  title: ReactNode;
+  sub?: string;
+  onDark?: boolean;
 }) {
   return (
     <div className="mx-auto max-w-2xl text-center">
@@ -62,17 +60,19 @@ function SectionHead({ eyebrow, title, sub, onDark = false }: {
   );
 }
 
-const coralBtn = "inline-flex items-center gap-2 rounded-full bg-[#d9603f] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]";
-const lightBtn = "inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#1c2b26] shadow-sm ring-1 ring-black/5 transition-colors hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:ring-white/10";
-const outlineDarkBtn = "inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10";
+const coralBtn =
+  "inline-flex items-center gap-2 rounded-full bg-[#d9603f] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]";
+const lightBtn =
+  "inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#1c2b26] shadow-sm ring-1 ring-black/5 transition-colors hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:ring-white/10";
+const outlineDarkBtn =
+  "inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10";
 const featureCard = "rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10";
 
+// ─── SHARED IMAGE PATHS ───────────────────────────────────────────────────────
+const IC = { check: "/icons/check.svg" };
+
 // ─── DATA ────────────────────────────────────────────────────────────────────
-const heroChecks = [
-  "Local support numbers customers recognize",
-  "Routing for teams, departments, and hours",
-  "AI Receptionist fallback for missed calls",
-];
+const heroChecks = ["Local support numbers customers recognize", "Routing for teams, departments, and hours", "AI Receptionist fallback for missed calls"];
 
 const heroRouting = [
   { label: "Support", status: "Open", dot: "bg-[#d9603f]" },
@@ -80,20 +80,20 @@ const heroRouting = [
   { label: "AI Receptionist", status: "After hrs", dot: "bg-[#e8a03b]", highlight: true },
 ];
 
-const gapCards: { title: string; desc: string; icon: IconType }[] = [
-  { title: "Missed calls lose customers", desc: "An unanswered support call often becomes a lost customer — and a poor first impression.", icon: FiPhone },
-  { title: "Personal numbers do not scale", desc: "Support that depends on individual mobiles breaks down as volume grows.", icon: FiUsers },
-  { title: "Customers need the right route", desc: "Without routing, inquiries bounce between staff, email, chat and personal phones.", icon: FiCornerDownRight },
-  { title: "After-hours inquiries still matter", desc: "Customers reach out outside business hours — and expect to be heard.", icon: FiClock },
+const gapCards = [
+  { title: "Missed calls lose customers", desc: "An unanswered support call often becomes a lost customer — and a poor first impression.", icon: "/icons/phone.svg" },
+  { title: "Personal numbers do not scale", desc: "Support that depends on individual mobiles breaks down as volume grows.", icon: "/icons/users.svg" },
+  { title: "Customers need the right route", desc: "Without routing, inquiries bounce between staff, email, chat and personal phones.", icon: "/icons/route.svg" },
+  { title: "After-hours inquiries still matter", desc: "Customers reach out outside business hours — and expect to be heard.", icon: "/icons/clock.svg" },
 ];
 
-const solution: { title: string; desc: string; icon: IconType; bg: string }[] = [
-  { title: "Local support numbers", desc: "Give customers a familiar number they recognize and trust.", icon: FiMapPin, bg: "bg-[#fbe9e3]" },
-  { title: "Inbound call routing", desc: "Route to support, sales, billing or after-hours teams.", icon: FiCornerDownRight, bg: "bg-[#fbe9e3]" },
-  { title: "AI Receptionist fallback", desc: "Capture inquiries when no one is available.", icon: FiCpu, bg: "bg-[#fdf0db]" },
-  { title: "Video escalation", desc: "Move to video when an issue needs visual clarity.", icon: FiVideo, bg: "bg-[#e3f3ee]" },
-  { title: "Missed-call protection", desc: "Reduce lost calls with capture and follow-up.", icon: FiShield, bg: "bg-[#fbe9e3]" },
-  { title: "Multi-market support", desc: "Offer local support numbers in the markets you serve.", icon: FiGlobe, bg: "bg-[#fbe9e3]" },
+const solution = [
+  { title: "Local support numbers", desc: "Give customers a familiar number they recognize and trust.", icon: "/icons/pin.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Inbound call routing", desc: "Route to support, sales, billing or after-hours teams.", icon: "/icons/route.svg", tint: "bg-[#fbe9e3]" },
+  { title: "AI Receptionist fallback", desc: "Capture inquiries when no one is available.", icon: "/icons/ai-bot.svg", tint: "bg-[#fdf0db]" },
+  { title: "Video escalation", desc: "Move to video when an issue needs visual clarity.", icon: "/icons/video.svg", tint: "bg-[#e3f3ee]" },
+  { title: "Missed-call protection", desc: "Reduce lost calls with capture and follow-up.", icon: "/icons/shield-check.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Multi-market support", desc: "Offer local support numbers in the markets you serve.", icon: "/icons/globe.svg", tint: "bg-[#fbe9e3]" },
 ];
 
 const steps = [
@@ -104,22 +104,22 @@ const steps = [
   { n: 5, title: "Improve as volume grows", desc: "Refine routing and capacity over time." },
 ];
 
-const useCases: { title: string; desc: string; icon: IconType; bg: string }[] = [
-  { title: "Main support line", desc: "One trusted number for inbound help.", icon: FiPhone, bg: "bg-[#fbe9e3]" },
-  { title: "After-sales support", desc: "Help customers after the purchase.", icon: FiCheckCircle, bg: "bg-[#fbe9e3]" },
-  { title: "Billing / account questions", desc: "Route account and billing calls cleanly.", icon: FiBriefcase, bg: "bg-[#fbe9e3]" },
-  { title: "E-commerce support", desc: "Support shoppers and order issues.", icon: FiShoppingCart, bg: "bg-[#fbe9e3]" },
-  { title: "Service-business support", desc: "Handle bookings, estimates and follow-ups.", icon: FiShield, bg: "bg-[#fbe9e3]" },
-  { title: "Remote support teams", desc: "Coordinate distributed support staff.", icon: FiUsers, bg: "bg-[#fbe9e3]" },
-  { title: "New-market support", desc: "Offer local support in new regions.", icon: FiGlobe, bg: "bg-[#fbe9e3]" },
-  { title: "After-hours intake", desc: "Capture calls outside business hours.", icon: FiClock, bg: "bg-[#fdf0db]" },
+const useCases = [
+  { title: "Main support line", desc: "One trusted number for inbound help.", icon: "/icons/phone.svg", tint: "bg-[#fbe9e3]" },
+  { title: "After-sales support", desc: "Help customers after the purchase.", icon: "/icons/hand.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Billing / account questions", desc: "Route account and billing calls cleanly.", icon: "/icons/briefcase.svg", tint: "bg-[#fbe9e3]" },
+  { title: "E-commerce support", desc: "Support shoppers and order issues.", icon: "/icons/cart.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Service-business support", desc: "Handle bookings, estimates and follow-ups.", icon: "/icons/shield-check.svg", tint: "bg-[#fbe9e3]" },
+  { title: "Remote support teams", desc: "Coordinate distributed support staff.", icon: "/icons/users.svg", tint: "bg-[#fbe9e3]" },
+  { title: "New-market support", desc: "Offer local support in new regions.", icon: "/icons/globe.svg", tint: "bg-[#fbe9e3]" },
+  { title: "After-hours intake", desc: "Capture calls outside business hours.", icon: "/icons/clock.svg", tint: "bg-[#fdf0db]" },
 ];
 
-const platform: { name: string; desc: string; cta: string; icon: IconType; bg: string; href: string }[] = [
-  { name: "Local Numbers", desc: "Local support numbers customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]", href: "/get-a-local-number" },
-  { name: "Calling", desc: "Direct inbound calling with a professional identity.", cta: "Explore Calling", icon: FiPhone, bg: "bg-[#fbe9e3]", href: "/calling" },
-  { name: "Video", desc: "Escalate to video when an issue needs clarity.", cta: "Explore Video", icon: FiVideo, bg: "bg-[#e3f3ee]", href: "/video" },
-  { name: "AI Receptionist", desc: "Capture inquiries when no one is available.", cta: "Explore AI Receptionist", icon: FiCpu, bg: "bg-[#fdf0db]", href: "/ai-receptionist" },
+const platform = [
+  { name: "Local Numbers", desc: "Local support numbers customers recognize.", cta: "Explore Local Numbers", icon: "/icons/pin.svg", tint: "bg-[#fbe9e3]" },
+  { name: "Calling", desc: "Direct inbound calling with a professional identity.", cta: "Explore Calling", icon: "/icons/phone.svg", tint: "bg-[#fbe9e3]" },
+  { name: "Video", desc: "Escalate to video when an issue needs clarity.", cta: "Explore Video", icon: "/icons/video.svg", tint: "bg-[#e3f3ee]" },
+  { name: "AI Receptionist", desc: "Capture inquiries when no one is available.", cta: "Explore AI Receptionist", icon: "/icons/ai-bot.svg", tint: "bg-[#fdf0db]" },
 ];
 
 const compare = [
@@ -142,22 +142,22 @@ const scenarios = [
 ];
 
 const markets = [
-  { name: "United States", flag: "us" },
-  { name: "United Kingdom", flag: "gb" },
-  { name: "Jamaica", flag: "jm" },
-  { name: "Canada", flag: "ca" },
-  { name: "Nigeria", flag: "ng" },
-  { name: "South Africa", flag: "za" },
+  { name: "United States", flag: "/flags/us.svg" },
+  { name: "United Kingdom", flag: "/flags/gb.svg" },
+  { name: "Jamaica", flag: "/flags/jm.svg" },
+  { name: "Canada", flag: "/flags/ca.svg" },
+  { name: "Nigeria", flag: "/flags/ng.svg" },
+  { name: "South Africa", flag: "/flags/za.svg" },
 ];
 const regions = ["Caribbean", "Europe", "Africa", "North America"];
 
-const scaling: { title: string; desc: string; icon: IconType }[] = [
-  { title: "Add support numbers by market", desc: "Offer local support as you expand.", icon: FiMapPin },
-  { title: "Route by department / hours", desc: "Direct calls to the right desk at the right time.", icon: FiCornerDownRight },
-  { title: "Add staff", desc: "Grow your support team on one line.", icon: FiUsers },
-  { title: "Use AI Receptionist", desc: "Capture overflow and after-hours calls.", icon: FiCpu },
-  { title: "Add video", desc: "Resolve complex issues face-to-face.", icon: FiVideo },
-  { title: "Track support demand", desc: "Understand volume before and after purchase.", icon: FiTrendingUp },
+const scaling = [
+  { title: "Add support numbers by market", desc: "Offer local support as you expand.", icon: "/icons/pin.svg" },
+  { title: "Route by department / hours", desc: "Direct calls to the right desk at the right time.", icon: "/icons/route.svg" },
+  { title: "Add staff", desc: "Grow your support team on one line.", icon: "/icons/users.svg" },
+  { title: "Use AI Receptionist", desc: "Capture overflow and after-hours calls.", icon: "/icons/ai-bot.svg" },
+  { title: "Add video", desc: "Resolve complex issues face-to-face.", icon: "/icons/video.svg" },
+  { title: "Track support demand", desc: "Understand volume before and after purchase.", icon: "/icons/trend.svg" },
 ];
 
 const faqs = [
@@ -177,7 +177,6 @@ function CustomerSupport() {
 
   return (
     <main className="bg-white font-sans text-[#1c2b26] dark:bg-gray-900 dark:text-gray-100">
-
       {/* ─── HERO ─── */}
       <section className="bg-[#f6ece5] px-4 py-20 sm:px-6 lg:px-8 dark:bg-gray-950">
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
@@ -192,18 +191,18 @@ function CustomerSupport() {
               support when no one is available.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a href="local-business-number"> <button className={coralBtn}>Set Up a Support Number</button></a>
-              <a href="ai-receptionist"> <button className={lightBtn}>Explore AI Receptionist</button></a>
+              <button className={coralBtn}>Set Up a Support Number</button>
+              <button className={lightBtn}>Explore AI Receptionist</button>
             </div>
-            <a href="/plans-and-pricing" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">See Pricing →</a>
+            <a href="#" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">See Pricing →</a>
             <div className="mt-5 flex max-w-md items-center justify-between gap-4 rounded-2xl bg-white px-5 py-4 text-sm shadow-sm ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
               <span className="text-gray-600 dark:text-gray-400">Replacing Skype Number for customer support?</span>
-              <a href="/switch-from-skype" className="shrink-0 font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
+              <a href="#" className="shrink-0 font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
             </div>
             <ul className="mt-6 space-y-2">
               {heroChecks.map((c) => (
                 <li key={c} className="flex items-center gap-2 text-sm font-medium dark:text-gray-300">
-                  <FiCheck size={14} className="shrink-0 text-[#d9603f]" strokeWidth={3} /> {c}
+                  <Img src={IC.check} alt="" className="h-4 w-4" /> {c}
                 </li>
               ))}
             </ul>
@@ -212,7 +211,7 @@ function CustomerSupport() {
           {/* Support line card */}
           <div className="relative">
             <div className="absolute -top-6 left-6 z-10 flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold shadow-lg ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-              <FiMapPin size={14} className="text-[#d9603f]" /> Reason captured
+              <Img src="/icons/pin.svg" alt="" className="h-4 w-4" /> Reason captured
             </div>
             <div className="rounded-3xl bg-white p-5 shadow-xl ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
               <div className="flex items-start justify-between rounded-2xl bg-[#16233a] p-5 text-white">
@@ -220,11 +219,11 @@ function CustomerSupport() {
                   <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">Support line</p>
                   <p className="mt-1 text-xl font-extrabold">+1 (800) 555-0188</p>
                 </div>
-                <span className="text-2xl">🇺🇸</span>
+                <Img src="/flags/us.svg" alt="US" cover className="h-7 w-9 rounded-md" />
               </div>
               <div className="mt-3 flex items-center gap-3 rounded-2xl bg-[#fbf2ee] p-4 dark:bg-gray-900/40">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#d9603f]">
-                  <FiPhone size={16} className="text-white" />
+                  <Img src="/icons/phone.svg" alt="" className="h-5 w-5" />
                 </span>
                 <div>
                   <p className="text-sm font-bold dark:text-white">Incoming · Support</p>
@@ -236,8 +235,9 @@ function CustomerSupport() {
                 {heroRouting.map((r) => (
                   <div
                     key={r.label}
-                    className={`flex items-center justify-between rounded-xl px-4 py-3 ${r.highlight ? "bg-[#e3f3ee] dark:bg-[#34d39e]/10" : "border border-gray-100 dark:border-gray-700"
-                      }`}
+                    className={`flex items-center justify-between rounded-xl px-4 py-3 ${
+                      r.highlight ? "bg-[#e3f3ee] dark:bg-[#34d39e]/10" : "border border-gray-100 dark:border-gray-700"
+                    }`}
                   >
                     <span className="flex items-center gap-2.5 text-sm font-medium dark:text-white">
                       <span className={`h-2 w-2 rounded-full ${r.dot}`} /> {r.label}
@@ -253,7 +253,7 @@ function CustomerSupport() {
               </p>
             </div>
             <div className="absolute -bottom-5 right-4 flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold shadow-lg ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-              <FiShield size={14} className="text-[#d9603f]" /> Follow-up ready
+              <Img src="/icons/shield-check.svg" alt="" className="h-4 w-4" /> Follow-up ready
             </div>
           </div>
         </div>
@@ -270,7 +270,9 @@ function CustomerSupport() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {gapCards.map((g) => (
               <div key={g.title} className={featureCard}>
-                <IconBox icon={g.icon} bg="bg-[#fbe1da]" />
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#fbe1da] dark:bg-[#d9603f]/15">
+                  <Img src={g.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{g.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{g.desc}</p>
               </div>
@@ -284,20 +286,22 @@ function CustomerSupport() {
         <div className="mx-auto max-w-6xl">
           <SectionHead
             eyebrow="The solution"
-            title="One trusted support number. Smarter call handling behind it."
+            title={<>One trusted support number. Smarter call handling behind it.</>}
             sub="Position Zoiko Local as the front door for customer communication."
           />
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {solution.map((s) => (
               <div key={s.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBox icon={s.icon} bg={s.bg} />
+                <span className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${s.tint} dark:bg-white/5`}>
+                  <Img src={s.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{s.desc}</p>
               </div>
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-           <a href="/local-business-number"> <button className={coralBtn}>Set Up a Support Number</button></a>
+            <button className={coralBtn}>Set Up a Support Number</button>
           </div>
         </div>
       </section>
@@ -316,7 +320,7 @@ function CustomerSupport() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-           <a href="/ai-receptionist"> <button className={lightBtn}>Explore AI Receptionist</button></a>
+            <button className={lightBtn}>Explore AI Receptionist</button>
           </div>
         </div>
       </section>
@@ -328,7 +332,9 @@ function CustomerSupport() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {useCases.map((u) => (
               <div key={u.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBox icon={u.icon} bg={u.bg} />
+                <span className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${u.tint} dark:bg-white/5`}>
+                  <Img src={u.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{u.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{u.desc}</p>
               </div>
@@ -344,27 +350,27 @@ function CustomerSupport() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {platform.map((p) => (
               <div key={p.name} className="flex flex-col rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBox icon={p.icon} bg={p.bg} />
+                <span className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${p.tint} dark:bg-white/5`}>
+                  <Img src={p.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{p.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{p.desc}</p>
-                <a href={p.href} className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
+                <a href="#" className="mt-5 inline-block text-sm font-semibold text-[#d9603f] hover:underline">{p.cta} →</a>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ─── WHY UPGRADE ─── */}
+      {/* ─── WHY UPGRADE (comparison) ─── */}
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8 dark:bg-gray-900">
         <div className="mx-auto max-w-5xl">
           <SectionHead eyebrow="Why upgrade" title="A shared inbox cannot replace a trusted support number." />
           <div className="mt-12 overflow-hidden rounded-2xl ring-1 ring-black/5 dark:ring-white/10">
             <div className="grid grid-cols-2">
-              <div className="bg-[#f3efe7] px-5 py-4 text-sm font-bold dark:bg-gray-800 dark:text-white">
-                Personal Phones &amp; Shared Inboxes
-              </div>
+              <div className="bg-[#f3efe7] px-5 py-4 text-sm font-bold dark:bg-gray-800 dark:text-white">Personal Phones &amp; Shared Inboxes</div>
               <div className="flex items-center gap-2 bg-[#d9603f] px-5 py-4 text-sm font-bold text-white">
-                <FiZap size={14} /> Zoiko Local
+                <Img src="/icons/spark.svg" alt="" className="h-4 w-4" /> Zoiko Local
               </div>
             </div>
             {compare.map((row, i) => (
@@ -374,7 +380,7 @@ function CustomerSupport() {
               </div>
             ))}
             <div className="bg-[#f3efe7] py-6 text-center dark:bg-gray-800">
-             <a href="/local-business-number"><button className={coralBtn}>Give Customers a Support Number They Can Trust</button></a>
+              <button className={coralBtn}>Give Customers a Support Number They Can Trust</button>
             </div>
           </div>
         </div>
@@ -407,7 +413,7 @@ function CustomerSupport() {
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {markets.map((m) => (
               <span key={m.name} className="flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white">
-                <span className="text-base leading-none">{FLAGS[m.flag]}</span> {m.name}
+                <Img src={m.flag} alt="" cover className="h-4 w-5 rounded-sm" /> {m.name}
               </span>
             ))}
           </div>
@@ -417,8 +423,8 @@ function CustomerSupport() {
             ))}
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="/global-coverage"> <button className={lightBtn}>Explore Global Coverage</button></a>
-            <a href="/resources"> <button className={outlineDarkBtn}>Request a Market</button></a>
+            <button className={lightBtn}>Explore Global Coverage</button>
+            <button className={outlineDarkBtn}>Request a Market</button>
           </div>
         </div>
       </section>
@@ -433,14 +439,16 @@ function CustomerSupport() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {scaling.map((s) => (
               <div key={s.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBox icon={s.icon} bg="bg-[#fbe9e3]" />
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#fbe9e3] dark:bg-white/5">
+                  <Img src={s.icon} alt="" className="h-5 w-5" />
+                </span>
                 <h3 className="mt-5 text-base font-bold dark:text-white">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{s.desc}</p>
               </div>
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <a href="/plans-and-pricing"> <button className={coralBtn}>See Pricing</button></a>
+            <button className={coralBtn}>See Pricing</button>
           </div>
         </div>
       </section>
@@ -460,8 +468,12 @@ function CustomerSupport() {
                     aria-expanded={isOpen}
                   >
                     <span className="text-sm font-semibold text-[#1c2b26] dark:text-white">{f.q}</span>
-                    <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition ${isOpen ? "bg-[#d9603f] text-white" : "text-[#d9603f]"}`}>
-                      <FiChevronDown size={16} className={`transition-transform ${isOpen ? "rotate-180" : ""}`} />
+                    <span
+                      className={`flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full text-lg leading-none ${
+                        isOpen ? "bg-[#d9603f] text-white" : "text-[#d9603f]"
+                      }`}
+                    >
+                      {isOpen ? "×" : "+"}
                     </span>
                   </button>
                   {isOpen && <p className="px-5 pb-5 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{f.a}</p>}
@@ -477,16 +489,17 @@ function CustomerSupport() {
         <div className="mx-auto max-w-3xl">
           <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Make it easier for customers to reach you.</h2>
           <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/70">
-            Give customers a trusted support number, route calls to the right team, and capture inquiries when no one is available.
+            Give customers a trusted support number, route calls to the right team, and capture inquiries when no one is
+            available.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-           <a href="/local-business-number"> <button className={lightBtn}>Set Up a Support Number</button></a>
-            <a href="/ai-receptionist"> <button className={outlineDarkBtn}>Explore AI Receptionist</button></a>
-            <a href="/plans-and-pricing"> <button className={outlineDarkBtn}>See Pricing</button></a>
+            <button className={lightBtn}>Set Up a Support Number</button>
+            <button className={outlineDarkBtn}>Explore AI Receptionist</button>
+            <button className={outlineDarkBtn}>See Pricing</button>
           </div>
           <p className="mt-6 text-sm text-white/70">
             Replacing Skype Number?{" "}
-            <a href="/switch-from-skype" className="font-semibold text-white hover:underline">Switch from Skype →</a>
+            <a href="#" className="font-semibold text-white hover:underline">Switch from Skype →</a>
           </p>
         </div>
       </section>
