@@ -270,7 +270,7 @@ const workflows = [
         description:
             "Trusted calling for lawyers, accountants, consultants and agencies.",
         link: "Calling for professional services →",
-        href: "/business",
+        href: "/business-communications",
     },
     {
         icon: <FiUsers />,

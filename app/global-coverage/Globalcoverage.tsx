@@ -48,7 +48,7 @@ const marketCards = [
   { code: "JM", name: "Jamaica", dial: "+1 876", desc: "Local presence for business, diaspora, and cross-border reach.", cta: "Get a Jamaica Local Number", href: "/jamaica-phone-numbers" },
   { code: "CA", name: "Canada", dial: "+1", desc: "Canadian local presence for customers, teams, and expansion.", cta: "Get a Canada Local Number", href: "/zoiko-local-canada" },
   { code: "NG", name: "Nigeria", dial: "+234", desc: "Local presence in one of Africa's most important markets.", cta: "Get a Nigeria Local Number", href: "/nigeria-online-number" },
-  { code: "ZA", name: "South Africa", dial: "+27", desc: "Local presence to support customers and growth in South Africa.", cta: "Get a South Africa Local Number", href: "/south-africa" },
+  { code: "ZA", name: "South Africa", dial: "+27", desc: "Local presence to support customers and growth in South Africa.", cta: "Get a South Africa Local Number", href: "/south-africa-local-phone-numbers" },
 ];
 
 const howItWorks = [

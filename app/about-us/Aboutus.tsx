@@ -409,7 +409,7 @@ function Aboutus() {
                   Get Started
                 </button>
               </a>
-              <a href="/zoiko-local-ai-terms">
+              <a href="/ai-terms">
                 <button className="rounded-full border border-[#1c2b26]/20 px-7 py-3 text-sm font-semibold text-[#1c2b26] transition-colors hover:bg-black/5 dark:border-white/20 dark:text-white dark:hover:bg-white/10">
                   Learn More
                 </button>

@@ -14,13 +14,13 @@ const platformItems = [
   { title: "Calling", desc: "Business-grade inbound & outbound voice", icon: FiPhone, href: "/calling" },
   { title: "Video", desc: "Meetings & customer video calls", icon: FiVideo, href: "/video" },
   { title: "AI Receptionist", desc: "Answer, qualify & route missed calls", icon: FiMic, badge: "NEW", href: "/ai-receptionist" },
-  { title: "Mobile Apps", desc: "Take your number anywhere", icon: FiSmartphone, href: "/zoiko-local-mobile-apps" },
-  { title: "Business Workspace", desc: "Teams, roles, routing & billing", icon: FiGrid, href: "/business" },
+  { title: "Mobile Apps", desc: "Take your number anywhere", icon: FiSmartphone, href: "/business-mobile-phone-app" },
+  { title: "Business Workspace", desc: "Teams, roles, routing & billing", icon: FiGrid, href: "/business-communications" },
   { title: "Status Page", desc: "Live service & uptime status", icon: FiActivity, href: "/status" },
 ];
 
 const solutionItems = [
-  { title: "For Business", desc: "One communication layer for every team", icon: FiBriefcase, href: "/business" },
+  { title: "For Business", desc: "One communication layer for every team", icon: FiBriefcase, href: "/business-communications" },
   { title: "Business Numbers", desc: "Local & toll-free numbers for work", icon: FiHash, href: "/local-business-numbers" },
   { title: "Remote Teams", desc: "Connect distributed teams anywhere", icon: FiUsers, href: "/remote-teams" },
   { title: "Diaspora Founders", desc: "Stay local in home & host markets", icon: FiGlobe, href: "/diaspora-founders" },

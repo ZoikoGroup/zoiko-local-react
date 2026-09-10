@@ -6,6 +6,7 @@ import {
     FiCheck, FiTrendingUp,
     FiGlobe, FiMessageSquare,
 } from "react-icons/fi";
+import Link from "next/link";
 
 const europeCoverage = [
     {
@@ -40,6 +41,7 @@ const europeMarkets = [
         description:
             "UK local presence for business calls and customer communication.",
         action: "Get a number",
+        href: "/uk-local-phone-numbers",
     },
     {
         code: "IE",
@@ -50,6 +52,7 @@ const europeMarkets = [
         description:
             "Local Irish presence for business and customer reach.",
         action: "Request this market",
+        href: "/contact-support"
     },
     {
         code: "DE",
@@ -60,6 +63,7 @@ const europeMarkets = [
         description:
             "Local German presence for one of Europe's largest markets.",
         action: "Request this market",
+        href: "/contact-support"
     },
 ];
 const europeBenefits = [
@@ -163,13 +167,16 @@ export default function Europe() {
 
                             {/* Buttons */}
                             <div className="mt-10 flex flex-wrap gap-4">
-                                <button className="h-12 px-8 rounded-xl bg-[#EB643F] text-white font-semibold shadow-lg hover:bg-[#D95A37] transition">
-                                    Explore Europe Coverage
-                                </button>
-
-                                <button className="h-12 px-8 rounded-xl border border-[#0F6660] dark:border-slate-700 bg-white dark:bg-slate-800 text-[#123533] dark:text-white font-semibold hover:bg-[#0F6660] hover:text-white transition">
-                                    Check Number Availability
-                                </button>
+                                <Link href="#">
+                                    <button className="h-12 px-8 rounded-xl bg-[#EB643F] text-white font-semibold shadow-lg hover:bg-[#D95A37] transition">
+                                        Explore Europe Coverage
+                                    </button>
+                                </Link>
+                                <Link href="#">
+                                    <button className="h-12 px-8 rounded-xl border border-[#0F6660] dark:border-slate-700 bg-white dark:bg-slate-800 text-[#123533] dark:text-white font-semibold hover:bg-[#0F6660] hover:text-white transition">
+                                        Check Number Availability
+                                    </button>
+                                </Link>
                             </div>
 
                             {/* Helper */}
@@ -177,11 +184,12 @@ export default function Europe() {
                                 <span className="text-gray-500 dark:text-gray-400">
                                     Replacing a Skype Number across markets?
                                 </span>
-
-                                <button className="ml-2 text-[#EB643F] font-semibold inline-flex items-center gap-1">
-                                    Switch from Skype
-                                    <FiArrowRight size={14} />
-                                </button>
+                                <Link href="/switch-from-skype">
+                                    <button className="ml-2 text-[#EB643F] font-semibold inline-flex items-center gap-1">
+                                        Switch from Skype
+                                        <FiArrowRight size={14} />
+                                    </button>
+                                </Link>
                             </div>
 
                             {/* Features */}
@@ -322,8 +330,9 @@ export default function Europe() {
                                 </p>
 
                                 {/* CTA */}
-                                <button
-                                    className="mt-8
+                                <Link href={market.href}>
+                                    <button
+                                        className="mt-8
                         inline-flex
                         items-center
                         gap-2
@@ -331,10 +340,11 @@ export default function Europe() {
                         font-semibold
                         hover:gap-3
                         transition-all"
-                                >
-                                    {market.action}
-                                    <span>→</span>
-                                </button>
+                                    >
+                                        {market.action}
+                                        <span>→</span>
+                                    </button>
+                                </Link>
                             </div>
                         ))}
                     </div>
@@ -541,23 +551,25 @@ export default function Europe() {
                         </p>
 
                         <div className="mt-10 flex flex-wrap justify-center gap-4">
-
-                            <button
-                                className="h-12 px-8 rounded-xl
+                            <Link href="/contact-support">
+                                <button
+                                    className="h-12 px-8 rounded-xl
                     bg-[#EB643F]
                     text-white
                     font-semibold
                     shadow-lg
                     hover:bg-[#D95A37]
                     transition"
-                            >
+                                >
 
-                                Request a Market
+                                    Request a Market
 
-                            </button>
+                                </button>
+                            </Link>
 
-                            <button
-                                className="h-12 px-8 rounded-xl
+                            <Link href="/contact-sales">
+                                <button
+                                    className="h-12 px-8 rounded-xl
                     border border-[#0F6660]
                     dark:border-slate-700
                     bg-white dark:bg-slate-800
@@ -567,12 +579,12 @@ export default function Europe() {
                     hover:bg-[#0F6660]
                     hover:text-white
                     transition"
-                            >
+                                >
 
-                                Talk to Sales
+                                    Talk to Sales
 
-                            </button>
-
+                                </button>
+                            </Link>
                         </div>
 
                     </div>
@@ -696,8 +708,9 @@ export default function Europe() {
 
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
                                 {/* Primary */}
-                                <button
-                                    className="h-12 px-8 rounded-xl
+                                <Link href="#">
+                                    <button
+                                        className="h-12 px-8 rounded-xl
                                                 bg-[#EB643F]
                                                 text-white
                                                 text-sm
@@ -705,28 +718,31 @@ export default function Europe() {
                                                 shadow-lg
                                                 hover:bg-[#D95A37]
                                                 transition-all duration-300"
-                                >
+                                    >
 
-                                    Explore Europe Coverage  →
-                                </button>
-
+                                        Explore Europe Coverage  →
+                                    </button>
+                                </Link>
                                 {/* Secondary */}
-                                <button
-                                    className="h-12 px-8 rounded-xl
+                                <Link href="/contact-support">
+                                    <button
+                                        className="h-12 px-8 rounded-xl
                                                 bg-white
                                                 text-[#123533]
                                                 text-sm
                                                 font-semibold
                                                 hover:bg-gray-100
                                                 transition-all duration-300"
-                                >
+                                    >
 
-                                    Request a Market
-                                </button>
+                                        Request a Market
+                                    </button>
+                                </Link>
 
                                 {/* Outline */}
-                                <button
-                                    className="h-12 px-8 rounded-xl
+                                <Link href="/contact-sales">
+                                    <button
+                                        className="h-12 px-8 rounded-xl
                                                 border border-white/25
                                                 text-white
                                                 text-sm
@@ -734,20 +750,22 @@ export default function Europe() {
                                                 hover:bg-white
                                                 hover:text-[#123533]
                                                 transition-all duration-300"
-                                >
+                                    >
 
-                                    Talk to Sales
-                                </button>
+                                        Talk to Sales
+                                    </button>
+                                </Link>
                             </div>
 
                             {/* Footer Text */}
                             <p className="mt-8 text-sm text-white/60">
 
                                 Replacing a Skype Number too?
-
+                            <Link href="/switch-from-skype">
                                 <span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
                                     Switch from Skype →
                                 </span>
+                            </Link>
                             </p>
                         </div>
                     </div>

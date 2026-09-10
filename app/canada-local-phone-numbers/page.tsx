@@ -161,9 +161,8 @@ function H2({ children }: { children: React.ReactNode }) {
 function Pill({ label, tone }: { label: string; tone: string }) {
   return (
     <span
-      className={`inline-block rounded-full px-3 py-1 text-[11.5px] font-semibold ${
-        tone === "ok" ? "bg-[#E1EFE6] text-[#20654A]" : "bg-[#FAF1DE] text-[#8A6114]"
-      }`}
+      className={`inline-block rounded-full px-3 py-1 text-[11.5px] font-semibold ${tone === "ok" ? "bg-[#E1EFE6] text-[#20654A]" : "bg-[#FAF1DE] text-[#8A6114]"
+        }`}
     >
       {label}
     </span>
@@ -178,156 +177,156 @@ export default function CanadaLocalNumbers() {
   return (
     <main className="min-h-screen bg-[#F6F2E9]">
       {/* ═══ HERO ═══ */}
-     {/* ═══ HERO ═══ */}
-<section className="bg-[#F6F2E9]">
-  <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+      {/* ═══ HERO ═══ */}
+      <section className="bg-[#F6F2E9]">
+        <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
 
-    {/* Hero */}
-    <div className="grid overflow-hidden rounded-none lg:grid-cols-[0.95fr_1.05fr]">
+          {/* Hero */}
+          <div className="grid overflow-hidden rounded-none lg:grid-cols-[0.95fr_1.05fr]">
 
-      {/* LEFT CONTENT */}
-      <div className="flex flex-col justify-center px-6 py-12 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
+            {/* LEFT CONTENT */}
+            <div className="flex flex-col justify-center px-6 py-12 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
 
-        {/* Country pill */}
-        <div className="w-fit rounded-full bg-white px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#1A1A17] shadow-sm">
-          🇨🇦 CANADA · +1
-        </div>
+              {/* Country pill */}
+              <div className="w-fit rounded-full bg-white px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-[#1A1A17] shadow-sm">
+                🇨🇦 CANADA · +1
+              </div>
 
-        {/* Heading */}
-        <h1
-          className={`mt-6 max-w-[540px] text-[38px] font-medium leading-[1.08] tracking-tight text-[#1A1A17] sm:text-[46px] lg:text-[50px] ${serif}`}
-        >
-          Get a Canadian local
-          <br className="hidden sm:block" />
-          number for calling and{" "}
-          <span className="italic text-[#C2421F]">
-            business
-          </span>{" "}
-          communications.
-        </h1>
+              {/* Heading */}
+              <h1
+                className={`mt-6 max-w-[540px] text-[38px] font-medium leading-[1.08] tracking-tight text-[#1A1A17] sm:text-[46px] lg:text-[50px] ${serif}`}
+              >
+                Get a Canadian local
+                <br className="hidden sm:block" />
+                number for calling and{" "}
+                <span className="italic text-[#C2421F]">
+                  business
+                </span>{" "}
+                communications.
+              </h1>
 
-        {/* Description */}
-        <p className="mt-5 max-w-[500px] text-[13px] leading-6 text-[#5C5C55] sm:text-[14px]">
-          Find an eligible Canadian local number by city, province, or area
-          code, then use Zoiko Local for calling and other communications
-          capabilities included with your plan.
-        </p>
+              {/* Description */}
+              <p className="mt-5 max-w-[500px] text-[13px] leading-6 text-[#5C5C55] sm:text-[14px]">
+                Find an eligible Canadian local number by city, province, or area
+                code, then use Zoiko Local for calling and other communications
+                capabilities included with your plan.
+              </p>
 
-        {/* Buttons */}
-        <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-          <Link
-            href="#search"
-            className="inline-flex h-11 items-center justify-center rounded-full bg-[#D24A22] px-6 text-[13px] font-semibold text-white transition hover:bg-[#B23C1A]"
-          >
-            Find a Canadian number
-          </Link>
+              {/* Buttons */}
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="#search"
+                  className="inline-flex h-11 items-center justify-center rounded-full bg-[#D24A22] px-6 text-[13px] font-semibold text-white transition hover:bg-[#B23C1A]"
+                >
+                  Find a Canadian number
+                </Link>
 
-          <Link
-            href="#porting"
-            className="inline-flex h-11 items-center justify-center rounded-full border border-[#1A1A17] bg-transparent px-6 text-[13px] font-semibold text-[#1A1A17] transition hover:bg-white"
-          >
-            Port my existing number
-          </Link>
-        </div>
+                <Link
+                  href="/number-porting"
+                  className="inline-flex h-11 items-center justify-center rounded-full border border-[#1A1A17] bg-transparent px-6 text-[13px] font-semibold text-[#1A1A17] transition hover:bg-white"
+                >
+                  Port my existing number
+                </Link>
+              </div>
 
-        {/* Small disclaimer */}
-        <p className="mt-5 max-w-[480px] text-[10.5px] leading-5 text-[#8C8271]">
-          Availability changes in real time. Capability, verification, 9-1-1,
-          messaging, language, and pricing depend on number, provider, plan,
-          and use case.
-        </p>
-      </div>
+              {/* Small disclaimer */}
+              <p className="mt-5 max-w-[480px] text-[10.5px] leading-5 text-[#8C8271]">
+                Availability changes in real time. Capability, verification, 9-1-1,
+                messaging, language, and pricing depend on number, provider, plan,
+                and use case.
+              </p>
+            </div>
 
-      {/* RIGHT IMAGE */}
-      <div className="relative min-h-[360px] overflow-hidden sm:min-h-[440px] lg:min-h-[570px]">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={IMAGES.hero.src}
-          alt={IMAGES.hero.alt}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+            {/* RIGHT IMAGE */}
+            <div className="relative min-h-[360px] overflow-hidden sm:min-h-[440px] lg:min-h-[570px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={IMAGES.hero.src}
+                alt={IMAGES.hero.alt}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
 
-        {/* Optional subtle image overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-transparent to-transparent" />
-      </div>
-    </div>
-
-    {/* ═══ SEARCH CARD OVERLAPPING HERO ═══ */}
-    <div
-      id="search"
-      className="relative z-10 mx-auto -mt-8 max-w-[1100px] px-2 pb-10 sm:-mt-10"
-    >
-      <div className="rounded-2xl border border-[#E6DFD1] bg-white p-4 shadow-[0_8px_30px_rgba(60,50,35,0.12)] sm:p-5 md:p-6">
-
-        {/* Label */}
-        <label
-          htmlFor="num-search"
-          className="block text-[12px] font-bold text-[#1A1A17]"
-        >
-          Search by city, province or territory, or area code
-        </label>
-
-        {/* Search row */}
-        <div className="mt-2.5 flex flex-col gap-2.5 sm:flex-row">
-          <div className="relative flex-1">
-            <FiSearch
-              aria-hidden
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-[15px] text-[#A79C86]"
-            />
-
-            <input
-              id="num-search"
-              type="search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="e.g. Calgary, Ontario, or 416"
-              className="h-11 w-full rounded-full border border-[#E6DFD1] bg-[#FBF8F1] pl-10 pr-5 text-[12.5px] text-[#1A1A17] placeholder:text-[#A79C86] focus:border-[#D24A22] focus:outline-none"
-            />
+              {/* Optional subtle image overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/5 via-transparent to-transparent" />
+            </div>
           </div>
 
-          <button
-            type="button"
-            className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#D24A22] px-7 text-[13px] font-semibold text-white transition hover:bg-[#B23C1A]"
+          {/* ═══ SEARCH CARD OVERLAPPING HERO ═══ */}
+          <div
+            id="search"
+            className="relative z-10 mx-auto -mt-8 max-w-[1100px] px-2 pb-10 sm:-mt-10"
           >
-            Search numbers
-            <FiArrowRight aria-hidden />
-          </button>
-        </div>
+            <div className="rounded-2xl border border-[#E6DFD1] bg-white p-4 shadow-[0_8px_30px_rgba(60,50,35,0.12)] sm:p-5 md:p-6">
 
-        {/* Suggestions */}
-        <p className="mt-2.5 text-[11px] text-[#5C5C55]">
-          Try{" "}
-          {["Toronto", "Québec", "604"].map((t, i) => (
-            <React.Fragment key={t}>
-              <button
-                type="button"
-                onClick={() => setQuery(t)}
-                className="font-semibold text-[#C2421F] hover:underline"
+              {/* Label */}
+              <label
+                htmlFor="num-search"
+                className="block text-[12px] font-bold text-[#1A1A17]"
               >
-                {t}
-              </button>
+                Search by city, province or territory, or area code
+              </label>
 
-              {i === 0 ? ", " : i === 1 ? ", or " : ""}
-            </React.Fragment>
-          ))}
-        </p>
+              {/* Search row */}
+              <div className="mt-2.5 flex flex-col gap-2.5 sm:flex-row">
+                <div className="relative flex-1">
+                  <FiSearch
+                    aria-hidden
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-[15px] text-[#A79C86]"
+                  />
 
-        {/* Availability note */}
-        <p className="mt-2.5 flex items-start gap-2 text-[10.5px] leading-5 text-[#8C8271]">
-          <span
-            className="mt-1 text-[#D24A22]"
-            aria-hidden
-          >
-            •
-          </span>
+                  <input
+                    id="num-search"
+                    type="search"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="e.g. Calgary, Ontario, or 416"
+                    className="h-11 w-full rounded-full border border-[#E6DFD1] bg-[#FBF8F1] pl-10 pr-5 text-[12.5px] text-[#1A1A17] placeholder:text-[#A79C86] focus:border-[#D24A22] focus:outline-none"
+                  />
+                </div>
 
-          Availability changes in real time and can vary by location, plan,
-          verification, and number capability.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+                <button
+                  type="button"
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#D24A22] px-7 text-[13px] font-semibold text-white transition hover:bg-[#B23C1A]"
+                >
+                  Search numbers
+                  <FiArrowRight aria-hidden />
+                </button>
+              </div>
+
+              {/* Suggestions */}
+              <p className="mt-2.5 text-[11px] text-[#5C5C55]">
+                Try{" "}
+                {["Toronto", "Québec", "604"].map((t, i) => (
+                  <React.Fragment key={t}>
+                    <button
+                      type="button"
+                      onClick={() => setQuery(t)}
+                      className="font-semibold text-[#C2421F] hover:underline"
+                    >
+                      {t}
+                    </button>
+
+                    {i === 0 ? ", " : i === 1 ? ", or " : ""}
+                  </React.Fragment>
+                ))}
+              </p>
+
+              {/* Availability note */}
+              <p className="mt-2.5 flex items-start gap-2 text-[10.5px] leading-5 text-[#8C8271]">
+                <span
+                  className="mt-1 text-[#D24A22]"
+                  aria-hidden
+                >
+                  •
+                </span>
+
+                Availability changes in real time and can vary by location, plan,
+                verification, and number capability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* ═══ CITIES ═══ */}
       <section className="bg-[#F6F2E9] pb-14 md:pb-20">
         <div className="mx-auto max-w-6xl px-5">
@@ -439,9 +438,8 @@ export default function CanadaLocalNumbers() {
             {availableNumbers.map((n, i) => (
               <li
                 key={n.number}
-                className={`flex flex-wrap items-center gap-4 p-5 ${
-                  i > 0 ? "border-t border-[#EFE9DC]" : ""
-                }`}
+                className={`flex flex-wrap items-center gap-4 p-5 ${i > 0 ? "border-t border-[#EFE9DC]" : ""
+                  }`}
               >
                 <span className="font-mono text-[16px] font-semibold tracking-tight text-[#1A1A17]">
                   {n.number}
@@ -504,12 +502,14 @@ export default function CanadaLocalNumbers() {
                   </li>
                 ))}
               </ul>
-              <button
-                type="button"
-                className="mt-6 h-12 w-full rounded-full bg-[#D24A22] text-[14px] font-semibold text-white transition hover:bg-[#B23C1A]"
-              >
-                Check portability
-              </button>
+              <Link href="/number-porting">
+                <button
+                  type="button"
+                  className="mt-6 h-12 w-full rounded-full bg-[#D24A22] text-[14px] font-semibold text-white transition hover:bg-[#B23C1A]"
+                >
+                  Check portability
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -545,7 +545,7 @@ export default function CanadaLocalNumbers() {
                 ))}
               </ul>
               <Link
-                href="#"
+                href="/calling"
                 className="mt-6 inline-flex h-11 w-full items-center justify-center rounded-full border border-[#E6DFD1] text-[13px] font-semibold text-[#1A1A17] transition hover:border-[#1A1A17]"
               >
                 Caller ID &amp; reputation help
@@ -600,7 +600,7 @@ export default function CanadaLocalNumbers() {
                 ))}
               </ul>
               <Link
-                href="#"
+                href="/emergency-calling"
                 className="mt-6 inline-flex h-11 w-full items-center justify-center rounded-full border border-[#E6DFD1] text-[13px] font-semibold text-[#1A1A17] transition hover:border-[#1A1A17]"
               >
                 Learn about emergency calling
@@ -652,9 +652,8 @@ export default function CanadaLocalNumbers() {
               {caslRows.map((r, i) => (
                 <div
                   key={r.label}
-                  className={`flex flex-wrap items-center justify-between gap-3 py-3.5 ${
-                    i > 0 ? "border-t border-[#EFE9DC]" : ""
-                  }`}
+                  className={`flex flex-wrap items-center justify-between gap-3 py-3.5 ${i > 0 ? "border-t border-[#EFE9DC]" : ""
+                    }`}
                 >
                   <dt className="text-[12.5px] text-[#3F3F39]">{r.label}</dt>
                   <dd>
@@ -675,9 +674,8 @@ export default function CanadaLocalNumbers() {
               {languageRows.map((r, i) => (
                 <div
                   key={r.label}
-                  className={`flex flex-wrap items-center justify-between gap-3 py-3.5 ${
-                    i > 0 ? "border-t border-[#EFE9DC]" : ""
-                  }`}
+                  className={`flex flex-wrap items-center justify-between gap-3 py-3.5 ${i > 0 ? "border-t border-[#EFE9DC]" : ""
+                    }`}
                 >
                   <dt className="text-[12.5px] text-[#3F3F39]">{r.label}</dt>
                   <dd>

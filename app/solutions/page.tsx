@@ -1,10 +1,10 @@
 import React from 'react'
-import PrivacyPolicy from './PrivacyPolicy'
+import Solutions from './Solutions'
 
 export default function page() {
   return (
     <>
-      <PrivacyPolicy/>
+      <Solutions/>
     </>
   )
 }
