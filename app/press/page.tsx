@@ -1,6 +1,5 @@
 "use client";
 
-
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
 import {
@@ -197,14 +196,16 @@ const factQa = [
 
 // ─── MEDIA ASSETS ────────────────────────────────────────────────────────────
 const assets = [
-  { kind: "logo-dark", title: "Zoiko Local logo — light", meta: "SVG, PNG · for dark backgrounds" },
-  { kind: "logo-light", title: "Zoiko Local logo — dark", meta: "SVG, PNG · for light backgrounds" },
-  { kind: "image", image: IMAGES.screenshot, title: "Product screenshot — Conversation Center", meta: "PNG · v2026.08 · web" },
-  { kind: "image", image: IMAGES.lifestyle, title: "Approved lifestyle imagery", meta: "png · rights cleared for press use" },
-  { kind: "doc", icon: <FiFile />, title: "Boilerplate & fact sheet", meta: "DOCX, PDF · v1.3 · effective Aug 2026" },
-  { kind: "doc", icon: <FiBook />, title: "Brand usage guidelines", meta: "PDF · naming, clear space, do's and don'ts" },
-  { kind: "image", image: IMAGES.headshots, title: "Leadership headshots", meta: "png · approved spokespeople only" },
-  { kind: "zip", icon: <FiPackage />, title: "Full media kit (ZIP)", meta: "All current approved assets, with manifest" },
+  { kind: "logo-dark", title: "Zoiko Local logo — light", meta: "SVG, PNG · for dark backgrounds", href: "#" },
+  { kind: "logo-light", title: "Zoiko Local logo — dark", meta: "SVG, PNG · for light backgrounds", href: "#" },
+  { kind: "image", image: IMAGES.screenshot, title: "Product screenshot — Conversation Center", meta: "PNG · v2026.08 · web", href: "#" },
+  { kind: "image", image: IMAGES.lifestyle, title: "Approved lifestyle imagery", meta: "png · rights cleared for press use", href: "#" },
+  { kind: "doc", icon: <FiFile />, title: "Boilerplate & fact sheet", meta: "PDF · v1.3 · effective Aug 2026", href: "/press/boilerplate-fact-sheet.pdf" },
+  { kind: "doc", icon: <FiBook />, title: "Brand usage guidelines", meta: "PDF · naming, clear space, do's and don'ts", href: "/press/brand-usage-guidelines.pdf" },
+  { kind: "doc", icon: <FiFile />, title: "Press kit", meta: "PDF · media-friendly resource guide", href: "/press/press-kit.pdf" },
+  { kind: "doc", icon: <FiFile />, title: "Product & platform overview", meta: "PDF · approved product narrative framework", href: "/press/product-platform-overview.pdf" },
+  { kind: "image", image: IMAGES.headshots, title: "Leadership headshots", meta: "png · approved spokespeople only", href: "#" },
+  { kind: "doc", icon: <FiPackage />, title: "Full media kit", meta: "PDF · all current approved assets with manifest", href: "/press/full-media-kit.pdf" },
 ];
 
 // ─── SPOKESPEOPLE — require sign-off before publishing ──────────────────────
@@ -258,8 +259,6 @@ const boilerplates = [
 ];
 
 // ─── FAQ ─────────────────────────────────────────────────────────────────────
-// Only the first answer was legible in the mockup; the rest restate rules
-// already stated on this page so the FAQ can't contradict it.
 const faqs = [
   {
     q: "Can I use the Zoiko Local logo in my article?",
@@ -267,7 +266,7 @@ const faqs = [
   },
   {
     q: "How do I request an interview with a Zoiko Local spokesperson?",
-    a: "Use the media inquiry form and select “Interview / comment request”. Availability isn't guaranteed on any given topic or date — the team will route your request to the right spokesperson.",
+    a: 'Use the media inquiry form and select "Interview / comment request". Availability isn\'t guaranteed on any given topic or date — the team will route your request to the right spokesperson.',
   },
   {
     q: "What should I do if I spot an error in a published release?",
@@ -307,8 +306,6 @@ function H2({ children }: { children: React.ReactNode }) {
   );
 }
 
-// Category → pill colour. A "Correction" tag is visually distinct on purpose:
-// a reader scanning the archive should be able to spot it without reading.
 function tagClass(tag: string) {
   if (tag === "Correction") return "bg-[#FBDDD2] text-[#C2421F]";
   if (tag === "Market expansion") return "bg-[#FBEAE3] text-[#C2421F]";
@@ -335,7 +332,6 @@ export default function PressNewsroom() {
   }, [query, category]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
-  // Clamp rather than store a page that no longer exists after filtering.
   const currentPage = Math.min(page, totalPages);
   const visible = filtered.slice((currentPage - 1) * PER_PAGE, currentPage * PER_PAGE);
 
@@ -345,8 +341,6 @@ export default function PressNewsroom() {
       setCopied(title);
       window.setTimeout(() => setCopied(null), 2000);
     } catch {
-      // Clipboard can be blocked by permissions or a non-secure context.
-      // Failing silently is wrong here — the text is selectable, so tell them.
       setCopied(`${title}:failed`);
       window.setTimeout(() => setCopied(null), 3000);
     }
@@ -465,7 +459,6 @@ export default function PressNewsroom() {
           <Eyebrow>Newsroom archive</Eyebrow>
           <H2>Latest news and press releases.</H2>
 
-          {/* Search + filters. Both really work — they filter the array below. */}
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <div className="relative min-w-[240px] flex-1 sm:max-w-xs">
               <label htmlFor="press-search" className="sr-only">
@@ -511,7 +504,6 @@ export default function PressNewsroom() {
             </div>
           </div>
 
-          {/* Results */}
           {visible.length === 0 ? (
             <p className="mt-10 rounded-2xl bg-white px-6 py-8 text-center text-[13.5px] text-[#5C6660]">
               No releases match that search. Try a different term or clear the category filter.
@@ -554,7 +546,6 @@ export default function PressNewsroom() {
             </div>
           )}
 
-          {/* Pagination — real, and reflects the filtered result count. */}
           {totalPages > 1 && (
             <nav className="mt-10 flex items-center justify-center gap-2" aria-label="Pagination">
               <button
@@ -614,8 +605,6 @@ export default function PressNewsroom() {
             ))}
           </div>
 
-          {/* Description list — these are question/answer pairs, so <dl> is the
-              correct element and it stacks cleanly on mobile. */}
           <dl className="mt-5 rounded-2xl bg-white p-6 md:p-7">
             {factQa.map((f, i) => (
               <div key={f.q} className={i > 0 ? "mt-5 border-t border-[#EDE7DB] pt-5" : ""}>
@@ -640,8 +629,6 @@ export default function PressNewsroom() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {assets.map((a) => (
               <div key={a.title} className="flex flex-col overflow-hidden rounded-2xl bg-white">
-                {/* Logo tiles render the wordmark as type, not an image file —
-                    the preview stays crisp at any size. */}
                 {a.kind === "logo-dark" && (
                   <div className="flex h-[130px] items-center justify-center bg-[#0E3129]">
                     <span className="text-[17px] font-bold tracking-tight">
@@ -663,12 +650,8 @@ export default function PressNewsroom() {
                 {a.kind === "image" && a.image && (
                   <Img src={a.image.src} alt={a.image.alt} className="h-[130px] w-full" rounded="rounded-none" />
                 )}
-                {(a.kind === "doc" || a.kind === "zip") && (
-                  <div
-                    className={`flex h-[130px] items-center justify-center ${
-                      a.kind === "zip" ? "bg-[#FBEAE3] text-[#C2421F]" : "bg-white text-[#0E5C4E]"
-                    }`}
-                  >
+                {a.kind === "doc" && (
+                  <div className="flex h-[130px] items-center justify-center bg-white text-[#0E5C4E]">
                     <span className="text-3xl">{a.icon}</span>
                   </div>
                 )}
@@ -676,12 +659,13 @@ export default function PressNewsroom() {
                 <div className="flex flex-1 flex-col p-5">
                   <h3 className="text-[13.5px] font-bold leading-snug text-[#0E2A21]">{a.title}</h3>
                   <p className="mt-1.5 flex-1 text-[11.5px] leading-5 text-[#8C8271]">{a.meta}</p>
-                  <Link
-                    href="#"
+                  <a
+                    href={a.href}
+                    download
                     className="mt-4 flex items-center justify-between text-[12.5px] font-semibold text-[#E85D3C] hover:underline"
                   >
                     Download <FiDownload aria-hidden />
-                  </Link>
+                  </a>
                 </div>
               </div>
             ))}
@@ -767,8 +751,6 @@ export default function PressNewsroom() {
             </ul>
           </div>
 
-          {/* Real labelled fields. No endpoint wired — point the submit at your
-              media-relations handler. */}
           <div className="rounded-2xl bg-white/[0.05] p-6 ring-1 ring-white/10 md:p-7">
             <div className="grid gap-5 sm:grid-cols-2">
               <div>

@@ -315,7 +315,7 @@ export default function Contactsupport() {
 
                         </button></a>
 
-                        <button
+                      <a href="/contact-sales">  <button
                             className="h-12 px-9 rounded-xl border border-[#0F6660]
                 dark:border-slate-600
                 bg-white dark:bg-slate-800
@@ -328,7 +328,7 @@ export default function Contactsupport() {
 
                             Talk to Sales
 
-                        </button>
+                        </button></a>
 
                     </div>
 

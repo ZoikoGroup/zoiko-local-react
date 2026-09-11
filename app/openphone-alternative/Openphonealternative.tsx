@@ -137,9 +137,9 @@ export default function Openphonealternative() {
                             <p className="mt-8 text-sm text-gray-500 dark:text-gray-400">
                                 Also replacing a Skype Number?
 
-                                <span className="ml-1 text-[#EB643F] font-medium cursor-pointer hover:underline">
+                                <a href="">  <span className="ml-1 text-[#EB643F] font-medium cursor-pointer hover:underline">
                                     Switch from Skype →
-                                </span>
+                                </span></a>
                             </p>
 
                             {/* Bottom Features */}
@@ -519,9 +519,9 @@ export default function Openphonealternative() {
 
                                 Replacing a Skype Number too?
 
-                                <span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
+                               <a href="">  <span className="ml-1 text-[#EB643F] font-medium cursor-pointer hover:underline">
                                     Switch from Skype →
-                                </span>
+                                </span></a>
                             </p>
                         </div>
                     </div>

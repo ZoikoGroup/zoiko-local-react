@@ -1,30 +1,5 @@
 "use client";
 
-// ─────────────────────────────────────────────────────────────────────────────
-// ZOIKO LOCAL — RECORDING & CONSENT
-//
-// Same document system as Terms / AUP / DPA / AI Terms, but a 3-column body:
-// left TOC, centre Q&A, right action rail.
-//
-// ⚠ THIS PAGE MAKES MORE ENFORCEABLE PRODUCT CLAIMS THAN ANY OF THE OTHERS.
-// The mockup's own disclaimer says the "operative legal sentences are
-// illustrative and are authored and approved by Zoiko Legal and Privacy
-// against the final product configuration before publication." That note is
-// rendered at the top of the body — keep it until Legal signs off, because
-// several statements below are commitments a regulator can test:
-//
-//   • "a host cannot suppress mandatory indicators"
-//   • "Payment credentials, authentication secrets, and one-time codes are
-//      not stored in recordings or transcripts by default"
-//   • "an administrator cannot hide mandatory participant notices"
-//   • "Deleting a recording ... remove[s] associated derivative transcripts"
-//   • the per-artifact retention table
-//
-// Verify each against the shipped product, not against this design.
-//
-// NOTE ON `metadata`: client component (scroll-spy TOC + jurisdiction tabs),
-// so `metadata` can't be exported here. Add a sibling layout.tsx for it.
-// ─────────────────────────────────────────────────────────────────────────────
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -50,46 +25,31 @@ import {
 
 const DOC = { effective: "August 28, 2026", updated: "August 28, 2026", version: "1.0" };
 
-// ─── IMAGE PLACEHOLDER ───────────────────────────────────────────────────────
-// Photos are slots, labelled and sized to the mockup's ratios. To use a real
-// asset, swap the inner div for <Image src=… alt=… fill className="object-cover" />
-// and keep the wrapper's relative + rounding classes.
-// ─── IMAGE PATHS ─────────────────────────────────────────────────────────────
-// All assets live in /public/images/recording-consent/, referenced from the
-// web root as /images/recording-consent/… . Paths are collected here so a
-// rename is one edit, not a hunt through the markup.
+
 const IMAGES = {
   hero: {
-    src: "/images/Recording-consent-hero.png",
+    src: "/images/Person taking a business call on a mobile phone.png",
     alt: "A person sitting by a window taking a business call",
   },
   desk: {
-    src: "/images/Always-visible.png",
+    src: "/images/Modern office building exterior.png",
     alt: "Overhead view of a shared desk with several laptops in use",
   },
   calls: {
-    src: "/images/recording-consent/calls.jpg",
+    src: "/images/recording-consent/calls.png",
     alt: "A person holding a phone during a call",
   },
   meetings: {
-    src: "/images/recording-consent/video-meetings.jpg",
+    src: "/images/recording-consent/video-meetings.png",
     alt: "Two colleagues in a video meeting",
   },
   aiReceptionist: {
-    src: "/images/recording-consent/ai-receptionist.jpg",
+    src: "/images/recording-consent/ai-receptionist.png",
     alt: "A desk phone and headset representing the AI receptionist",
   },
 } as const;
 
-// Fixed-ratio image frame. The wrapper keeps the reserved space from the
-// design, so the layout holds its shape whether or not the file exists yet —
-// a missing asset shows the warm placeholder tone instead of collapsing the
-// section or shifting everything below it.
-//
-// Uses a plain <img> by request. Next lints this as a warning
-// (@next/next/no-img-element); swapping to next/image with `fill` silences it
-// and adds automatic optimisation — the wrapper already has `relative`, so
-// that change is a one-line edit here and nothing else.
+
 function Img({
   src,
   alt,
