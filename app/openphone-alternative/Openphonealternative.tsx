@@ -114,7 +114,7 @@ export default function Openphonealternative() {
                                     Get a Local Number →
                                 </button></a>
 
-                                <a href="/terms-of-service"><button
+                                <a href=""><button
                                     className="h-12 px-8 rounded-xl
                               border border-[#0F6660]
                               dark:border-slate-600

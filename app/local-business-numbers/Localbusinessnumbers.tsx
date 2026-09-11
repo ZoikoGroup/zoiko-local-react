@@ -127,7 +127,7 @@ function Localbusinessnumbers() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
              <a href="/get-a-local-number"></a> <button className={coralBtn}>Get a Local Number →</button>
-             <a href="/about-us"><button className={outlineBtn}>How it works</button></a> 
+             <a href="#"></a> <button className={outlineBtn}>How it works</button>
             </div>
             <p className="mt-5 text-sm text-gray-600 dark:text-gray-400">
               Replacing a Skype Number?{" "}

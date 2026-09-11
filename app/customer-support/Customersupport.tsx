@@ -192,8 +192,8 @@ function CustomerSupport() {
               support when no one is available.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <a href="/local-business-numbers"> <button className={coralBtn}>Set Up a Support Number</button></a>
-              <a href="/ai-receptionist"> <button className={lightBtn}>Explore AI Receptionist</button></a>
+              <a href="local-business-number"> <button className={coralBtn}>Set Up a Support Number</button></a>
+              <a href="ai-receptionist"> <button className={lightBtn}>Explore AI Receptionist</button></a>
             </div>
             <a href="/plans-and-pricing" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">See Pricing →</a>
             <div className="mt-5 flex max-w-md items-center justify-between gap-4 rounded-2xl bg-white px-5 py-4 text-sm shadow-sm ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
@@ -297,7 +297,7 @@ function CustomerSupport() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-           <a href="/local-business-numbers"> <button className={coralBtn}>Set Up a Support Number</button></a>
+           <a href="/local-business-number"> <button className={coralBtn}>Set Up a Support Number</button></a>
           </div>
         </div>
       </section>
@@ -374,7 +374,7 @@ function CustomerSupport() {
               </div>
             ))}
             <div className="bg-[#f3efe7] py-6 text-center dark:bg-gray-800">
-             <a href="/local-business-numbers"><button className={coralBtn}>Give Customers a Support Number They Can Trust</button></a>
+             <a href="/local-business-number"><button className={coralBtn}>Give Customers a Support Number They Can Trust</button></a>
             </div>
           </div>
         </div>
@@ -480,7 +480,7 @@ function CustomerSupport() {
             Give customers a trusted support number, route calls to the right team, and capture inquiries when no one is available.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-           <a href="/local-business-numbers"> <button className={lightBtn}>Set Up a Support Number</button></a>
+           <a href="/local-business-number"> <button className={lightBtn}>Set Up a Support Number</button></a>
             <a href="/ai-receptionist"> <button className={outlineDarkBtn}>Explore AI Receptionist</button></a>
             <a href="/plans-and-pricing"> <button className={outlineDarkBtn}>See Pricing</button></a>
           </div>

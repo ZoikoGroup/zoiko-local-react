@@ -490,7 +490,7 @@ export default function Googlevoice() {
                                 </button></a>
 
                                 {/* Secondary */}
-                                <a href="/plans-and-pricing">
+                                <a href="/pricing">
                                 <button
                                     className="h-12 px-8 rounded-xl
                         bg-white

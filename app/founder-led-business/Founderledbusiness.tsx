@@ -105,7 +105,7 @@ const useCases: { title: string; desc: string; icon: IconType; bg: string }[] = 
 ];
 
 const platform: { name: string; desc: string; cta: string; icon: IconType; bg: string; href: string }[] = [
-  { name: "Local Numbers", desc: "A local business number in the market your customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]", href: "/local-business-numbers" },
+  { name: "Local Numbers", desc: "A local business number in the market your customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]", href: "/local-business-number" },
   { name: "Calling", desc: "Make and receive business calls with a professional caller identity.", cta: "Explore Calling", icon: FiPhone, bg: "bg-[#fbe9e3]", href: "/calling" },
   { name: "Video", desc: "Meet customers, partners, investors and suppliers through secure video.", cta: "Explore Video", icon: FiVideo, bg: "bg-[#e3f3ee]", href: "/video" },
   { name: "AI Receptionist", desc: "Capture and route inquiries when you are busy or unavailable.", cta: "Explore AI Receptionist", icon: FiCpu, bg: "bg-[#fdf0db]", href: "/ai-receptionist" },
@@ -171,7 +171,7 @@ function FounderLedBusiness() {
               with the company.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-             <a href="/local-business-numbers"> <button className={coralBtn}>Get Your Business Number</button></a>
+             <a href="/local-business-number"> <button className={coralBtn}>Get Your Business Number</button></a>
              <a href="/plans-and-pricing"> <button className={lightBtn}>See Pricing</button></a>
             </div>
             <a href="/ai-receptionist" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">Explore AI Receptionist →</a>
@@ -276,7 +276,7 @@ function FounderLedBusiness() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <a href="/local-business-numbers"> <button className={coralBtn}>Get Your Business Number</button></a>
+            <a href="/local-business-number"> <button className={coralBtn}>Get Your Business Number</button></a>
           </div>
         </div>
       </section>
@@ -348,7 +348,7 @@ function FounderLedBusiness() {
               </div>
             ))}
             <div className="bg-[#f3efe7] py-6 text-center dark:bg-gray-800">
-              <a href="/local-business-numbers"> <button className={coralBtn}>Separate Personal and Business Calls</button></a>
+              <a href="/local-business-number"> <button className={coralBtn}>Separate Personal and Business Calls</button></a>
             </div>
           </div>
         </div>
@@ -434,7 +434,7 @@ function FounderLedBusiness() {
             Get a professional business number, separate personal and work calls, and give customers a trusted way to reach you from day one.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="/local-business-numbers"> <button className={lightBtn}>Get Your Business Number</button></a>
+            <a href="/local-business-number"> <button className={lightBtn}>Get Your Business Number</button></a>
             <a href="/plans-and-pricing"> <button className={outlineDarkBtn}>See Pricing</button></a>
             <a href="/ai-receptionist"> <button className={outlineDarkBtn}>Explore AI Receptionist</button></a>
           </div>

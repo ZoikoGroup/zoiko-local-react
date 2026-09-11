@@ -144,7 +144,7 @@ export default function Switchfromskype() {
                             {/* Buttons */}
 
                             <div className="mt-4 flex flex-col sm:flex-row gap-4">
-                                <a href="/number-porting">   <button
+                                <a href="/switch-from-skype">   <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white

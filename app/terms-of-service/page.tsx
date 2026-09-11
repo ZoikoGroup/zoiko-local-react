@@ -276,7 +276,7 @@ function PlanPanel() {
 
         {resolved?.signedIn === false ? (
           <Link
-            href="/login"
+            href="/plans-and-pricing"
             className="mt-6 inline-flex h-11 items-center rounded-full bg-[#E85D3C] px-6 text-[13.5px] font-semibold text-white transition hover:bg-[#D14C2C]"
           >
             Sign in to see your plan
