@@ -177,9 +177,9 @@ export default function Switchfromskype() {
 
                             <p className="mt-6 text-sm text-gray-500 dark:text-gray-400">
                                 Questions about moving?
-                                <span className="ml-1 text-[#EB643F] font-medium cursor-pointer hover:underline">
+                              <a href="/customer-support"><span className="ml-1 text-[#EB643F] font-medium cursor-pointer hover:underline">
                                     Talk to migration support →
-                                </span>
+                                </span></a>  
                             </p>
 
                             {/* Features */}
