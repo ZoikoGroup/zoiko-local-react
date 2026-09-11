@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 type FooterLink = string | { title: string; href: string };
 
@@ -15,34 +15,35 @@ const footerSections: FooterSection[] = [
         links: [
             { title: "Search Numbers", href: "/get-a-local-number" },
             { title: "Pricing", href: "/plans-and-pricing" },
-            { title: "Business Workspace", href: "/business" },
-            { title: "Mobile Apps", href: "#" },
-            { title: "Status Page", href: "#" },
+            { title: "Business Workspace", href: "/business-communications" },
+            { title: "Mobile Apps", href: "/business-mobile-phone-app" },
+            { title: "Status Page", href: "/status" },
             { title: "Contact Support", href: "/contact-support" },
-            { title: "Contact Sales", href: "#" },
+            { title: "Contact Sales", href: "/contact-sales" },
         ],
     },
     {
         title: "Global Coverage",
         links: [
-            { title: "United States", href: "#" },
-            { title: "United Kingdom", href: "#" },
-            { title: "Canada", href: "#" },
-            { title: "European Numbers", href: "#" },
-            { title: "Nigeria", href: "#" },
-            { title: "South Africa", href: "#" },
-            { title: "Caribbean Numbers", href: "#" },
-            { title: "African Numbers", href: "#" },
-            { title: "All Countries", href: "#" },
+            { title: "United States", href: "/us-local-phone-numbers" },
+            { title: "United Kingdom", href: "/uk-local-phone-numbers" },
+            { title: "Canada", href: "/canada-local-phone-numbers" },
+            { title: "European Numbers", href: "/europe-local-phone-numbers" },
+            { title: "Nigeria", href: "/nigeria-local-phone-numbers" },
+            { title: "South Africa", href: "/south-africa-local-phone-numbers" },
+            { title: "Caribbean Numbers", href: "/caribbean-local-phone-numbers" },
+            { title: "African Numbers", href: "/africa-local-phone-numbers" },
+            { title: "Jamaica", href: "/jamaica-local-phone-numbers" },
+            // { title: "All Countries", href: "#" },
         ],
     },
     {
         title: "Use Cases",
         links: [
-            { title: "Business Numbers", href: "/business" },
+            { title: "Business Numbers", href: "/business-communications" },
             { title: "Diaspora Founders", href: "/diaspora-founders" },
             { title: "Remote Teams", href: "/remote-teams" },
-            { title: "International Expansion", href: "#" },
+            { title: "International Expansion", href: "/international-expansion" },
             { title: "Customer Support", href: "/customer-support" },
             { title: "Founder-Led Business", href: "/founder-led-business" },
         ],
@@ -61,16 +62,16 @@ const footerSections: FooterSection[] = [
     {
         title: "Legal",
         links: [
-            { title: "Privacy Policy",href:"#" },
-            { title: "Terms of Service", href: "#" },
-            { title: "Acceptable Use Policy", href: "#" },
-            { title: "Data Processing Agreement", href: "#" },
-            { title: "AI Terms", href: "#" },
-            { title: "Recording & Consent", href: "#" },
+            { title: "Privacy Policy",href:"/privacy-policy" },
+            { title: "Terms of Service", href: "/terms-of-service" },
+            { title: "Acceptable Use Policy", href: "/acceptable-use-policy" },
+            { title: "Data Processing Agreement", href: "/data-processing-agreement" },
+            { title: "AI Terms", href: "/ai-terms" },
+            { title: "Recording & Consent", href: "/recording-consent" },
             { title: "Emergency Calling", href: "/emergency-calling" },
             { title: "Number Porting", href: "/number-porting" },
-            { title: "Low Enforcement Requests", href: "#" },
-            { title: "Accessibility", href: "#" },
+            { title: "Low Enforcement Requests", href: "/law-enforcement" },
+            { title: "Accessibility", href: "/accessibility" },
             
         ],
     },
@@ -78,7 +79,7 @@ const footerSections: FooterSection[] = [
         title: "Company",
         links: [
             { title: "About", href: "/about-us" },
-            { title: "Communications", href: "/communications" },
+            { title: "Communications", href: "/zoiko-communications-group" },
             { title: "Careers", href: "/careers" },
             { title: "Press", href: "/press" },
             { title: "Contact", href: "/contact-support" },
@@ -122,10 +123,21 @@ export default function Footer() {
                         </div>
 
                         <div className="mt-8 flex gap-3">
-                            <SocialIcon icon={<FaTwitter size={16} />} />
-                            <SocialIcon icon={<FaLinkedin size={16} />} />
-                            <SocialIcon icon={<FaFacebook size={16} />} />
-                            <SocialIcon icon={<FaInstagram size={16} />} />
+                            <a href="https://x.com/ZoikoLocal" target="_blank" rel="noopener noreferrer">
+                                <SocialIcon icon={<FaTwitter size={16} />} />
+                            </a>
+                            <a href="https://www.linkedin.com/company/zoiko-local" target="_blank" rel="noopener noreferrer">
+                                <SocialIcon icon={<FaLinkedin size={16} />} />
+                            </a>
+                            <a href="https://www.facebook.com/zoikolocal" target="_blank" rel="noopener noreferrer">
+                                <SocialIcon icon={<FaFacebook size={16} />} />
+                            </a>
+                            <a href="https://www.instagram.com/zoikolocal" target="_blank" rel="noopener noreferrer">
+                                <SocialIcon icon={<FaInstagram size={16} />} />
+                            </a>
+                            <a href="https://www.youtube.com/@ZoikoLocal" target="_blank" rel="noopener noreferrer">
+                                <SocialIcon icon={<FaYoutube size={16} />} />
+                            </a>
                         </div>
                     </div>
 
@@ -194,10 +206,10 @@ export default function Footer() {
                     </p>
 
                     <div className="flex flex-wrap gap-5">
-                        <Link href="#">Privacy</Link>
-                        <Link href="#">Terms</Link>
-                        <Link href="#">Accessibility</Link>
-                        <Link href="#">Status</Link>
+                        <Link href="/privacy-policy">Privacy</Link>
+                        <Link href="/terms-of-service">Terms</Link>
+                        <Link href="/accessibility">Accessibility</Link>
+                        <Link href="/status">Status</Link>
                     </div>
                 </div>
             </div>

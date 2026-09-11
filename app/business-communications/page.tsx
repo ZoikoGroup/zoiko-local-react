@@ -1,12 +1,11 @@
-// import { business-communications } from "./Buisiness";
-import business-communications from "./Buisiness";
+import  Buisiness from "./Buisiness";
 
 export default function page(){
 return(
 
 
     <>
-    <business-communications/>
+    <Buisiness/>
     </>
 );
 

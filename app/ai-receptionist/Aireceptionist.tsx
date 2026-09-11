@@ -10,6 +10,7 @@ import {
     FiMessageSquare, FiUser, FiClock,
 } from "react-icons/fi";
 import Faq from '../Components/Faq';
+import Link from 'next/link';
 
 const receptionistFeatures = [
     "Answers when your team sleeps",
@@ -1501,12 +1502,13 @@ export default function Aireceptionist() {
                     {/* CTA */}
 
                     <div className="mt-12 flex justify-center">
+                        <Link href="/switch-from-skype">
+                            <button className="h-12 px-10 rounded-xl bg-[#EB643F] text-white font-semibold shadow-lg hover:bg-[#D95A37] transition">
 
-                        <button className="h-12 px-10 rounded-xl bg-[#EB643F] text-white font-semibold shadow-lg hover:bg-[#D95A37] transition">
+                                Switch from Skype to Zoiko Local →
 
-                            Switch from Skype to Zoiko Local →
-
-                        </button>
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -1653,21 +1655,21 @@ export default function Aireceptionist() {
                             </button>
 
                             {/* Secondary */}
-
+                        <Link href="/contact-sales">
                             <button className="h-12 px-8 rounded-full bg-white text-[#123533] text-sm font-semibold hover:bg-gray-100 transition">
 
                                 Talk to Sales
 
                             </button>
-
+                        </Link>
                             {/* Outline */}
-
+                        <Link href="/switch-from-skype">
                             <button className="h-12 px-8 rounded-full border border-white/30 text-white text-sm font-semibold hover:bg-white hover:text-[#123533] transition">
 
                                 Switch from Skype
 
                             </button>
-
+                        </Link>
                         </div>
 
                         {/* Footer */}

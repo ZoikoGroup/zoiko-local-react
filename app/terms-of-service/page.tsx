@@ -14,18 +14,18 @@ const DOC = {
   versionEffectiveShort: "Aug 28, 2026",
 };
 
-// Commercial terms-of-service that apply to every account — not per-subscription data.
-const COMMERCIAL_terms-of-service = {
+// Commercial terms that apply to every account — not per-subscription data.
+const COMMERCIAL_TERMS = {
   cancelAnytime: "Self-service, effective next cycle",
   minimumTerm: "None",
 };
 
 // ─── AT A GLANCE ─────────────────────────────────────────────────────────────
 const glanceCards = [
-  { n: "01", title: "Your agreement", body: "Who you're contracting with and what these terms-of-service cover.", href: "#who-these-terms-of-service-apply-to" },
+  { n: "01", title: "Your agreement", body: "Who you're contracting with and what these Terms cover.", href: "#who-these-terms-apply-to" },
   { n: "02", title: "Subscription & cancellation", body: "How billing, renewal, and cancellation work.", href: "#billing-cancellation" },
   { n: "03", title: "Local numbers", body: "How numbers are assigned, ported, and released.", href: "#numbers-portability" },
-  { n: "04", title: "Service limitations", body: "Emergency calling and other availability boundaries.", href: "#emergency-zoiko-communications-group" },
+  { n: "04", title: "Service limitations", body: "Emergency calling and other availability boundaries.", href: "#emergency-communications" },
   { n: "05", title: "AI & recordings", body: "What our AI receptionist and recording features do — and don't.", href: "#ai-recordings" },
   { n: "06", title: "Disputes & rights", body: "How disagreements get resolved, and rights we can't limit.", href: "#disputes-rights" },
 ];
@@ -47,22 +47,22 @@ type Section = {
 
 const sections: Section[] = [
   {
-    id: "who-these-terms-of-service-apply-to",
+    id: "who-these-terms-apply-to",
     n: "01",
-    title: "Who these terms-of-service apply to",
-    tocLabel: "Who these terms-of-service apply to",
+    title: "Who these Terms apply to",
+    tocLabel: "Who these Terms apply to",
     callout:
-      "These terms-of-service govern your use of Zoiko Local's business-communications calling and zoiko-communications-group services, offered by the applicable Zoiko contracting entity for your account's service country.",
+      "These Terms govern your use of Zoiko Local's business calling and communications services, offered by the applicable Zoiko contracting entity for your account's service country.",
     body: (
       <>
         By creating an account, starting a trial, or purchasing a subscription, you agree to these
-        terms-of-service and to the Zoiko Local Privacy Policy. If you&apos;re accepting on behalf of a business-communications,
-        you confirm you have authority to bind that business-communications.
+        Terms and to the Zoiko Local Privacy Policy. If you&apos;re accepting on behalf of a business,
+        you confirm you have authority to bind that business.
       </>
     ),
     points: [
       "The contracting entity, registered address, and territory shown to you are resolved from your service country — not your IP address.",
-      "Enterprise or negotiated agreements take precedence over these public terms-of-service where a signed order form or MSA says so.",
+      "Enterprise or negotiated agreements take precedence over these public Terms where a signed order form or MSA says so.",
     ],
   },
   {
@@ -93,7 +93,7 @@ const sections: Section[] = [
       "A local number is assigned to your account for use with Zoiko Local — it isn't guaranteed to be permanently owned, and availability depends on your number's country.",
     body: (
       <>
-        Some number countries require identity, address, or business-communications-registration documentation before
+        Some number countries require identity, address, or business-registration documentation before
         a number can be provisioned. We&apos;ll tell you what&apos;s needed during setup.
       </>
     ),
@@ -103,10 +103,10 @@ const sections: Section[] = [
     ],
   },
   {
-    id: "emergency-zoiko-communications-group",
+    id: "emergency-communications",
     n: "04",
-    title: "Emergency zoiko-communications-group",
-    tocLabel: "Emergency zoiko-communications-group",
+    title: "Emergency communications",
+    tocLabel: "Emergency communications",
     callout:
       "Emergency-calling support varies by market and service — check whether it's supported before you rely on it.",
     body: (
@@ -133,7 +133,7 @@ const sections: Section[] = [
       <>
         AI-assisted features are governed separately by the{" "}
         <Link href="#" className="font-medium text-[#C2421F] underline underline-offset-2">
-          AI terms-of-service
+          AI Terms
         </Link>
         . Call recording and transcription features are governed by the{" "}
         <Link href="#" className="font-medium text-[#C2421F] underline underline-offset-2">
@@ -157,7 +157,7 @@ const sections: Section[] = [
     body: (
       <>
         Where applicable, jurisdiction-specific consumer protections, regulator complaint routes, and
-        alternative dispute resolution options apply on top of these terms-of-service and are never overridden by
+        alternative dispute resolution options apply on top of these Terms and are never overridden by
         a global clause.
       </>
     ),
@@ -168,7 +168,7 @@ const sections: Section[] = [
     title: "Changes & version history",
     tocLabel: "Changes & version history",
     callout:
-      "We'll never silently replace these terms-of-service — every version is preserved, dated, and linkable.",
+      "We'll never silently replace these Terms — every version is preserved, dated, and linkable.",
     body: (
       <>
         If we make a material change, we&apos;ll notify you through a durable channel before it takes
@@ -182,7 +182,7 @@ const relatedPolicies = [
   "Privacy Policy",
   "Acceptable Use Policy",
   "Data Processing Agreement",
-  "AI terms-of-service",
+  "AI Terms",
   "Recording & Consent",
   "Law Enforcement Requests",
   "Accessibility",
@@ -223,7 +223,7 @@ function PlanPanel() {
         if (live) setResolved({ signedIn: true, sub });
       })
       .catch(() => {
-        // A failed subscription lookup must not blank out the terms-of-service. Falling
+        // A failed subscription lookup must not blank out the Terms. Falling
         // through to sub: null shows the em-dash state.
         if (live) setResolved({ signedIn: true, sub: null });
       });
@@ -256,8 +256,8 @@ function PlanPanel() {
           : `Automatic, ${billing.toLowerCase()}`
         : dash,
     },
-    { label: "Cancel anytime", value: COMMERCIAL_terms-of-service.cancelAnytime },
-    { label: "Minimum term", value: COMMERCIAL_terms-of-service.minimumTerm },
+    { label: "Cancel anytime", value: COMMERCIAL_TERMS.cancelAnytime },
+    { label: "Minimum term", value: COMMERCIAL_TERMS.minimumTerm },
   ];
 
   return (
@@ -270,20 +270,20 @@ function PlanPanel() {
           What applies to your plan
         </h2>
         <p className="mt-3 max-w-sm text-[13.5px] leading-6 text-white/70">
-          Your terms-of-service acceptance is tied to the exact plan and price shown here — not a general
+          Your Terms acceptance is tied to the exact plan and price shown here — not a general
           estimate.
         </p>
 
         {resolved?.signedIn === false ? (
           <Link
-            href="/login"
+            href="/plans-and-pricing"
             className="mt-6 inline-flex h-11 items-center rounded-full bg-[#E85D3C] px-6 text-[13.5px] font-semibold text-white transition hover:bg-[#D14C2C]"
           >
             Sign in to see your plan
           </Link>
         ) : (
           <Link
-            href="/dashboard/billing"
+            href="#"
             className="mt-6 inline-flex h-11 items-center rounded-full bg-[#E85D3C] px-6 text-[13.5px] font-semibold text-white transition hover:bg-[#D14C2C]"
           >
             View your plan and contract summary
@@ -306,7 +306,7 @@ function PlanPanel() {
 }
 
 // ─── PAGE ────────────────────────────────────────────────────────────────────
-export default function terms-of-serviceOfService() {
+export default function TermsOfService() {
   const [active, setActive] = useState(sections[0].id);
   const [archiveOpen, setArchiveOpen] = useState(false);
 
@@ -342,11 +342,11 @@ export default function terms-of-serviceOfService() {
         {/* ═══ HERO ═══ */}
         <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#E85D3C]">Legal</p>
         <h1 className={`mt-5 text-4xl font-medium tracking-tight text-[#1A1A17] md:text-[46px] ${serif}`}>
-          terms-of-service of <span className="italic text-[#E85D3C]">Service</span>
+          Terms of <span className="italic text-[#E85D3C]">Service</span>
         </h1>
         <p className="mt-6 max-w-xl text-[15px] leading-7 text-[#5C5C55]">
-          These terms-of-service explain the rules for using Zoiko Local — accounts, subscriptions, local
-          numbers, zoiko-communications-group features, billing, and service limitations — in plain language
+          These Terms explain the rules for using Zoiko Local — accounts, subscriptions, local
+          numbers, communications features, billing, and service limitations — in plain language
           first, full detail below.
         </p>
 
@@ -358,10 +358,10 @@ export default function terms-of-serviceOfService() {
         {/* ═══ AT A GLANCE ═══ */}
         <section className="mt-14" aria-labelledby="glance">
           <h2 id="glance" className="text-[16px] font-semibold text-[#1A1A17]">
-            terms-of-service at a glance
+            Terms at a glance
           </h2>
           <p className="mt-2.5 max-w-lg text-[13.5px] leading-6 text-[#7A7A70]">
-            This summary highlights key points only. The full terms-of-service below are the authoritative
+            This summary highlights key points only. The full Terms below are the authoritative
             agreement, subject to rights that cannot be limited by contract.
           </p>
 
@@ -397,10 +397,10 @@ export default function terms-of-serviceOfService() {
               Zoiko Local&apos;s emergency-calling support depends on your plan, service country, and
               device. Review the{" "}
               <Link
-                href="#emergency-zoiko-communications-group"
+                href="#emergency-communications"
                 className="font-medium text-[#C2421F] underline underline-offset-2"
               >
-                Emergency zoiko-communications-group
+                Emergency communications
               </Link>{" "}
               section before relying on this service in an emergency.
             </p>
@@ -528,7 +528,7 @@ export default function terms-of-serviceOfService() {
             <section id="questions" className="mt-12 scroll-mt-28 border-t border-[#E8E2D5] pt-12">
               <h2 className={`flex items-baseline gap-3 text-[21px] font-medium text-[#1A1A17] ${serif}`}>
                 <span className="text-[13px] font-medium text-[#E8814A]">08</span>
-                Questions about these terms-of-service?
+                Questions about these Terms?
               </h2>
               <p className="mt-4 text-[13.5px] leading-7 text-[#5C5C55]">
                 Reach our legal and support teams, or review the related policies that govern

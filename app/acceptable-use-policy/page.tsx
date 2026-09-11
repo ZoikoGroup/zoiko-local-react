@@ -3,7 +3,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // ZOIKO LOCAL — ACCEPTABLE USE POLICY
 //
-// Same document system as the terms-of-service page: sections are data, so the TOC,
+// Same document system as the Terms page: sections are data, so the TOC,
 // the anchor IDs and the cross-links can never drift out of sync with the
 // headings. On a policy page a dead anchor is a compliance problem, not a
 // cosmetic one.
@@ -105,7 +105,7 @@ const sections: Section[] = [
     n: "01",
     title: "Calling rules",
     callout:
-      "Live business-communications calling is allowed. Automated, prerecorded, or high-volume calling needs consent evidence and approval first.",
+      "Live business calling is allowed. Automated, prerecorded, or high-volume calling needs consent evidence and approval first.",
     note: "Examples below are illustrative, not exhaustive.",
     rules: [
       { state: "allowed", text: "Live outbound calling to customers, support lines, and opt-in notifications." },
@@ -152,7 +152,7 @@ const sections: Section[] = [
     body: (
       <>
         Verified brand or CNAM display is available where authorized — impersonating another person,
-        business-communications, or number is a critical violation regardless of intent.
+        business, or number is a critical violation regardless of intent.
       </>
     ),
   },
@@ -168,8 +168,8 @@ const sections: Section[] = [
       <>
         AI voice cloning used for deceptive impersonation — legitimate synthetic voice use is governed
         separately by the{" "}
-        <Link href="#" className="font-medium text-[#C2421F] underline underline-offset-2">
-          AI terms-of-service
+        <Link href="/ai-terms" className="font-medium text-[#C2421F] underline underline-offset-2">
+          AI Terms
         </Link>
         .
       </>,
@@ -190,7 +190,7 @@ const sections: Section[] = [
         </Link>
         .
       </>,
-      "Covert surveillance, stalking, or intercepting zoiko-communications-group not intended for you is prohibited outright.",
+      "Covert surveillance, stalking, or intercepting communications not intended for you is prohibited outright.",
     ],
   },
   {
@@ -237,9 +237,9 @@ const routes = [
 ];
 
 const relatedPolicies = [
-  "terms-of-service of Service",
+  "Terms of Service",
   "Privacy Policy",
-  "AI terms-of-service",
+  "AI Terms",
   "Recording & Consent",
   "Law Enforcement Requests",
 ];

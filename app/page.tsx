@@ -82,14 +82,17 @@ export default function Home() {
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <button className="inline-flex items-center justify-center rounded-full bg-[#F05A2B] px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                  Get a Local Number
-                  <span className="ml-2">→</span>
-                </button>
-
-                <button className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-900 dark:text-white">
-                  See Business Plans
-                </button>
+                <a href="/get-a-local-number">
+                  <button className="inline-flex items-center justify-center rounded-full bg-[#F05A2B] px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    Get a Local Number
+                    <span className="ml-2">→</span>
+                  </button>
+                </a>
+                <a href="/plans-and-pricing">
+                  <button className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-900 dark:text-white">
+                    See Business Plans
+                  </button>
+                </a>
               </div>
 
               <div className="mt-8 flex items-start gap-3">
@@ -574,9 +577,9 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-
-              <button
-                className="
+              <a href="/plans-and-pricing">
+                <button
+                  className="
             mt-8
             w-full
             rounded-full
@@ -588,9 +591,10 @@ export default function Home() {
             transition
             hover:opacity-90
           "
-              >
-                Explore Business Plans
-              </button>
+                >
+                  Explore Business Plans
+                </button>
+              </a>
             </div>
 
             {/* Individual Card */}
@@ -635,8 +639,9 @@ export default function Home() {
                 ))}
               </ul>
 
-              <button
-                className="
+              <a href="/get-a-local-number">
+                <button
+                  className="
             mt-8
             w-full
             rounded-full
@@ -648,9 +653,10 @@ export default function Home() {
             transition
             hover:opacity-90
           "
-              >
-                Get Started
-              </button>
+                >
+                  Get Started
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -822,9 +828,9 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-
-              <button
-                className="
+              <a href="/ai-receptionist">
+                <button
+                  className="
             mt-10
             rounded-full
             bg-[#F26B45]
@@ -835,9 +841,10 @@ export default function Home() {
             transition-all
             hover:opacity-90
           "
-              >
-                See AI Receptionist
-              </button>
+                >
+                  See AI Receptionist
+                </button>
+              </a>
             </div>
 
             {/* Dashboard Card */}
@@ -1240,8 +1247,9 @@ export default function Home() {
 
           {/* CTA */}
           <div className="mt-12 flex justify-center">
-            <button
-              className="
+            <a href="/get-a-local-number">
+              <button
+                className="
           rounded-full
           bg-[#F26B45]
           px-8
@@ -1253,9 +1261,10 @@ export default function Home() {
           hover:scale-[1.02]
           hover:opacity-90
         "
-            >
-              Start With Your First Number
-            </button>
+              >
+                Start With Your First Number
+              </button>
+            </a>
           </div>
         </div>
       </section>
@@ -1441,8 +1450,9 @@ export default function Home() {
           </div>
 
           <div className="mt-10 flex justify-center">
-            <button
-              className="
+            <a href="/global-coverage">
+              <button
+                className="
           flex items-center gap-2
           rounded-full
           border
@@ -1454,10 +1464,11 @@ export default function Home() {
           font-medium
           dark:bg-slate-900
         "
-            >
-              View all countries
-              <FiArrowRight />
-            </button>
+              >
+                View all countries
+                <FiArrowRight />
+              </button>
+            </a>
           </div>
         </div>
       </section>
@@ -1504,9 +1515,9 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-
-              <button
-                className="
+              <a href="#">
+                <button
+                  className="
             mt-10
             rounded-full
             bg-[#F26B45]
@@ -1515,9 +1526,10 @@ export default function Home() {
             font-semibold
             text-white
           "
-              >
-                Book a Demo
-              </button>
+                >
+                  Book a Demo
+                </button>
+              </a>
             </div>
 
             {/* Dashboard */}
@@ -1916,9 +1928,9 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-
-              <button
-                className="
+              <a href="/plans-and-pricing">
+                <button
+                  className="
             mt-10
             rounded-full
             bg-[#F26B45]
@@ -1929,9 +1941,10 @@ export default function Home() {
             transition-all
             hover:opacity-90
           "
-              >
-                View Pricing
-              </button>
+                >
+                  View Pricing
+                </button>
+              </a>
             </div>
 
           </div>
@@ -2048,6 +2061,7 @@ export default function Home() {
 
           {/* CTA */}
           <div className="mt-10 flex justify-center">
+            <a href="/switch-from-skype">
             <button
               className="
           rounded-full
@@ -2063,6 +2077,7 @@ export default function Home() {
             >
               Move Beyond Skype
             </button>
+            </a>
           </div>
         </div>
       </section>
@@ -2095,6 +2110,7 @@ export default function Home() {
                 desc: "Start with your first number",
                 button: "Choose Plan",
                 dark: false,
+                href:"/plans-and-pricing",
               },
               {
                 title: "Business Starter",
@@ -2102,6 +2118,7 @@ export default function Home() {
                 heading: "Choose plan",
                 desc: "Built for first business use",
                 button: "Choose Plan",
+                href:"/plans-and-pricing",
                 dark: false,
               },
               {
@@ -2110,6 +2127,7 @@ export default function Home() {
                 heading: "Choose plan",
                 desc: "Running in multiple markets",
                 button: "Choose Plan",
+                href:"/plans-and-pricing",
                 featured: true,
               },
               {
@@ -2118,6 +2136,7 @@ export default function Home() {
                 heading: "Talk to sales",
                 desc: "Custom & compliance-led",
                 button: "Talk To Sales",
+                href:"/contact-sales",
                 dark: false,
               },
             ].map((plan) => (
@@ -2210,7 +2229,7 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-
+                  <a href={plan.href}>
                 <button
                   className={`
               mt-8
@@ -2230,6 +2249,7 @@ export default function Home() {
                 >
                   {plan.button}
                 </button>
+                </a>
               </div>
             ))}
           </div>
@@ -2419,6 +2439,7 @@ export default function Home() {
           sm:flex-row
         "
             >
+              <a href="/get-a-local-number">
               <button
                 className="
             flex
@@ -2440,7 +2461,9 @@ export default function Home() {
                 Get a Local Number
                 <FiArrowRight size={16} />
               </button>
+              </a>
 
+              <a href="/contact-sales">
               <button
                 className="
             rounded-full
@@ -2457,6 +2480,7 @@ export default function Home() {
               >
                 Talk to Sales
               </button>
+              </a>
             </div>
 
             {/* Country Pills */}

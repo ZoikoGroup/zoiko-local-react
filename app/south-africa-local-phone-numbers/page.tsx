@@ -27,10 +27,10 @@ import {
 /* -------------------------------------------------------------------------- */
 
 const IMAGES = {
-  heroMain: { src: "/images/City skyline representing a South africa-local-phone-numbersn metro business-communications hub.png", alt: "City skyline at dusk, South africa-local-phone-numbers" },
+  heroMain: { src: "/images/City skyline representing a South African metro business hub.png", alt: "City skyline at dusk, South Africa" },
   heroMeeting: { src: "/images/Person using a phone outdoors.png", alt: "Colleagues meeting in a glass-walled office" },
-  heroLaptops: { src: "/images/Small business-communications team reviewing calls together.png", alt: "Two colleagues reviewing work on laptops" },
-  johannesburg: { src: "/images/Small business-communications team reviewing calls together.png", alt: "Johannesburg skyline" },
+  heroLaptops: { src: "/images/Small business team reviewing calls together.png", alt: "Two colleagues reviewing work on laptops" },
+  johannesburg: { src: "/images/Small business team reviewing calls together.png", alt: "Johannesburg skyline" },
   pretoria: { src: "/images/Johannesburg city skyline.png", alt: "A government building in Pretoria" },
   capeTown: { src: "/images/image 6.png", alt: "Table Mountain overlooking Cape Town" },
   durban: { src: "/images/image 5.png", alt: "Durban beachfront" },
@@ -159,7 +159,7 @@ const capabilities: { title: string; body: string; tag: string; icon: IconType }
   },
   {
     title: "Eligible messaging",
-    body: "Not every South africa-local-phone-numbersn geographic number supports SMS. Messaging depends on the number, provider, plan, and provisioning state.",
+    body: "Not every South African geographic number supports SMS. Messaging depends on the number, provider, plan, and provisioning state.",
     tag: "Number dependent",
     icon: FiMessageSquare,
   },
@@ -177,7 +177,7 @@ const capabilities: { title: string; body: string; tag: string; icon: IconType }
   },
   {
     title: "Web & mobile apps",
-    body: "Manage your South africa-local-phone-numbersn number from the web today. Native iOS and Android apps are in development.",
+    body: "Manage your South African number from the web today. Native iOS and Android apps are in development.",
     tag: "Web available now",
     icon: FiSmartphone,
   },
@@ -251,8 +251,8 @@ const trustedCalling: { title: string; body: string; icon: IconType }[] = [
 ];
 
 const emergencyNumbers = [
-  { code: "112", title: "Mobile emergency route", body: "Commonly published by South africa-local-phone-numbersn authorities as a mobile emergency number." },
-  { code: "10111", title: "Police emergency", body: "South africa-local-phone-numbersn Police Service emergency call-center route." },
+  { code: "112", title: "Mobile emergency route", body: "Commonly published by South African authorities as a mobile emergency number." },
+  { code: "10111", title: "Police emergency", body: "South African Police Service emergency call-center route." },
   { code: "10177", title: "Medical / ambulance", body: "Emergency medical services route per current government guidance." },
   {
     code: "107",
@@ -278,9 +278,9 @@ const popiaPoints = [
 
 const remotePoints = [
   "Remote use through supported Zoiko Local apps may be offered where provider, plan, identity, and regulatory rules permit.",
-  "Owning a South africa-local-phone-numbersn geographic number doesn't create physical presence, tax residence, or a local office.",
-  "Eligibility, service-address requirements, tax, emergency routing, and messaging rules may differ for customers based outside South africa-local-phone-numbers.",
-  "Emergency and public-safety dialing is location-sensitive — South africa-local-phone-numbersn emergency routes can't serve someone physically overseas.",
+  "Owning a South African geographic number doesn't create physical presence, tax residence, or a local office.",
+  "Eligibility, service-address requirements, tax, emergency routing, and messaging rules may differ for customers based outside South Africa.",
+  "Emergency and public-safety dialing is location-sensitive — South African emergency routes can't serve someone physically overseas.",
 ];
 
 const deviceAvailability = [
@@ -310,11 +310,11 @@ const whyZoiko: { title: string; body: string; icon: IconType }[] = [
 
 const faqs = [
   {
-    q: "What is a South africa-local-phone-numbersn local phone number?",
-    a: "A South africa-local-phone-numbersn geographic number is a +27 number associated with a geographic dialing area. The dialing code doesn't prove that the user or business-communications has a physical office there.",
+    q: "What is a South African local phone number?",
+    a: "A South African geographic number is a +27 number associated with a geographic dialing area. The dialing code doesn't prove that the user or business has a physical office there.",
   },
   {
-    q: "How do I get a South africa-local-phone-numbersn local number?",
+    q: "How do I get a South African local number?",
     a: "Search a supported city, province, or dialing code, choose an available number, sign in and confirm an eligible plan, complete any required verification, then activate.",
   },
   {
@@ -322,15 +322,15 @@ const faqs = [
     a: "Where inventory allows, yes — Johannesburg numbers are shown with the 010 or 011 access code depending on live availability at search time.",
   },
   {
-    q: "Can I get a South africa-local-phone-numbersn number from outside South africa-local-phone-numbers?",
-    a: "You may use a supported South africa-local-phone-numbersn number from outside South africa-local-phone-numbers via Zoiko apps, subject to provider, legal, and product rules. Number allocation doesn't create a legal establishment or office in South africa-local-phone-numbers.",
+    q: "Can I get a South African number from outside South Africa?",
+    a: "You may use a supported South African number from outside South Africa via Zoiko apps, subject to provider, legal, and product rules. Number allocation doesn't create a legal establishment or office in South Africa.",
   },
   {
-    q: "Can I port my existing South africa-local-phone-numbersn number?",
+    q: "Can I port my existing South African number?",
     a: "Porting depends on number type, current provider, account details, and our supported porting route. Not every number or provider is eligible.",
   },
   {
-    q: "Does every South africa-local-phone-numbersn geographic number support SMS?",
+    q: "Does every South African geographic number support SMS?",
     a: "No. Messaging is not guaranteed by holding a +27 number — it depends on the number, provider, plan, and provisioning state, each independently qualified.",
   },
   {
@@ -342,7 +342,7 @@ const faqs = [
     a: "Unsolicited electronic direct marketing is subject to POPIA and current Information Regulator guidance. Existing-customer and prospective-customer marketing are treated separately, with distinct consent and opt-out handling.",
   },
   {
-    q: "How much does a South africa-local-phone-numbersn number cost?",
+    q: "How much does a South African number cost?",
     a: "Number fees, plan pricing, included usage, and applicable tax are shown from our current price book during selection and checkout — never hard-coded on this page.",
   },
 ];
@@ -351,7 +351,7 @@ const faqs = [
 /*  Page                                                                       */
 /* -------------------------------------------------------------------------- */
 
-export default function Southafrica-local-phone-numbersLocalNumbers() {
+export default function SouthAfricaLocalNumbers() {
   const [activeTab, setActiveTab] = useState<(typeof searchTabs)[number]["id"]>("city");
   const [query, setQuery] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -362,14 +362,14 @@ export default function Southafrica-local-phone-numbersLocalNumbers() {
       <section className="bg-[#EDEAE0] py-14 md:py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-[1fr_1fr]">
           <div>
-            <Eyebrow>South africa-local-phone-numbers · +27</Eyebrow>
+            <Eyebrow>South Africa · +27</Eyebrow>
             <h1 className="mt-4 text-4xl font-bold leading-[1.12] tracking-tight text-[#16130F] md:text-[44px]">
-              Get a South africa-local-phone-numbersn local number for{" "}
-              <span className="text-[#E85D3C]">calling and business-communications zoiko-communications-group.</span>
+              Get a South African local number for{" "}
+              <span className="text-[#E85D3C]">calling and business communications.</span>
             </h1>
             <p className="mt-5 max-w-lg text-[14px] leading-7 text-[#5C5C55]">
-              Find an eligible South africa-local-phone-numbersn local number by city, province, or dialing code, then use
-              Zoiko Local for calling and other zoiko-communications-group capabilities included with your plan.
+              Find an eligible South African local number by city, province, or dialing code, then use
+              Zoiko Local for calling and other communications capabilities included with your plan.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
@@ -447,7 +447,7 @@ export default function Southafrica-local-phone-numbersLocalNumbers() {
       <section className="bg-white pb-14 md:pb-20">
         <div className="mx-auto max-w-6xl px-5">
           <Eyebrow centered>Popular locations</Eyebrow>
-          <H2>Search South africa-local-phone-numbersn numbers by city.</H2>
+          <H2>Search South African numbers by city.</H2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-[13px] leading-7 text-[#5C5C55]">
             A dialing code shows the numbering area a number belongs to — not proof of a physical office
             there.
@@ -474,7 +474,7 @@ export default function Southafrica-local-phone-numbersLocalNumbers() {
           </div>
 
           <div className="mt-6 rounded-lg bg-[#E7F0EC] px-5 py-4 text-[12.5px] leading-6 text-[#2E5A4C]">
-            A South africa-local-phone-numbersn geographic number is a +27 number associated with a geographic dialing area.
+            A South African geographic number is a +27 number associated with a geographic dialing area.
             Owning a Johannesburg, Cape Town, Durban, or other geographic number doesn&apos;t confirm a
             physical office or establishment there.
           </div>
@@ -615,7 +615,7 @@ export default function Southafrica-local-phone-numbersLocalNumbers() {
         <div className="mx-auto max-w-6xl px-5">
           <div className={`${cardBase} flex flex-col items-start justify-between gap-6 p-8 sm:flex-row sm:items-center`}>
             <div>
-              <h3 className="text-[19px] font-bold text-[#16130F]">See current South africa-local-phone-numbers pricing.</h3>
+              <h3 className="text-[19px] font-bold text-[#16130F]">See current South Africa pricing.</h3>
               <p className="mt-2 max-w-md text-[13px] leading-6 text-[#5C5C55]">
                 Number fees, plan pricing, included usage, and applicable tax are shown from our current
                 price book during selection and checkout — never hard-coded on this page.
@@ -623,13 +623,13 @@ export default function Southafrica-local-phone-numbersLocalNumbers() {
             </div>
             <div className="flex shrink-0 gap-3">
               <Link
-                href="#"
+                href="/plans-and-pricing"
                 className="inline-flex h-11 items-center justify-center rounded-lg bg-[#E85D3C] px-6 text-[13.5px] font-semibold text-white transition hover:bg-[#D14C2C]"
               >
                 Compare plans
               </Link>
               <Link
-                href="#"
+                href="/start-free"
                 className="inline-flex h-11 items-center justify-center rounded-lg border border-[#E4E0D6] px-6 text-[13.5px] font-semibold text-[#16130F] transition hover:bg-[#F4F2ED]"
               >
                 Start free
@@ -643,7 +643,7 @@ export default function Southafrica-local-phone-numbersLocalNumbers() {
       <section id="port" className="bg-[#F4F2ED] py-14 md:py-20">
         <div className="mx-auto max-w-6xl px-5">
           <Eyebrow>Keep your number</Eyebrow>
-          <H2 centered={false}>Port your existing South africa-local-phone-numbersn number.</H2>
+          <H2 centered={false}>Port your existing South African number.</H2>
           <p className="mt-4 max-w-2xl text-[13px] leading-7 text-[#5C5C55]">
             Portability depends on number type, current provider, account details, and our supported
             porting route.
@@ -654,12 +654,12 @@ export default function Southafrica-local-phone-numbersLocalNumbers() {
               <h3 className="text-[15px] font-bold text-[#16130F]">Check portability</h3>
               <div className="mt-4 flex flex-col gap-3 sm:flex-row">
                 <label htmlFor="port-check" className="sr-only">
-                  Enter your South africa-local-phone-numbersn number
+                  Enter your South African number
                 </label>
                 <input
                   id="port-check"
                   type="tel"
-                  placeholder="Enter your South africa-local-phone-numbersn number"
+                  placeholder="Enter your South African number"
                   className="h-12 flex-1 rounded-lg border border-[#E4E0D6] bg-white px-4 text-[13.5px] text-[#16130F] placeholder:text-[#A79C86] focus:border-[#E85D3C] focus:outline-none"
                 />
                 <button className="inline-flex h-12 items-center justify-center rounded-lg bg-[#E85D3C] px-7 text-[14px] font-semibold text-white transition hover:bg-[#D14C2C]">
@@ -745,7 +745,7 @@ export default function Southafrica-local-phone-numbersLocalNumbers() {
           </div>
 
           <p className="mt-6 text-[11.5px] leading-5 text-[#8C8271]">
-            Emergency calls, where supported, bypass AI Receptionist, business-communications call routing, and
+            Emergency calls, where supported, bypass AI Receptionist, business call routing, and
             non-required call recording. If someone is in immediate danger, use the most reliable
             emergency access available to you — this page provides routing and status information only,
             not emergency-response advice.
@@ -796,7 +796,7 @@ export default function Southafrica-local-phone-numbersLocalNumbers() {
 
           <div>
             <Eyebrow>Using a number remotely</Eyebrow>
-            <H2 centered={false}>Use a South africa-local-phone-numbersn number from outside South africa-local-phone-numbers.</H2>
+            <H2 centered={false}>Use a South African number from outside South Africa.</H2>
             <ul className="mt-5 space-y-3">
               {remotePoints.map((p) => (
                 <li key={p} className="flex items-start gap-2.5 text-[13px] leading-6 text-[#5C5C55]">
@@ -814,7 +814,7 @@ export default function Southafrica-local-phone-numbersLocalNumbers() {
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#E8825F]">Available today</p>
             <h2 className="mt-3 text-[28px] font-bold leading-tight tracking-tight text-white md:text-[32px]">
-              Manage your South africa-local-phone-numbersn number from web or mobile.
+              Manage your South African number from web or mobile.
             </h2>
             <p className="mt-4 max-w-md text-[13px] leading-7 text-white/70">
               Zoiko Local is available on the web now. Native iOS and Android apps are in development
@@ -866,7 +866,7 @@ export default function Southafrica-local-phone-numbersLocalNumbers() {
       <section className="bg-[#F4F2ED] py-14 md:py-20">
         <div className="mx-auto max-w-4xl px-5">
           <Eyebrow>FAQ</Eyebrow>
-          <H2 centered={false}>South africa-local-phone-numbersn local number questions.</H2>
+          <H2 centered={false}>South African local number questions.</H2>
 
           <div className="mt-8 space-y-2.5">
             {faqs.map((f, i) => {

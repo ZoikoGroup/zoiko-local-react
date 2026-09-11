@@ -16,7 +16,7 @@ const applicability = [
   {
     letter: "P",
     title: "We're your processor",
-    body: "You determine why and how your business-communications zoiko-communications-group are used; Zoiko Local processes on your instructions to deliver the service.",
+    body: "You determine why and how your business communications are used; Zoiko Local processes on your instructions to deliver the service.",
   },
   {
     letter: "M",
@@ -25,8 +25,8 @@ const applicability = [
   },
   {
     letter: "E",
-    title: "You need negotiated terms-of-service",
-    body: "Enterprise agreements, custom liability terms-of-service, or a signed MSA that already covers processing take precedence over this standard DPA.",
+    title: "You need negotiated terms",
+    body: "Enterprise agreements, custom liability terms, or a signed MSA that already covers processing take precedence over this standard DPA.",
   },
 ];
 
@@ -54,18 +54,18 @@ const roleRows: { activity: string; role: Role; note: string }[] = [
   { activity: "Contacts & address book", role: "processor", note: "You determine the purpose; we process to provide the feature." },
   { activity: "Calls, messages & video content", role: "processor", note: "Processed on your instructions to transmit and deliver service." },
   { activity: "Recordings & transcripts", role: "processor", note: "You control whether the feature is used; we operate it." },
-  { activity: "AI receptionist", role: "processor", note: "Customer-controlled service processing under the AI terms-of-service." },
-  { activity: "Account sign-in, billing & subscription", role: "controller", note: "We determine essential account and business-communications purposes." },
+  { activity: "AI receptionist", role: "processor", note: "Customer-controlled service processing under the AI Terms." },
+  { activity: "Account sign-in, billing & subscription", role: "controller", note: "We determine essential account and business purposes." },
   { activity: "Fraud, security & network integrity", role: "controller", note: "We determine security and legal purposes and means." },
 ];
 
 // ─── ANNEX I ─────────────────────────────────────────────────────────────────
 const annexI = [
-  { term: "Subject matter", detail: "Provision of Zoiko Local business-communications zoiko-communications-group services." },
+  { term: "Subject matter", detail: "Provision of Zoiko Local business communications services." },
   { term: "Duration", detail: "For your subscription term, plus the applicable retention and exit period." },
   { term: "Nature of processing", detail: "Collect, transmit, route, store, retrieve, transcribe, and delete — limited to enabled features." },
-  { term: "Data subjects", detail: "Your users/admins and your zoiko-communications-group participants." },
-  { term: "Data categories", detail: "Identifiers, contact data, zoiko-communications-group metadata, content, recordings/transcripts where enabled." },
+  { term: "Data subjects", detail: "Your users/admins and your communications participants." },
+  { term: "Data categories", detail: "Identifiers, contact data, communications metadata, content, recordings/transcripts where enabled." },
   { term: "Storage locations", detail: "Shown factually per service; hosting location and data residency are not assumed equivalent." },
 ];
 
@@ -93,10 +93,10 @@ const executeSteps = [
 ];
 
 const relatedPolicies = [
-  "terms-of-service of Service",
+  "Terms of Service",
   "Privacy Policy",
   "Acceptable Use Policy",
-  "AI terms-of-service",
+  "AI Terms",
   "Recording & Consent",
 ];
 
@@ -208,8 +208,8 @@ export default function DataProcessingAgreement() {
           <span className="italic text-[#E85D3C]">Agreement</span>
         </h1>
         <p className="mt-6 max-w-xl text-[15px] leading-7 text-[#5C5C55]">
-          Review the terms-of-service that govern how Zoiko Local processes Customer Personal Data on behalf of
-          business-communications customers — security, subprocessors, international transfers, and data return or
+          Review the terms that govern how Zoiko Local processes Customer Personal Data on behalf of
+          business customers — security, subprocessors, international transfers, and data return or
           deletion.
         </p>
 
@@ -307,7 +307,7 @@ export default function DataProcessingAgreement() {
             <Section id="how-we-process" first>
               <SectionHeading n="01" title="How we process your data" />
               <Callout>
-                We&apos;re your processor for most zoiko-communications-group activity — and an independent
+                We&apos;re your processor for most communications activity — and an independent
                 controller for things like billing and fraud prevention.
               </Callout>
 
@@ -333,7 +333,7 @@ export default function DataProcessingAgreement() {
             <Section id="standard-agreement">
               <SectionHeading n="02" title="The standard agreement" badge={`v${DOC.version}`} />
               <Callout>
-                Our standard DPA incorporates your terms-of-service of Service by reference and governs any
+                Our standard DPA incorporates your Terms of Service by reference and governs any
                 processing of Customer Personal Data.
               </Callout>
               <p className="mt-5 text-[13.5px] leading-7 text-[#5C5C55]">

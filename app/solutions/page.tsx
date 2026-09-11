@@ -1,10 +1,10 @@
 import React from 'react'
-import Europe from './Europe'
+import Solutions from './Solutions'
 
 export default function page() {
   return (
     <>
-      <Europe/>
+      <Solutions/>
     </>
   )
 }

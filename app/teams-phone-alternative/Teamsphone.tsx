@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from 'react';
 import { FiCheck, FiMapPin, FiMic, FiPlus, FiMinus } from "react-icons/fi";
 
@@ -112,7 +113,7 @@ export default function Teamsphone() {
                             {/* Buttons */}
 
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                                <button
+                                   <a href="/get-a-local-number"> <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -125,7 +126,9 @@ export default function Teamsphone() {
                                     Get a Local Number →
                                 </button>
 
-                                <button
+                                </a>
+
+                                <a href="/terms-of-service"><button
                                     className="h-12 px-8 rounded-xl
                         border border-[#0F6660]
                         dark:border-slate-600
@@ -140,7 +143,7 @@ export default function Teamsphone() {
                                 >
 
                                     See if Zoiko Local Fits
-                                </button>
+                                </button></a>
                             </div>
 
                             {/* Migration */}
@@ -261,7 +264,7 @@ export default function Teamsphone() {
                                 ))}
                             </div>
 
-                            <button
+                               <a href="/get-a-local-number"> <button
                                 className="mt-10 h-12 px-8 rounded-xl
                     bg-[#EB643F]
                     text-white
@@ -273,6 +276,8 @@ export default function Teamsphone() {
 
                                 Get a Local Number →
                             </button>
+
+                            </a>
                         </div>
 
                         {/* RIGHT */}
@@ -487,7 +492,7 @@ export default function Teamsphone() {
 
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
                                 {/* Primary */}
-                                <button
+                                   <a href="/get-a-local-number"> <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -499,10 +504,10 @@ export default function Teamsphone() {
                                 >
 
                                     Get a Local Number →
-                                </button>
+                                </button></a>
 
                                 {/* Secondary */}
-                                <button
+                              <a href="/plans-and-pricing">    <button
                                     className="h-12 px-8 rounded-xl
                         bg-white
                         text-[#123533]
@@ -513,10 +518,10 @@ export default function Teamsphone() {
                                 >
 
                                     See Pricing
-                                </button>
+                                </button></a>
 
                                 {/* Outline */}
-                                <button
+                              <a href="/contact-sales">  <button
                                     className="h-12 px-8 rounded-xl
                         border border-white/25
                         text-white
@@ -528,7 +533,7 @@ export default function Teamsphone() {
                                 >
 
                                     Talk to Sales
-                                </button>
+                                </button></a>
                             </div>
 
                             {/* Footer Text */}
@@ -536,9 +541,9 @@ export default function Teamsphone() {
 
                                 Replacing a Skype Number too?
 
-                                <span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
+                                <a href="/switch-from-skype"><span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
                                     Switch from Skype →
-                                </span>
+                                </span></a>
                             </p>
                         </div>
                     </div>

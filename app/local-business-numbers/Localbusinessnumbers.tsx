@@ -126,12 +126,12 @@ function Localbusinessnumbers() {
               the markets you serve. Sound local. Reach anywhere.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <button className={coralBtn}>Get a Local Number →</button>
-              <button className={outlineBtn}>How it works</button>
+             <a href="/get-a-local-number"></a> <button className={coralBtn}>Get a Local Number →</button>
+             <a href="#"></a> <button className={outlineBtn}>How it works</button>
             </div>
             <p className="mt-5 text-sm text-gray-600 dark:text-gray-400">
               Replacing a Skype Number?{" "}
-              <a href="#" className="font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
+              <a href="/switch-from-skype" className="font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
             </p>
             <div className="mt-5 flex flex-wrap gap-x-8 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
               {heroChecks.map((c) => (
@@ -156,12 +156,12 @@ function Localbusinessnumbers() {
       </section>
 
       {/* ─── HOW IT WORKS ─── */}
-      <section className="bg-[#F7F5F2] px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-[#F7F5F2] px-4 py-20 sm:px-6 lg:px-8 dark:bg-gray-950">
         <div className="mx-auto max-w-6xl">
-          <SectionHead onDark eyebrow="How it works" title="Simple to get, powerful to use." />
+          <SectionHead eyebrow="How it works" title="Simple to get, powerful to use." />
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {howItWorks.map((h) => (
-              <div key={h.title} className="rounded-2xl bg-white p-6 ring-1 ring-white/10 dark:bg-gray-800">
+              <div key={h.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#e8f1ec] dark:bg-[#34d39e]/15">
                   <Img src={h.icon} alt="" className="h-8 w-8" />
                 </span>
@@ -188,7 +188,7 @@ function Localbusinessnumbers() {
                 </li>
               ))}
             </ul>
-            <button className={`${coralBtn} mt-8`}>Get a Local Number →</button>
+           <a href="/get-a-local-number"><button className={`${coralBtn} mt-8`}>Get a Local Number →</button></a>
           </div>
 
           {/* What you get card */}
@@ -206,10 +206,10 @@ function Localbusinessnumbers() {
       </section>
 
       {/* ─── QUESTIONS / FAQ ─── */}
-      <section className="bg-[#F7F5F2] px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-[#F7F5F2] px-4 py-20 sm:px-6 lg:px-8 dark:bg-gray-950">
         <div className="mx-auto max-w-3xl">
-          <SectionHead onDark eyebrow="Questions" title="Local business numbers, answered." />
-          <div className="mt-12 divide-y divide-white/10">
+          <SectionHead eyebrow="Questions" title="Local business numbers, answered." />
+          <div className="mt-12 divide-y divide-gray-200 dark:divide-white/10">
             {faqs.map((f, i) => {
               const isOpen = open === i;
               return (
@@ -220,11 +220,11 @@ function Localbusinessnumbers() {
                     aria-expanded={isOpen}
                   >
                     <span className="text-sm font-semibold dark:text-white/90">{f.q}</span>
-                    <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-white/20 text-lg leading-none dark:text-white/70">
+                    <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-black/10 text-lg leading-none text-gray-500 dark:border-white/20 dark:text-white/70">
                       {isOpen ? "−" : "+"}
                     </span>
                   </button>
-                  {isOpen && <p className="pb-5 text-sm leading-relaxed dark:text-white/60">{f.a}</p>}
+                  {isOpen && <p className="pb-5 text-sm leading-relaxed text-gray-600 dark:text-white/60">{f.a}</p>}
                 </div>
               );
             })}
@@ -233,7 +233,7 @@ function Localbusinessnumbers() {
       </section>
 
       {/* ─── FINAL CTA ─── */}
-      <section className="bg-[#F7F5F2] px-4 pb-24 pt-4 sm:px-6 lg:px-8">
+      <section className="bg-[#F7F5F2] px-4 pb-24 pt-4 sm:px-6 lg:px-8 dark:bg-gray-950">
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-[#0f2a21] p-10 text-center text-white sm:p-16">
           <div aria-hidden className="pointer-events-none absolute -right-16 top-0 h-72 w-72 rounded-full bg-[#d9603f]/15 blur-3xl" />
           <div className="relative">
@@ -245,13 +245,13 @@ function Localbusinessnumbers() {
               reachable from anywhere.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <button className={coralBtn}>Get a Local Number →</button>
-              <button className={outlineBtnDark}>See Pricing</button>
-              <button className={outlineBtnDark}>Talk to Sales</button>
+             <a href="/get-a-local-number"><button className={coralBtn}>Get a Local Number →</button></a>
+             <a href="/plans-and-pricing"><button className={outlineBtnDark}>See Pricing</button></a>
+             <a href="/contact-sales"><button className={outlineBtnDark}>Talk to Sales</button></a>
             </div>
             <p className="mt-6 text-sm text-white/70">
               Replacing a Skype Number?{" "}
-              <a href="#" className="font-semibold text-[#e9a98f] hover:underline">Switch from Skype →</a>
+              <a href="/switch-from-skype" className="font-semibold text-[#e9a98f] hover:underline">Switch from Skype →</a>
             </p>
           </div>
         </div>

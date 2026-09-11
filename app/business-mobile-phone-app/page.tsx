@@ -57,7 +57,7 @@ function ImageSlot({
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 const capabilityStrip = [
-  { icon: <FiMapPin />, title: "business-communications number", description: "Keep work calls on your business-communications identity." },
+  { icon: <FiMapPin />, title: "Business number", description: "Keep work calls on your business identity." },
   { icon: <FiPhone />, title: "Calling", description: "Make and receive calls while mobile." },
   { icon: <FiMessageCircle />, title: "Messages", description: "Keep conversations in one place." },
   { icon: <FiVideo />, title: "Video", description: "Join face-to-face conversations on the go." },
@@ -72,17 +72,17 @@ const identityPoints = [
 
 const deviceSteps = [
   { step: "1", title: "Sign in", description: "Sign in to your Zoiko Local account on your phone or the web." },
-  { step: "2", title: "Continue", description: "Access the zoiko-communications-group your plan and device support." },
-  { step: "3", title: "Stay informed", description: "Keep your business-communications identity and settings connected to your workspace." },
+  { step: "2", title: "Continue", description: "Access the communications your plan and device support." },
+  { step: "3", title: "Stay informed", description: "Keep your business identity and settings connected to your workspace." },
 ];
 
 const locations = [
   { name: "United States", caption: "Local & toll-free numbers", href: "/images/mobile-apps/US.png" },
   { name: "United Kingdom", caption: "Local city numbers", href: "/images/mobile-apps/UK.png" },
-  { name: "canada-local-phone-numbers", caption: "Local numbers by region", href: "/images/mobile-apps/CA.png" },
-  { name: "europe-local-phone-numbers", caption: "Selected markets", href: "/images/mobile-apps/EU.png" },
-  { name: "Nigeria", caption: "Local business-communications numbers", href: "/images/mobile-apps/NG.png" },
-  { name: "South africa-local-phone-numbers", caption: "Local numbers by region", href: "/images/mobile-apps/SA.png" },
+  { name: "Canada", caption: "Local numbers by region", href: "/images/mobile-apps/CA.png" },
+  { name: "Europe", caption: "Selected markets", href: "/images/mobile-apps/EU.png" },
+  { name: "Nigeria", caption: "Local business numbers", href: "/images/mobile-apps/NG.png" },
+  { name: "South Africa", caption: "Local numbers by region", href: "/images/mobile-apps/SA.png" },
   { name: "Jamaica", caption: "Local presence", href: "/images/mobile-apps/JM.png" },
 ];
 
@@ -129,9 +129,9 @@ const faqItems = [
       "Zoiko Local mobile apps for iPhone and Android are being prepared for release. You can get mobile app updates to be notified when the app is available for your device and market, and use Zoiko Local on the web in the meantime.",
   },
   {
-    question: "Can I use my Zoiko Local business-communications number from the mobile app?",
+    question: "Can I use my Zoiko Local business number from the mobile app?",
     answer:
-      "Yes. Eligible numbers on your account can be used from supported devices, so calls and conversations stay on your business-communications identity rather than your personal number. Availability depends on your plan and market.",
+      "Yes. Eligible numbers on your account can be used from supported devices, so calls and conversations stay on your business identity rather than your personal number. Availability depends on your plan and market.",
   },
   {
     question: "Do mobile features depend on my Zoiko Local plan?",
@@ -191,13 +191,13 @@ export default function MobileApps() {
             <p className={eyebrow}>Zoiko Local Mobile Apps</p>
 
             <h1 className="mt-5 text-4xl font-bold leading-[1.1] tracking-tight text-[#0E2A21] md:text-[54px]">
-              business-communications calling and zoiko-communications-group,
+              Business calling and communications,
               <br />
               <span className={accent}>wherever you work.</span>
             </h1>
 
             <p className="mt-6 max-w-lg text-[15px] leading-7 text-[#5C6660]">
-              Use Zoiko Local on your phone to stay reachable on your business-communications number, manage
+              Use Zoiko Local on your phone to stay reachable on your business number, manage
               conversations, and keep work moving beyond your desk.
             </p>
 
@@ -231,7 +231,7 @@ export default function MobileApps() {
               image, so the number stays selectable text). */}
           <div className="relative min-h-[520px]">
             <ImageSlot
-              label="Photo — person on a business-communications call by a window"
+              label="Photo — person on a business call by a window"
               className="absolute right-0 top-0 h-[300px] w-[62%]"
             />
             <ImageSlot
@@ -245,7 +245,7 @@ export default function MobileApps() {
                 <FiPhone className="text-sm" aria-hidden />
               </span>
               <div className="leading-tight">
-                <p className="text-[13px] font-semibold text-[#0E2A21]">On your business-communications line</p>
+                <p className="text-[13px] font-semibold text-[#0E2A21]">On your business line</p>
                 <p className="text-[11px] text-[#8C8271]">Not your personal number</p>
               </div>
             </div>
@@ -310,16 +310,16 @@ export default function MobileApps() {
         </div>
       </section>
 
-      {/* ═══ business-communications IDENTITY ═══ */}
+      {/* ═══ BUSINESS IDENTITY ═══ */}
       <section className="bg-[#F6F3EC] py-14 md:py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-2">
           <div>
             <p className={eyebrow}>Work number, personal phone</p>
             <h2 className={`mt-5 ${h2Class}`}>
-              Your business-communications identity, <span className={accent}>on your phone.</span>
+              Your business identity, <span className={accent}>on your phone.</span>
             </h2>
             <p className="mt-5 max-w-lg text-[15px] leading-7 text-[#5C6660]">
-              Use Zoiko Local to keep business-communications zoiko-communications-group separate from personal calling while
+              Use Zoiko Local to keep business communications separate from personal calling while
               staying reachable away from your desk. Your available numbers and calling capabilities
               follow your account, plan, and supported markets.
             </p>
@@ -360,7 +360,7 @@ export default function MobileApps() {
               </span>
               <div className="leading-tight">
                 <p className="text-[13px] font-bold text-[#0E2A21]">+1 (916) 555-0148</p>
-                <p className="text-[11px] text-[#8C8271]">Your business-communications line</p>
+                <p className="text-[11px] text-[#8C8271]">Your business line</p>
               </div>
             </div>
           </div>
@@ -376,13 +376,13 @@ export default function MobileApps() {
               Built for work <span className={accent}>beyond the desk.</span>
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-[15px] leading-7 text-[#5C6660]">
-              Everything you need to run business-communications conversations from your phone — with
+              Everything you need to run business conversations from your phone — with
               plan-dependent features clearly labeled.
             </p>
           </div>
 
           <div className="mt-14 grid gap-5 lg:grid-cols-2">
-            {/* business-communications calling — image on top */}
+            {/* Business calling — image on top */}
             <div className={`${cardBase} overflow-hidden`}>
               {/* <ImageSlot
                 label="Photo — phone home screen with app icons"
@@ -400,10 +400,10 @@ export default function MobileApps() {
                   <div className={chip}>
                     <FiPhone />
                   </div>
-                  <h3 className="text-[16px] font-bold text-[#0E2A21]">business-communications calling</h3>
+                  <h3 className="text-[16px] font-bold text-[#0E2A21]">Business calling</h3>
                 </div>
                 <p className="mt-3 text-[13.5px] leading-6 text-[#5C6660]">
-                  Make and receive inbound and outbound calls using your entitled business-communications numbers,
+                  Make and receive inbound and outbound calls using your entitled business numbers,
                   wherever you are.
                 </p>
               </div>
@@ -510,7 +510,7 @@ export default function MobileApps() {
               <span className="italic text-[#F5B19A]">the way you work.</span>
             </h2>
             <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/70">
-              Use Zoiko Local from supported devices and keep your business-communications zoiko-communications-group tied to
+              Use Zoiko Local from supported devices and keep your business communications tied to
               the same account and workspace.
             </p>
 
@@ -531,7 +531,7 @@ export default function MobileApps() {
 
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               <Image
-                src="/images/mobile-apps/across-devices1.png" alt="Photo — person on a business-communications call by a window"
+                src="/images/mobile-apps/across-devices1.png" alt="Photo — person on a business call by a window"
                 width={600}
                 height={120}
                 className="h-[120px] w-full object-cover rounded-xl"
@@ -627,7 +627,7 @@ export default function MobileApps() {
           <div className="mx-auto max-w-2xl text-center">
             <p className={`${eyebrow} justify-center`}>Local numbers &amp; availability</p>
             <h2 className={`mt-5 ${h2Class}`}>
-              Use Zoiko Local where your business-communications needs{" "}
+              Use Zoiko Local where your business needs{" "}
               <span className={accent}>a local presence.</span>
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-[15px] leading-7 text-[#5C6660]">
@@ -848,7 +848,7 @@ export default function MobileApps() {
               Be ready when Zoiko Local mobile is available.
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-[15px] leading-7 text-white/70">
-              Get product updates for your device and market — then bring your business-communications number,
+              Get product updates for your device and market — then bring your business number,
               calling, messaging, video, and plan-enabled AI Receptionist with you.
             </p>
 

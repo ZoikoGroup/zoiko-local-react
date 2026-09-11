@@ -164,12 +164,16 @@ function Aboutus() {
               compliance and governance built for scale.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <button className="rounded-full bg-[#d9603f] px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
-                Get Started
-              </button>
-              <button className="rounded-full border border-[#1c2b26]/20 px-7 py-3 text-sm font-semibold text-[#1c2b26] transition-colors hover:bg-black/5 dark:border-white/20 dark:text-white dark:hover:bg-white/10">
-                Learn More
-              </button>
+              <a href="/contact-sales">
+                <button className="rounded-full bg-[#d9603f] px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
+                  Get Started
+                </button>
+              </a>
+              <a href="/ai-terms">
+                <button className="rounded-full border border-[#1c2b26]/20 px-7 py-3 text-sm font-semibold text-[#1c2b26] transition-colors hover:bg-black/5 dark:border-white/20 dark:text-white dark:hover:bg-white/10">
+                  Learn More
+                </button>
+              </a>
             </div>
           </div>
 

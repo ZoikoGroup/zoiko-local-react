@@ -115,16 +115,16 @@ export default function Numberporting() {
 
                             {/* Buttons */}
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-
+<a href="/virtual-phone-numbers">
                                 <button
                                     className="h-12 px-8 rounded-xl bg-[#EB643F]
                         text-white text-sm font-semibold shadow-lg
                         hover:bg-[#D95A37] transition-all duration-300"
                                 >
                                     Check Porting Eligibility →
-                                </button>
+                                </button></a>
 
-                                <button
+                              <a href="/contact-sales">  <button
                                     className="h-12 px-8 rounded-xl
                         border border-[#0F6660]
                         dark:border-slate-600
@@ -136,7 +136,7 @@ export default function Numberporting() {
                         transition-all duration-300"
                                 >
                                     Talk to Sales
-                                </button>
+                                </button></a>
                             </div>
 
                             {/* Helper */}
@@ -429,7 +429,7 @@ export default function Numberporting() {
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
 
                                 {/* Primary */}
-                                <button
+                                <a href="/virtual-phone-numbers"><button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -442,9 +442,9 @@ export default function Numberporting() {
                                 >
                                     Check Porting Eligibility →
                                 </button>
-
+</a>
                                 {/* Secondary */}
-                                <button
+                            <a href="/contact-sales">    <button
                                     className="h-12 px-8 rounded-xl
                         border border-white/25
                         text-white
@@ -455,10 +455,10 @@ export default function Numberporting() {
                         transition-all duration-300"
                                 >
                                     Talk to Sales
-                                </button>
+                                </button></a>
 
                                 {/* Tertiary */}
-                                <button
+                               <a href="/contact-support"> <button
                                     className="h-12 px-8 rounded-xl
                         border border-white/25
                         text-white
@@ -469,7 +469,7 @@ export default function Numberporting() {
                         transition-all duration-300"
                                 >
                                     Contact Support
-                                </button>
+                                </button></a>
 
                             </div>
                         </div>

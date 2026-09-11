@@ -10,6 +10,10 @@ import {
     FiCopy, FiCalendar,
 } from "react-icons/fi";
 import Faq from '../Components/Faq';
+import Link from 'next/link';
+
+
+
 
 const participants = [
     {
@@ -282,19 +286,20 @@ export default function Video() {
                         {/* Buttons */}
 
                         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                            <Link href="/start-free">
+                                <button className="h-11 px-8 rounded-full bg-[#EB643F] text-white text-sm font-semibold hover:bg-[#D95B38] transition">
 
-                            <button className="h-11 px-8 rounded-full bg-[#EB643F] text-white text-sm font-semibold hover:bg-[#D95B38] transition">
+                                    Start Video Meetings →
 
-                                Start Video Meetings →
+                                </button>
+                            </Link>
+                            <Link href="/switch-from-skype">
+                                <button className="h-11 px-8 rounded-full border border-[#0F6660] text-[#123533] dark:text-white hover:bg-[#0F6660] hover:text-white transition">
 
-                            </button>
+                                    Switch from Skype
 
-                            <button className="h-11 px-8 rounded-full border border-[#0F6660] text-[#123533] dark:text-white hover:bg-[#0F6660] hover:text-white transition">
-
-                                Switch from Skype
-
-                            </button>
-
+                                </button>
+                            </Link>
                         </div>
 
                         {/* Bottom Link */}
@@ -1222,13 +1227,11 @@ export default function Video() {
                     {/* Buttons */}
 
                     <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
-
-                        <button className="h-11 px-8 rounded-full bg-[#EB643F] text-white text-sm font-semibold hover:bg-[#D95B38] transition shadow-md">
-
-                            Switch from Skype
-
-                        </button>
-
+                        <Link href="/switch-from-skype">
+                            <button className="h-11 px-8 rounded-full bg-[#EB643F] text-white text-sm font-semibold hover:bg-[#D95B38] transition shadow-md">
+                                Switch from Skype
+                            </button>
+                        </Link>
                         <button className="h-11 px-8 rounded-full border border-[#0F6660] bg-white dark:bg-slate-800 text-[#123533] dark:text-white text-sm font-semibold hover:bg-[#0F6660] hover:text-white transition">
 
                             Compare Zoiko Local
@@ -1411,17 +1414,17 @@ export default function Video() {
                                 </p>
 
                                 {/* Button */}
-
-                                <button
-                                    className={`mt-8 w-full h-11 rounded-full text-sm font-semibold transition-all duration-300
+                                <Link href="/plans-and-pricing">
+                                    <button
+                                        className={`mt-8 w-full h-11 rounded-full text-sm font-semibold transition-all duration-300
                         ${plan.featured
-                                            ? "bg-[#EB643F] text-white hover:bg-[#D95B38] shadow-md"
-                                            : "border border-[#D7D0C6] dark:border-slate-600 bg-white dark:bg-slate-700 text-[#123533] dark:text-white hover:border-[#0F6660] hover:text-[#0F6660] dark:hover:text-[#0F6660]"
-                                        }`}
-                                >
-                                    {plan.button}
-                                </button>
-
+                                                ? "bg-[#EB643F] text-white hover:bg-[#D95B38] shadow-md"
+                                                : "border border-[#D7D0C6] dark:border-slate-600 bg-white dark:bg-slate-700 text-[#123533] dark:text-white hover:border-[#0F6660] hover:text-[#0F6660] dark:hover:text-[#0F6660]"
+                                            }`}
+                                    >
+                                        {plan.button}
+                                    </button>
+                                </Link>
                             </div>
 
                         ))}
@@ -1494,29 +1497,31 @@ export default function Video() {
                             <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
 
                                 {/* Primary */}
+                                <Link href="/start-free">
+                                    <button className="h-12 px-8 rounded-full bg-[#EB643F] text-white text-sm font-semibold shadow-lg transition-all duration-300 hover:bg-[#D95835] hover:scale-[1.02]">
 
-                                <button className="h-12 px-8 rounded-full bg-[#EB643F] text-white text-sm font-semibold shadow-lg transition-all duration-300 hover:bg-[#D95835] hover:scale-[1.02]">
+                                        Start Video Meetings
 
-                                    Start Video Meetings
-
-                                </button>
+                                    </button>
+                                </Link>
 
                                 {/* Secondary */}
+                                <Link href="/switch-from-skype">
+                                    <button className="h-12 px-8 rounded-full bg-white text-[#123533] text-sm font-semibold transition-all duration-300 hover:bg-gray-100">
 
-                                <button className="h-12 px-8 rounded-full bg-white text-[#123533] text-sm font-semibold transition-all duration-300 hover:bg-gray-100">
+                                        Switch from Skype
 
-                                    Switch from Skype
-
-                                </button>
+                                    </button>
+                                </Link>
 
                                 {/* Outline */}
+                                <Link href="/contact-support">
+                                    <button className="h-12 px-8 rounded-full border border-white/40 text-white text-sm font-semibold transition-all duration-300 hover:bg-white hover:text-[#123533]">
 
-                                <button className="h-12 px-8 rounded-full border border-white/40 text-white text-sm font-semibold transition-all duration-300 hover:bg-white hover:text-[#123533]">
+                                        Talk to Sales
 
-                                    Talk to Sales
-
-                                </button>
-
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>

@@ -335,7 +335,7 @@ function Business() {
             })}
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-           <a href="/plans-pricing"> <button className={outlineBtn}>Compare Plans</button></a>
+           <a href="/plans-and-pricing"> <button className={outlineBtn}>Compare Plans</button></a>
            <a href="/contact-sales"> <button className={outlineBtn}>Talk to Sales</button></a>
           </div>
         </div>

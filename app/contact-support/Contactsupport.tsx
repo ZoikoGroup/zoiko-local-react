@@ -132,7 +132,7 @@ export default function Contactsupport() {
 
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
 
-                                <button
+                              <a href="/customer-support">  <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -145,9 +145,9 @@ export default function Contactsupport() {
 
                                     Get Help →
 
-                                </button>
+                                </button></a>
 
-                                <button
+                             <a href="/contact-us">   <button
                                     className="h-12 px-8 rounded-xl
                         border border-[#0F6660]
                         dark:border-slate-600
@@ -164,7 +164,7 @@ export default function Contactsupport() {
 
                                     Visit Help Center
 
-                                </button>
+                                </button></a>
 
                             </div>
 
@@ -304,7 +304,7 @@ export default function Contactsupport() {
 
                     <div className="mt-14 flex flex-col sm:flex-row justify-center gap-4">
 
-                        <button
+                     <a href="/contact-support">   <button
                             className="h-12 px-9 rounded-xl bg-[#EB643F]
                 text-white font-semibold shadow-lg
                 hover:bg-[#D95A37]
@@ -313,7 +313,7 @@ export default function Contactsupport() {
 
                             Contact Support →
 
-                        </button>
+                        </button></a>
 
                         <button
                             className="h-12 px-9 rounded-xl border border-[#0F6660]
@@ -393,7 +393,7 @@ export default function Contactsupport() {
 
                                 {/* Primary */}
 
-                                <button
+                               <a href="/customer-support"> <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -407,11 +407,11 @@ export default function Contactsupport() {
 
                                     Contact Support →
 
-                                </button>
+                                </button></a>
 
                                 {/* Secondary */}
 
-                                <button
+                                <a href="/contact-us"><button
                                     className="h-12 px-8 rounded-xl
                         border border-white/25
                         text-white
@@ -425,10 +425,10 @@ export default function Contactsupport() {
                                     Visit Help Center
 
                                 </button>
-
+</a>
                                 {/* Tertiary */}
 
-                                <button
+                              <a href="/contact-sales">  <button
                                     className="h-12 px-8 rounded-xl
                         border border-white/25
                         text-white
@@ -441,7 +441,7 @@ export default function Contactsupport() {
 
                                     Talk to Sales
 
-                                </button>
+                                </button></a>
 
                             </div>
 

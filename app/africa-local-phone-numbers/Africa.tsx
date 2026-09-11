@@ -5,6 +5,7 @@ import {
     FiTrendingUp, FiPhone, FiMic, FiVideo,
     FiMessageSquare,
 } from "react-icons/fi";
+import Link from 'next/link';
 
 const africaCoverage = [
     {
@@ -57,7 +58,7 @@ const africaMarkets = [
         status: "By request",
         available: false,
         description:
-            "Local Kenyan presence for East African business-communications.",
+            "Local Kenyan presence for East African business.",
         action: "Request this market",
     },
 ];
@@ -86,7 +87,7 @@ const africaServices = [
         icon: <FiPhone />,
         title: "Calling",
         description:
-            "Inbound and outbound business-communications calls on every African number, with routing and history.",
+            "Inbound and outbound business calls on every African number, with routing and history.",
     },
     {
         icon: <FiMic />,
@@ -110,7 +111,7 @@ const Faqs = [
     {
         question: "Can diaspora founders get African numbers from abroad?",
         answer:
-            "In many supported markets, business-communicationses and founders operating internationally may be eligible for local numbers, subject to verification requirements, regulatory rules, and supporting documentation.",
+            "In many supported markets, businesses and founders operating internationally may be eligible for local numbers, subject to verification requirements, regulatory rules, and supporting documentation.",
     },
     {
         question: "Can I use an African number for calls, video, and AI?",
@@ -526,7 +527,7 @@ export default function Africa() {
                     <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
 
                         {/* Primary */}
-
+<Link href="/contact-support">
                         <button
                             className="h-12 px-8 rounded-xl
                 bg-[#EB643F]
@@ -540,9 +541,9 @@ export default function Africa() {
                             Request a Market →
 
                         </button>
-
+</Link>
                         {/* Secondary */}
-
+<Link href="/contact-sales">
                         <button
                             className="h-12 px-8 rounded-xl
                 border border-[#0F6660]
@@ -560,7 +561,7 @@ export default function Africa() {
                             Talk to Sales
 
                         </button>
-
+</Link>
                     </div>
 
                 </div>

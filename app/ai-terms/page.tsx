@@ -55,12 +55,12 @@ const voiceRules: { state: RuleState; text: string; qualifier?: string }[] = [
 const dataUse = [
   { title: "Service delivery", body: "Prompts, audio, and transcripts used as necessary to provide the feature you enabled.", flagged: false },
   { title: "Safety & security", body: "Signals used to detect fraud, abuse, and service-integrity risks.", flagged: false },
-  { title: "Model training", body: "Disabled by default. Never enabled by accepting these terms-of-service alone.", flagged: true },
+  { title: "Model training", body: "Disabled by default. Never enabled by accepting these Terms alone.", flagged: true },
   { title: "Your feedback", body: "May improve the service — doesn't authorize training on unrelated content.", flagged: false },
 ];
 
 const relatedPolicies = [
-  "terms-of-service of Service",
+  "Terms of Service",
   "Privacy Policy",
   "Acceptable Use Policy",
   "Data Processing Agreement",
@@ -125,7 +125,7 @@ function Section({ id, first, children }: { id: string; first?: boolean; childre
 }
 
 // ─── PAGE ────────────────────────────────────────────────────────────────────
-export default function Aiterms-of-service() {
+export default function AiTerms() {
   const [active, setActive] = useState(TOC[0].id);
   const [archiveOpen, setArchiveOpen] = useState(false);
 
@@ -176,7 +176,7 @@ export default function Aiterms-of-service() {
             What AI does — and doesn&apos;t — do
           </h2>
           <p className="mt-3 max-w-lg text-[13.5px] leading-6 text-[#7A7A70]">
-            This summary highlights key points only. The full terms-of-service below are authoritative.
+            This summary highlights key points only. The full Terms below are authoritative.
           </p>
 
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -288,7 +288,7 @@ export default function Aiterms-of-service() {
               </Callout>
               <p className="mt-5 text-[13.5px] leading-7 text-[#5C5C55]">
                 You&apos;re responsible for your scripts, knowledge sources, escalation destinations,
-                and business-communications instructions. We provide safeguards — policy filters, rate limits,
+                and business instructions. We provide safeguards — policy filters, rate limits,
                 disclosure controls, and failover — but understanding isn&apos;t guaranteed across
                 accents, noise, or ambiguous language.
               </p>
@@ -368,7 +368,7 @@ export default function Aiterms-of-service() {
               <SectionHeading n="05" title="Data use & training" />
               <Callout>
                 Your content is used to deliver the AI feature you enabled. Using it to train models is
-                a separate, distinct choice — never bundled into these terms-of-service.
+                a separate, distinct choice — never bundled into these Terms.
               </Callout>
 
               <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -403,7 +403,7 @@ export default function Aiterms-of-service() {
               <Bullets
                 points={[
                   "Fraud, phishing, or social engineering to obtain money, credentials, or trust through deception.",
-                  "Deceptive impersonation of a person, government, or business-communications.",
+                  "Deceptive impersonation of a person, government, or business.",
                   "Unlawful automated calling or messaging that evades consent, DND, or carrier controls.",
                   "Prompt injection or automation intended to bypass safety, authorization, or rate limits.",
                 ]}

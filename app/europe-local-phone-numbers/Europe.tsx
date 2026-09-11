@@ -6,8 +6,9 @@ import {
     FiCheck, FiTrendingUp,
     FiGlobe, FiMessageSquare,
 } from "react-icons/fi";
+import Link from "next/link";
 
-const europe-local-phone-numbersCoverage = [
+const europeCoverage = [
     {
         code: "GB",
         country: "United Kingdom",
@@ -30,7 +31,7 @@ const europe-local-phone-numbersCoverage = [
         type: "request",
     },
 ];
-const europe-local-phone-numbersMarkets = [
+const europeMarkets = [
     {
         code: "GB",
         country: "United Kingdom",
@@ -38,8 +39,9 @@ const europe-local-phone-numbersMarkets = [
         status: "Available",
         available: true,
         description:
-            "UK local presence for business-communications calls and customer communication.",
+            "UK local presence for business calls and customer communication.",
         action: "Get a number",
+        href: "/uk-local-phone-numbers",
     },
     {
         code: "IE",
@@ -48,8 +50,9 @@ const europe-local-phone-numbersMarkets = [
         status: "By request",
         available: false,
         description:
-            "Local Irish presence for business-communications and customer reach.",
+            "Local Irish presence for business and customer reach.",
         action: "Request this market",
+        href: "/contact-support"
     },
     {
         code: "DE",
@@ -58,78 +61,79 @@ const europe-local-phone-numbersMarkets = [
         status: "By request",
         available: false,
         description:
-            "Local German presence for one of europe-local-phone-numbers's largest markets.",
+            "Local German presence for one of Europe's largest markets.",
         action: "Request this market",
+        href: "/contact-support"
     },
 ];
-const europe-local-phone-numbersBenefits = [
+const europeBenefits = [
     {
         icon: <FiTrendingUp />,
-        title: "europe-local-phone-numbersan presence",
+        title: "European presence",
         description:
-            "Credible local presence in europe-local-phone-numbersan markets without a local office.",
+            "Credible local presence in European markets without a local office.",
         color: "green",
     },
     {
         icon: <FiGlobe />,
         title: "Regional expansion",
         description:
-            "Enter and test europe-local-phone-numbersan markets before committing to infrastructure.",
+            "Enter and test European markets before committing to infrastructure.",
         color: "green",
     },
     {
         icon: <FiMessageSquare />,
         title: "Local-language support",
         description:
-            "Route europe-local-phone-numbersan calls by market, language, or business-communications hours.",
+            "Route European calls by market, language, or business hours.",
         color: "green",
     },
 ];
-const europe-local-phone-numbersServices = [
+const europeServices = [
     {
         icon: <FiPhone />,
         title: "Calling",
         description:
-            "Inbound and outbound business-communications calls on every europe-local-phone-numbers number, with routing and history.",
+            "Inbound and outbound business calls on every Europe number, with routing and history.",
     },
     {
         icon: <FiMic />,
         title: "AI Receptionist",
         description:
-            "Answers, qualifies, and routes calls across europe-local-phone-numbers markets — and captures what you miss.",
+            "Answers, qualifies, and routes calls across Europe markets — and captures what you miss.",
     },
     {
         icon: <FiVideo />,
         title: "Video",
         description:
-            "Meet customers and partners across europe-local-phone-numbers face-to-face, from anywhere.",
+            "Meet customers and partners across Europe face-to-face, from anywhere.",
     },
 ];
 const Faqs = [
     {
-        question: "Which europe-local-phone-numbersan markets are live?",
+        question: "Which European markets are live?",
         answer:
-            "Available markets may change over time based on carrier partnerships, regulations, and local availability. Contact Zoiko Local for the latest list of supported europe-local-phone-numbersan countries and number types.",
+            "Available markets may change over time based on carrier partnerships, regulations, and local availability. Contact Zoiko Local for the latest list of supported European countries and number types.",
     },
     {
-        question: "Can I get a europe-local-phone-numbersan number without a local office?",
+        question: "Can I get a European number without a local office?",
         answer:
-            "In many supported markets, business-communicationses may be eligible for local europe-local-phone-numbersan numbers without maintaining a physical office, subject to verification requirements, regulatory rules, and supporting documentation.",
+            "In many supported markets, businesses may be eligible for local European numbers without maintaining a physical office, subject to verification requirements, regulatory rules, and supporting documentation.",
     },
     {
-        question: "Can I cover multiple europe-local-phone-numbersan markets?",
+        question: "Can I cover multiple European markets?",
         answer:
-            "Yes. business-communicationses can manage multiple europe-local-phone-numbersan numbers from a single workspace, supporting calling, routing, voicemail, video meetings, and AI Receptionist capabilities across markets.",
+            "Yes. Businesses can manage multiple European numbers from a single workspace, supporting calling, routing, voicemail, video meetings, and AI Receptionist capabilities across markets.",
     },
     {
-        question: "Can I request a europe-local-phone-numbersan market not listed?",
+        question: "Can I request a European market not listed?",
         answer:
             "Yes. Zoiko Local continually evaluates new countries and regions. You can submit a market request and the team will review demand, regulatory requirements, and carrier availability.",
     },
 ];
 
 
-export default function europe-local-phone-numbers() {
+export default function Europe() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
 
     const toggleFaq = (index: number) => {
@@ -144,32 +148,35 @@ export default function europe-local-phone-numbers() {
                         {/* LEFT */}
                         <div>
                             <p className="uppercase tracking-[0.32em] text-[11px] font-semibold text-[#EB643F]">
-                                europe-local-phone-numbers • Local Numbers
+                                Europe • Local Numbers
                             </p>
 
                             <h1 className="mt-6 text-4xl md:text-5xl lg:text-[58px] font-bold leading-[1.1] text-[#123533] dark:text-white">
-                                europe-local-phone-numbers local numbers
+                                Europe local numbers
                                 <br />
                                 <span className="text-[#EB643F]">
-                                    for business-communications.
+                                    for business.
                                 </span>
                             </h1>
 
                             <p className="mt-8 max-w-lg text-[17px] leading-8 text-[#666666] dark:text-gray-400">
-                                Get local numbers across europe-local-phone-numbersan markets and build trusted
+                                Get local numbers across European markets and build trusted
                                 regional presence from one workspace. Sound local.
                                 Reach anywhere.
                             </p>
 
                             {/* Buttons */}
                             <div className="mt-10 flex flex-wrap gap-4">
-                                <button className="h-12 px-8 rounded-xl bg-[#EB643F] text-white font-semibold shadow-lg hover:bg-[#D95A37] transition">
-                                    Explore europe-local-phone-numbers Coverage
-                                </button>
-
-                                <button className="h-12 px-8 rounded-xl border border-[#0F6660] dark:border-slate-700 bg-white dark:bg-slate-800 text-[#123533] dark:text-white font-semibold hover:bg-[#0F6660] hover:text-white transition">
-                                    Check Number Availability
-                                </button>
+                                <Link href="#">
+                                    <button className="h-12 px-8 rounded-xl bg-[#EB643F] text-white font-semibold shadow-lg hover:bg-[#D95A37] transition">
+                                        Explore Europe Coverage
+                                    </button>
+                                </Link>
+                                <Link href="#">
+                                    <button className="h-12 px-8 rounded-xl border border-[#0F6660] dark:border-slate-700 bg-white dark:bg-slate-800 text-[#123533] dark:text-white font-semibold hover:bg-[#0F6660] hover:text-white transition">
+                                        Check Number Availability
+                                    </button>
+                                </Link>
                             </div>
 
                             {/* Helper */}
@@ -177,11 +184,12 @@ export default function europe-local-phone-numbers() {
                                 <span className="text-gray-500 dark:text-gray-400">
                                     Replacing a Skype Number across markets?
                                 </span>
-
-                                <button className="ml-2 text-[#EB643F] font-semibold inline-flex items-center gap-1">
-                                    Switch from Skype
-                                    <FiArrowRight size={14} />
-                                </button>
+                                <Link href="/switch-from-skype">
+                                    <button className="ml-2 text-[#EB643F] font-semibold inline-flex items-center gap-1">
+                                        Switch from Skype
+                                        <FiArrowRight size={14} />
+                                    </button>
+                                </Link>
                             </div>
 
                             {/* Features */}
@@ -189,7 +197,7 @@ export default function europe-local-phone-numbers() {
                             <div className="mt-10 space-y-4">
                                 {[
                                     "Backed by a global connectivity agreement",
-                                    "One workspace for every europe-local-phone-numbers market",
+                                    "One workspace for every Europe market",
                                 ].map((item) => (
                                     <div
                                         key={item}
@@ -209,12 +217,12 @@ export default function europe-local-phone-numbers() {
                             <div className="w-full max-w-xl rounded-[24px] overflow-hidden bg-white dark:bg-slate-800 shadow-2xl border border-[#E7DED2] dark:border-slate-700">
                                 {/* Header */}
                                 <div className="bg-[#0F5A52] text-white px-7 py-5 text-sm font-semibold">
-                                    europe-local-phone-numbers · coverage
+                                    Europe · coverage
                                 </div>
 
                                 {/* Countries */}
                                 <div className="p-6 space-y-4">
-                                    {europe-local-phone-numbersCoverage.map((item) => (
+                                    {europeCoverage.map((item) => (
                                         <div
                                             key={item.country}
                                             className="flex items-center justify-between rounded-xl border border-[#ECE6DA] dark:border-slate-700 bg-[#FAF8F5] dark:bg-slate-700 px-5 py-4"
@@ -254,28 +262,28 @@ export default function europe-local-phone-numbers() {
                     </div>
                 </div>
             </section>
-            {/* europe-local-phone-numbers Markets */}
+            {/* Europe Markets */}
             <section className="bg-white dark:bg-slate-900 py-10 lg:py-14">
                 <div className="max-w-7xl mx-auto px-5">
                     {/* Heading */}
                     <div className="max-w-3xl mx-auto text-center">
                         <p className="uppercase tracking-[0.32em] text-[11px] font-semibold text-[#EB643F]">
-                            europe-local-phone-numbers Markets
+                            Europe Markets
                         </p>
 
                         <h2 className="mt-5 text-4xl md:text-[48px] font-bold leading-tight text-[#123533] dark:text-white">
-                            Local numbers across europe-local-phone-numbers.
+                            Local numbers across Europe.
                         </h2>
 
                         <p className="mt-6 text-[17px] leading-8 text-gray-500 dark:text-gray-400">
-                            Get local numbers across europe-local-phone-numbersan markets and build
+                            Get local numbers across European markets and build
                             trusted regional presence from one workspace.
                         </p>
                     </div>
 
                     {/* Cards */}
                     <div className="mt-16 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                        {europe-local-phone-numbersMarkets.map((market) => (
+                        {europeMarkets.map((market) => (
                             <div
                                 key={market.code}
                                 className="rounded-[24px]
@@ -322,8 +330,9 @@ export default function europe-local-phone-numbers() {
                                 </p>
 
                                 {/* CTA */}
-                                <button
-                                    className="mt-8
+                                <Link href={market.href}>
+                                    <button
+                                        className="mt-8
                         inline-flex
                         items-center
                         gap-2
@@ -331,10 +340,11 @@ export default function europe-local-phone-numbers() {
                         font-semibold
                         hover:gap-3
                         transition-all"
-                                >
-                                    {market.action}
-                                    <span>→</span>
-                                </button>
+                                    >
+                                        {market.action}
+                                        <span>→</span>
+                                    </button>
+                                </Link>
                             </div>
                         ))}
                     </div>
@@ -343,7 +353,7 @@ export default function europe-local-phone-numbers() {
                     <div className="mt-12 text-center">
                         <p className="max-w-3xl mx-auto text-sm leading-7 text-gray-400 dark:text-gray-500">
                             The United Kingdom is live today.
-                            Additional europe-local-phone-numbersan markets, including Ireland and Germany,
+                            Additional European markets, including Ireland and Germany,
                             are available by request under our global connectivity agreement.
                         </p>
                     </div>
@@ -360,13 +370,13 @@ export default function europe-local-phone-numbers() {
 
                         <p className="uppercase tracking-[0.32em] text-[11px] font-semibold text-[#EB643F]">
 
-                            Why europe-local-phone-numbers Presence Matters
+                            Why Europe Presence Matters
 
                         </p>
 
                         <h2 className="mt-5 text-4xl md:text-[48px] font-bold leading-tight text-[#123533] dark:text-white">
 
-                            Be local across europe-local-phone-numbers —
+                            Be local across Europe —
 
                             <br />
 
@@ -380,7 +390,7 @@ export default function europe-local-phone-numbers() {
 
                     <div className="mt-16 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 
-                        {europe-local-phone-numbersBenefits.map((item) => (
+                        {europeBenefits.map((item) => (
 
                             <div
                                 key={item.title}
@@ -455,7 +465,7 @@ export default function europe-local-phone-numbers() {
 
                             <h2 className="mt-5 text-4xl md:text-[48px] font-bold leading-tight text-[#123533] dark:text-white">
 
-                                Every europe-local-phone-numbers number,
+                                Every Europe number,
 
                                 <span className="mx-2">connected to</span>
 
@@ -471,7 +481,7 @@ export default function europe-local-phone-numbers() {
 
                         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
 
-                            {europe-local-phone-numbersServices.map((item) => (
+                            {europeServices.map((item) => (
 
                                 <div
                                     key={item.title}
@@ -521,7 +531,7 @@ export default function europe-local-phone-numbers() {
 
                         <p className="uppercase tracking-[0.32em] text-[11px] font-semibold text-[#EB643F]">
 
-                            More europe-local-phone-numbers Markets
+                            More Europe Markets
 
                         </p>
 
@@ -534,30 +544,32 @@ export default function europe-local-phone-numbers() {
                         <p className="mt-6 max-w-3xl mx-auto text-[17px] leading-8 text-gray-500 dark:text-gray-400">
 
                             Backed by a global connectivity agreement,
-                            we're expanding across europe-local-phone-numbers by demand.
+                            we're expanding across Europe by demand.
                             Tell us the country or city you need and
                             we'll review availability.
 
                         </p>
 
                         <div className="mt-10 flex flex-wrap justify-center gap-4">
-
-                            <button
-                                className="h-12 px-8 rounded-xl
+                            <Link href="/contact-support">
+                                <button
+                                    className="h-12 px-8 rounded-xl
                     bg-[#EB643F]
                     text-white
                     font-semibold
                     shadow-lg
                     hover:bg-[#D95A37]
                     transition"
-                            >
+                                >
 
-                                Request a Market
+                                    Request a Market
 
-                            </button>
+                                </button>
+                            </Link>
 
-                            <button
-                                className="h-12 px-8 rounded-xl
+                            <Link href="/contact-sales">
+                                <button
+                                    className="h-12 px-8 rounded-xl
                     border border-[#0F6660]
                     dark:border-slate-700
                     bg-white dark:bg-slate-800
@@ -567,12 +579,12 @@ export default function europe-local-phone-numbers() {
                     hover:bg-[#0F6660]
                     hover:text-white
                     transition"
-                            >
+                                >
 
-                                Talk to Sales
+                                    Talk to Sales
 
-                            </button>
-
+                                </button>
+                            </Link>
                         </div>
 
                     </div>
@@ -590,7 +602,7 @@ export default function europe-local-phone-numbers() {
                         </p>
 
                         <h2 className="mt-5 text-3xl md:text-[50px] font-bold leading-tight text-[#123533] dark:text-white">
-                            africa-local-phone-numbers coverage, answered.
+                            Africa coverage, answered.
                         </h2>
                     </div>
 
@@ -599,7 +611,7 @@ export default function europe-local-phone-numbers() {
                     <div className="mt-10 rounded-xl border-l-4 border-[#EB643F] border border-[#EB643F] dark:border-[#EB643F] bg-white dark:bg-slate-800 px-6 py-5">
                         <p className="text-sm leading-7 text-gray-500 dark:text-gray-400">
                             Local-number availability may vary by country, city, number type, carrier partner, verification requirement, eligibility rule, and
-                            applicable law. Some numbers may require business-communications verification, proof of address, identity checks, or additional onboarding before
+                            applicable law. Some numbers may require business verification, proof of address, identity checks, or additional onboarding before
                             activation.
                         </p>
                     </div>
@@ -689,15 +701,16 @@ export default function europe-local-phone-numbers() {
                             {/* Description */}
 
                             <p className="mt-7 max-w-2xl mx-auto text-[16px] md:text-lg leading-8 text-white/75">
-                                Get local numbers across europe-local-phone-numbers with calling, video, and an AI Receptionist — managed from one workspace.
+                                Get local numbers across Europe with calling, video, and an AI Receptionist — managed from one workspace.
                             </p>
 
                             {/* Buttons */}
 
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
                                 {/* Primary */}
-                                <button
-                                    className="h-12 px-8 rounded-xl
+                                <Link href="#">
+                                    <button
+                                        className="h-12 px-8 rounded-xl
                                                 bg-[#EB643F]
                                                 text-white
                                                 text-sm
@@ -705,28 +718,31 @@ export default function europe-local-phone-numbers() {
                                                 shadow-lg
                                                 hover:bg-[#D95A37]
                                                 transition-all duration-300"
-                                >
+                                    >
 
-                                    Explore europe-local-phone-numbers Coverage  →
-                                </button>
-
+                                        Explore Europe Coverage  →
+                                    </button>
+                                </Link>
                                 {/* Secondary */}
-                                <button
-                                    className="h-12 px-8 rounded-xl
+                                <Link href="/contact-support">
+                                    <button
+                                        className="h-12 px-8 rounded-xl
                                                 bg-white
                                                 text-[#123533]
                                                 text-sm
                                                 font-semibold
                                                 hover:bg-gray-100
                                                 transition-all duration-300"
-                                >
+                                    >
 
-                                    Request a Market
-                                </button>
+                                        Request a Market
+                                    </button>
+                                </Link>
 
                                 {/* Outline */}
-                                <button
-                                    className="h-12 px-8 rounded-xl
+                                <Link href="/contact-sales">
+                                    <button
+                                        className="h-12 px-8 rounded-xl
                                                 border border-white/25
                                                 text-white
                                                 text-sm
@@ -734,20 +750,22 @@ export default function europe-local-phone-numbers() {
                                                 hover:bg-white
                                                 hover:text-[#123533]
                                                 transition-all duration-300"
-                                >
+                                    >
 
-                                    Talk to Sales
-                                </button>
+                                        Talk to Sales
+                                    </button>
+                                </Link>
                             </div>
 
                             {/* Footer Text */}
                             <p className="mt-8 text-sm text-white/60">
 
                                 Replacing a Skype Number too?
-
+                            <Link href="/switch-from-skype">
                                 <span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
                                     Switch from Skype →
                                 </span>
+                            </Link>
                             </p>
                         </div>
                     </div>
