@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import {
     FiSearch,
     FiCheck,
@@ -25,6 +24,7 @@ import {
     FiPhoneForwarded,
 } from "react-icons/fi";
 import Faq from '../Components/Faq';
+import Link from 'next/link';
 
 const steps = [
     "Search",
@@ -644,11 +644,11 @@ export default function Getlocalnumber() {
                                 </p>
 
                             </div>
-                            <Link href="/contact-sales">
-                                <button className="text-[#E66845] font-semibold hover:underline">
-                                    Talk to Sales →
-                                </button>
-                            </Link>
+
+                            <button className="text-[#E66845] font-semibold hover:underline">
+                                Talk to Sales →
+                            </button>
+
                         </div>
 
                     </div>
@@ -1313,16 +1313,19 @@ export default function Getlocalnumber() {
                             </div>
 
                             <div className="mt-10 space-y-4">
-                                <Link href="/switch-from-skype">
-                                    <button className="w-full mb-2 h-12 rounded-full bg-[#EB643F] text-white font-semibold transition hover:bg-[#D95934]">
-                                        Start Skype Replacement
-                                    </button>
-                                </Link>
-                                <Link href="/number-porting">
-                                    <button className="w-full h-12 rounded-full bg-white text-[#123533] font-semibold border border-white transition hover:bg-gray-100">
-                                        Check Porting Eligibility
-                                    </button>
-                                </Link>
+
+                                <button className="w-full h-12 rounded-full bg-[#EB643F] text-white font-semibold transition hover:bg-[#D95934]">
+
+                                    Start Skype Replacement
+
+                                </button>
+
+                                <button className="w-full h-12 rounded-full bg-white text-[#123533] font-semibold border border-white transition hover:bg-gray-100">
+
+                                    Check Porting Eligibility
+
+                                </button>
+
                             </div>
 
                         </div>
@@ -1884,13 +1887,15 @@ export default function Getlocalnumber() {
                     {/* CTA */}
 
                     <div className="mt-12 flex justify-center">
-                        <Link href="/contact-sales">
-                            <button
-                                className="px-8 h-11 rounded-full border border-[#D8D2C7] dark:border-slate-600 bg-white dark:bg-slate-800 text-[#123533] dark:text-white text-sm font-semibold transition-all duration-300 hover:bg-[#EB643F] hover:border-[#EB643F] hover:text-white"
-                            >
-                                Talk to a Specialist
-                            </button>
-                        </Link>
+
+                        <button
+                            className="px-8 h-11 rounded-full border border-[#D8D2C7] dark:border-slate-600 bg-white dark:bg-slate-800 text-[#123533] dark:text-white text-sm font-semibold transition-all duration-300 hover:bg-[#EB643F] hover:border-[#EB643F] hover:text-white"
+                        >
+
+                            Talk to a Specialist
+
+                        </button>
+
                     </div>
 
                     {/* Bottom Note */}
@@ -1974,29 +1979,28 @@ export default function Getlocalnumber() {
                             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
 
                                 {/* Primary */}
-                                <Link href="/get-a-local-number">
-                                    <button className="w-full sm:w-auto px-7 h-12 rounded-full bg-[#EB643F] text-white font-semibold text-sm transition-all duration-300 hover:bg-[#D95B38] hover:shadow-xl">
-                                        Search Available Numbers →
-                                    </button>
-                                </Link>
+
+                                <button className="w-full sm:w-auto px-7 h-12 rounded-full bg-[#EB643F] text-white font-semibold text-sm transition-all duration-300 hover:bg-[#D95B38] hover:shadow-xl">
+
+                                    Search Available Numbers →
+
+                                </button>
 
                                 {/* Secondary */}
 
-                                <Link href="/number-porting">
-                                    <button className="w-full sm:w-auto px-7 h-12 rounded-full bg-white text-[#123533] font-semibold text-sm transition-all duration-300 hover:bg-gray-100">
+                                <button className="w-full sm:w-auto px-7 h-12 rounded-full bg-white text-[#123533] font-semibold text-sm transition-all duration-300 hover:bg-gray-100">
+
                                     Port an Existing Number
-                                    </button>
-                                </Link>
+
+                                </button>
 
                                 {/* Outline */}
 
-                                <Link href="/contact-sales">
-                                    <button className="w-full sm:w-auto px-7 h-12 rounded-full border border-[#4B7772] text-white font-semibold text-sm transition-all duration-300 hover:border-white hover:bg-white/10">
+                                <button className="w-full sm:w-auto px-7 h-12 rounded-full border border-[#4B7772] text-white font-semibold text-sm transition-all duration-300 hover:border-white hover:bg-white/10">
 
                                     Talk to Sales for Bulk Numbers
 
-                                    </button>
-                                </Link>
+                                </button>
 
                             </div>
 

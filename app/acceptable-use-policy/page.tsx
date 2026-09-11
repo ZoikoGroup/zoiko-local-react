@@ -61,8 +61,8 @@ const RULE_STATE: Record<
 const summaryCards: { state: RuleState; title: string; body: string }[] = [
   {
     state: "allowed",
-    title: "Legitimate communications",
-    body: "Ordinary business calling, support lines, opt-in notifications, and AI receptionist use for lawful customer service — within your plan and the law.",
+    title: "Legitimate zoiko-communications-group",
+    body: "Ordinary business-communications calling, support lines, opt-in notifications, and AI receptionist use for lawful customer service — within your plan and the law.",
   },
   {
     state: "controlled",
@@ -168,7 +168,7 @@ const sections: Section[] = [
       <>
         AI voice cloning used for deceptive impersonation — legitimate synthetic voice use is governed
         separately by the{" "}
-        <Link href="#" className="font-medium text-[#C2421F] underline underline-offset-2">
+        <Link href="/ai-terms" className="font-medium text-[#C2421F] underline underline-offset-2">
           AI Terms
         </Link>
         .

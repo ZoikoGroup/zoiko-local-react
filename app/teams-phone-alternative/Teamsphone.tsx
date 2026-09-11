@@ -1,17 +1,7 @@
 "use client";
-import { Metadata } from 'next';
+
 import { useState } from 'react';
 import { FiCheck, FiMapPin, FiMic, FiPlus, FiMinus } from "react-icons/fi";
-
-
-export const metadata: Metadata = {
-  title: "Best Teams Phone Alternative for Business | Zoiko Local",
-  description:
-    "Looking for a Teams Phone alternative for business? Zoiko Local offers local numbers, calling, video, and an AI Receptionist in one modern platform.",
-};
-
-
-
 
 
 const fitChecklist = [
@@ -138,7 +128,7 @@ export default function Teamsphone() {
 
                                 </a>
 
-                                <a href="/zoiko-local-terms"><button
+                                <a href="/terms-of-service"><button
                                     className="h-12 px-8 rounded-xl
                         border border-[#0F6660]
                         dark:border-slate-600

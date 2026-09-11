@@ -1,20 +1,9 @@
 "use client";
-import { Metadata } from 'next';
+// import { Metadata } from 'next';
 import { useState } from 'react';
 import {
     FiCheck, FiPhone, FiMapPin, FiPhoneCall, FiMic, FiActivity, FiPlus, FiMinus
 } from "react-icons/fi";
-
-
-
-
-export const metadata: Metadata = {
-  title: "Switch From Skype to Modern Business Calling | Zoiko Local",
-  description:
-    "Switch from Skype to modern business calling with Zoiko Local. Get local numbers, video, and an AI Receptionist in one connected workspace for your business.",
-};
-
-
 
 
 const whyMoveNow = [
@@ -155,7 +144,7 @@ export default function Switchfromskype() {
                             {/* Buttons */}
 
                             <div className="mt-4 flex flex-col sm:flex-row gap-4">
-                             <a href="/number-porting">   <button
+                                <a href="/switch-from-skype">   <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -166,8 +155,8 @@ export default function Switchfromskype() {
                                 >
                                     Switch from Skype →
                                 </button>
-</a>
-                              <a href="/get-a-local-number">  <button
+                                </a>
+                                <a href="/get-a-local-number">  <button
                                     className="h-12 px-8 rounded-xl
                         border border-[#0F6660]
                         dark:border-slate-600
@@ -418,7 +407,7 @@ export default function Switchfromskype() {
 
                     {/* Buttons */}
                     <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
-                       <a href="/number-porting"><button
+                        <a href="/number-porting"><button
                             className="h-12 px-8 rounded-xl
                 bg-[#EB643F]
                 text-white
@@ -430,11 +419,11 @@ export default function Switchfromskype() {
 
                             Switch from Skype →
                         </button>
-</a> 
+                        </a>
                         <a href="/get-a-local-number">
-                        
-                        <button
-                            className="h-12 px-8 rounded-xl
+
+                            <button
+                                className="h-12 px-8 rounded-xl
                 border border-[#0F6660]
                 dark:border-slate-600
                 bg-white
@@ -445,11 +434,11 @@ export default function Switchfromskype() {
                 hover:bg-[#0F6660]
                 hover:text-white
                 transition-all duration-300"
-                        >
-                            Get a Local Number
-                        </button>
+                            >
+                                Get a Local Number
+                            </button>
 
-                        
+
                         </a>
                     </div>
                 </div>
@@ -628,11 +617,11 @@ export default function Switchfromskype() {
 
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
                                 {/* Primary */}
-                                    <a href="/get-a-local-number">
-                                    
-                                    
+                                <a href="/get-a-local-number">
+
+
                                     <button
-                                    className="h-12 px-8 rounded-xl
+                                        className="h-12 px-8 rounded-xl
                                     bg-[#EB643F]
                                     text-white
                                     text-sm
@@ -640,31 +629,31 @@ export default function Switchfromskype() {
                                     shadow-lg
                                     hover:bg-[#D95A37]
                                     transition-all duration-300"
-                                >
+                                    >
 
-                                    Get a Local Number →
-                                </button>
-                                    
-                                    </a>
+                                        Get a Local Number →
+                                    </button>
+
+                                </a>
 
                                 {/* Secondary */}
-                               <a href="/plans-and-pricing">
-                                 <button
-                                    className="h-12 px-8 rounded-xl
+                                <a href="/plans-and-pricing">
+                                    <button
+                                        className="h-12 px-8 rounded-xl
                                     bg-white
                                     text-[#123533]
                                     text-sm
                                     font-semibold
                                     hover:bg-gray-100
                                     transition-all duration-300"
-                                >
+                                    >
 
-                                    See Pricing
-                                </button>
+                                        See Pricing
+                                    </button>
 
-                               </a>
+                                </a>
                                 {/* Outline */}
-                               <a href="/contact-sales"> <button
+                                <a href="/contact-sales"> <button
                                     className="h-12 px-8 rounded-xl
                                     border border-white/25
                                     text-white
@@ -683,10 +672,10 @@ export default function Switchfromskype() {
                             <p className="mt-8 text-sm text-white/60">
 
                                 Replacing a Skype Number too?
-<a href="/number-porting">
-                                <span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
-                                    Switch from Skype →
-                                </span></a>
+                                <a href="/switch-from-skype">
+                                    <span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
+                                        Switch from Skype →
+                                    </span></a>
                             </p>
                         </div>
                     </div>

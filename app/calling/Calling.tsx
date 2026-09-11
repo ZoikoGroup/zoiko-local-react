@@ -22,7 +22,6 @@ import {
     FiRotateCcw, FiUserCheck,
 } from "react-icons/fi";
 import Faq from '../Components/Faq';
-import Link from 'next/link';
 
 const features = [
     "Inbound & outbound business calling",
@@ -145,7 +144,6 @@ const voicemailCards = [
         description:
             "When you team can't answer, capture the call, preserve the message, and turn it into a structured summary with caller intent and next actions.",
         link: "See AI Receptionist →",
-        href: "/ai-receptionist",
     },
     {
         icon: <FiMenu />,
@@ -153,7 +151,6 @@ const voicemailCards = [
         description:
             "As numbers multiply, keep them organized. Label by country, market, department, or campaigns so teams know the context before they answer.",
         link: "Organize your numbers →",
-        href: "#",
     },
     {
         icon: <FiMic />,
@@ -161,7 +158,6 @@ const voicemailCards = [
         description:
             "Route unanswered or overflow calls to an AI Receptionist that screens, qualifies, summarizes, and routes — with consent controls built in.",
         link: "Explore AI Receptionist →",
-        href: "/ai-receptionist",
     },
 ];
 
@@ -246,7 +242,6 @@ const workflows = [
         description:
             "Local business with local numbers and professional call handling.",
         link: "Calling for small business →",
-        href: "/local-business-numbers",
     },
     {
         icon: <FiPhoneCall />,
@@ -254,7 +249,6 @@ const workflows = [
         description:
             "Improve answer rates and follow-up with localized identity.",
         link: "Calling for sales teams →",
-        href: "/contact-sales",
     },
     {
         icon: <FiHeadphones />,
@@ -262,7 +256,6 @@ const workflows = [
         description:
             "Give customers familiar local numbers when they need help.",
         link: "Calling for support →",
-        href: "/contact-support",
     },
     {
         icon: <FiBriefcase />,
@@ -278,7 +271,6 @@ const workflows = [
         description:
             "Answer calls without a legacy office phone system.",
         link: "Calling for remote teams →",
-        href: "/remote-teams",
     },
     {
         icon: <FiGlobe />,
@@ -286,7 +278,6 @@ const workflows = [
         description:
             "Your local business presence across multiple countries.",
         link: "Calling for expansion →",
-        href: "/international-expansion",
     },
 ];
 const skypeComparison = [
@@ -480,13 +471,12 @@ export default function Calling() {
                                 Start Calling →
 
                             </button>
-                            <Link href="/get-a-local-number">
-                                <button className="h-12 px-7 rounded-xl border border-[#0F6660] text-[#123533] dark:text-white hover:bg-[#0F6660] hover:text-white transition">
 
-                                    Get a Local Number
+                            <button className="h-12 px-7 rounded-xl border border-[#0F6660] text-[#123533] dark:text-white hover:bg-[#0F6660] hover:text-white transition">
 
-                                </button>
-                            </Link>
+                                Get a Local Number
+
+                            </button>
 
                         </div>
 
@@ -495,13 +485,13 @@ export default function Calling() {
                         <div className="mt-7 text-sm text-gray-500 dark:text-gray-400">
 
                             Replacing Skype Calling?
-                            <Link href="/switch-from-skype">
-                                <button className="ml-2 font-semibold text-[#EB643F] hover:underline">
 
-                                    Switch from Skype →
+                            <button className="ml-2 font-semibold text-[#EB643F] hover:underline">
 
-                                </button>
-                            </Link>
+                                Switch from Skype →
+
+                            </button>
+
                         </div>
 
                         {/* Features */}
@@ -906,13 +896,13 @@ export default function Calling() {
                             Start Calling →
 
                         </button>
-                        <Link href="/plans-and-pricing">
-                            <button className="h-12 md:h-14 px-7 py-4 rounded-xl border border-[#0F6660] text-[#123533] dark:text-white hover:bg-[#0F6660] hover:text-white transition">
 
-                                View Calling Plans
+                        <button className="h-12 md:h-14 px-7 py-4 rounded-xl border border-[#0F6660] text-[#123533] dark:text-white hover:bg-[#0F6660] hover:text-white transition">
 
-                            </button>
-                        </Link>
+                            View Calling Plans
+
+                        </button>
+
                     </div>
                 </div>
             </section>
@@ -1225,13 +1215,13 @@ export default function Calling() {
                                     {card.description}
 
                                 </p>
-                                <Link href={card.href}>
-                                    <button className="mt-5 text-[#EB643F] text-sm font-medium hover:underline">
 
-                                        {card.link}
+                                <button className="mt-5 text-[#EB643F] text-sm font-medium hover:underline">
 
-                                    </button>
-                                </Link>
+                                    {card.link}
+
+                                </button>
+
                             </div>
 
                         ))}
@@ -1455,13 +1445,13 @@ export default function Calling() {
                     {/* CTA */}
 
                     <div className="mt-10 flex justify-center">
-                        <Link href="/plans-and-pricing">
-                            <button className="h-11 px-8 rounded-full border border-[#D7D0C6] dark:border-slate-600 bg-white dark:bg-slate-800 text-[#123533] dark:text-white font-semibold hover:bg-[#0F6660] hover:text-white transition">
 
-                                Explore Calling Add-ons
+                        <button className="h-11 px-8 rounded-full border border-[#D7D0C6] dark:border-slate-600 bg-white dark:bg-slate-800 text-[#123533] dark:text-white font-semibold hover:bg-[#0F6660] hover:text-white transition">
 
-                            </button>
-                        </Link>
+                            Explore Calling Add-ons
+
+                        </button>
+
                     </div>
 
                 </div>
@@ -1521,13 +1511,13 @@ export default function Calling() {
                                     {item.description}
 
                                 </p>
-                                <Link href={item.href}>
-                                    <button className="mt-5 text-sm font-medium text-[#EB643F] hover:underline">
 
-                                        {item.link}
+                                <button className="mt-5 text-sm font-medium text-[#EB643F] hover:underline">
 
-                                    </button>
-                                </Link>
+                                    {item.link}
+
+                                </button>
+
                             </div>
 
                         ))}
@@ -1643,20 +1633,19 @@ export default function Calling() {
                     {/* Buttons */}
 
                     <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
-                        <Link href="/switch-from-skype">
-                            <button className="h-12 px-8 rounded-xl bg-[#EB643F] text-white font-semibold hover:bg-[#D95B38] transition">
 
-                                Switch from Skype →
+                        <button className="h-12 px-8 rounded-xl bg-[#EB643F] text-white font-semibold hover:bg-[#D95B38] transition">
 
-                            </button>
-                        </Link>
-                        <Link href="/numer-porting">
-                            <button className="h-12 px-8 rounded-xl border border-[#0F6660] text-[#123533] dark:text-white hover:bg-[#0F6660] hover:text-white transition">
+                            Switch from Skype →
 
-                                Read Migration Guide
+                        </button>
 
-                            </button>
-                        </Link>
+                        <button className="h-12 px-8 rounded-xl border border-[#0F6660] text-[#123533] dark:text-white hover:bg-[#0F6660] hover:text-white transition">
+
+                            Read Migration Guide
+
+                        </button>
+
                     </div>
 
                 </div>
@@ -1743,20 +1732,18 @@ export default function Calling() {
 
                     <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
 
-                        <Link href="/contact-support">
-                            <button className="h-11 px-8 rounded-full border border-[#D7D0C6] dark:border-slate-600 bg-white dark:bg-slate-800 text-[#123533] dark:text-white text-sm font-semibold transition-all duration-300 hover:bg-[#0F6660] hover:border-[#0F6660] hover:text-white">
+                        <button className="h-11 px-8 rounded-full border border-[#D7D0C6] dark:border-slate-600 bg-white dark:bg-slate-800 text-[#123533] dark:text-white text-sm font-semibold transition-all duration-300 hover:bg-[#0F6660] hover:border-[#0F6660] hover:text-white">
 
                             Check Country Rules
 
-                            </button>
-                        </Link>
-                        <Link href="/contact-sales">
-                            <button className="h-11 px-8 rounded-full border border-[#0F6660] text-[#123533] dark:text-white text-sm font-semibold transition-all duration-300 hover:bg-[#0F6660] hover:text-white">
+                        </button>
 
-                                Talk to Sales
+                        <button className="h-11 px-8 rounded-full border border-[#0F6660] text-[#123533] dark:text-white text-sm font-semibold transition-all duration-300 hover:bg-[#0F6660] hover:text-white">
 
-                            </button>
-                        </Link>
+                            Talk to Sales
+
+                        </button>
+
                     </div>
 
                 </div>
@@ -1841,7 +1828,7 @@ export default function Calling() {
                                 </div>
 
                                 {/* Button */}
-                                <Link href="/plans-and-pricing">
+
                                 <button
                                     className={`mt-8 h-11 w-full rounded-xl text-sm font-semibold transition-all duration-300
                                         ${plan.primary
@@ -1851,7 +1838,7 @@ export default function Calling() {
                                 >
                                     {plan.button}
                                 </button>
-                                </Link>
+
                             </div>
 
                         ))}
@@ -1863,14 +1850,14 @@ export default function Calling() {
                     <div className="mt-10 flex flex-wrap justify-center gap-6">
 
                         {pricingLinks.map((link) => (
-                        <Link href="/plans-and-pricing">
+
                             <button
                                 key={link}
                                 className="text-[13px] font-medium text-[#EB643F] hover:underline"
                             >
                                 {link}
                             </button>
-                        </Link>
+
                         ))}
 
                     </div>
@@ -1919,40 +1906,33 @@ export default function Calling() {
                             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
 
                                 {/* Primary */}
-                                <Link href="/start-free">
                                 <button
                                     className="h-11 px-7 rounded-full bg-[#EB643F] text-white text-sm font-semibold transition-all duration-300 hover:bg-[#D95A38] hover:shadow-lg"
                                 >
                                     Start Calling →
                                 </button>
-                                </Link>
 
                                 {/* Secondary */}
-                                <Link href="/get-a-local-number">
                                 <button
                                     className="h-11 px-7 rounded-full bg-white text-[#123533] text-sm font-semibold transition-all duration-300 hover:bg-gray-100"
                                 >
                                     Get a Local Number
                                 </button>
-                                </Link>
+
                                 {/* Outline */}
-                                <Link href="/contact-support">
                                 <button
                                     className="h-11 px-7 rounded-full border border-[#5E8C88] text-white text-sm font-semibold transition-all duration-300 hover:border-white hover:bg-white/10"
                                 >
                                     Talk to Sales
                                 </button>
-                                </Link>
                             </div>
 
                             {/* Bottom Link */}
                             <p className="mt-8 text-[12px] text-gray-300">
                                 Replacing Skype Calling?
-                                <Link href="/switch-from-skype">
-                                    <button className="ml-1 text-[#EB643F] font-medium hover:underline">
-                                        Switch from Skype →
-                                    </button>
-                                </Link>
+                                <button className="ml-1 text-[#EB643F] font-medium hover:underline">
+                                    Switch from Skype →
+                                </button>
                             </p>
                         </div>
                     </div>

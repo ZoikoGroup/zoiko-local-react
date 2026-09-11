@@ -154,10 +154,10 @@ export default function AiTerms() {
           Legal · Artificial Intelligence
         </p>
         <h1 className={`mt-5 text-4xl font-medium tracking-tight text-[#1A1A17] md:text-[46px] ${serif}`}>
-          AI <span className="italic text-[#E85D3C]">Terms</span>
+          AI <span className="italic text-[#E85D3C]">terms-of-service</span>
         </h1>
         <p className="mt-6 max-w-xl text-[15px] leading-7 text-[#5C5C55]">
-          These Terms explain how AI-enabled features in Zoiko Local work, what you&apos;re
+          These terms-of-service explain how AI-enabled features in Zoiko Local work, what you&apos;re
           responsible for, how AI-generated outputs should be used, and the rules for AI Receptionist,
           synthetic voice, and automated actions.
         </p>

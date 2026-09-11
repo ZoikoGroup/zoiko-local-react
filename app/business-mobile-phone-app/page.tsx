@@ -65,7 +65,7 @@ const capabilityStrip = [
 ];
 
 const identityPoints = [
-  "One business identity across your team.",
+  "One business-communications identity across your team.",
   "Mobile access without publishing your personal number.",
   "Calls and conversations tied to your Zoiko Local workspace.",
 ];

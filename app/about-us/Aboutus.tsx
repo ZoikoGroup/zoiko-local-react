@@ -2,282 +2,40 @@
 
 import type { ReactNode } from "react";
 
-// ─── SVG ICONS ──────────────────────────────────────────────────────────────
+/* ────────────────────────────────────────────────────────────────────────────
+   PALETTE (Zoiko Local — warm / earthy)
+   coral     #d9603f      dark green  #163a2e      cream  #f3efe7
+   Light sections invert to gray-900/800 in dark mode; the dark-green sections
+   stay green in both modes.
 
-function PhoneIcon({ className = "h-6 w-6" }: { className?: string }) {
+   NOTE: all SVG icons removed — each icon spot is now a dashed <ImageSlot />
+   placeholder. Drop your custom images in and delete the placeholder styling.
+──────────────────────────────────────────────────────────────────────────── */
+
+// ─── IMAGE / ICON SLOTS ──────────────────────────────────────────────────────
+function ImageSlot({
+  className = "h-11 w-11 rounded-xl",
+  light = false,
+  label = "img",
+}: {
+  className?: string;
+  light?: boolean;
+  label?: string;
+}) {
   return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
-    </svg>
-  );
-}
-
-function ForwardIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M13 17l5-5-5-5M6 17l5-5-5-5" />
-    </svg>
-  );
-}
-
-function VoicemailIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="5.5" cy="11.5" r="4.5" />
-      <circle cx="18.5" cy="11.5" r="4.5" />
-      <path d="M5.5 16h13" />
-    </svg>
-  );
-}
-
-function BotIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="11" width="18" height="10" rx="2" />
-      <circle cx="12" cy="5" r="2" />
-      <path d="M12 7v4M8 16h0M16 16h0" />
-    </svg>
-  );
-}
-
-function VideoIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="6" width="13" height="12" rx="2" />
-      <path d="M15 10l5-3v10l-5-3" />
-    </svg>
-  );
-}
-
-function SlidersIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <line x1="4" y1="21" x2="4" y2="14" /><line x1="4" y1="10" x2="4" y2="3" />
-      <line x1="12" y1="21" x2="12" y2="12" /><line x1="12" y1="8" x2="12" y2="3" />
-      <line x1="20" y1="21" x2="20" y2="16" /><line x1="20" y1="12" x2="20" y2="3" />
-      <line x1="1" y1="14" x2="7" y2="14" /><line x1="9" y1="8" x2="15" y2="8" /><line x1="17" y1="16" x2="23" y2="16" />
-    </svg>
-  );
-}
-
-function ShieldIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      <path d="M9 12l2 2 4-4" />
-    </svg>
-  );
-}
-
-function GlobeIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10" />
-      <line x1="2" y1="12" x2="22" y2="12" />
-      <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z" />
-    </svg>
-  );
-}
-
-function KeyIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" />
-    </svg>
-  );
-}
-
-function CheckCircleIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
-      <path d="M22 4L12 14.01l-3-3" />
-    </svg>
-  );
-}
-
-function EyeIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-      <circle cx="12" cy="12" r="3" />
-    </svg>
-  );
-}
-
-function UndoIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M3 7v6h6" />
-      <path d="M21 17a9 9 0 00-9-9 9 9 0 00-6 2.3L3 13" />
-    </svg>
-  );
-}
-
-function ClipboardIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" />
-      <rect x="8" y="2" width="8" height="4" rx="1" />
-      <path d="M9 14l2 2 4-4" />
-    </svg>
-  );
-}
-
-function FingerprintIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M2 12C2 6.5 6.5 2 12 2a10 10 0 018 4" />
-      <path d="M5 19.5C5.5 18 6 15 6 12c0-3.5 2.5-6 6-6a6 6 0 016 6c0 1-.3 3-1 5" />
-      <path d="M9 12c0-1.7 1.3-3 3-3s3 1.3 3 3v1c0 2-.5 4.5-2.5 7" />
-      <path d="M12 12v4c0 2.5-1 5-3 7" />
-    </svg>
-  );
-}
-
-function FileTextIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-      <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
-    </svg>
-  );
-}
-
-function AlertIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
-      <line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" />
-    </svg>
-  );
-}
-
-function DatabaseIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <ellipse cx="12" cy="5" rx="9" ry="3" />
-      <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
-      <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
-    </svg>
-  );
-}
-
-function TargetIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" />
-    </svg>
-  );
-}
-
-function LayersIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" />
-    </svg>
-  );
-}
-
-function TrendingUpIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M23 6l-9.5 9.5-5-5L1 18" /><path d="M17 6h6v6" />
-    </svg>
-  );
-}
-
-function SearchIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
-    </svg>
-  );
-}
-
-function CheckSmallIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20 6L9 17l-5-5" />
-    </svg>
-  );
-}
-
-// Business card icons
-function BriefcaseIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
-    </svg>
-  );
-}
-
-function UserIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" />
-    </svg>
-  );
-}
-
-function UsersIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" />
-      <path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" />
-    </svg>
-  );
-}
-
-function MapPinIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />
-    </svg>
-  );
-}
-
-function WifiIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M5 12.55a11 11 0 0114.08 0" /><path d="M1.42 9a16 16 0 0121.16 0" />
-      <path d="M8.53 16.11a6 6 0 016.95 0" /><circle cx="12" cy="20" r="1" />
-    </svg>
-  );
-}
-
-function HeartIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
-    </svg>
-  );
-}
-
-function LockIcon({ className = "h-6 w-6" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0110 0v4" />
-    </svg>
-  );
-}
-
-// ─── ICON BADGE WRAPPER ──────────────────────────────────────────────────────
-
-function IconBadge({ icon, light = false }: { icon: ReactNode; light?: boolean }) {
-  return (
-    <div className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${
-      light
-        ? "bg-white/10 text-white"
-        : "bg-[#d9603f]/10 text-[#d9603f] dark:bg-[#d9603f]/20"
-    }`}>
-      {icon}
-    </div>
+    <span
+      className={`inline-flex items-center justify-center border border-dashed text-[8px] font-medium leading-none tracking-wide ${
+        light
+          ? "border-white/30 text-white/50"
+          : "border-gray-300 bg-gray-100 text-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-500"
+      } ${className}`}
+    >
+      {label}
+    </span>
   );
 }
 
 // ─── SMALL HELPERS ──────────────────────────────────────────────────────────
-
 function Eyebrow({ children, light = false }: { children: ReactNode; light?: boolean }) {
   return (
     <p className={`text-xs font-bold uppercase tracking-[0.18em] ${light ? "text-white/60" : "text-[#d9603f]"}`}>
@@ -286,38 +44,41 @@ function Eyebrow({ children, light = false }: { children: ReactNode; light?: boo
   );
 }
 
-// ─── DATA ────────────────────────────────────────────────────────────────────
+function IconBadge({ light = false }: { light?: boolean }) {
+  return <ImageSlot className="h-11 w-11 rounded-xl" light={light} label="icon" />;
+}
 
+// ─── DATA ────────────────────────────────────────────────────────────────────
 const trustPoints = [
-  { title: "Trust", desc: "Verified local presence customers recognise and answer with confidence.", icon: <ShieldIcon className="h-5 w-5" /> },
-  { title: "Reliability", desc: "Calls, forwarding and messaging that work the same way every time.", icon: <CheckCircleIcon className="h-5 w-5" /> },
-  { title: "Cross-border identity", desc: "One identity that stays consistent wherever you operate.", icon: <GlobeIcon className="h-5 w-5" /> },
+  { title: "Trust", desc: "Verified local presence customers recognise and answer with confidence." },
+  { title: "Reliability", desc: "Calls, forwarding and messaging that work the same way every time." },
+  { title: "Cross-border identity", desc: "One identity that stays consistent wherever you operate." },
 ];
 
 const features = [
-  { title: "Local numbers", desc: "Get a real local number in the markets that matter to you.", icon: <PhoneIcon /> },
-  { title: "Calling & forwarding", desc: "Route calls to any device, anywhere, with smart rules.", icon: <ForwardIcon /> },
-  { title: "Voicemail intelligence", desc: "Transcribed, summarised and searchable voicemail.", icon: <VoicemailIcon /> },
-  { title: "AI receptionist", desc: "Greet, qualify and route callers automatically.", icon: <BotIcon /> },
-  { title: "Video calling", desc: "Move from a call to face-to-face in a single tap.", icon: <VideoIcon /> },
-  { title: "Business controls", desc: "Manage lines, teams and permissions from one place.", icon: <SlidersIcon /> },
+  { title: "Local numbers", desc: "Get a real local number in the markets that matter to you." },
+  { title: "Calling & forwarding", desc: "Route calls to any device, anywhere, with smart rules." },
+  { title: "Voicemail intelligence", desc: "Transcribed, summarised and searchable voicemail." },
+  { title: "AI receptionist", desc: "Greet, qualify and route callers automatically." },
+  { title: "Video calling", desc: "Move from a call to face-to-face in a single tap." },
+  { title: "Business controls", desc: "Manage lines, teams and permissions from one place." },
 ];
 
 const pillars = [
-  { title: "Access", desc: "Open local presence in new markets in minutes, not weeks.", icon: <KeyIcon /> },
-  { title: "Trust", desc: "Verified, recognisable numbers people actually pick up.", icon: <ShieldIcon /> },
-  { title: "Control", desc: "Full visibility and governance across every line.", icon: <SlidersIcon /> },
+  { title: "Access", desc: "Open local presence in new markets in minutes, not weeks." },
+  { title: "Trust", desc: "Verified, recognisable numbers people actually pick up." },
+  { title: "Control", desc: "Full visibility and governance across every line." },
 ];
 
 const businessCards = [
-  { title: "Introduce a local line", desc: "Add a local number without changing carriers.", icon: <PhoneIcon className="h-5 w-5" /> },
-  { title: "Separate work & life", desc: "Keep business calls off your personal phone.", icon: <UserIcon className="h-5 w-5" /> },
-  { title: "Consistent professionalism", desc: "One number your whole team can answer.", icon: <UsersIcon className="h-5 w-5" /> },
-  { title: "One business, many regions", desc: "Present locally in every market you serve.", icon: <MapPinIcon className="h-5 w-5" /> },
-  { title: "Remote-ready & flexible", desc: "Work from anywhere, sound like you're next door.", icon: <WifiIcon className="h-5 w-5" /> },
-  { title: "Healthcare & care teams", desc: "Reliable, private lines for sensitive work.", icon: <HeartIcon className="h-5 w-5" /> },
-  { title: "Personal & business split", desc: "Clear boundaries between the two.", icon: <LockIcon className="h-5 w-5" /> },
-  { title: "Cross-border operations", desc: "Compliant local numbers across borders.", icon: <GlobeIcon className="h-5 w-5" /> },
+  { title: "Introduce a local line", desc: "Add a local number without changing carriers." },
+  { title: "Separate work & life", desc: "Keep business calls off your personal phone." },
+  { title: "Consistent professionalism", desc: "One number your whole team can answer." },
+  { title: "One business, many regions", desc: "Present locally in every market you serve." },
+  { title: "Remote-ready & flexible", desc: "Work from anywhere, sound like you're next door." },
+  { title: "Healthcare & care teams", desc: "Reliable, private lines for sensitive work." },
+  { title: "Personal & business split", desc: "Clear boundaries between the two." },
+  { title: "Cross-border operations", desc: "Compliant local numbers across borders." },
 ];
 
 const countries = [
@@ -350,16 +111,16 @@ const comparison = [
 ];
 
 const aiGovern = [
-  { title: "Content review", desc: "AI suggestions are reviewed against clear, human-set rules.", icon: <EyeIcon /> },
-  { title: "Reversible", desc: "Every automated action can be undone or overridden.", icon: <UndoIcon /> },
-  { title: "Auditable", desc: "A complete record of what happened, when and why.", icon: <ClipboardIcon /> },
+  { title: "Content review", desc: "AI suggestions are reviewed against clear, human-set rules." },
+  { title: "Reversible", desc: "Every automated action can be undone or overridden." },
+  { title: "Auditable", desc: "A complete record of what happened, when and why." },
 ];
 
 const scaleItems = [
-  { title: "Identity verification", desc: "Know who is on every line before it goes live.", icon: <FingerprintIcon /> },
-  { title: "Compliance by region", desc: "Rules applied automatically per jurisdiction.", icon: <FileTextIcon /> },
-  { title: "Fraud controls", desc: "Continuous monitoring across all numbers.", icon: <AlertIcon /> },
-  { title: "Data residency", desc: "Records stored in line with local requirements.", icon: <DatabaseIcon /> },
+  { title: "Identity verification", desc: "Know who is on every line before it goes live." },
+  { title: "Compliance by region", desc: "Rules applied automatically per jurisdiction." },
+  { title: "Fraud controls", desc: "Continuous monitoring across all numbers." },
+  { title: "Data residency", desc: "Records stored in line with local requirements." },
 ];
 
 const values = [
@@ -376,15 +137,14 @@ const zoikonexPoints = [
 ];
 
 const focusCards = [
-  { title: "Focused product", desc: "One product, done well — local phone presence.", icon: <TargetIcon /> },
-  { title: "Group infrastructure", desc: "Backed by ZoikoNex's platform and security.", icon: <LayersIcon /> },
-  { title: "Built to scale", desc: "Designed for many markets from day one.", icon: <TrendingUpIcon /> },
+  { title: "Focused product", desc: "One product, done well — local phone presence." },
+  { title: "Group infrastructure", desc: "Backed by ZoikoNex's platform and security." },
+  { title: "Built to scale", desc: "Designed for many markets from day one." },
 ];
 
 const ctaPills = ["Local numbers", "AI receptionist", "Smart routing", "Cross-border ready"];
 
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
-
 function Aboutus() {
   return (
     <main className="bg-[#f3efe7] font-sans text-[#1c2b26] dark:bg-gray-900 dark:text-gray-100">
@@ -420,7 +180,7 @@ function Aboutus() {
           {/* Product mock */}
           <div className="rounded-2xl bg-white p-5 shadow-xl ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
             <div className="flex items-center gap-2 rounded-xl bg-[#f3efe7] px-4 py-3 dark:bg-gray-700">
-              <SearchIcon className="h-4 w-4 text-gray-400" />
+              <ImageSlot className="h-4 w-4 rounded" label="" />
               <span className="text-sm text-gray-500 dark:text-gray-300">Search a local number…</span>
             </div>
             <div className="mt-4 space-y-3">
@@ -460,9 +220,7 @@ function Aboutus() {
           <div className="space-y-4">
             {trustPoints.map((t) => (
               <div key={t.title} className="flex gap-4 rounded-xl bg-[#f3efe7] p-5 dark:bg-gray-900">
-                <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#d9603f]/10 text-[#d9603f] dark:bg-[#d9603f]/20">
-                  {t.icon}
-                </div>
+                <ImageSlot className="mt-0.5 h-6 w-6 flex-shrink-0 rounded-full" label="" />
                 <div>
                   <h3 className="text-sm font-bold dark:text-white">{t.title}</h3>
                   <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{t.desc}</p>
@@ -485,7 +243,7 @@ function Aboutus() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((f) => (
               <div key={f.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <IconBadge icon={f.icon} />
+                <IconBadge />
                 <h3 className="mt-4 text-base font-bold dark:text-white">{f.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{f.desc}</p>
               </div>
@@ -506,7 +264,7 @@ function Aboutus() {
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {pillars.map((p) => (
               <div key={p.title} className="rounded-2xl bg-white/5 p-6 ring-1 ring-white/10">
-                <IconBadge icon={p.icon} light />
+                <IconBadge light />
                 <h3 className="mt-4 text-base font-bold">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/70">{p.desc}</p>
               </div>
@@ -525,9 +283,7 @@ function Aboutus() {
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {businessCards.map((c) => (
               <div key={c.title} className="rounded-2xl bg-white p-5 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#d9603f]/10 text-[#d9603f] dark:bg-[#d9603f]/20">
-                  {c.icon}
-                </div>
+                <ImageSlot className="h-9 w-9 rounded-lg" label="icon" />
                 <h3 className="mt-3 text-sm font-bold dark:text-white">{c.title}</h3>
                 <p className="mt-1.5 text-xs leading-relaxed text-gray-600 dark:text-gray-400">{c.desc}</p>
               </div>
@@ -553,7 +309,7 @@ function Aboutus() {
                   {c.name}
                   <span className="text-gray-400">{c.code}</span>
                 </span>
-                <span className="rounded-full bg-[#163a2e]/10 px-3 py-1 text-xs font-semibold text-[#163a2e] dark:bg-emerald-400/15 dark:text-emerald-400">
+                <span className="rounded-full bg-[#163a2e]/10 px-3 py-1 text-xs font-semibold text-[#163a2e] dark:bg-[#34d39e]/15 dark:text-[#34d39e]">
                   Available
                 </span>
               </div>
@@ -596,7 +352,7 @@ function Aboutus() {
                   <tr key={row.feature} className={i % 2 ? "bg-[#f3efe7]/50 dark:bg-gray-900/40" : ""}>
                     <td className="px-5 py-3 font-medium dark:text-gray-100">{row.feature}</td>
                     <td className="px-5 py-3 text-gray-500 dark:text-gray-400">{row.basic}</td>
-                    <td className="px-5 py-3 font-semibold text-[#163a2e] dark:text-emerald-400">{row.local}</td>
+                    <td className="px-5 py-3 font-semibold text-[#163a2e] dark:text-[#34d39e]">{row.local}</td>
                   </tr>
                 ))}
               </tbody>
@@ -616,7 +372,7 @@ function Aboutus() {
             <div className="mt-8 space-y-5">
               {aiGovern.map((a) => (
                 <div key={a.title} className="flex gap-4">
-                  <IconBadge icon={a.icon} />
+                  <IconBadge />
                   <div>
                     <h3 className="text-sm font-bold dark:text-white">{a.title}</h3>
                     <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{a.desc}</p>
@@ -624,11 +380,9 @@ function Aboutus() {
                 </div>
               ))}
             </div>
-            <a href="/local-business-numbers">
-              <button className="mt-8 rounded-full bg-[#d9603f] px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
-                See how it works
-              </button>
-            </a>
+            <button className="mt-8 rounded-full bg-[#d9603f] px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
+              See how it works
+            </button>
           </div>
 
           {/* Card mock */}
@@ -640,7 +394,7 @@ function Aboutus() {
             <div className="mt-5 space-y-3">
               {["Caller identified & verified", "Intent: new enquiry", "Routed to sales team", "Summary saved to record"].map((line) => (
                 <div key={line} className="flex items-center gap-3 rounded-lg bg-white px-4 py-3 text-sm dark:bg-gray-800 dark:text-gray-100">
-                  <CheckSmallIcon className="h-4 w-4 flex-shrink-0 text-[#163a2e] dark:text-emerald-400" />
+                  <ImageSlot className="h-4 w-4 flex-shrink-0 rounded" label="" />
                   {line}
                 </div>
               ))}
@@ -660,16 +414,13 @@ function Aboutus() {
               Trust is built one line at a time. Every number, identity and routing rule is verified and monitored
               before it ever reaches your customers.
             </p>
-            <a href="/platform">
-              <button className="mt-6 rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#0f2a21] transition-colors hover:bg-white/90">
-                Read compliance
-              </button>
-            </a>
+            <button className="mt-6 rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#0f2a21] transition-colors hover:bg-white/90">
+              Read compliance
+            </button>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {scaleItems.map((s) => (
               <div key={s.title} className="rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
-                <div className="mb-3 text-white/80">{s.icon}</div>
                 <h3 className="text-sm font-bold">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/70">{s.desc}</p>
               </div>
@@ -714,22 +465,18 @@ function Aboutus() {
                 communication at scale.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <a href="https://www.zoikonex.com/">
-                  <button className="rounded-full bg-[#d9603f] px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
-                    Explore ZoikoNex
-                  </button>
-                </a>
-                <a href="/plans-and-pricing">
-                  <button className="rounded-full border border-white/25 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10">
-                    View pricing
-                  </button>
-                </a>
+                <button className="rounded-full bg-[#d9603f] px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
+                  Explore ZoikoNex
+                </button>
+                <button className="rounded-full border border-white/25 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10">
+                  View pricing
+                </button>
               </div>
             </div>
             <ul className="space-y-3 lg:pt-10">
               {zoikonexPoints.map((p) => (
                 <li key={p} className="flex items-start gap-3 text-sm text-white/80">
-                  <CheckSmallIcon className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-400" />
+                  <ImageSlot className="mt-0.5 h-4 w-4 flex-shrink-0 rounded" light label="" />
                   {p}
                 </li>
               ))}
@@ -750,7 +497,7 @@ function Aboutus() {
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {focusCards.map((f) => (
               <div key={f.title} className="rounded-2xl bg-[#f3efe7] p-6 dark:bg-gray-900">
-                <IconBadge icon={f.icon} />
+                <IconBadge />
                 <h3 className="mt-4 text-base font-bold dark:text-white">{f.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{f.desc}</p>
               </div>
@@ -775,16 +522,12 @@ function Aboutus() {
             Build your local presence where business and life happen.
           </h2>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="/get-a-local-number">
-              <button className="rounded-full bg-[#d9603f] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
-                Get Started
-              </button>
-            </a>
-            <a href="/contact-sales">
-              <button className="rounded-full border border-white/25 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10">
-                Talk to Sales
-              </button>
-            </a>
+            <button className="rounded-full bg-[#d9603f] px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]">
+              Get Started
+            </button>
+            <button className="rounded-full border border-white/25 px-8 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10">
+              Talk to Sales
+            </button>
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-2.5">
             {ctaPills.map((p) => (

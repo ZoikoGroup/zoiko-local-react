@@ -11,7 +11,6 @@ import {
 } from "react-icons/fi";
 import Faq from '../Components/Faq';
 import Link from 'next/link';
-import { link } from 'fs';
 
 const receptionistFeatures = [
     "Answers when your team sleeps",
@@ -289,7 +288,6 @@ const aiPlans = [
         description:
             "For small teams that need professional answering and basic call capture.",
         button: "View Starter Plan",
-        link: "/plans-and-pricing",
         primary: false,
         popular: false,
     },
@@ -298,7 +296,6 @@ const aiPlans = [
         description:
             "For growing businesses needing routing, overflow, after-hours, and follow-up workflows.",
         button: "Compare Business Plans",
-        link: "/plans-and-pricing",
         primary: true,
         popular: true,
     },
@@ -307,7 +304,6 @@ const aiPlans = [
         description:
             "For multi-location teams, higher volumes, advanced routing, and AI summaries where available.",
         button: "Talk to Sales",
-        link: "/contact-sales",
         primary: false,
         popular: false,
     },
@@ -1574,19 +1570,18 @@ export default function Aireceptionist() {
                                         {plan.description}
 
                                     </p>
-                                    <Link href={plan.link}>
-                                        <button
-                                            className={`mt-8 h-12 w-full rounded-xl text-sm font-semibold transition-all duration-300
+
+                                    <button
+                                        className={`mt-8 h-12 w-full rounded-xl text-sm font-semibold transition-all duration-300
                             ${plan.primary
-                                                    ? "bg-[#EB643F] text-white shadow-lg hover:bg-[#D95A37]"
-                                                    : "border border-[#0F6660] text-[#123533] dark:text-white hover:bg-[#0F6660] hover:text-white"
-                                                }`}
-                                        >
+                                                ? "bg-[#EB643F] text-white shadow-lg hover:bg-[#D95A37]"
+                                                : "border border-[#0F6660] text-[#123533] dark:text-white hover:bg-[#0F6660] hover:text-white"
+                                            }`}
+                                    >
 
-                                            {plan.button}
+                                        {plan.button}
 
-                                        </button>
-                                    </Link>
+                                    </button>
                                 </div>
                             </div>
                         ))}
@@ -1660,21 +1655,21 @@ export default function Aireceptionist() {
                             </button>
 
                             {/* Secondary */}
-                            <Link href="/contact-sales">
-                                <button className="h-12 px-8 rounded-full bg-white text-[#123533] text-sm font-semibold hover:bg-gray-100 transition">
+                        <Link href="/contact-sales">
+                            <button className="h-12 px-8 rounded-full bg-white text-[#123533] text-sm font-semibold hover:bg-gray-100 transition">
 
-                                    Talk to Sales
+                                Talk to Sales
 
-                                </button>
-                            </Link>
+                            </button>
+                        </Link>
                             {/* Outline */}
-                            <Link href="/switch-from-skype">
-                                <button className="h-12 px-8 rounded-full border border-white/30 text-white text-sm font-semibold hover:bg-white hover:text-[#123533] transition">
+                        <Link href="/switch-from-skype">
+                            <button className="h-12 px-8 rounded-full border border-white/30 text-white text-sm font-semibold hover:bg-white hover:text-[#123533] transition">
 
-                                    Switch from Skype
+                                Switch from Skype
 
-                                </button>
-                            </Link>
+                            </button>
+                        </Link>
                         </div>
 
                         {/* Footer */}

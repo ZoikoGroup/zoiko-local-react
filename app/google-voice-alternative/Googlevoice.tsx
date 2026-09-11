@@ -1,19 +1,8 @@
 "use client";
-import { Metadata } from 'next';
+
 import { useState } from 'react';
 import { FiCheck, FiMapPin, FiMic, FiPlus, FiMinus } from "react-icons/fi";
 import { PiPaintBrush } from 'react-icons/pi';
-
-
-
-
-export const metadata: Metadata = {
-  title: "Best Google Voice Alternative for Business | Zoiko Local",
-  description:
-    "Looking for the best Google Voice alternative for business? Zoiko Local offers local numbers, calling, video, and an AI Receptionist in one modern platform.",
-};
-
-
 
 
 const fitChecklist = [
@@ -130,7 +119,7 @@ export default function Googlevoice() {
                                
                                </a> 
 
-                                <a href="/zoiko-local-acceptable-use"><button
+                                <a href="/acceptable-use-policy"><button
                                     className="h-12 px-8 rounded-xl
                               border border-[#0F6660]
                               dark:border-slate-600
@@ -501,6 +490,7 @@ export default function Googlevoice() {
                                 </button></a>
 
                                 {/* Secondary */}
+                                <a href="/pricing">
                                 <button
                                     className="h-12 px-8 rounded-xl
                         bg-white
@@ -513,8 +503,9 @@ export default function Googlevoice() {
 
                                     See Pricing
                                 </button>
-
+                                </a>
                                 {/* Outline */}
+                                <a href="/contact-sales">
                                 <button
                                     className="h-12 px-8 rounded-xl
                         border border-white/25
@@ -528,6 +519,7 @@ export default function Googlevoice() {
 
                                     Talk to Sales
                                 </button>
+                                </a>
                             </div>
 
                             {/* Footer Text */}

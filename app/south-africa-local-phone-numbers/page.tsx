@@ -377,7 +377,7 @@ export default function SouthAfricaLocalNumbers() {
                 href="#search"
                 className="inline-flex h-12 items-center justify-center rounded-lg bg-[#E85D3C] px-7 text-[14px] font-semibold text-white transition hover:bg-[#D14C2C]"
               >
-                Find a South African number
+                Find a South africa-local-phone-numbersn number
               </Link>
               <Link
                 href="#port"
@@ -623,13 +623,13 @@ export default function SouthAfricaLocalNumbers() {
             </div>
             <div className="flex shrink-0 gap-3">
               <Link
-                href="#"
+                href="/plans-and-pricing"
                 className="inline-flex h-11 items-center justify-center rounded-lg bg-[#E85D3C] px-6 text-[13.5px] font-semibold text-white transition hover:bg-[#D14C2C]"
               >
                 Compare plans
               </Link>
               <Link
-                href="#"
+                href="/start-free"
                 className="inline-flex h-11 items-center justify-center rounded-lg border border-[#E4E0D6] px-6 text-[13.5px] font-semibold text-[#16130F] transition hover:bg-[#F4F2ED]"
               >
                 Start free

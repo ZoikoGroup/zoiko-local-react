@@ -243,7 +243,7 @@ export default function Openphonealternative() {
                                 ))}
                             </div>
 
-                         <a href="get-a-local-number">   <button
+                            <a href="get-a-local-number">   <button
                                 className="mt-10 h-12 px-8 rounded-xl
                                 bg-[#EB643F]
                                 text-white
@@ -470,7 +470,7 @@ export default function Openphonealternative() {
 
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
                                 {/* Primary */}
-       <a href="/get-a-local-number"> <button
+                                <a href="/get-a-local-number"> <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -483,7 +483,7 @@ export default function Openphonealternative() {
 
                                     Get a Local Number →
                                 </button>
-</a>
+                                </a>
                                 {/* Secondary */}
                                 <a href="/plans-and-pricing"><button
                                     className="h-12 px-8 rounded-xl
@@ -499,7 +499,7 @@ export default function Openphonealternative() {
                                 </button></a>
 
                                 {/* Outline */}
-                               <a href="/contact-sales"> <button
+                                <a href="/contact-sales"> <button
                                     className="h-12 px-8 rounded-xl
                         border border-white/25
                         text-white

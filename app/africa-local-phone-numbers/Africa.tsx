@@ -5,6 +5,7 @@ import {
     FiTrendingUp, FiPhone, FiMic, FiVideo,
     FiMessageSquare,
 } from "react-icons/fi";
+import Link from 'next/link';
 
 const africaCoverage = [
     {
@@ -146,7 +147,7 @@ export default function Africa() {
                                 Africa local numbers
                                 <br />
                                 <span className="text-[#EB643F] italic">
-                                    for business.
+                                    for business-communications.
                                 </span>
                             </h1>
 
@@ -174,7 +175,7 @@ export default function Africa() {
                                     Explore Africa Coverage →
                                 </button>
 
-                                <button
+                              <a href="/get-local-number">  <button
                                     className="py-3 px-6 rounded-xl
                         border border-[#0F6660]
                         dark:border-slate-600
@@ -189,7 +190,7 @@ export default function Africa() {
                                 >
 
                                     Check Number Availability
-                                </button>
+                                </button></a>
                             </div>
 
                             {/* Helper Link */}
@@ -336,10 +337,10 @@ export default function Africa() {
                                 <p className="mt-5 text-[15px] leading-7 text-gray-500 dark:text-gray-400">
                                     {market.description}
                                 </p>
-                                <button className="mt-8 text-[#EB643F] font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                             <a href="/get-a-local-number">   <button className="mt-8 text-[#EB643F] font-semibold flex items-center gap-2 hover:gap-3 transition-all">
                                     {market.action}
                                     <FiArrowRight />
-                                </button>
+                                </button></a>
                             </div>
                         ))}
                     </div>
@@ -526,7 +527,7 @@ export default function Africa() {
                     <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
 
                         {/* Primary */}
-
+<Link href="/contact-support">
                         <button
                             className="h-12 px-8 rounded-xl
                 bg-[#EB643F]
@@ -540,9 +541,9 @@ export default function Africa() {
                             Request a Market →
 
                         </button>
-
+</Link>
                         {/* Secondary */}
-
+<Link href="/contact-sales">
                         <button
                             className="h-12 px-8 rounded-xl
                 border border-[#0F6660]
@@ -560,7 +561,7 @@ export default function Africa() {
                             Talk to Sales
 
                         </button>
-
+</Link>
                     </div>
 
                 </div>
@@ -585,7 +586,7 @@ export default function Africa() {
                     <div className="mt-10 rounded-xl border-l-4 border-[#EB643F] border border-[#EB643F] dark:border-[#EB643F] bg-white dark:bg-slate-800 px-6 py-5">
                         <p className="text-sm leading-7 text-gray-500 dark:text-gray-400">
                             Local-number availability may vary by country, city, number type, carrier partner, verification requirement, eligibility rule, and
-                            applicable law. Some numbers may require business verification, proof of address, identity checks, or additional onboarding before
+                            applicable law. Some numbers may require business-communications verification, proof of address, identity checks, or additional onboarding before
                             activation.
                         </p>
                     </div>
