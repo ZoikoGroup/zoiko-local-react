@@ -39,12 +39,12 @@ const liveMarkets = [
 ];
 
 const marketCards = [
-  { code: "US", name: "United States", dial: "+1", desc: "Local US numbers for sales, support, and market presence.", cta: "Get a US Local Number" },
-  { code: "GB", name: "United Kingdom", dial: "+44", desc: "UK local presence for business calls and customer communication.", cta: "Get a UK Local Number" },
-  { code: "JM", name: "Jamaica", dial: "+1 876", desc: "Local presence for business, diaspora, and cross-border reach.", cta: "Get a Jamaica Local Number" },
-  { code: "CA", name: "Canada", dial: "+1", desc: "Canadian local presence for customers, teams, and expansion.", cta: "Get a Canada Local Number" },
-  { code: "NG", name: "Nigeria", dial: "+234", desc: "Local presence in one of Africa's most important markets.", cta: "Get a Nigeria Local Number" },
-  { code: "ZA", name: "South Africa", dial: "+27", desc: "Local presence to support customers and growth in South Africa.", cta: "Get a South Africa Local Number" },
+  { code: "US", name: "United States", dial: "+1", desc: "Local US numbers for sales, support, and market presence.", cta: "Get a US Local Number", href: "/us-local-phone-numbers" },
+  { code: "GB", name: "United Kingdom", dial: "+44", desc: "UK local presence for business calls and customer communication.", cta: "Get a UK Local Number", href: "/uk-local-phone-numbers" },
+  { code: "JM", name: "Jamaica", dial: "+1 876", desc: "Local presence for business, diaspora, and cross-border reach.", cta: "Get a Jamaica Local Number", href: "/jamaica-local-phone-numbers" },
+  { code: "CA", name: "Canada", dial: "+1", desc: "Canadian local presence for customers, teams, and expansion.", cta: "Get a Canada Local Number", href: "/canada-local-phone-numbers" },
+  { code: "NG", name: "Nigeria", dial: "+234", desc: "Local presence in one of Africa's most important markets.", cta: "Get a Nigeria Local Number", href: "/nigeria-local-phone-numbers" },
+  { code: "ZA", name: "South Africa", dial: "+27", desc: "Local presence to support customers and growth in South Africa.", cta: "Get a South Africa Local Number", href: "/south-africa-local-phone-numbers" },
 ];
 
 const howItWorks = [

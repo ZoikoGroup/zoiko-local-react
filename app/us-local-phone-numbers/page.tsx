@@ -14,7 +14,7 @@ const IMAGES = {
   sanFrancisco: { src: "/images/San Francisco skyline.png", alt: "Blue flowering plants in the Bay Area" },
   porting: { src: "/images/Office desk with laptop and phone (1).png", alt: "An office doorway with filing cabinets" },
   callerId: { src: "/images/Customer support representative (1).png", alt: "A support agent wearing a headset" },
-  emergency: { src: "/images/Emergency services concept (1.png", alt: "An orange roadside emergency call box" },
+  emergency: { src: "/images/Emergency-services-concept.png", alt: "An orange roadside emergency call box" },
   business: { src: "/images/Team working together in a small business setting (1).png", alt: "A small business team standing in their shop" },
 };
 
@@ -146,9 +146,8 @@ function H2({ children }: { children: React.ReactNode }) {
 function Pill({ label, tone }: { label: string; tone: string }) {
   return (
     <span
-      className={`inline-block rounded-full px-3 py-1 text-[11.5px] font-semibold ${
-        tone === "ok" ? "bg-[#E1EFE6] text-[#20654A]" : "bg-[#FAF1DE] text-[#8A6114]"
-      }`}
+      className={`inline-block rounded-full px-3 py-1 text-[11.5px] font-semibold ${tone === "ok" ? "bg-[#E1EFE6] text-[#20654A]" : "bg-[#FAF1DE] text-[#8A6114]"
+        }`}
     >
       {label}
     </span>
@@ -201,7 +200,7 @@ export default function UsLocalNumbers() {
                 Find a U.S. number
               </Link>
               <Link
-                href="#porting"
+                href="/number-porting"
                 className="inline-flex h-12 items-center justify-center rounded-full border border-[#1A1A17] px-7 text-[14px] font-semibold text-[#1A1A17] transition hover:bg-white"
               >
                 Port my existing number
@@ -425,12 +424,14 @@ export default function UsLocalNumbers() {
                   "Your current service stays active until the transfer completes.",
                 ]}
               />
-              <button
-                type="button"
-                className="mt-6 h-12 w-full rounded-full bg-[#D24A22] text-[14px] font-semibold text-white transition hover:bg-[#B23C1A]"
-              >
-                Check portability
-              </button>
+              <a href="/number-porting">
+                <button
+                  type="button"
+                  className="mt-6 h-12 w-full rounded-full bg-[#D24A22] text-[14px] font-semibold text-white transition hover:bg-[#B23C1A]"
+                >
+                  Check portability
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -458,7 +459,7 @@ export default function UsLocalNumbers() {
                 ]}
               />
               <Link
-                href="#"
+                href="/contact-support"
                 className="mt-6 inline-flex h-11 w-full items-center justify-center rounded-full border border-[#E6DFD1] text-[13px] font-semibold text-[#1A1A17] transition hover:border-[#1A1A17]"
               >
                 Caller ID &amp; reputation help
@@ -503,7 +504,7 @@ export default function UsLocalNumbers() {
                 ]}
               />
               <Link
-                href="#"
+                href="/emergency-calling"
                 className="mt-6 inline-flex h-11 w-full items-center justify-center rounded-full border border-[#E6DFD1] text-[13px] font-semibold text-[#1A1A17] transition hover:border-[#1A1A17]"
               >
                 Learn about emergency calling
@@ -527,9 +528,8 @@ export default function UsLocalNumbers() {
               {messagingRows.map((r, i) => (
                 <div
                   key={r.label}
-                  className={`flex flex-wrap items-center justify-between gap-3 py-3.5 ${
-                    i > 0 ? "border-t border-[#EFE9DC]" : ""
-                  }`}
+                  className={`flex flex-wrap items-center justify-between gap-3 py-3.5 ${i > 0 ? "border-t border-[#EFE9DC]" : ""
+                    }`}
                 >
                   <dt className="text-[12.5px] text-[#3F3F39]">{r.label}</dt>
                   <dd>
@@ -553,9 +553,8 @@ export default function UsLocalNumbers() {
               {abroadRows.map((r, i) => (
                 <div
                   key={r.label}
-                  className={`flex flex-wrap items-center justify-between gap-3 py-3.5 ${
-                    i > 0 ? "border-t border-[#EFE9DC]" : ""
-                  }`}
+                  className={`flex flex-wrap items-center justify-between gap-3 py-3.5 ${i > 0 ? "border-t border-[#EFE9DC]" : ""
+                    }`}
                 >
                   <dt className="text-[12.5px] text-[#3F3F39]">{r.label}</dt>
                   <dd>

@@ -24,6 +24,7 @@ import {
     FiPhoneForwarded,
 } from "react-icons/fi";
 import Faq from '../Components/Faq';
+import Link from 'next/link';
 
 const steps = [
     "Search",

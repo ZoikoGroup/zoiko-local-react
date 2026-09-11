@@ -76,7 +76,7 @@ function Img({
 const orientationCards = [
   { label: "Focus", value: "Communications technology & services", icon: <FiActivity /> },
   { label: "What we build", value: "Numbers, calling, messaging, video & AI", icon: <FiLayers /> },
-  { label: "Who we serve", value: "People, small business-communicationses, teams & enterprises", icon: <FiUsers /> },
+  { label: "Who we serve", value: "People, small businesses, teams & enterprises", icon: <FiUsers /> },
   { label: "Portfolio", value: "Includes Zoiko Local", icon: <FiMapPin /> },
 ];
 
@@ -84,7 +84,7 @@ const hierarchy = [
   {
     kicker: "The product you're using",
     title: "Zoiko Local",
-    body: "Local numbers, calling, messaging, video and AI-assisted communications for people and business-communicationses.",
+    body: "Local numbers, calling, messaging, video and AI-assisted communications for people and businesses.",
     highlight: true,
   },
   {
@@ -102,7 +102,7 @@ const hierarchy = [
 ];
 
 const capabilities = [
-  { icon: <FiMapPin />, title: "Local numbers & identity", body: "Help people and business-communicationses establish a recognizable local presence and manage communications identities across supported markets." },
+  { icon: <FiMapPin />, title: "Local numbers & identity", body: "Help people and businesses establish a recognizable local presence and manage communications identities across supported markets." },
   { icon: <FiPhone />, title: "Calling & messaging", body: "Enable modern inbound and outbound communications with customer-friendly controls across supported devices and services." },
   { icon: <FiVideo />, title: "Video & collaboration", body: "Support richer conversations when voice alone is not enough, including video and associated collaboration capabilities where offered." },
   { icon: <FiMic />, title: "AI-assisted communications", body: "Use AI to help answer, route, summarize, or organize communications — subject to clear AI, recording, privacy and consent controls." },
@@ -112,7 +112,7 @@ const productTags = ["Local numbers", "Calling", "Messaging where offered", "Vid
 
 const productRows = [
   { icon: <FiMapPin />, title: "Local numbers", body: "Search & manage local presence" },
-  { icon: <FiPhone />, title: "Calling & messaging", body: "business-communications-grade communications" },
+  { icon: <FiPhone />, title: "Calling & messaging", body: "Business-grade communications" },
   { icon: <FiMic />, title: "AI Receptionist", body: "Where enabled by plan" },
 ];
 
@@ -132,12 +132,12 @@ const principles = [
   { icon: <FiSun />, title: "Responsible innovation", body: "Apply AI and automation with disclosure, permission boundaries and human escalation." },
 ];
 
-const markets = ["United States", "United Kingdom", "canada-local-phone-numbers", "europe-local-phone-numbers", "Nigeria", "South africa-local-phone-numbers", "Jamaica"];
+const markets = ["United States", "United Kingdom", "Canada", "Europe", "Nigeria", "South Africa", "Jamaica"];
 
 const techPhilosophy = [
   { icon: <FiLayers />, title: "Service-oriented", body: "Separate identity, subscription, entitlement, numbering, communications, AI, billing and trust so changes can be governed safely." },
   { icon: <FiCrosshair />, title: "Entitlement-led access", body: "Customers receive the capabilities authorized by their plan and service state; marketing content does not grant access." },
-  { icon: <FiCode />, title: "API-ready", body: "Design for controlled integration with communications, carrier, identity, billing and business-communications systems." },
+  { icon: <FiCode />, title: "API-ready", body: "Design for controlled integration with communications, carrier, identity, billing and business systems." },
   { icon: <FiActivity />, title: "Resilient & observable", body: "Measure service health and expose truthful public status rather than relying on generic availability claims." },
   { icon: <FiLock />, title: "Privacy & consent aware", body: "Recording, AI, data processing and government-request handling are explicit, governed systems." },
   { icon: <FiSmartphone />, title: "Mobile-first & auditable", body: "Core journeys work across mobile and web, and material actions generate traceable records." },
@@ -151,7 +151,7 @@ const trustLinks = [
   { icon: <FiMic />, title: "Responsible AI", body: "AI disclosure and control philosophy." },
   { icon: <FiActivity />, title: "Recording & Consent", body: "Recording, transcription and consent." },
   { icon: <FiFileText />, title: "Acceptable Use", body: "Lawful, respectful communications." },
-  { icon: <FiFileText />, title: "Data Processing (DPA)", body: "For business-communications and procurement users." },
+  { icon: <FiFileText />, title: "Data Processing (DPA)", body: "For business and procurement users." },
   { icon: <FiGlobe />, title: "Law Enforcement Requests", body: "How we handle government requests." },
 ];
 
@@ -179,7 +179,7 @@ const milestones = [
 ];
 
 const contactRoutes = [
-  { icon: <FiBriefcase />, title: "Sales & product", body: "Talk to us about Zoiko Local for your business-communications." },
+  { icon: <FiBriefcase />, title: "Sales & product", body: "Talk to us about Zoiko Local for your business." },
   { icon: <FiLink />, title: "Partnerships", body: "Explore working with Zoiko Communications Group." },
   { icon: <FiFileText />, title: "Press & media", body: "Media resources and press contact." },
   { icon: <FiUser />, title: "Careers", body: "Join a multidisciplinary communications team." },
@@ -212,7 +212,7 @@ const faqs = [
   },
   {
     q: "How can I work with or join the group?",
-    a: "Use the contact routes above: sales and product for business-communications enquiries, partnerships for working together, press and media for media resources, and careers to join the team. Customer support handles help with an existing Zoiko Local account.",
+    a: "Use the contact routes above: sales and product for business enquiries, partnerships for working together, press and media for media resources, and careers to join the team. Customer support handles help with an existing Zoiko Local account.",
   },
 ];
 
@@ -261,13 +261,13 @@ export default function AboutCommunicationsGroup() {
           <div>
             <Eyebrow centered={false}>About Zoiko Communications Group</Eyebrow>
             <h1 className="mt-5 text-4xl font-bold leading-[1.12] tracking-tight text-[#0E2A21] md:text-[46px]">
-              Connecting people and business-communicationses through{" "}
+              Connecting people and businesses through{" "}
               <span className="italic text-[#C2603F]">modern communications.</span>
             </h1>
             <p className="mt-6 max-w-lg text-[15px] leading-7 text-[#5C6660]">
               Zoiko Communications Group builds communications products and services designed to make
               local and global connection simpler, more flexible, and more useful for people and
-              business-communicationses.
+              businesses.
             </p>
 
             <p className="mt-6 inline-flex items-center gap-2.5 rounded-full bg-white px-4 py-2.5 text-[12.5px] text-[#4A544D] shadow-sm">
@@ -350,7 +350,7 @@ export default function AboutCommunicationsGroup() {
           <div className="relative">
             <Img src={IMAGES.connected.src} alt={IMAGES.connected.alt} className="h-[300px] w-full md:h-[360px]" />
             <span className="absolute bottom-5 left-5 rounded-lg bg-[#0E3A32]/90 px-4 py-2 text-[12.5px] font-bold text-white">
-              People and business-communicationses, connected across numbers, voice, video, and AI.
+              People and businesses, connected across numbers, voice, video, and AI.
             </span>
           </div>
 
@@ -364,13 +364,13 @@ export default function AboutCommunicationsGroup() {
               <div className="border-l-[3px] border-[#C2603F] pl-5">
                 <p className="text-[14px] font-bold leading-7 text-[#0E2A21]">
                   Zoiko Communications Group focuses on the technology and services that help people
-                  and business-communicationses communicate across numbers, voice, messaging, video, and AI-assisted
+                  and businesses communicate across numbers, voice, messaging, video, and AI-assisted
                   experiences.
                 </p>
               </div>
               <p className="mt-5 text-[13.5px] leading-7 text-[#4A544D]">
                 We build for a world in which communications should work across devices, locations,
-                and business-communications sizes without unnecessary complexity. Our role is to design and operate
+                and business sizes without unnecessary complexity. Our role is to design and operate
                 the underlying communications capabilities — and to bring them to customers through
                 focused products like Zoiko Local.
               </p>
@@ -451,7 +451,7 @@ export default function AboutCommunicationsGroup() {
               <p className="mt-4 max-w-lg text-[13px] leading-7 text-white/70">
                 Zoiko Local brings together local-number access and modern communications
                 capabilities in a customer-focused experience designed for individuals, teams and
-                business-communicationses — with plan and market availability governed by the product.
+                businesses — with plan and market availability governed by the product.
               </p>
 
               <ul className="mt-6 flex flex-wrap gap-2.5">
@@ -517,7 +517,7 @@ export default function AboutCommunicationsGroup() {
             <Eyebrow>Why we exist</Eyebrow>
             <H2>Communications should feel local, clear, and dependable</H2>
             <p className="mx-auto mt-5 max-w-2xl text-center text-[13.5px] leading-7 text-[#5C6660]">
-              People and business-communicationses shouldn&apos;t need to understand carrier infrastructure or juggle
+              People and businesses shouldn&apos;t need to understand carrier infrastructure or juggle
               fragmented tools to be reachable. We exist to make communications feel present where
               your customers, teams, families and communities are — and to keep customers in control
               of what they have, what it costs, what is recorded, and what AI is doing.
@@ -580,7 +580,7 @@ export default function AboutCommunicationsGroup() {
               </p>
               <p className="mt-2.5 text-[12px] leading-6 text-[#5C6660]">
                 Local numbers, calling, messaging, video and AI-assisted communications for
-                individuals, teams and business-communicationses.
+                individuals, teams and businesses.
               </p>
               <Link
                 href="#"
@@ -929,7 +929,7 @@ export default function AboutCommunicationsGroup() {
           <div className="relative">
             <Img src={IMAGES.closing.src} alt={IMAGES.closing.alt} className="h-[260px] w-full" />
             <span className="absolute bottom-5 left-5 rounded-lg bg-[#0E3A32]/90 px-4 py-2 text-[12.5px] font-bold text-white">
-              Building communications people and business-communicationses can rely on.
+              Building communications people and businesses can rely on.
             </span>
           </div>
 

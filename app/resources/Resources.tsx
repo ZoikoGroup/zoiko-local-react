@@ -1,1241 +1,1280 @@
 import React from 'react';
+import Image from 'next/image';
+import { PiPaintBrushLight } from 'react-icons/pi'
 import {
-    FiCheck, FiRepeat, FiGlobe,
-    FiBriefcase, FiBook,
-    FiMessageSquare, FiShield, FiMapPin,
-    FiMic, FiArrowRight,
+    FiArrowRight,
+    FiCheck, FiBriefcase, FiUsers, FiMessageSquare,
+    FiMapPin, FiMap, FiHeart,
+    FiMic, FiPhone, FiVideo,
+    FiActivity,
 } from "react-icons/fi";
-import { FaBalanceScale } from "react-icons/fa";
 import Faq from '../Components/Faq';
+import Link from 'next/link';
 
-const resourceItems = [
-    {
-        title: "I'm replacing Skype Number",
-        action: "Switch from Skype →",
-    },
-    {
-        title: "I'm comparing alternatives",
-        action: "Compare Options →",
-    },
-    {
-        title: "I want to learn about virtual numbers",
-        action: "Learn the Basics →",
-    },
-    {
-        title: "I need account or product support",
-        action: "Find Help →",
-    },
-    {
-        title: "I want to port a number",
-        action: "Check Porting Eligibility →",
-    },
-    {
-        title: "I need emergency-calling information",
-        action: "Read Emergency Information →",
-    },
-];
-const decisionPaths = [
-    {
-        title: "I need a Skype Number replacement",
-        badge: "Switch from Skype",
-        action: "Switch from Skype →",
-    },
-    {
-        title: "I'm comparing providers",
-        badge: "Alternatives & Comparisons",
-        action: "Compare Options →",
-    },
-    {
-        title: "I want to understand virtual numbers",
-        badge: "Virtual Phone Number",
-        action: "Learn About Virtual Numbers →",
-    },
-    {
-        title: "I need a local business number",
-        badge: "Local Business Number",
-        action: "Get a Local Business Number →",
-    },
-    {
-        title: "I want to keep my existing number",
-        badge: "Number Porting",
-        action: "Check Porting Eligibility →",
-    },
-    {
-        title: "I need help using Zoiko Local",
-        badge: "Help Center",
-        action: "Find Help →",
-    },
-    {
-        title: "I need to contact support",
-        badge: "Contact Support",
-        action: "Contact Support →",
-    },
-    {
-        title: "I need safety information",
-        badge: "Emergency Calling",
-        action: "Read Emergency Information →",
-    },
-];
-const comparisonCards = [
-    {
-        title: "Switch from Skype",
-        description:
-            "Move from Skype Number to Zoiko Local — local numbers, calling, video, and an AI Receptionist.",
-        action: "Switch from Skype →",
-        icon: FiRepeat,
-    },
-    {
-        title: "Google Voice Alternative",
-        description:
-            "Compare Zoiko Local with Google Voice for business local numbers, international reach, and communication.",
-        action: "Compare Zoiko Local →",
-        icon: FaBalanceScale,
-    },
-    {
-        title: "OpenPhone Alternative",
-        description:
-            "Compare Zoiko Local for local presence, business calling, routing, and growth use cases.",
-        action: "Compare Zoiko Local →",
-        icon: FaBalanceScale,
-    },
-    {
-        title: "Teams Phone Alternative",
-        description:
-            "Local numbers and business calling without enterprise-telephony complexity.",
-        action: "Explore Zoiko Local →",
-        icon: FaBalanceScale,
-    },
-];
-const basicsCards = [
-    {
-        title: "Virtual Phone Number",
-        description:
-            "How virtual phone numbers work and how businesses use them for local presence.",
-        action: "Get a Virtual Number →",
-        icon: FiGlobe,
-    },
-    {
-        title: "Local Business Number",
-        description:
-            "Why local numbers help customers recognize, trust, and reach your company.",
-        action: "Get a Local Business Number →",
-        icon: FiBriefcase,
-    },
-];
-const supportCards = [
-    {
-        title: "Help Center",
-        description:
-            "Setup guidance, account support, billing, product help, and troubleshooting.",
-        action: "Find Help →",
-        icon: FiBook,
-    },
-    {
-        title: "Contact Support",
-        description:
-            "Reach support for account, billing, number porting, or technical issues.",
-        action: "Contact Support →",
-        icon: FiMessageSquare,
-    },
-    {
-        title: "Number Porting",
-        description:
-            "How transferring an existing number may work, subject to eligibility.",
-        action: "Check Porting Eligibility →",
-        icon: FiRepeat,
-    },
-    {
-        title: "Emergency Calling",
-        description:
-            "Emergency-calling availability, limitations, and responsibilities for internet-based calling.",
-        action: "Read Emergency Information →",
-        icon: FiShield,
-    },
-];
-const buyerTypes = [
-    {
-        buyer: "Skype Number user",
-        resource: "Switch from Skype",
-        action: "Start Migration →",
-    },
-    {
-        buyer: "Comparison shopper",
-        resource: "Google Voice / OpenPhone / Teams Phone",
-        action: "Compare Options →",
-    },
-    {
-        buyer: "Founder",
-        resource: "Local Business Number",
-        action: "Get a Local Business Number →",
-    },
-    {
-        buyer: "Small business",
-        resource: "Virtual / Local Business Number",
-        action: "Get a Local Number →",
-    },
-    {
-        buyer: "Existing customer",
-        resource: "Help Center",
-        action: "Find Help →",
-    },
-    {
-        buyer: "Porting customer",
-        resource: "Number Porting",
-        action: "Check Porting Eligibility →",
-    },
-    {
-        buyer: "Safety / compliance reviewer",
-        resource: "Emergency Calling",
-        action: "Read Emergency Information →",
-    },
-    {
-        buyer: "Enterprise buyer",
-        resource: "Contact Support / Sales",
-        action: "Talk to Sales →",
-    },
-];
-const trustCards = [
-    {
-        title: "Number availability",
-        description:
-            "Availability may vary by country, city, number type, carrier partner, eligibility, and applicable law.",
-        icon: FiMapPin,
-    },
-    {
-        title: "Number porting",
-        description:
-            "Porting depends on current carrier, number type, documentation, account status, and regulatory rules.",
-        icon: FiRepeat,
-    },
-    {
-        title: "Emergency calling",
-        description:
-            "Availability and limitations vary by country, number type, device, network connection, location, and configuration.",
-        icon: FiShield,
-    },
-    {
-        title: "AI Receptionist",
-        description:
-            "Provides automated call handling and does not replace regulated professional advice.",
-        icon: FiMic,
-    },
-];
-const resourceSteps = [
-    {
-        category: "Migration",
-        action: "Get a local number",
-    },
-    {
-        category: "Comparison",
-        action: "See pricing & check availability",
-    },
-    {
-        category: "Education",
-        action: "Get a local number",
-    },
-    {
-        category: "Porting",
-        action: "Port or get a new number",
-    },
-    {
-        category: "Support",
-        action: "Resolve & keep using Zoiko Local",
-    },
-    {
-        category: "Enterprise",
-        action: "Assisted setup with sales",
-    },
-];
 const faqItems = [
     {
-        question: "What resources are available for Zoiko Local?",
+        question: "What is Zoiko Local?",
         answer:
-            "Zoiko Local provides help guides, setup walkthroughs, comparison pages, porting instructions, compliance information, emergency-calling notices, and account support resources — all accessible from the Resources hub.",
+            "Zoiko Local is a business communication platform that gives you local phone numbers, calling, video, and an AI Receptionist — all connected in one workspace. It's built for businesses that need to sound local and stay reachable across markets.",
     },
     {
-        question: "Can I switch from Skype Number to Zoiko Local?",
+        question: "What does the platform include?",
         answer:
-            "Yes. Zoiko Local is a direct replacement for Skype Numbers. You can get a new local number in the same country, port your existing number where eligible, and continue receiving calls with AI Receptionist and routing built in.",
+            "Zoiko Local includes local numbers across supported markets, inbound and outbound calling, call routing, smart voicemail, video meetings, an AI Receptionist, and a shared team workspace — all from one platform.",
     },
     {
-        question: "Is Zoiko Local a Google Voice alternative?",
+        question: "Can I get a local number and make business calls?",
         answer:
-            "Yes. Zoiko Local offers local numbers, calling, and team routing like Google Voice, and adds AI Receptionist, video meetings, multi-country support, and business-grade compliance tools that Google Voice doesn't provide.",
+            "Yes. You can get a local number in supported markets and use it to receive inbound calls and — on supported plans — make outbound calls with that number as your caller ID.",
     },
     {
-        question: "Is Zoiko Local an OpenPhone alternative?",
+        question: "Does Zoiko Local include an AI Receptionist?",
         answer:
-            "Yes. Zoiko Local competes directly with OpenPhone for small business and remote team use cases, and adds multi-country local numbers, AI Receptionist, and video meeting integration in a single workspace",
+            "Yes. The AI Receptionist answers calls when your team is unavailable, screens and qualifies callers, captures the intent of the call, and routes or logs inquiries automatically — so no call is ever lost.",
     },
     {
-        question: "Is Zoiko Local a Teams Phone alternative?",
+        question: "Can it replace a Skype Number?",
         answer:
-            "For businesses that used Teams Phone for local numbers and basic calling, Zoiko Local is a simpler, more focused alternative — with local numbers, routing, AI Receptionist, and video, without the enterprise complexity.",
+            "Zoiko Local is a direct alternative for businesses moving away from Skype Numbers. You can get an equivalent local number, retain the same market presence, and gain additional business features like routing, video, and AI call handling.",
     },
     {
-        question: "What is a virtual phone number?",
+        question: "Can remote teams use Zoiko Local?",
         answer:
-            "A virtual phone number is a cloud-based number not tied to a physical phone line or location. It receives calls over the internet and routes them to any device or team member — anywhere in the world.",
+            "Yes. Zoiko Local is built for distributed and remote teams. Multiple team members can share a single business line, with calls routed by role, availability, or department — regardless of where each person is located.",
     },
     {
-        question: "Can I port my existing number?",
+        question: "Can it support customer support calls?",
         answer:
-            "Porting is supported in many countries, subject to carrier eligibility and documentation requirements. You can initiate a port after purchasing your Zoiko Local number.",
+            "Yes. You can set up a dedicated support number, route calls to the right team, capture missed calls with the AI Receptionist, and track call history — making Zoiko Local a reliable layer for customer-facing support operations.",
     },
     {
-        question: "Where can I find emergency-calling information?",
+        question: "Can I add more numbers or markets later?",
         answer:
-            "Emergency-calling availability and limitations are documented in the Trust & Compliance section. Zoiko Local does not guarantee emergency-service equivalence — please review this before activating numbers for primary use.",
-    },
-    {
-        question: "How do I contact Zoiko Local support?",
-        answer:
-            "You can reach Zoiko Local support via the Help Center for self-service guides, or through the Contact Support page for billing, porting, account, and technical issues.",
-    },
-    {
-        question: "Can Resources help me choose the right plan?",
-        answer:
-            "Yes. The Resources hub includes comparison guides, pricing pages, and use-case walkthroughs to help you find the right number type, plan, and configuration for your business needs.",
+            "Yes. You can add numbers in additional markets as your business expands. Zoiko Local is designed to scale — start with one number and grow your presence, team size, and routing complexity over time.",
     },
 ];
 
-export default function Resources() {
+export default function Platform() {
     return (
         <>
             {/* Hero Section */}
-            <section className="bg-[#F7F5F2] dark:bg-slate-900 py-10 md:py-14">
-                <div className="max-w-6xl mx-auto px-5">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+            <section className="bg-[#F7F3ED] dark:bg-slate-950">
+                <div className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
+                    <div className="grid items-center gap-16 lg:grid-cols-2">
 
-                        {/* LEFT */}
+                        {/* Left Content */}
                         <div>
-                            <p className="uppercase tracking-[0.35em] text-[10px] font-semibold text-[#EB643F]">
-                                Resources
+                            <p className="mb-4 text-[10px] md:text-xs font-semibold uppercase tracking-[4px] text-[#F26B45]">
+                                The Zoiko Local Platform · AI Powered
                             </p>
 
-                            <h1 className="mt-4 md:mt-5 text-2xl sm:text-3xl md:text-4xl lg:text-[48px] leading-tight md:leading-[1.08] font-bold text-[#123533] dark:text-white">
-                                Resources to compare, switch, learn, and
-                                <span className="text-[#EB643F] italic"> get support.</span>
+                            <h1 className="max-w-xl text-3xl font-bold leading-tight dark:text-white md:text-5xl">
+                                The AI-powered platform for local presence in every market you serve.
                             </h1>
 
-                            <p className="mt-5 md:mt-8 max-w-xl text-[15px] md:text-[17px] leading-7 md:leading-8 text-[#666666] dark:text-gray-400">
-                                Guides, comparisons, migration resources, support pathways, and
-                                trust information — built to help your business move from research
-                                to local-number activation with confidence. Sound local. Reach
-                                anywhere.
+                            <p className="mt-6 max-w-xl text-[16px] leading-8 text-slate-600 dark:text-slate-400">
+                                Local numbers, business calling, video, and an AI Receptionist that
+                                answers, qualifies and captures calls when your team can't — in one
+                                workspace.
                             </p>
 
                             {/* Buttons */}
-                            <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3 md:gap-4">
-                                <button
-                                    className="h-11 md:h-12 px-6 md:px-8 rounded-full
-              bg-[#EB643F] text-white font-semibold shadow-lg
-              hover:bg-[#D95A37] transition-all duration-300
-              text-sm md:text-base"
-                                >
-                                    Switch from Skype
+                            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                                <Link href="/get-a-local-number">
+                                    <button className="flex items-center justify-center gap-2 rounded-2xl bg-[#F26B45] px-7 py-3.5 font-semibold text-white transition hover:bg-[#EB5D34]">
+                                        Get a Local Number
+                                        <FiArrowRight />
+                                    </button>
+                                </Link>
+
+                                {/* <Link href="/explore-the-platform"> */}
+                                <button className="rounded-2xl border border-[#D8D2C8] bg-white px-7 py-3.5 font-semibold text-[#143A36] transition hover:bg-[#F8F5F1] dark:border-slate-700 dark:bg-slate-900 dark:text-white">
+                                    Explore the Platform
                                 </button>
-                                <button
-                                    className="h-11 md:h-12 px-6 md:px-8 rounded-full
-              border border-[#0F6660]
-              text-[#123533] dark:text-white dark:border-slate-600
-              hover:bg-[#0F6660] hover:text-white
-              transition-all duration-300
-              text-sm md:text-base"
-                                >
-                                    Get a Local Number
-                                </button>
+                                {/* </Link> */}
                             </div>
 
-                            {/* Support */}
-                            <p className="mt-6 md:mt-10 text-sm text-gray-500 dark:text-gray-400">
-                                Need help with an existing account?
-                                <span className="ml-1 text-[#EB643F] font-medium cursor-pointer hover:underline">
-                                    Contact Support →
+                            {/* Supporting Text */}
+                            <p className="mt-8 text-sm text-slate-500 dark:text-slate-400">
+                                Replacing a retired Skype Number?
+                                <span className="ml-1 font-semibold text-[#F26B45]">
+                                    <a href="/switch-from-skype">Switch from Skype →</a>
                                 </span>
                             </p>
 
-                            {/* Bottom checks */}
-                            <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-3 md:gap-6">
-                                <div className="flex items-center gap-2">
-                                    <FiCheck className="text-[#0F6660] shrink-0" />
-                                    <span className="text-sm text-gray-600 dark:text-gray-400">
-                                        Skype Number migration pathway
-                                    </span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <FiCheck className="text-[#0F6660] shrink-0" />
-                                    <span className="text-sm text-gray-600 dark:text-gray-400">
-                                        Comparison, porting & support resources
-                                    </span>
-                                </div>
+                            {/* Features */}
+                            <div className="mt-8 space-y-4">
+                                {[
+                                    "Local numbers across 150+ markets",
+                                    "Calling, video & routing in one platform",
+                                    "AI Receptionist captures every missed call",
+                                ].map((item) => (
+                                    <div key={item} className="flex items-center gap-3">
+                                        <FiCheck className="text-[#0D7A4D]" />
+                                        <span className="text-sm text-slate-700 dark:text-slate-300">
+                                            {item}
+                                        </span>
+                                    </div>
+                                ))}
                             </div>
                         </div>
 
-                        {/* RIGHT */}
-                        <div className="flex justify-center mt-4 lg:mt-0">
-                            <div className="w-full max-w-xl rounded-[24px] overflow-hidden bg-white dark:bg-slate-800 shadow-2xl border border-[#E5DDD2] dark:border-slate-700">
+                        {/* Right Dashboard */}
+                        <div className="mx-auto w-full max-w-[470px]">
+                            <div className="overflow-hidden rounded-[16px] bg-white shadow-[0_18px_40px_rgba(0,0,0,0.12)] dark:bg-slate-900">
 
                                 {/* Header */}
-                                <div className="bg-[#0F6660] text-white px-5 md:px-7 py-4 md:py-5">
-                                    <h3 className="font-medium text-sm md:text-base">
-                                        What do you need help with?
+                                <div className="flex items-center justify-between bg-[#0D5C54] px-5 py-3">
+                                    <h3 className="text-[13px] font-medium text-white">
+                                        AI Receptionist · call captured
                                     </h3>
+
+                                    <div className="flex flex-col items-center">
+                                        <span className="h-1.5 w-1.5 rounded-full bg-[#5FE39C]" />
+                                        <span className="mt-1 text-[9px] uppercase tracking-wider text-white/80">
+                                            LIVE
+                                        </span>
+                                    </div>
                                 </div>
 
-                                {/* Resources */}
-                                <div>
-                                    {resourceItems.map((item, index) => (
-                                        <div
-                                            key={index}
-                                            className="flex  flex-col md:flex-row items-center justify-between gap-3 md:gap-6 px-5 md:px-7 py-4 md:py-5 border-b border-[#ECE6DA] dark:border-slate-700"
-                                        >
-                                            <div className="flex items-center gap-3 min-w-0">
-                                                <span className="w-2 h-2 rounded-full bg-[#EB643F] shrink-0" />
-                                                <span className="text-[13px] md:text-[15px] text-[#123533] dark:text-white truncate">
-                                                    {item.title}
+                                <div className="p-4">
+
+                                    {/* Number */}
+                                    <div className="flex items-start justify-between">
+                                        <div className="flex gap-3">
+                                            <span className="mt-1 text-sm font-semibold text-[#2B2B2B]">
+                                                GB
+                                            </span>
+
+                                            <div>
+                                                <h4 className="text-sm font-semibold text-[#3D88D8]">
+                                                    +44 20 7946 0238
+                                                </h4>
+
+                                                <p className="mt-1 text-[11px] text-[#9A9A9A]">
+                                                    Missed by team · 6:42 pm
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <span className="rounded-full bg-[#FFE9DF] px-3 py-1 text-[10px] font-semibold text-[#E86A3B]">
+                                            After hours
+                                        </span>
+                                    </div>
+
+                                    {/* Summary Box */}
+                                    <div className="mt-4 rounded-xl border border-[#DDD7CF] bg-[#F8F5F1]">
+                                        <div className="border-b border-[#E7DED5] px-4 py-3">
+                                            <p className="text-[10px] font-bold uppercase tracking-[2px] text-[#9B958C]">
+                                                AI RECEPTIONIST HANDLED
+                                            </p>
+                                        </div>
+
+                                        {[
+                                            ["Caller", "Priya Madsen"],
+                                            ["Intent", "New enquiry — pricing"],
+                                            ["Qualified", "Yes · 12 staff"],
+                                            ["Callback", "Tomorrow 9:30am"],
+                                            ["Routed to", "Sales team"],
+                                        ].map(([label, value], index) => (
+                                            <div
+                                                key={label}
+                                                className={`grid grid-cols-[90px_1fr] px-4 py-3 ${index !== 4 ? "border-b border-[#ECE4DB]" : ""
+                                                    }`}
+                                            >
+                                                <span className="text-[12px] text-[#8B8B8B]">
+                                                    {label}
+                                                </span>
+
+                                                <span
+                                                    className={`text-right text-[12px] font-semibold ${label === "Routed to"
+                                                        ? "text-[#E96A3B]"
+                                                        : "text-[#2E2E2E] dark:text-white"
+                                                        }`}
+                                                >
+                                                    {value}
                                                 </span>
                                             </div>
-                                            <button
-                                                className="text-[#EB643F] text-xs md:text-sm font-medium
-                    whitespace-nowrap hover:underline shrink-0"
-                                            >
-                                                {item.action}
-                                            </button>
-                                        </div>
-                                    ))}
-                                </div>
+                                        ))}
+                                    </div>
 
-                                {/* CTA */}
-                                <div className="p-4 md:p-6">
-                                    <button
-                                        className="w-full h-11 md:h-12 rounded-xl
-                bg-[#EB643F] text-white font-semibold text-sm md:text-base
-                hover:bg-[#D95A37] transition-all duration-300"
-                                    >
-                                        Find the Right Resource
-                                    </button>
-                                </div>
+                                    {/* Footer Pills */}
+                                    <div className="mt-4 flex gap-2">
+                                        <span className="rounded-full bg-[#E8F7EE] px-3 py-1 text-[10px] md:text-xs text-[#0D7A4D]">
+                                            Captured, not lost
+                                        </span>
 
+                                        <span className="rounded-full bg-[#EEF4F2] px-3 py-1 text-[10px] md:text-xs text-[#0D5C54]">
+                                            Summary logged
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                     </div>
                 </div>
             </section>
-            {/* Decision Paths */}
-            <section className="bg-[#F7F5F2] dark:bg-slate-900 py-10 md:py-14">
-                <div className="max-w-6xl mx-auto px-5">
+            {/* What Makes It Different */}
+            <section className="bg-[#F7F3ED] px-4 py-8 md:py-12 dark:bg-slate-950">
+                <div className="mx-auto max-w-6xl">
+
                     {/* Heading */}
-                    <div className="text-center max-w-3xl mx-auto">
-
-                        <p className="uppercase tracking-[0.35em] text-[10px] font-semibold text-[#EB643F]">
-
-                            Start Here
-
+                    <div className="mx-auto max-w-4xl text-center">
+                        <p className="mb-4 text-[10px] md:text-xs font-semibold uppercase tracking-[4px] text-[#F26B45]">
+                            What Makes It Different
                         </p>
 
-                        <h2 className="mt-5 text-3xl md:text-[50px] font-bold leading-[1.15] text-[#123533] dark:text-white">
-
-                            Choose the path that matches your
-
+                        <h2 className="mx-auto max-w-3xl text-[34px] font-bold leading-tight text-[#143A36] dark:text-white md:text-[40px]">
+                            Local presence in many markets.
                             <br />
-
-                            next decision.
-
+                            AI that catches every call.
+                            One platform.
                         </h2>
 
-                    </div>
-
-                    {/* Decision List */}
-
-                    <div className="mt-16 rounded-[26px] overflow-hidden border border-[#E5DDD2] dark:border-slate-700 bg-white dark:bg-slate-800 shadow-xl">
-
-                        {decisionPaths.map((item, index) => (
-
-                            <div
-                                key={item.title}
-                                className={`flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 px-6 md:px-8 py-5 transition-all duration-300 hover:bg-[#FCF7F1] dark:hover:bg-slate-700
-                    ${index !== decisionPaths.length - 1
-                                        ? "border-b border-[#ECE5DA] dark:border-slate-700"
-                                        : ""
-                                    }`}
-                            >
-
-                                {/* Left */}
-
-                                <div className="flex-1">
-
-                                    <h3 className="text-[15px] md:text-base font-medium text-[#123533] dark:text-white">
-
-                                        {item.title}
-
-                                    </h3>
-
-                                </div>
-
-                                {/* Badge */}
-
-                                <div className="lg:w-[220px] flex lg:justify-center">
-
-                                    <span
-                                        className="inline-flex items-center rounded-full
-                            bg-[#EDF6F2] dark:bg-slate-600
-                            px-4 py-2
-                            text-xs font-semibold
-                            text-[#0F6660] dark:text-green-300"
-                                    >
-
-                                        {item.badge}
-
-                                    </span>
-
-                                </div>
-
-                                {/* CTA */}
-
-                                <div className="lg:w-[240px] lg:text-right">
-
-                                    <button
-                                        className="text-[#EB643F]
-                            text-sm
-                            font-semibold
-                            hover:underline
-                            transition"
-                                    >
-
-                                        {item.action}
-
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                        ))}
-
-                    </div>
-
-                </div>
-
-            </section>
-            {/* Migration & Comparison */}
-            <section className="bg-[#F7F5F2] dark:bg-slate-900 py-10 md:py-14">
-                <div className="max-w-6xl mx-auto px-5">
-                    {/* Heading */}
-
-                    <div className="max-w-4xl mx-auto text-center">
-                        <p className="uppercase tracking-[0.35em] text-[10px] font-semibold text-[#EB643F]">
-
-                            Migration & Comparison
-
+                        <p className="mx-auto mt-6 max-w-3xl text-[15px] leading-7 text-slate-500 dark:text-slate-400">
+                            Most tools give you a number, or calls, or an answering service.
+                            Zoiko Local is the layer that does all of it together —
+                            recognizable local numbers across the markets you serve,
+                            with an AI Receptionist making sure no enquiry is ever lost.
                         </p>
-
-                        <h2 className="mt-5 text-3xl md:text-[50px] font-bold leading-[1.15] text-[#123533] dark:text-white">
-
-                            Replacing Skype Number or
-
-                            <br />
-
-                            comparing options? Start here.
-
-                        </h2>
-
                     </div>
 
-                    {/* Cards */}
+                    {/* Feature Cards */}
+                    <div className="mt-16 grid gap-6 md:grid-cols-3">
 
-                    <div className="mt-16 grid md:grid-cols-2 gap-6">
-
-                        {comparisonCards.map((card, index) => {
-
-                            const Icon = card.icon;
+                        {[
+                            {
+                                title: "Multi-market local presence",
+                                desc: "Hold recognizable local numbers across several countries and manage them from one workspace — no one domestic line.",
+                                icon: FiMapPin,
+                            },
+                            {
+                                title: "AI call capture built in",
+                                desc: "When your team is busy, after hours, or offline, the AI Receptionist answers, qualifies and books the callback automatically.",
+                                icon: FiMic,
+                            },
+                            {
+                                title: "One connected layer",
+                                desc: "Numbers, calling, video and routing work together — not stitched across separate apps and providers.",
+                                icon: FiActivity,
+                            },
+                        ].map((item) => {
+                            const Icon = item.icon;
 
                             return (
-
                                 <div
-                                    key={index}
-                                    className="group rounded-[24px]
-                        border border-[#E5DDD2]
-                        dark:border-slate-700
-                        bg-white
-                        dark:bg-slate-800
-                        p-8
-                        transition-all
-                        duration-300
-                        hover:border-[#EB643F]
-                        hover:-translate-y-1
-                        hover:shadow-xl"
+                                    key={item.title}
+                                    className="
+              rounded-2xl
+              border
+              border-[#E6DDD2]
+              bg-white
+              p-6
+              transition-all
+              duration-300
+              hover:-translate-y-1
+              hover:shadow-lg
+              dark:border-slate-700
+              dark:bg-slate-900
+            "
                                 >
-
                                     {/* Icon */}
-
                                     <div
-                                        className="w-12 h-12 rounded-xl
-                            bg-[#EEF6F3]
-                            dark:bg-slate-700
-                            flex items-center justify-center
-                            text-[#0F6660]
-                            transition-all duration-300
-                            group-hover:bg-[#EB643F]
-                            group-hover:text-white"
+                                        className="
+                mb-6
+                flex
+                h-11
+                w-11
+                items-center
+                justify-center
+                rounded-xl
+                bg-[#EEF4F2]
+                dark:bg-slate-800
+              "
                                     >
-
-                                        <Icon size={20} />
-
+                                        <Icon
+                                            size={18}
+                                            className="text-[#0D5C54]"
+                                        />
                                     </div>
 
                                     {/* Title */}
-
-                                    <h3 className="mt-8 text-[24px] font-bold text-[#123533] dark:text-white">
-
-                                        {card.title}
-
+                                    <h3 className="text-[18px] font-semibold leading-7 text-[#143A36] dark:text-white">
+                                        {item.title}
                                     </h3>
 
                                     {/* Description */}
-
-                                    <p className="mt-5 text-[15px] leading-7 text-[#666666] dark:text-gray-400">
-
-                                        {card.description}
-
+                                    <p className="mt-4 text-[14px] leading-7 text-slate-500 dark:text-slate-400">
+                                        {item.desc}
                                     </p>
-
-                                    {/* Link */}
-
-                                    <button
-                                        className="mt-6
-                            text-[#EB643F]
-                            font-semibold
-                            text-sm
-                            hover:underline"
-                                    >
-
-                                        {card.action}
-
-                                    </button>
-
                                 </div>
-
                             );
-
-                        })}
-
-                    </div>
-
-                    {/* Bottom Note */}
-
-                    <p className="mt-12 text-center text-xs leading-6 text-gray-500 dark:text-gray-400 max-w-3xl mx-auto">
-
-                        Comparisons are factual, fair, and use-case led.
-                        Review each provider's current features and terms
-                        before deciding.
-
-                    </p>
-
-                </div>
-
-            </section>
-            {/* learn the basics */}
-            <section className="bg-[#F7F5F2] dark:bg-slate-900 py-10 md:py-14">
-                <div className="max-w-6xl mx-auto px-5">
-                    {/* ===================== */}
-                    {/* Learn The Basics */}
-                    {/* ===================== */}
-
-                    <div className="max-w-3xl mx-auto text-center">
-
-                        <p className="uppercase tracking-[0.35em] text-[10px] font-semibold text-[#EB643F]">
-
-                            Learn The Basics
-
-                        </p>
-
-                        <h2 className="mt-5 text-3xl md:text-[48px] font-bold leading-[1.15] text-[#123533] dark:text-white">
-
-                            Understand the numbers behind
-
-                            <br />
-
-                            local presence.
-
-                        </h2>
-
-                    </div>
-
-                    <div className="mt-14 grid md:grid-cols-2 gap-6">
-
-                        {basicsCards.map((card) => {
-
-                            const Icon = card.icon;
-
-                            return (
-
-                                <div
-                                    key={card.title}
-                                    className="group bg-white dark:bg-slate-800 rounded-[24px]
-                        border border-[#E5DDD2] dark:border-slate-700
-                        p-8 transition-all duration-300
-                        hover:-translate-y-1 hover:shadow-xl"
-                                >
-
-                                    <div
-                                        className="w-12 h-12 rounded-xl
-                            bg-[#EEF6F3] dark:bg-slate-700
-                            flex items-center justify-center
-                            text-[#0F6660]
-                            group-hover:bg-[#EB643F]
-                            group-hover:text-white
-                            transition-all"
-                                    >
-
-                                        <Icon size={20} />
-
-                                    </div>
-
-                                    <h3 className="mt-7 text-xl font-semibold text-[#123533] dark:text-white">
-
-                                        {card.title}
-
-                                    </h3>
-
-                                    <p className="mt-4 text-[15px] leading-7 text-[#666666] dark:text-gray-400">
-
-                                        {card.description}
-
-                                    </p>
-
-                                    <button
-                                        className="mt-6 text-[#EB643F]
-                            font-semibold text-sm hover:underline"
-                                    >
-
-                                        {card.action}
-
-                                    </button>
-
-                                </div>
-
-                            );
-
-                        })}
-
-                    </div>
-
-                    {/* ===================== */}
-                    {/* Support & Trust */}
-                    {/* ===================== */}
-
-                    <div className="mt-28 max-w-3xl mx-auto text-center">
-
-                        <p className="uppercase tracking-[0.35em] text-[10px] font-semibold text-[#EB643F]">
-
-                            Support & Trust
-
-                        </p>
-
-                        <h2 className="mt-5 text-3xl md:text-[48px] font-bold leading-[1.15] text-[#123533] dark:text-white">
-
-                            Find help, check porting, and
-
-                            <br />
-
-                            understand service information.
-
-                        </h2>
-
-                    </div>
-
-                    <div className="mt-14 grid sm:grid-cols-2 gap-6">
-
-                        {supportCards.map((card) => {
-
-                            const Icon = card.icon;
-
-                            return (
-
-                                <div
-                                    key={card.title}
-                                    className="group bg-white dark:bg-slate-800 rounded-[24px]
-                        border border-[#E5DDD2] dark:border-slate-700
-                        p-8 transition-all duration-300
-                        hover:-translate-y-1 hover:shadow-xl"
-                                >
-
-                                    <div
-                                        className="w-12 h-12 rounded-xl
-                            bg-[#EEF6F3] dark:bg-slate-700
-                            flex items-center justify-center
-                            text-[#0F6660]
-                            group-hover:bg-[#EB643F]
-                            group-hover:text-white
-                            transition-all"
-                                    >
-
-                                        <Icon size={20} />
-
-                                    </div>
-
-                                    <h3 className="mt-7 text-xl font-semibold text-[#123533] dark:text-white">
-
-                                        {card.title}
-
-                                    </h3>
-
-                                    <p className="mt-4 text-[15px] leading-7 text-[#666666] dark:text-gray-400">
-
-                                        {card.description}
-
-                                    </p>
-
-                                    <button
-                                        className="mt-6 text-[#EB643F]
-                            font-semibold text-sm hover:underline"
-                                    >
-
-                                        {card.action}
-
-                                    </button>
-
-                                </div>
-
-                            );
-
                         })}
 
                     </div>
 
                 </div>
-
             </section>
-            {/* By Buyer Type */}
-            <section className="bg-[#F7F5F2] dark:bg-slate-900 py-10 md:py-14">
-                <div className="max-w-6xl mx-auto px-5">
+            {/* Everything Starts Section */}
+            <section className="bg-[#F7F3ED] px-4 py-8 md:py-12 dark:bg-slate-950">
+                <div className="mx-auto max-w-6xl">
+
                     {/* Heading */}
-                    <div className="text-center max-w-4xl mx-auto">
-
-                        <p className="uppercase tracking-[0.35em] text-[10px] font-semibold text-[#EB643F]">
-
-                            By Buyer Type
-
+                    <div className="mx-auto max-w-3xl text-center">
+                        <p className="mb-3 text-[10px] font-semibold uppercase tracking-[4px] text-[#F26B45]">
+                            The Four Pillars
                         </p>
 
-                        <h2 className="mt-5 text-3xl md:text-[50px] font-bold leading-[1.15] text-[#123533] dark:text-white">
-
-                            Find the fastest path to the answer you need.
-
-                        </h2>
-
-                    </div>
-
-                    {/* Table */}
-
-                    <div className="mt-16 rounded-[24px] overflow-hidden bg-white dark:bg-slate-800 border border-[#E5DDD2] dark:border-slate-700 shadow-xl">
-
-                        {buyerTypes.map((item, index) => (
-
-                            <div
-                                key={item.buyer}
-                                className={`grid md:grid-cols-[1.1fr_1.2fr_auto]
-                    items-center gap-5 px-6 md:px-8 py-5
-                    transition-all duration-300
-                    hover:bg-[#FCF7F1]
-                    dark:hover:bg-slate-700
-                    ${index !== buyerTypes.length - 1
-                                        ? "border-b border-[#ECE6DA] dark:border-slate-700"
-                                        : ""
-                                    }`}
-                            >
-
-                                {/* Buyer */}
-
-                                <div>
-
-                                    <h3 className="font-semibold text-[#123533] dark:text-white">
-
-                                        {item.buyer}
-
-                                    </h3>
-
-                                </div>
-
-                                {/* Resource */}
-
-                                <div>
-
-                                    <p className="text-sm text-gray-500 dark:text-gray-400">
-
-                                        {item.resource}
-
-                                    </p>
-
-                                </div>
-
-                                {/* CTA */}
-
-                                <div className="md:text-right">
-
-                                    <button
-                                        className="text-[#EB643F]
-                            text-sm
-                            font-semibold
-                            whitespace-nowrap
-                            hover:underline
-                            transition"
-                                    >
-
-                                        {item.action}
-
-                                    </button>
-
-                                </div>
-
-                            </div>
-
-                        ))}
-
-                    </div>
-
-                </div>
-
-            </section>
-            {/* Trust Cards */}
-            <section className="bg-[#F7F5F2] dark:bg-slate-900 py-10 md:py-14">
-                <div className="max-w-6xl mx-auto px-5">
-                    {/* ==================================== */}
-                    {/* TRUST SECTION */}
-                    {/* ==================================== */}
-
-                    <div className="max-w-4xl mx-auto text-center">
-
-                        <p className="uppercase tracking-[0.35em] text-[10px] font-semibold text-[#EB643F]">
-
-                            Trust, Safety & Service Information
-
-                        </p>
-
-                        <h2 className="mt-5 text-3xl md:text-[50px] font-bold leading-[1.15] text-[#123533] dark:text-white">
-
-                            Clear information builds trust before
-
+                        <h2 className="text-[34px] font-bold leading-tight text-[#143A36] dark:text-white md:text-[40px]">
+                            Everything starts with the way
                             <br />
-
-                            and after purchase.
-
+                            customers reach you.
                         </h2>
-
                     </div>
 
                     {/* Cards */}
+                    <div className="mt-14 grid gap-5 lg:grid-cols-2">
 
-                    <div className="mt-16 grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
-
-                        {trustCards.map((card) => {
-
-                            const Icon = card.icon;
+                        {[
+                            {
+                                icon: FiMapPin,
+                                title: "Local Numbers",
+                                badge: "Start here",
+                                desc:
+                                    "Create local presence in the markets your customers recognize.",
+                                link: "Explore Local Numbers",
+                                href: "/get-a-local-number",
+                            },
+                            {
+                                icon: FiPhone,
+                                title: "Calling",
+                                desc:
+                                    "Make and receive business calls with a professional local identity.",
+                                link: "Explore Calling",
+                                href: "/calling",
+                            },
+                            {
+                                icon: FiVideo,
+                                title: "Video",
+                                desc:
+                                    "Move high-trust conversations into secure video when voice isn't enough.",
+                                link: "Explore Video",
+                                href: "/video",
+                            },
+                            {
+                                icon: FiMic,
+                                title: "AI Receptionist",
+                                featured: true,
+                                badgeTop: "The differentiator",
+                                desc:
+                                    "Answers, qualifies and captures calls when your team is busy or unavailable — so no enquiry is ever lost.",
+                                link: "Explore AI Receptionist",
+                                href: "/ai-receptionist",
+                            },
+                        ].map((item) => {
+                            const Icon = item.icon;
 
                             return (
-
                                 <div
-                                    key={card.title}
-                                    className="group rounded-[24px]
-                        bg-white dark:bg-slate-800
-                        border border-[#E5DDD2]
-                        dark:border-slate-700
-                        p-7
-                        transition-all duration-300
-                        hover:-translate-y-1
-                        hover:shadow-xl"
+                                    key={item.title}
+                                    className={`
+              relative
+              rounded-[18px]
+              border
+              bg-white
+              p-6
+              transition-all
+              duration-300
+              hover:-translate-y-1
+              hover:shadow-lg
+
+              ${item.featured
+                                            ? "border-[#F26B45]"
+                                            : "border-[#E4DDD3]"
+                                        }
+
+              dark:bg-slate-900
+              dark:border-slate-700
+            `}
                                 >
+                                    {/* Floating Badge */}
+                                    {item.badgeTop && (
+                                        <div className="absolute -top-3 left-6">
+                                            <span className="rounded-full bg-[#F26B45] px-3 py-1 text-[10px] font-semibold text-white shadow-md">
+                                                {item.badgeTop}
+                                            </span>
+                                        </div>
+                                    )}
 
-                                    <div
-                                        className="w-12 h-12 rounded-xl
-                            bg-[#EEF6F3]
-                            dark:bg-slate-700
-                            text-[#0F6660]
-                            flex items-center justify-center
-                            group-hover:bg-[#EB643F]
-                            group-hover:text-white
-                            transition-all"
-                                    >
-
-                                        <Icon size={20} />
-
+                                    {/* Icon */}
+                                    <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-lg bg-[#EEF4F2] dark:bg-slate-800">
+                                        <Icon
+                                            size={18}
+                                            className={`${item.featured
+                                                ? "text-[#F26B45]"
+                                                : "text-[#0D5C54]"
+                                                }`}
+                                        />
                                     </div>
 
-                                    <h3 className="mt-7 text-xl font-semibold text-[#123533] dark:text-white">
+                                    {/* Title */}
+                                    <div className="flex items-center gap-2">
+                                        <h3 className="text-lg font-semibold text-[#143A36] dark:text-white">
+                                            {item.title}
+                                        </h3>
 
-                                        {card.title}
+                                        {item.badge && (
+                                            <span className="text-[10px] font-semibold uppercase tracking-wide text-[#F26B45]">
+                                                {item.badge}
+                                            </span>
+                                        )}
+                                    </div>
 
-                                    </h3>
-
-                                    <p className="mt-4 text-[15px] leading-7 text-[#666666] dark:text-gray-400">
-
-                                        {card.description}
-
+                                    {/* Description */}
+                                    <p className="mt-3 text-[14px] leading-6 text-slate-500 dark:text-slate-400">
+                                        {item.desc}
                                     </p>
 
+                                    {/* Link */}
+                                    <Link href={item.href}>
+                                        <button className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#F26B45] transition hover:gap-3">
+                                            {item.link}
+                                            <FiArrowRight size={14} />
+                                        </button>
+                                    </Link>
                                 </div>
-
                             );
-
                         })}
+                    </div>
+                </div>
+            </section>
+            {/* How It Works Section */}
+            <section className="bg-[#F7F3ED] px-4 py-8 md:py-12 dark:bg-slate-950">
+                <div className="mx-auto max-w-6xl">
 
+                    {/* Heading */}
+                    <div className="mx-auto max-w-3xl text-center">
+                        <p className="mb-3 text-[10px] md:text-xs font-semibold uppercase tracking-[4px] text-[#F26B45]">
+                            How It Works
+                        </p>
+
+                        <h2 className="text-[30px] font-bold leading-tight dark:text-white md:text-[40px]">
+                            From local number to customer
+                            <br />
+                            conversation in one connected flow.
+                        </h2>
                     </div>
 
-                    {/* ==================================== */}
-                    {/* RESOURCE NEXT STEP */}
-                    {/* ==================================== */}
-
-                    <div className="mt-28 grid lg:grid-cols-2 gap-16 items-center">
-
-                        {/* LEFT */}
-
-                        <div>
-
-                            <p className="uppercase tracking-[0.35em] text-[10px] font-semibold text-[#EB643F]">
-
-                                Resources That Keep You Moving
-
-                            </p>
-
-                            <h2 className="mt-5 text-3xl md:text-[48px] font-bold leading-[1.15] text-[#123533] dark:text-white">
-
-                                Every resource helps you
-
-                                <br />
-
-                                take the next step.
-
-                            </h2>
-
-                            <p className="mt-7 text-[16px] leading-8 text-[#666666] dark:text-gray-400 max-w-lg">
-
-                                Resources aren't a passive library —
-                                each one routes you forward:
-                                activate a number, complete porting,
-                                understand billing, configure call handling,
-                                or reach support, so you move from
-                                research to confident use.
-
-                            </p>
-
-                            <button
-                                className="mt-10 h-12 px-8 rounded-full
-                    bg-[#EB643F]
-                    text-white
-                    font-semibold
-                    shadow-lg
-                    hover:bg-[#D95A37]
-                    transition-all"
+                    {/* Steps */}
+                    <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+                        {[
+                            {
+                                number: "1",
+                                title: "Choose a market",
+                                desc: "Pick the country, city, or area code customers already trust.",
+                            },
+                            {
+                                number: "2",
+                                title: "Get a local number",
+                                desc: "Secure your business number instantly with guided setup.",
+                            },
+                            {
+                                number: "3",
+                                title: "Connect paths",
+                                desc: "Route calls to people, teams, departments, or AI Receptionist.",
+                            },
+                            {
+                                number: "4",
+                                title: "Add calling, video & AI",
+                                desc: "Handle every conversation through one connected workspace.",
+                            },
+                            {
+                                number: "5",
+                                title: "Scale by market",
+                                desc: "Add countries, users, routing and compliance as you grow.",
+                            },
+                        ].map((step) => (
+                            <div
+                                key={step.number}
+                                className="
+            rounded-[16px]
+            border
+            border-[#E6DDD2]
+            bg-white
+            p-5
+            transition-all
+            duration-300
+            hover:-translate-y-1
+            hover:border-[#F26B45]
+            hover:shadow-lg
+            dark:border-slate-700
+            dark:bg-slate-900
+          "
                             >
+                                {/* Number */}
+                                <div className="mb-5 flex h-7 w-7 items-center justify-center rounded-full bg-[#F26B45] text-xs md:text-sm font-bold text-white">
+                                    {step.number}
+                                </div>
 
-                                Get a Local Number
-
-                            </button>
-
-                        </div>
-
-                        {/* RIGHT */}
-
-                        <div className="rounded-[24px] overflow-hidden bg-white dark:bg-slate-800 shadow-xl border border-[#E5DDD2] dark:border-slate-700">
-
-                            {/* Header */}
-
-                            <div className="bg-[#0F6660] text-white px-7 py-5">
-
-                                <h3 className="font-medium">
-
-                                    Resource → next step
-
+                                {/* Title */}
+                                <h3 className="text-[16px] font-semibold text-[#143A36] dark:text-white">
+                                    {step.title}
                                 </h3>
 
+                                {/* Description */}
+                                <p className="mt-3 text-[13px] leading-6 text-slate-500 dark:text-slate-400">
+                                    {step.desc}
+                                </p>
                             </div>
+                        ))}
+                    </div>
 
-                            {/* Rows */}
-
-                            <div>
-
-                                {resourceSteps.map((item, index) => (
-
-                                    <div
-                                        key={item.category}
-                                        className={`grid grid-cols-[120px_20px_1fr]
-                            items-center
-                            px-7 py-5
-                            transition-all duration-300
-                            hover:bg-[#FCF7F1]
-                            dark:hover:bg-slate-700
-                            ${index !== resourceSteps.length - 1
-                                                ? "border-b border-[#ECE6DA] dark:border-slate-700"
-                                                : ""
-                                            }`}
-                                    >
-
-                                        <span className="font-semibold text-[#123533] dark:text-white">
-
-                                            {item.category}
-
-                                        </span>
-
-                                        <FiArrowRight className="text-[#EB643F]" />
-
-                                        <span className="text-sm text-gray-500 dark:text-gray-400">
-
-                                            {item.action}
-
-                                        </span>
-
-                                    </div>
-
-                                ))}
-
-                            </div>
-
-                        </div>
-
+                    {/* CTA */}
+                    <div className="mt-12 flex justify-center">
+                        <Link href="/get-a-local-number">
+                            <button
+                                className="
+          inline-flex
+          items-center
+          gap-2
+          rounded-full
+          bg-[#F26B45]
+          px-8
+          py-3.5
+          text-sm
+          font-semibold
+          text-white
+          shadow-[0_10px_25px_rgba(242,107,69,0.25)]
+          transition-all
+          duration-300
+          hover:-translate-y-0.5
+          hover:bg-[#EA5F36]
+        "
+                            >
+                                Check Number Availability
+                                <FiArrowRight size={16} />
+                            </button>
+                        </Link>
                     </div>
 
                 </div>
-
             </section>
-            {/* FAQ */}
-            <Faq
-                heading="QUESTIONS"
-                subHeading="Zoiko Local resources, answered."
-                items={faqItems}
-            />
-            {/* Final CTA */}
-            <section className="bg-[#F7F5F2] dark:bg-slate-900 py-10 md:py-14">
+            {/* Built For Business Section */}
+            <section className="bg-[#F7F3ED] px-4 py-8 md:py-12 dark:bg-slate-950">
+                <div className="mx-auto max-w-6xl">
 
-                <div className="max-w-7xl mx-auto px-5">
+                    {/* Heading */}
+                    <div className="mx-auto max-w-3xl text-center">
+                        <p className="mb-3 text-[10px] md:text-xs font-semibold uppercase tracking-[4px] text-[#F26B45]">
+                            Built For Your Business
+                        </p>
+
+                        <h2 className="text-[30px] font-bold leading-tight text-[#143A36] dark:text-white md:text-[40px]">
+                            Built for the way modern businesses grow.
+                        </h2>
+                    </div>
+
+                    {/* Cards */}
+                    <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+                        {[
+                            {
+                                title: "For Business",
+                                desc: "Build a professional phone presence for customers, sales, and support.",
+                                icon: FiBriefcase,
+                            },
+                            {
+                                title: "Remote Teams",
+                                desc: "Give distributed teams one professional communication layer.",
+                                icon: FiUsers,
+                            },
+                            {
+                                title: "Customer Support",
+                                desc: "Create a trusted support number and reduce missed enquiries.",
+                                icon: FiMessageSquare,
+                            },
+                            {
+                                title: "Founder-Led",
+                                desc: "Separate personal and business calls from day one.",
+                                icon: PiPaintBrushLight,
+                            },
+                            {
+                                title: "International Expansion",
+                                desc: "Build local presence before opening offices.",
+                                icon: FiMap,
+                            },
+                            {
+                                title: "Diaspora Founders",
+                                desc: "Stay locally reachable across borders and customer communities.",
+                                icon: FiHeart,
+                            },
+                        ].map((item) => {
+                            const Icon = item.icon;
+
+                            return (
+                                <div
+                                    key={item.title}
+                                    className="
+              rounded-[16px]
+              border
+              border-[#E5DDD3]
+              bg-white
+              p-5
+              transition-all
+              duration-300
+              hover:-translate-y-1
+              hover:border-[#F26B45]
+              hover:shadow-lg
+              dark:border-slate-700
+              dark:bg-slate-900
+            "
+                                >
+                                    {/* Icon */}
+                                    <div
+                                        className="
+                mb-5
+                flex
+                h-10
+                w-10
+                items-center
+                justify-center
+                rounded-lg
+                bg-[#EEF4F2]
+                dark:bg-slate-800
+              "
+                                    >
+                                        <Icon
+                                            size={17}
+                                            className="text-[#0D5C54]"
+                                        />
+                                    </div>
+
+                                    {/* Title */}
+                                    <h3 className="text-[17px] font-semibold text-[#143A36] dark:text-white">
+                                        {item.title}
+                                    </h3>
+
+                                    {/* Description */}
+                                    <p className="mt-3 text-[13px] leading-6 text-slate-500 dark:text-slate-400">
+                                        {item.desc}
+                                    </p>
+                                </div>
+                            );
+                        })}
+
+                    </div>
+                </div>
+            </section>
+            {/* Platform vs Basic Number */}
+            <section className="bg-[#F7F3ED] px-4 py-8 md:py-12 dark:bg-slate-950">
+                <div className="mx-auto max-w-5xl">
+
+                    {/* Heading */}
+                    <div className="text-center">
+                        <p className="mb-3 text-[10px] font-semibold uppercase tracking-[4px] text-[#F26B45]">
+                            Platform vs Basic Number
+                        </p>
+
+                        <h2 className="text-[30px] font-bold leading-tight text-[#143A36] dark:text-white md:text-[40px]">
+                            Zoiko Local is more than a number.
+                        </h2>
+                    </div>
+
+                    {/* Desktop Table */}
+                    <div
+                        className="
+        mt-12
+        hidden
+        overflow-hidden
+        rounded-[18px]
+        border
+        border-[#E5DDD3]
+        bg-white
+        shadow-sm
+        dark:border-slate-700
+        dark:bg-slate-900
+        md:block
+      "
+                    >
+                        {/* Header */}
+                        <div className="grid grid-cols-2 bg-[#0D5C54] text-white">
+                            <div className="border-r border-white/10 px-6 py-4 text-sm font-semibold">
+                                Basic number service
+                            </div>
+
+                            <div className="px-6 py-4 text-sm font-semibold">
+                                Zoiko Local platform
+                            </div>
+                        </div>
+
+                        {[
+                            [
+                                "A number only",
+                                "Numbers connected to calling, video, routing & AI Receptionist",
+                            ],
+                            [
+                                "Limited business context",
+                                "Built for real business use cases",
+                            ],
+                            [
+                                "Often tied to one user",
+                                "Supports teams, departments & market growth",
+                            ],
+                            [
+                                "Missed calls may be lost",
+                                "AI Receptionist captures and routes enquiries",
+                            ],
+                            [
+                                "Single domestic market",
+                                "Local presence across multiple markets at once",
+                            ],
+                            [
+                                "Generic utility",
+                                "AI-powered platform for local presence & customer communication",
+                            ],
+                        ].map(([left, right], index) => (
+                            <div
+                                key={left}
+                                className={`grid grid-cols-2 ${index !== 5
+                                    ? "border-b border-[#ECE5DC] dark:border-slate-700"
+                                    : ""
+                                    }`}
+                            >
+                                {/* Left */}
+                                <div
+                                    className="
+              border-r
+              border-[#ECE5DC]
+              bg-[#FAF8F5]
+              px-6
+              py-5
+              text-[14px]
+              text-slate-500
+              dark:border-slate-700
+              dark:bg-slate-800
+              dark:text-slate-400
+            "
+                                >
+                                    {left}
+                                </div>
+
+                                {/* Right */}
+                                <div
+                                    className="
+              px-6
+              py-5
+              text-[14px]
+              font-medium
+              text-[#143A36]
+              dark:text-white
+            "
+                                >
+                                    {right}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Mobile Cards */}
+                    <div className="mt-10 space-y-5 md:hidden">
+                        {[
+                            [
+                                "A number only",
+                                "Numbers connected to calling, video, routing & AI Receptionist",
+                            ],
+                            [
+                                "Limited business context",
+                                "Built for real business use cases",
+                            ],
+                            [
+                                "Often tied to one user",
+                                "Supports teams, departments & market growth",
+                            ],
+                            [
+                                "Missed calls may be lost",
+                                "AI Receptionist captures and routes enquiries",
+                            ],
+                            [
+                                "Single domestic market",
+                                "Local presence across multiple markets",
+                            ],
+                            [
+                                "Generic utility",
+                                "AI-powered communication platform",
+                            ],
+                        ].map(([basic, zoiko]) => (
+                            <div
+                                key={basic}
+                                className="rounded-2xl border border-[#E5DDD3] bg-white p-5 dark:border-slate-700 dark:bg-slate-900"
+                            >
+                                <div>
+                                    <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
+                                        Basic Number
+                                    </p>
+
+                                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                                        {basic}
+                                    </p>
+                                </div>
+
+                                <div className="my-5 border-t border-[#ECE5DC] dark:border-slate-700" />
+
+                                <div>
+                                    <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-[#0D5C54]">
+                                        Zoiko Local
+                                    </p>
+
+                                    <p className="text-sm font-medium text-[#143A36] dark:text-white">
+                                        {zoiko}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* CTA */}
+                    <div className="mt-12 flex justify-center">
+                        <Link href="/get-a-local-number">
+                            <button
+                                className="
+          inline-flex
+          items-center
+          gap-2
+          rounded-full
+          bg-[#F26B45]
+          px-8
+          py-3.5
+          text-sm
+          font-semibold
+          text-white
+          shadow-[0_10px_25px_rgba(242,107,69,0.25)]
+          transition-all
+          duration-300
+          hover:-translate-y-0.5
+          hover:bg-[#EA5F36]
+        "
+                            >
+                                Get a Local Number
+                                <FiArrowRight size={15} />
+                            </button>
+                        </Link>
+                    </div>
+
+                </div>
+            </section>
+            {/* Global Coverage CTA */}
+            <section className="bg-[#F7F3ED] px-4 py-8 md:py-12 dark:bg-slate-950">
+                <div className="mx-auto max-w-6xl">
 
                     <div
-                        className="relative overflow-hidden rounded-[32px] px-8 py-16 md:px-16 md:py-20 text-center"
-                        style={{
-                            background:
-                                "radial-gradient(circle at top right, rgba(20,140,130,.18), transparent 35%), linear-gradient(135deg,#0F6660 0%, #083D3B 100%)",
-                        }}
+                        className="
+        relative
+        overflow-hidden
+        rounded-[28px]
+        bg-[#0D5C54]
+        px-6
+        py-14
+        text-center
+        shadow-[0_25px_70px_rgba(0,0,0,0.12)]
+
+        md:px-12
+        md:py-20
+      "
                     >
-
-                        {/* Decorative Glow */}
-
-                        <div className="absolute inset-0 pointer-events-none">
-
-                            <div className="absolute -top-24 right-0 w-72 h-72 rounded-full bg-white/5 blur-[90px]" />
-
-                            <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-[#0F8B80]/20 blur-[110px]" />
-
-                        </div>
+                        {/* Background Glow */}
+                        <div
+                            className="
+          absolute
+          right-0
+          top-0
+          h-72
+          w-72
+          rounded-full
+          bg-[radial-gradient(circle,rgba(255,255,255,0.12)_0%,transparent_70%)]
+        "
+                        />
 
                         <div className="relative z-10">
 
                             {/* Heading */}
-
-                            <h2 className="text-3xl md:text-[50px] font-bold leading-[1.12] text-white">
-
-                                Ready to move from research to
-
-                                <br />
-
-                                <span className="text-[#F5A48D]">
-
-                                    local presence?
-
+                            <h2 className="mx-auto max-w-3xl text-[30px] font-bold leading-tight text-white md:text-[40px]">
+                                Be local{" "}
+                                <span className="text-[#F6A27E]">
+                                    where your customers are.
                                 </span>
-
                             </h2>
 
                             {/* Description */}
-
-                            <p className="mt-7 max-w-2xl mx-auto text-[16px] leading-8 text-white/70">
-
-                                Compare options, understand the basics,
-
-                                get support, or start with a local
-
-                                number built for business communication.
-
+                            <p className="mx-auto mt-6 max-w-2xl text-[15px] md:text-[16px] leading-7 text-white/70">
+                                Live now across six markets, with regional coverage expanding
+                                under our global connectivity agreement.
                             </p>
 
-                            {/* Buttons */}
+                            {/* Countries */}
+                            <div className="mt-8 flex flex-wrap justify-center gap-3">
+                                {[
+                                    {
+                                        name: "United States",
+                                        flag: "/images/platform/US.png",
+                                    },
+                                    {
+                                        name: "United Kingdom",
+                                        flag: "/images/platform/UK.png",
+                                    },
+                                    {
+                                        name: "Jamaica",
+                                        flag: "/images/platform/JM.png",
+                                    },
+                                    {
+                                        name: "Canada",
+                                        flag: "/images/platform/CA.png",
+                                    },
+                                    {
+                                        name: "Nigeria",
+                                        flag: "/images/platform/NG.png",
+                                    },
+                                    {
+                                        name: "South Africa",
+                                        flag: "/images/platform/SA.png",
+                                    },
+                                ].map((country) => (
+                                    <div
+                                        key={country.name}
+                                        className="
+                flex
+                items-center
+                gap-2
+                rounded-full
+                bg-white/10
+                px-4
+                py-2
+                backdrop-blur-md
+              "
+                                    >
+                                        <Image
+                                            src={country.flag}
+                                            alt={country.name}
+                                            width={20}
+                                            height={20}
+                                            className="rounded-full"
+                                        />
 
-                            <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
+                                        <span className="text-xs md:text-sm text-white">
+                                            {country.name}
+                                        </span>
 
-                                {/* Primary */}
-
-                                <button
-                                    className="h-12 px-8 rounded-full
-                        bg-[#EB643F]
-                        text-white
-                        text-sm
-                        font-semibold
-                        shadow-xl
-                        hover:bg-[#D95A37]
-                        hover:shadow-2xl
-                        transition-all duration-300"
-                                >
-
-                                    Get a Local Number
-
-                                </button>
-
-                                {/* Secondary */}
-
-                                <button
-                                    className="h-12 px-8 rounded-full
-                        border border-white/20
-                        text-white
-                        text-sm
-                        font-semibold
-                        hover:bg-white
-                        hover:text-[#123533]
-                        transition-all duration-300"
-                                >
-
-                                    Switch from Skype
-
-                                </button>
-
-                                {/* Outline */}
-
-                                <button
-                                    className="h-12 px-8 rounded-full
-                        border border-white/20
-                        text-white
-                        text-sm
-                        font-semibold
-                        hover:bg-white
-                        hover:text-[#123533]
-                        transition-all duration-300"
-                                >
-
-                                    Find Help
-
-                                </button>
-
+                                        <span
+                                            className="
+                  rounded-full
+                  bg-white/10
+                  px-2
+                  py-0.5
+                  text-[10px]
+                  font-semibold
+                  uppercase
+                  tracking-wide
+                  text-[#8FE2BE]
+                "
+                                        >
+                                            LIVE
+                                        </span>
+                                    </div>
+                                ))}
                             </div>
 
-                            {/* Bottom Link */}
+                            {/* Buttons */}
+                            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
 
-                            <p className="mt-8 text-sm text-white/60">
+                                <Link href="/get-a-local-number">
+                                    <button
+                                        className="
+              rounded-xl
+              border
+              border-white/20
+              bg-white/5
+              px-8
+              py-3.5
+              text-sm
+              font-semibold
+              text-white
+              backdrop-blur-md
+              transition-all
+              hover:bg-white/10
+            "
+                                    >
+                                        Explore Global Coverage
+                                    </button>
+                                </Link>
 
-                                Comparing options?
+                                <Link href="#">
+                                    <button
+                                        className="
+              rounded-xl
+              border
+              border-white/20
+              bg-transparent
+              px-8
+              py-3.5
+              text-sm
+              font-semibold
+              text-white
+              transition-all
+              hover:bg-white/10
+            "
+                                    >
+                                        Request a Market
+                                    </button>
+                                </Link>
+                            </div>
 
-                                <button className="ml-1 text-[#F5A48D] font-medium hover:underline">
+                        </div>
+                    </div>
 
-                                    See Pricing →
+                </div>
+            </section>
+            {/* Long-Term Growth Section */}
+            <section className="bg-[#F7F3ED] px-4 py-8 md:py-12 dark:bg-slate-950">
+                <div className="mx-auto max-w-6xl">
 
-                                </button>
+                    <div className="grid items-center gap-14 lg:grid-cols-2">
 
+                        {/* Left */}
+                        <div>
+                            <p className="mb-4 text-[10px] md:text-xs font-semibold uppercase tracking-[4px] text-[#F26B45]">
+                                Start Simple. Stay Because It Grows With You.
                             </p>
+
+                            <h2 className="max-w-xl text-[30px] font-bold leading-tight text-[#143A36] dark:text-white md:text-[40px]">
+                                A long-term communication layer, not a one-time number purchase.
+                            </h2>
+
+                            <p className="mt-8 max-w-xl text-[15px] leading-8 text-slate-500 dark:text-slate-400">
+                                A business may start with one local number. As needs grow,
+                                Zoiko Local adds users, markets, support paths, AI Receptionist
+                                coverage, video, reporting and multi-market setup — so the
+                                platform scales into a lasting part of how you operate.
+                            </p>
+                            <Link href="/get-a-local-number">
+                                <button
+                                    className="
+            mt-10
+            rounded-lg
+            bg-[#F26B45]
+            px-8
+            py-4
+            text-sm
+            font-semibold
+            text-white
+            shadow-[0_10px_25px_rgba(242,107,69,0.25)]
+            transition-all
+            duration-300
+            hover:-translate-y-0.5
+            hover:bg-[#EB5D34]
+          "
+                                >
+                                    Start with a Local Number →
+                                </button>
+                            </Link>
+                        </div>
+
+                        {/* Right Card */}
+                        <div className="mx-auto w-full max-w-[520px]">
+
+                            <div
+                                className="
+            overflow-hidden
+            rounded-[18px]
+            bg-white
+            shadow-[0_20px_50px_rgba(0,0,0,0.08)]
+            dark:bg-slate-900
+          "
+                            >
+
+                                {/* Header */}
+                                <div className="bg-[#0D5C54] px-6 py-4">
+                                    <h3 className="text-sm font-medium text-white">
+                                        Grows with your business
+                                    </h3>
+                                </div>
+
+                                {/* Body */}
+                                <div className="p-6">
+
+                                    <div className="space-y-4">
+
+                                        {[
+                                            "Add numbers by market",
+                                            "Add users and teams",
+                                            "Add call routing",
+                                            "Add AI Receptionist coverage",
+                                            "Add video for high-trust conversations",
+                                            "Add multi-market setup as you expand",
+                                        ].map((item) => (
+                                            <div
+                                                key={item}
+                                                className="flex items-start gap-3"
+                                            >
+                                                <div className="mt-0.5">
+                                                    <FiCheck
+                                                        size={16}
+                                                        className="text-[#0D7A4D]"
+                                                    />
+                                                </div>
+
+                                                <span className="text-[14px] text-[#4A4A4A] dark:text-slate-300">
+                                                    {item}
+                                                </span>
+                                            </div>
+                                        ))}
+
+                                    </div>
+
+                                </div>
+
+                            </div>
 
                         </div>
 
                     </div>
 
                 </div>
+            </section>
+            {/* FAQ */}
+            <Faq
+                heading="Questions"
+                subHeading="The Zoiko Local platform, answered."
+                items={faqItems}
+            />
+            {/* Final CTA */}
+            <section className="bg-[#F7F3ED] px-4 py-8 md:py-14 dark:bg-slate-950">
+                <div className="mx-auto max-w-6xl">
+                    <div
+                        className="
+        relative
+        overflow-hidden
+        rounded-[24px]
+        bg-[#0D5C54]
+        px-6
+        py-16
+        text-center
+        shadow-[0_20px_60px_rgba(0,0,0,0.12)]
 
+        md:px-12
+        md:py-12
+      "
+                    >
+                        {/* Background Glow */}
+                        <div
+                            className="
+          absolute
+          right-0
+          top-0
+          h-72
+          w-72
+          rounded-full
+          bg-[radial-gradient(circle,rgba(255,255,255,0.08),transparent_70%)]
+        "
+                        />
+
+                        <div className="relative z-10">
+                            {/* Heading */}
+                            <h2 className="text-[30px] font-bold text-white md:text-[40px]">
+                                Ready to sound local where it matters?
+                            </h2>
+
+                            {/* Description */}
+                            <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-7 text-white/70">
+                                Start with a local number your customers recognize, then scale
+                                into calling, video, routing, and an AI Receptionist as your
+                                business grows.
+                            </p>
+
+                            {/* Buttons */}
+                            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+
+                                {/* Primary */}
+                                <Link href="/get-a-local-number">
+                                    <button
+                                        className="
+              inline-flex
+              items-center
+              gap-2
+              rounded-lg
+              bg-[#F26B45]
+              px-6
+              py-3.5
+              text-sm
+              font-semibold
+              text-white
+              transition-all
+              duration-300
+              hover:bg-[#EB5D34]
+              hover:-translate-y-0.5
+            "
+                                    >
+                                        Get a Local Number
+                                        <FiArrowRight size={15} />
+                                    </button>
+                                </Link>
+
+                                {/* Secondary */}
+                                <Link href="/get-a-local-number">
+                                    <button
+                                        className="
+              rounded-lg
+              border
+              border-white/20
+              bg-transparent
+              px-6
+              py-3.5
+              text-sm
+              font-semibold
+              text-white
+              transition-all
+              duration-300
+              hover:bg-white/10
+            "
+                                    >
+                                        Check Number Availability
+                                    </button>
+                                </Link>
+
+                                {/* Third */}
+                                <Link href="/plans-and-pricing">
+                                    <button
+                                        className="
+              rounded-lg
+              border
+              border-white/20
+              bg-transparent
+              px-6
+              py-3.5
+              text-sm
+              font-semibold
+              text-white
+              transition-all
+              duration-300
+              hover:bg-white/10
+            "
+                                    >
+                                        See Pricing
+                                    </button>
+                                </Link>
+                            </div>
+
+                            {/* Bottom Text */}
+                            <p className="mt-8 text-[12px] text-white/60">
+                                Replacing a retired Skype Number?
+                                <Link href="/switch-from-skype">
+                                    <span className="ml-1 font-semibold text-[#F6A27E]">
+                                        Switch from Skype →
+                                    </span>
+                                </Link>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </section>
         </>
     )

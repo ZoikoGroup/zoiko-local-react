@@ -2,6 +2,7 @@
 
 import { useState, type ReactNode } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   FiPhone, FiVideo, FiMic, FiMapPin, FiCheck, FiChevronDown,
   FiChevronUp, FiGlobe, FiSmartphone, FiAlertCircle, FiArrowRight,
@@ -211,12 +212,17 @@ export default function UnitedKingdom() {
               ))}
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
-              <button className="inline-flex items-center gap-2 rounded-full bg-[#d9603f] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#c25030]">
-                Get a UK Number <FiArrowRight size={14} />
-              </button>
-              <button className="inline-flex items-center gap-2 rounded-full border border-[#1c2b26]/20 bg-white px-7 py-3.5 text-sm font-semibold text-[#1c2b26] transition hover:bg-gray-50 dark:border-white/20 dark:bg-gray-800 dark:text-white">
-                See Pricing
-              </button>
+
+              <Link href="#get-a-uk-number">
+                <button className="inline-flex items-center gap-2 rounded-full bg-[#d9603f] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#c25030]">
+                  Get a UK Number <FiArrowRight size={14} />
+                </button>
+              </Link>
+              <Link href="/plans-and-pricing">
+                <button className="inline-flex items-center gap-2 rounded-full border border-[#1c2b26]/20 bg-white px-7 py-3.5 text-sm font-semibold text-[#1c2b26] transition hover:bg-gray-50 dark:border-white/20 dark:bg-gray-800 dark:text-white">
+                  See Pricing
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -329,9 +335,8 @@ export default function UnitedKingdom() {
             {availableNumbers.map((n, i) => (
               <div
                 key={n.number}
-                className={`flex items-center justify-between gap-4 px-5 py-4 ${
-                  i % 2 ? "bg-[#fbfaf6] dark:bg-gray-800/60" : "bg-white dark:bg-gray-800"
-                } ${i > 0 ? "border-t border-gray-100 dark:border-gray-700" : ""}`}
+                className={`flex items-center justify-between gap-4 px-5 py-4 ${i % 2 ? "bg-[#fbfaf6] dark:bg-gray-800/60" : "bg-white dark:bg-gray-800"
+                  } ${i > 0 ? "border-t border-gray-100 dark:border-gray-700" : ""}`}
               >
                 <div className="flex items-center gap-4">
                   <span className="font-mono text-[14px] font-semibold text-[#1c2b26] dark:text-white">{n.number}</span>
@@ -402,9 +407,11 @@ export default function UnitedKingdom() {
                 "Video escalation for high-value conversations",
               ].map((c) => <Check key={c}>{c}</Check>)}
             </ul>
-            <button className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#d9603f] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#c25030]">
-              Explore Calling <FiArrowRight size={14} />
-            </button>
+            <Link href="/calling">
+              <button className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#d9603f] px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-[#c25030]">
+                Explore Calling <FiArrowRight size={14} />
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -432,7 +439,7 @@ export default function UnitedKingdom() {
                 "UK emergency numbers: 999 and 112",
               ].map((c) => <Check key={c}>{c}</Check>)}
             </ul>
-            <a href="#" className="mt-6 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#d9603f] hover:underline">
+            <a href="/emergency-calling" className="mt-6 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-[#d9603f] hover:underline">
               Read emergency calling policy <FiArrowRight size={13} />
             </a>
           </div>
@@ -552,13 +559,13 @@ export default function UnitedKingdom() {
           <p className="mb-5 text-[13px] font-semibold text-gray-500 dark:text-gray-400">Also available in</p>
           <div className="flex flex-wrap gap-3">
             {relatedCountries.map((c) => (
-            //   <a
-            //     key={c.code}
-            //     href={`/countries/${c.code}`}
-            //     className="flex items-center gap-2 rounded-full border border-[#e8e2d8] bg-[#f7f4ee] px-4 py-2 text-[13px] font-medium text-[#1c2b26] transition hover:border-[#d9603f]/40 hover:bg-[#fdf3ee] dark:border-gray-700 dark:bg-gray-800 dark:text-white"
-            //   >
-                <span className="flex items-center gap-2 rounded-full border border-[#e8e2d8] bg-[#f7f4ee] px-4 py-2 text-[13px] font-medium text-[#1c2b26] transition hover:border-[#d9603f]/40 hover:bg-[#fdf3ee] dark:border-gray-700 dark:bg-gray-800 dark:text-white">{c.flag} {c.name}</span> 
-            //   </a>
+              //   <a
+              //     key={c.code}
+              //     href={`/countries/${c.code}`}
+              //     className="flex items-center gap-2 rounded-full border border-[#e8e2d8] bg-[#f7f4ee] px-4 py-2 text-[13px] font-medium text-[#1c2b26] transition hover:border-[#d9603f]/40 hover:bg-[#fdf3ee] dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+              //   >
+              <span className="flex items-center gap-2 rounded-full border border-[#e8e2d8] bg-[#f7f4ee] px-4 py-2 text-[13px] font-medium text-[#1c2b26] transition hover:border-[#d9603f]/40 hover:bg-[#fdf3ee] dark:border-gray-700 dark:bg-gray-800 dark:text-white">{c.flag} {c.name}</span>
+              //   </a>
             ))}
           </div>
         </div>
@@ -576,12 +583,16 @@ export default function UnitedKingdom() {
             layer with Zoiko Local.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-[14px] font-semibold text-[#d9603f] transition hover:bg-gray-50">
-              Find a UK Number <FiArrowRight size={14} />
-            </button>
-            <button className="inline-flex items-center gap-2 rounded-full border border-white/30 px-8 py-4 text-[14px] font-semibold text-white transition hover:bg-white/10">
-              Talk to Sales
-            </button>
+            <Link href="#get-a-uk-number">
+              <button className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-[14px] font-semibold text-[#d9603f] transition hover:bg-gray-50">
+                Find a UK Number <FiArrowRight size={14} />
+              </button>
+            </Link>
+            <Link href="/contact-sales">
+              <button className="inline-flex items-center gap-2 rounded-full border border-white/30 px-8 py-4 text-[14px] font-semibold text-white transition hover:bg-white/10">
+                Talk to Sales
+              </button>
+            </Link>
           </div>
           <p className="mt-6 text-[12.5px] text-white/60">
             No UK office required · Flexible monthly plans · Cancel anytime

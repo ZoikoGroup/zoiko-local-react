@@ -630,10 +630,10 @@ export default function PrivacyPolicy() {
               <h2 className="mb-4 text-[20px] font-bold text-[#1c2b26] dark:text-white">Related policies</h2>
               <div className="grid gap-3 sm:grid-cols-2">
                 {[
-                  { title: "Terms of Service", desc: "Your agreement with Zoiko Local." , href: "/zoiko-local-terms" },
-                  { title: "Acceptable Use Policy", desc: "Permitted and prohibited uses of the service." , href: "/zoiko-local-acceptable-use" },
-                  { title: "Data Processing Agreement", desc: "For customers processing personal data through the service." , href: "/zoiko-local-dpa" },
-                  { title: "AI Terms", desc: "Specific terms for AI Receptionist and AI-powered features." , href: "/zoiko-local-ai-terms" },
+                  { title: "Terms of Service", desc: "Your agreement with Zoiko Local." , href: "/terms-of-service" },
+                  { title: "Acceptable Use Policy", desc: "Permitted and prohibited uses of the service." , href: "/acceptable-use-policy" },
+                  { title: "Data Processing Agreement", desc: "For customers processing personal data through the service." , href: "/data-processing-agreement" },
+                  { title: "AI Terms", desc: "Specific terms for AI Receptionist and AI-powered features." , href: "/ai-terms" },
                   { title: "Recording & Consent", desc: "Call recording notice and consent requirements." , href: "/recording-consent" },
                   { title: "Law Enforcement Requests", desc: "How we handle legal requests for data." , href: "/law-enforcement" },
                 ].map((p) => (
@@ -670,7 +670,7 @@ export default function PrivacyPolicy() {
               <FiMail size={14} /> Contact privacy team
             </a>
             <a
-              href="/"
+              href="/contact-us"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
             >
               Submit a privacy request

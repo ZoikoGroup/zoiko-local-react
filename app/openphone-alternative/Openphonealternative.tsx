@@ -101,7 +101,7 @@ export default function Openphonealternative() {
                             {/* Buttons */}
 
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                                <button
+                                <a href="/get-a-local-number"><button
                                     className="h-12 px-8 rounded-xl
                               bg-[#EB643F]
                               text-white
@@ -112,9 +112,9 @@ export default function Openphonealternative() {
                                 >
 
                                     Get a Local Number →
-                                </button>
+                                </button></a>
 
-                                <button
+                                <a href="/terms-of-service"><button
                                     className="h-12 px-8 rounded-xl
                               border border-[#0F6660]
                               dark:border-slate-600
@@ -129,7 +129,7 @@ export default function Openphonealternative() {
                                 >
 
                                     See if Zoiko Local Fits
-                                </button>
+                                </button></a>
                             </div>
 
                             {/* Migration */}
@@ -137,9 +137,9 @@ export default function Openphonealternative() {
                             <p className="mt-8 text-sm text-gray-500 dark:text-gray-400">
                                 Also replacing a Skype Number?
 
-                                <span className="ml-1 text-[#EB643F] font-medium cursor-pointer hover:underline">
+                                <a href="">  <span className="ml-1 text-[#EB643F] font-medium cursor-pointer hover:underline">
                                     Switch from Skype →
-                                </span>
+                                </span></a>
                             </p>
 
                             {/* Bottom Features */}
@@ -243,7 +243,7 @@ export default function Openphonealternative() {
                                 ))}
                             </div>
 
-                            <button
+                            <a href="get-a-local-number">   <button
                                 className="mt-10 h-12 px-8 rounded-xl
                                 bg-[#EB643F]
                                 text-white
@@ -254,7 +254,7 @@ export default function Openphonealternative() {
                             >
 
                                 Get a Local Number →
-                            </button>
+                            </button></a>
                         </div>
 
                         {/* RIGHT */}
@@ -470,7 +470,7 @@ export default function Openphonealternative() {
 
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
                                 {/* Primary */}
-                                <button
+                                <a href="/get-a-local-number"> <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -483,9 +483,9 @@ export default function Openphonealternative() {
 
                                     Get a Local Number →
                                 </button>
-
+                                </a>
                                 {/* Secondary */}
-                                <button
+                                <a href="/plans-and-pricing"><button
                                     className="h-12 px-8 rounded-xl
                         bg-white
                         text-[#123533]
@@ -496,10 +496,10 @@ export default function Openphonealternative() {
                                 >
 
                                     See Pricing
-                                </button>
+                                </button></a>
 
                                 {/* Outline */}
-                                <button
+                                <a href="/contact-sales"> <button
                                     className="h-12 px-8 rounded-xl
                         border border-white/25
                         text-white
@@ -511,7 +511,7 @@ export default function Openphonealternative() {
                                 >
 
                                     Talk to Sales
-                                </button>
+                                </button></a>
                             </div>
 
                             {/* Footer Text */}
@@ -519,9 +519,9 @@ export default function Openphonealternative() {
 
                                 Replacing a Skype Number too?
 
-                                <span className="ml-1 text-[#F5A58C] hover:underline cursor-pointer">
+                               <a href="">  <span className="ml-1 text-[#EB643F] font-medium cursor-pointer hover:underline">
                                     Switch from Skype →
-                                </span>
+                                </span></a>
                             </p>
                         </div>
                     </div>

@@ -9,48 +9,49 @@ import {
     FiActivity,
 } from "react-icons/fi";
 import Faq from '../Components/Faq';
+import Link from 'next/link';
 
 const faqItems = [
-  {
-    question: "What is Zoiko Local?",
-    answer:
-      "Zoiko Local is a business communication platform that gives you local phone numbers, calling, video, and an AI Receptionist — all connected in one workspace. It's built for businesses that need to sound local and stay reachable across markets.",
-  },
-  {
-    question: "What does the platform include?",
-    answer:
-      "Zoiko Local includes local numbers across supported markets, inbound and outbound calling, call routing, smart voicemail, video meetings, an AI Receptionist, and a shared team workspace — all from one platform.",
-  },
-  {
-    question: "Can I get a local number and make business calls?",
-    answer:
-      "Yes. You can get a local number in supported markets and use it to receive inbound calls and — on supported plans — make outbound calls with that number as your caller ID.",
-  },
-  {
-    question: "Does Zoiko Local include an AI Receptionist?",
-    answer:
-      "Yes. The AI Receptionist answers calls when your team is unavailable, screens and qualifies callers, captures the intent of the call, and routes or logs inquiries automatically — so no call is ever lost.",
-  },
-  {
-    question: "Can it replace a Skype Number?",
-    answer:
-      "Zoiko Local is a direct alternative for businesses moving away from Skype Numbers. You can get an equivalent local number, retain the same market presence, and gain additional business features like routing, video, and AI call handling.",
-  },
-  {
-    question: "Can remote teams use Zoiko Local?",
-    answer:
-      "Yes. Zoiko Local is built for distributed and remote teams. Multiple team members can share a single business line, with calls routed by role, availability, or department — regardless of where each person is located.",
-  },
-  {
-    question: "Can it support customer support calls?",
-    answer:
-      "Yes. You can set up a dedicated support number, route calls to the right team, capture missed calls with the AI Receptionist, and track call history — making Zoiko Local a reliable layer for customer-facing support operations.",
-  },
-  {
-    question: "Can I add more numbers or markets later?",
-    answer:
-      "Yes. You can add numbers in additional markets as your business expands. Zoiko Local is designed to scale — start with one number and grow your presence, team size, and routing complexity over time.",
-  },
+    {
+        question: "What is Zoiko Local?",
+        answer:
+            "Zoiko Local is a business communication platform that gives you local phone numbers, calling, video, and an AI Receptionist — all connected in one workspace. It's built for businesses that need to sound local and stay reachable across markets.",
+    },
+    {
+        question: "What does the platform include?",
+        answer:
+            "Zoiko Local includes local numbers across supported markets, inbound and outbound calling, call routing, smart voicemail, video meetings, an AI Receptionist, and a shared team workspace — all from one platform.",
+    },
+    {
+        question: "Can I get a local number and make business calls?",
+        answer:
+            "Yes. You can get a local number in supported markets and use it to receive inbound calls and — on supported plans — make outbound calls with that number as your caller ID.",
+    },
+    {
+        question: "Does Zoiko Local include an AI Receptionist?",
+        answer:
+            "Yes. The AI Receptionist answers calls when your team is unavailable, screens and qualifies callers, captures the intent of the call, and routes or logs inquiries automatically — so no call is ever lost.",
+    },
+    {
+        question: "Can it replace a Skype Number?",
+        answer:
+            "Zoiko Local is a direct alternative for businesses moving away from Skype Numbers. You can get an equivalent local number, retain the same market presence, and gain additional business features like routing, video, and AI call handling.",
+    },
+    {
+        question: "Can remote teams use Zoiko Local?",
+        answer:
+            "Yes. Zoiko Local is built for distributed and remote teams. Multiple team members can share a single business line, with calls routed by role, availability, or department — regardless of where each person is located.",
+    },
+    {
+        question: "Can it support customer support calls?",
+        answer:
+            "Yes. You can set up a dedicated support number, route calls to the right team, capture missed calls with the AI Receptionist, and track call history — making Zoiko Local a reliable layer for customer-facing support operations.",
+    },
+    {
+        question: "Can I add more numbers or markets later?",
+        answer:
+            "Yes. You can add numbers in additional markets as your business expands. Zoiko Local is designed to scale — start with one number and grow your presence, team size, and routing complexity over time.",
+    },
 ];
 
 export default function Platform() {
@@ -79,21 +80,25 @@ export default function Platform() {
 
                             {/* Buttons */}
                             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                                <button className="flex items-center justify-center gap-2 rounded-2xl bg-[#F26B45] px-7 py-3.5 font-semibold text-white transition hover:bg-[#EB5D34]">
-                                    Get a Local Number
-                                    <FiArrowRight />
-                                </button>
+                                <Link href="/get-a-local-number">
+                                    <button className="flex items-center justify-center gap-2 rounded-2xl bg-[#F26B45] px-7 py-3.5 font-semibold text-white transition hover:bg-[#EB5D34]">
+                                        Get a Local Number
+                                        <FiArrowRight />
+                                    </button>
+                                </Link>
 
+                                {/* <Link href="/explore-the-platform"> */}
                                 <button className="rounded-2xl border border-[#D8D2C8] bg-white px-7 py-3.5 font-semibold text-[#143A36] transition hover:bg-[#F8F5F1] dark:border-slate-700 dark:bg-slate-900 dark:text-white">
                                     Explore the Platform
                                 </button>
+                                {/* </Link> */}
                             </div>
 
                             {/* Supporting Text */}
                             <p className="mt-8 text-sm text-slate-500 dark:text-slate-400">
                                 Replacing a retired Skype Number?
                                 <span className="ml-1 font-semibold text-[#F26B45]">
-                                    Switch from Skype →
+                                    <a href="/switch-from-skype">Switch from Skype →</a>
                                 </span>
                             </p>
 
@@ -339,6 +344,7 @@ export default function Platform() {
                                 desc:
                                     "Create local presence in the markets your customers recognize.",
                                 link: "Explore Local Numbers",
+                                href: "/get-a-local-number",
                             },
                             {
                                 icon: FiPhone,
@@ -346,6 +352,7 @@ export default function Platform() {
                                 desc:
                                     "Make and receive business calls with a professional local identity.",
                                 link: "Explore Calling",
+                                href: "/calling",
                             },
                             {
                                 icon: FiVideo,
@@ -353,6 +360,7 @@ export default function Platform() {
                                 desc:
                                     "Move high-trust conversations into secure video when voice isn't enough.",
                                 link: "Explore Video",
+                                href: "/video",
                             },
                             {
                                 icon: FiMic,
@@ -362,6 +370,7 @@ export default function Platform() {
                                 desc:
                                     "Answers, qualifies and captures calls when your team is busy or unavailable — so no enquiry is ever lost.",
                                 link: "Explore AI Receptionist",
+                                href: "/ai-receptionist",
                             },
                         ].map((item) => {
                             const Icon = item.icon;
@@ -428,10 +437,12 @@ export default function Platform() {
                                     </p>
 
                                     {/* Link */}
-                                    <button className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#F26B45] transition hover:gap-3">
-                                        {item.link}
-                                        <FiArrowRight size={14} />
-                                    </button>
+                                    <Link href={item.href}>
+                                        <button className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#F26B45] transition hover:gap-3">
+                                            {item.link}
+                                            <FiArrowRight size={14} />
+                                        </button>
+                                    </Link>
                                 </div>
                             );
                         })}
@@ -521,8 +532,9 @@ export default function Platform() {
 
                     {/* CTA */}
                     <div className="mt-12 flex justify-center">
-                        <button
-                            className="
+                        <Link href="/get-a-local-number">
+                            <button
+                                className="
           inline-flex
           items-center
           gap-2
@@ -539,10 +551,11 @@ export default function Platform() {
           hover:-translate-y-0.5
           hover:bg-[#EA5F36]
         "
-                        >
-                            Check Number Availability
-                            <FiArrowRight size={16} />
-                        </button>
+                            >
+                                Check Number Availability
+                                <FiArrowRight size={16} />
+                            </button>
+                        </Link>
                     </div>
 
                 </div>
@@ -822,8 +835,9 @@ export default function Platform() {
 
                     {/* CTA */}
                     <div className="mt-12 flex justify-center">
-                        <button
-                            className="
+                        <Link href="/get-a-local-number">
+                            <button
+                                className="
           inline-flex
           items-center
           gap-2
@@ -840,10 +854,11 @@ export default function Platform() {
           hover:-translate-y-0.5
           hover:bg-[#EA5F36]
         "
-                        >
-                            Get a Local Number
-                            <FiArrowRight size={15} />
-                        </button>
+                            >
+                                Get a Local Number
+                                <FiArrowRight size={15} />
+                            </button>
+                        </Link>
                     </div>
 
                 </div>
@@ -971,8 +986,9 @@ export default function Platform() {
                             {/* Buttons */}
                             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
 
-                                <button
-                                    className="
+                                <Link href="/get-a-local-number">
+                                    <button
+                                        className="
               rounded-xl
               border
               border-white/20
@@ -986,12 +1002,14 @@ export default function Platform() {
               transition-all
               hover:bg-white/10
             "
-                                >
-                                    Explore Global Coverage
-                                </button>
+                                    >
+                                        Explore Global Coverage
+                                    </button>
+                                </Link>
 
-                                <button
-                                    className="
+                                <Link href="#">
+                                    <button
+                                        className="
               rounded-xl
               border
               border-white/20
@@ -1004,10 +1022,10 @@ export default function Platform() {
               transition-all
               hover:bg-white/10
             "
-                                >
-                                    Request a Market
-                                </button>
-
+                                    >
+                                        Request a Market
+                                    </button>
+                                </Link>
                             </div>
 
                         </div>
@@ -1037,9 +1055,9 @@ export default function Platform() {
                                 coverage, video, reporting and multi-market setup — so the
                                 platform scales into a lasting part of how you operate.
                             </p>
-
-                            <button
-                                className="
+                            <Link href="/get-a-local-number">
+                                <button
+                                    className="
             mt-10
             rounded-lg
             bg-[#F26B45]
@@ -1054,9 +1072,10 @@ export default function Platform() {
             hover:-translate-y-0.5
             hover:bg-[#EB5D34]
           "
-                            >
-                                Start with a Local Number →
-                            </button>
+                                >
+                                    Start with a Local Number →
+                                </button>
+                            </Link>
                         </div>
 
                         {/* Right Card */}
@@ -1175,8 +1194,9 @@ export default function Platform() {
                             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
 
                                 {/* Primary */}
-                                <button
-                                    className="
+                                <Link href="/get-a-local-number">
+                                    <button
+                                        className="
               inline-flex
               items-center
               gap-2
@@ -1192,14 +1212,16 @@ export default function Platform() {
               hover:bg-[#EB5D34]
               hover:-translate-y-0.5
             "
-                                >
-                                    Get a Local Number
-                                    <FiArrowRight size={15} />
-                                </button>
+                                    >
+                                        Get a Local Number
+                                        <FiArrowRight size={15} />
+                                    </button>
+                                </Link>
 
                                 {/* Secondary */}
-                                <button
-                                    className="
+                                <Link href="/get-a-local-number">
+                                    <button
+                                        className="
               rounded-lg
               border
               border-white/20
@@ -1213,13 +1235,15 @@ export default function Platform() {
               duration-300
               hover:bg-white/10
             "
-                                >
-                                    Check Number Availability
-                                </button>
+                                    >
+                                        Check Number Availability
+                                    </button>
+                                </Link>
 
                                 {/* Third */}
-                                <button
-                                    className="
+                                <Link href="/plans-and-pricing">
+                                    <button
+                                        className="
               rounded-lg
               border
               border-white/20
@@ -1233,18 +1257,20 @@ export default function Platform() {
               duration-300
               hover:bg-white/10
             "
-                                >
-                                    See Pricing
-                                </button>
-
+                                    >
+                                        See Pricing
+                                    </button>
+                                </Link>
                             </div>
 
                             {/* Bottom Text */}
                             <p className="mt-8 text-[12px] text-white/60">
                                 Replacing a retired Skype Number?
-                                <span className="ml-1 font-semibold text-[#F6A27E]">
-                                    Switch from Skype →
-                                </span>
+                                <Link href="/switch-from-skype">
+                                    <span className="ml-1 font-semibold text-[#F6A27E]">
+                                        Switch from Skype →
+                                    </span>
+                                </Link>
                             </p>
                         </div>
                     </div>
