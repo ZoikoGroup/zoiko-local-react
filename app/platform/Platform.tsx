@@ -15,22 +15,32 @@ const faqItems = [
     {
         question: "What is Zoiko Local?",
         answer:
-            "Zoiko Local is a business communication platform that gives you local phone numbers, calling, video, and an AI Receptionist — all connected in one workspace. It's built for businesses that need to sound local and stay reachable across markets.",
+           "Zoiko Local is an enterprise business communications platform that unifies virtual local phone numbers, voice calling, video conferencing, intelligent call routing, and an AI Receptionist into a single workspace.",
     },
     {
-        question: "What does the platform include?",
+        question: "What is the Zoiko Local platform?",
         answer:
-            "Zoiko Local includes local numbers across supported markets, inbound and outbound calling, call routing, smart voicemail, video meetings, an AI Receptionist, and a shared team workspace — all from one platform.",
+            "The Zoiko Local platform consolidates virtual local numbers, business voice calling, video meetings, call distribution, and an AI Receptionist into a unified web and mobile workspace. It streamlines local market reach and customer communications for growing businesses at www.zoikolocal.com.",
+    },
+    {
+        question: "What does the Zoiko Local platform include?",
+        answer:
+            "The platform includes virtual local numbers, inbound and outbound calling, call forwarding, voicemail transcription, video meetings, an AI Receptionist, and administrative team controls.",
+    },
+    {
+        question: "Can Zoiko Local support businesses in multiple markets?",
+        answer:
+        "Zoiko Local enables companies to establish a local communications presence across multiple geographic markets simultaneously. Organizations can add new virtual numbers, manage team seats, and configure regional call routing through a central dashboard.",
     },
     {
         question: "Can I get a local number and make business calls?",
         answer:
-            "Yes. You can get a local number in supported markets and use it to receive inbound calls and — on supported plans — make outbound calls with that number as your caller ID.",
+            "Businesses can provision virtual local numbers in supported international markets and use them for inbound and outbound calling via web or mobile apps.",
     },
     {
         question: "Does Zoiko Local include an AI Receptionist?",
         answer:
-            "Yes. The AI Receptionist answers calls when your team is unavailable, screens and qualifies callers, captures the intent of the call, and routes or logs inquiries automatically — so no call is ever lost.",
+            "Zoiko Local includes an automated AI Receptionist that answers calls 24/7, screens caller intent, answers routine questions, and routes urgent calls to staff.",
     },
     {
         question: "Can it replace a Skype Number?",
@@ -40,17 +50,22 @@ const faqItems = [
     {
         question: "Can remote teams use Zoiko Local?",
         answer:
-            "Yes. Zoiko Local is built for distributed and remote teams. Multiple team members can share a single business line, with calls routed by role, availability, or department — regardless of where each person is located.",
+        "Zoiko Local is built for remote and distributed teams, providing centralized virtual business lines, multi-line ring groups, and location-aware call distribution.",
     },
     {
-        question: "Can it support customer support calls?",
+        question: "Can Zoiko Local support customer support calls?",
         answer:
-            "Yes. You can set up a dedicated support number, route calls to the right team, capture missed calls with the AI Receptionist, and track call history — making Zoiko Local a reliable layer for customer-facing support operations.",
+            "Companies utilize Zoiko Local to deploy dedicated customer support numbers, route calls across team queues, and ensure after-hours AI call handling.",
     },
     {
         question: "Can I add more numbers or markets later?",
         answer:
             "Yes. You can add numbers in additional markets as your business expands. Zoiko Local is designed to scale — start with one number and grow your presence, team size, and routing complexity over time.",
+    },
+    {
+        question: "Zoiko Local vs. Basic Business Number Services",
+        answer:
+        "Zoiko Local extends beyond single virtual phone lines by combining localized phone numbers with multi-line voice calling, intelligent call distribution, HD video meetings, team collaboration controls, and automated AI Receptionists in one platform at www.zoikolocal.com.",
     },
 ];
 

@@ -184,10 +184,13 @@ const proof: { title: string; desc: string; icon: IconType }[] = [
 
 const faqs = [
   { q: "What is Zoiko Local for Business?", a: "A single workspace that brings together local numbers, business calling, video and an AI Receptionist — so calls, meetings and follow-up live in one managed business layer instead of scattered tools." },
+  {q: "What are Zoiko Local business communications?", a: "Zoiko Local business communications encompass local virtual phone lines, HD voice calling, intelligent call distribution, video meetings, visual voicemail, and automated AI answering tools in a centralized software interface."},
   { q: "Can I use existing numbers?", a: "In many markets you can port an existing number into Zoiko Local. Portability and timelines depend on your current provider, country and number type — we'll confirm eligibility before you switch." },
+  {q: "Can Zoiko Local help businesses migrate existing numbers?", a: "Zoiko Local manages seamless porting pathways for businesses seeking to migrate existing landline or virtual numbers, ensuring service continuity and carrier compliance."}, 
   { q: "Can I add AI Receptionist later?", a: "Yes. Start with a number and calling, then activate AI Receptionist whenever answering becomes business-critical. Each capability can stand alone or work together." },
   { q: "Can different teams use different numbers?", a: "Yes — assign separate lines to branches, campaigns and departments, each with its own routing rules and business hours, while keeping central control of the workspace." },
   { q: "Does this replace Skype?", a: "It's built for teams moving beyond standalone calling and legacy number workflows into a managed business layer. Zoiko Local is not affiliated with or endorsed by Microsoft." },
+  {q: "Zoiko Local vs. Separate Business Communication Tools", a: "Zoiko Local eliminates software fragmentation by consolidating local virtual phone numbers, cloud calling, video meetings, call forwarding, and AI receptionist tools into one workspace at www.zoikolocal.com."},
   { q: "Is it suitable for regulated businesses?", a: "It supports roles, routing, consent and review workflows, and configurable data retention. These are controls, not a compliance guarantee — requirements vary by jurisdiction and should be confirmed for your use case." },
   { q: "Can I route by location?", a: "Yes. Configure routing rules, business hours and AI intake per branch or market, so each location keeps a local presence under one central workflow." },
   { q: "Can customers speak to a person?", a: "Always. The AI Receptionist qualifies and captures, then hands off to your team based on rules you set — escalation to a human is built into the workflow." },

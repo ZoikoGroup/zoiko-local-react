@@ -84,22 +84,30 @@ const faqs = [
 
   },
   {
+    q: "What is a local business number?",
+    a: "A local business number is a designated phone line featuring a specific geographic area code. In Zoiko Local, a local number allows a business to present a recognizable local caller ID to prospective clients while managing calls through cloud software.",
+  },
+  {
     q: "Why do local numbers build customer trust?",
     a: "Customers are often more comfortable calling a recognizable local number, which can help create familiarity, credibility, and a stronger local presence.",
   },
   {
     q: "Can I get a local business number without an office?",
-    a: "Yes. In many supported markets, businesses can obtain local numbers without maintaining a physical office, subject to local regulations and eligibility requirements.",
+    a: "Zoiko Local provides virtual local phone numbers in supported international markets without requiring a physical office, subject to local telecommunications regulations, business entity validation, and identity verification rules.",
 
   },
   {
     q: "Can I use a local number for international business?",
-    a: "Yes. Many businesses use local numbers in different countries or regions to create a familiar customer experience while managing communications centrally.",
+    a: "Businesses utilize local geographic numbers in foreign markets to build regional customer trust and improve call answer rates, while managing global calls centrally through www.zoikolocal.com.",
   },
   {
-    q: "Can I separate it from my personal phone?",
-    a: "Yes. A dedicated business number helps separate personal and business communications while maintaining a more professional customer experience.",
+    q: "Can I separate a business number from my personal phone?",
+    a: "Zoiko Local assigns dedicated business phone numbers that operate on existing personal devices, keeping business calling, text messaging, contacts, and voicemail completely separate from personal mobile activity.",
   },
+  {
+    q: "Why Use Zoiko Local for a Local Business Number?",
+    a: "Zoiko Local pairs virtual local market numbers with enterprise voice calling, custom call distribution, call logs, visual voicemail, video conferencing, and automated AI call screening at www.zoikolocal.com.",
+  }
 ];
 
 // ─── PAGE ─────────────────────────────────────────────────────────────────────

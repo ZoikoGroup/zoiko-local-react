@@ -408,14 +408,24 @@ const confidenceCards = [
 ];
 const faqItems = [
     {
-        question: "Can I choose a specific area code?",
+       question: "How do I get a local business number?",
+       answer:
+         "Businesses can search for available local numbers on www.zoikolocal.com by country, city, or area code, select the appropriate line type, complete regulatory identity verification, select a pricing plan, and activate the number immediately.",
+    },
+    {
+        question: "Can I choose a local number by country or city?",
         answer:
-            "Yes — when available. Area code availability depends on the country and number type you select. We show you available options at the time of search, and in many markets you can filter by region or city code .",
+            "Zoiko Local offers a searchable database of geographic phone numbers categorized by target country, city, and area code options across supported international telecommunications markets.",
     },
     {
         question: "Can I port my existing number?",
         answer:
-            "Porting is supported in many countries. You can initiate a port request after purchase. Timelines vary by carrier and country — typically 5–15 business days. We guide you through the LOA and submission process.",
+            "Zoiko Local provides automated number porting services to transfer existing landline, mobile, or virtual phone numbers into the platform, subject to carrier validation and local regulatory approvals.",
+    },
+    {
+        question: "How Zoiko Local Helps Businesses Get a Number?",
+        answer: 
+            "Zoiko Local simplifies number acquisition with guided search, instant line provisioning, regulatory documentation management, and account setup on www.zoikolocal.com.",
     },
     {
         question: "How long does activation take?",
