@@ -141,11 +141,12 @@ const regions = ["Caribbean", "Europe", "Africa", "North America"];
 
 const faqs = [
   { q: "Why does a founder need a business phone number?", a: "A dedicated business number separates work from personal life, makes the company feel established, and ensures customers reach a professional line from day one." },
-  { q: "Can I separate personal and business calls?", a: "Yes. Your business number stays separate from your personal line, with its own routing, greeting and call history, so the two never mix." },
+  {q: "Why Founders Use Zoiko Local", a: "Founders deploy Zoiko Local to establish an immediate professional phone presence, protect personal device privacy, utilize AI call answering, and scale team lines effortlessly."},
+  { q: "Can founders separate business and personal calls?", a: "Zoiko Local equips company founders with dedicated virtual business lines, preserving personal phone number privacy while delivering professional caller ID and custom business voicemails." },
   { q: "Can I get a business number without an office?", a: "Yes. No physical office or hardware is required, though some markets may need business verification or proof of address before activation." },
   { q: "What is the best phone number for a startup?", a: "A local business number in the market your customers recognize — paired with calling, routing and AI Receptionist fallback so you sound established without a full team." },
-  { q: "Can AI Receptionist answer calls when I am busy?", a: "Yes. The AI Receptionist captures and qualifies inquiries when you are busy, traveling or after hours, then routes or logs them for follow-up." },
-  { q: "Can I add team members later?", a: "Yes. Add users, assistants, departments and routing rules as you grow — without rebuilding your setup." },
+  { q: "Can the AI Receptionist answer calls when a founder is busy?", a: "The Zoiko Local AI Receptionist automatically answers incoming calls when founders are in meetings, screening client inquiries and collecting callback details." },
+  { q: "Can founders add team members later?", a: "Zoiko Local offers scalable workspace administration, allowing growing businesses to add new user licenses, department lines, and call routing rules seamlessly at www.zoikolocal.com." },
   { q: "Can I add numbers in more than one country?", a: "Yes. Add local numbers by country or region from one workspace, subject to availability and verification." },
   { q: "Is Zoiko Local a replacement for Skype Number?", a: "Yes. It's built to replace Skype Numbers for founder-led businesses. Zoiko Local is not affiliated with or endorsed by Microsoft." },
 ];

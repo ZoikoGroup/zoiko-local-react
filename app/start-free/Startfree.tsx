@@ -14,10 +14,20 @@ import {
 
 const faqItems = [
   {
-    question: "Is it really free to start?",
+    question: "How can I get started with Zoiko Local?",
     answer:
-      "Yes. You can create a workspace, check number availability, and test calling and video at no cost. You only pay when you activate a number or select a paid plan.",
+      "To start with Zoiko Local, register a workspace at www.zoikolocal.com, select target local market phone numbers, configure business call distribution rules, and invite team members.",
   },
+  {
+    question: "Can I bring my existing business number to Zoiko Local?",
+    answer:
+       "Businesses can port existing landline, mobile, or virtual phone numbers into Zoiko Local during initial account onboarding or via the administrative dashboard.",
+},
+{
+    question: "How Zoiko Local Helps Businesses Get Started",
+    answer: 
+         "Zoiko Local offers streamlined onboarding to set up virtual numbers, configure AI Receptionist workflows, establish call queues, and deploy business communications rapidly on www.zoikolocal.com.",
+},
   {
     question: "When do I pay?",
     answer:

@@ -312,7 +312,12 @@ const faqItems = [
     {
         question: "What is Zoiko Local AI Receptionist?",
         answer:
-            "Zoiko Local AI Receptionist is an intelligent call-answering layer connected to your local business numbers. It answers, qualifies, routes, and captures customer calls automatically — so you never miss an opportunity, even when your team is busy or offline.",
+            "The Zoiko Local AI Receptionist is an automated voice assistant that answers inbound calls, qualifies client intent, answers routine questions, collects key information, and routes callers to human team members or after-hours voicemails.",
+    },
+    {
+         question: "Can the AI Receptionist handle missed or overflow calls?",
+         answer: 
+             "The AI Receptionist automatically manages call spikes, line overflows, and after-hours incoming calls, ensuring every caller receives immediate service even when human staff are busy or unavailable.",   
     },
     {
         question: "Does it replace my receptionist?",
@@ -325,9 +330,14 @@ const faqItems = [
             "Yes. AI Receptionist is always on. You can configure separate after-hours scripts, routing rules, and escalation behaviour so customers always reach the right response — even at midnight or on weekends.",
     },
     {
-        question: "Can it route calls to my team?",
+        question: "Can the AI Receptionist route calls to a team?",
         answer:
-            "Yes. Calls can be routed to specific team members, departments, locations, or a callback queue based on intent, urgency, caller identity, and business rules you define in your dashboard.",
+            "The AI Receptionist screens incoming calls, identifies caller requirements through conversational voice analysis, gathers initial client details, and routes the call to the appropriate team or queue.",
+    },
+    {
+        question: "Why Use an AI Receptionist with Zoiko Local?",
+        answer: 
+            "Combining an AI Receptionist with local business numbers guarantees 24/7 call coverage, captures qualified leads during peak hours, and eliminates missed sales opportunities at www.zoikolocal.com.",
     },
     {
         question: "Can customers speak to a person?",
