@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import Faq from "../Components/Faq";
 
 // ─── SVG ICON MAP ─────────────────────────────────────────────────────────────
 const icons: Record<string, (props: { className?: string; light?: boolean }) => ReactNode> = {
@@ -293,6 +294,24 @@ const focusCards = [
 ];
 
 const ctaPills = ["Local numbers", "AI receptionist", "Smart routing", "Cross-border ready"];
+
+const faqItems = [
+  {
+    question: "Why was Zoiko Local created?",
+    answer:
+      "Zoiko Local was developed to modernize global business communications by combining localized phone numbers, voice calling, smart call forwarding, voicemail intelligence, HD video meetings, and automated AI receptionists into one platform.",
+  },
+  {
+    question: "What communication features does Zoiko Local provide?",
+    answer:
+      "Zoiko Local provides localized virtual numbers, inbound and outbound calling, visual voicemail, smart call routing, video conferencing, automated AI call handling, and administrative user controls at www.zoikolocal.com.",
+  },
+  {
+    question: "What Makes Zoiko Local Different?",
+    answer:
+      "Zoiko Local combines local phone presence, intelligent automated call handling, and unified communications into a cloud workspace designed for modern, multi-market businesses at www.zoikolocal.com.",
+  },
+];
 
 // ─── PAGE ─────────────────────────────────────────────────────────────────────
 function Aboutus() {
@@ -678,6 +697,13 @@ function Aboutus() {
           </div>
         </div>
       </section>
+
+      {/* ─── FAQ ─── */}
+      <Faq
+        heading="Questions"
+        subHeading="About Zoiko Local, answered."
+        items={faqItems}
+      />
 
       {/* ─── FINAL CTA ─── */}
       <section className="px-4 pb-24 pt-4 sm:px-6 lg:px-8">
