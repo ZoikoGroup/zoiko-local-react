@@ -173,7 +173,7 @@ function FounderLedBusiness() {
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
              <a href="/local-business-number"> <button className={coralBtn}>Get Your Business Number</button></a>
-             <a href="/plans-and-pricing"> <button className={lightBtn}>See Pricing</button></a>
+             <a href="/pricing"> <button className={lightBtn}>See Pricing</button></a>
             </div>
             <a href="/ai-receptionist" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">Explore AI Receptionist →</a>
             <div className="mt-5 flex max-w-md items-center justify-between gap-4 rounded-2xl bg-white px-5 py-4 text-sm shadow-sm ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
@@ -368,7 +368,7 @@ function FounderLedBusiness() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <a href="/plans-and-pricing"> <button className={coralBtn}>See Pricing</button></a>
+            <a href="/pricing"> <button className={coralBtn}>See Pricing</button></a>
           </div>
         </div>
       </section>
@@ -436,7 +436,7 @@ function FounderLedBusiness() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a href="/local-business-number"> <button className={lightBtn}>Get Your Business Number</button></a>
-            <a href="/plans-and-pricing"> <button className={outlineDarkBtn}>See Pricing</button></a>
+            <a href="/pricing"> <button className={outlineDarkBtn}>See Pricing</button></a>
             <a href="/ai-receptionist"> <button className={outlineDarkBtn}>Explore AI Receptionist</button></a>
           </div>
           <p className="mt-6 text-sm text-white/70">

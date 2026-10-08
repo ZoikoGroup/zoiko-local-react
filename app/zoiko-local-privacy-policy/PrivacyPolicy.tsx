@@ -634,7 +634,7 @@ export default function PrivacyPolicy() {
                   { title: "Acceptable Use Policy", desc: "Permitted and prohibited uses of the service." , href: "/acceptable-use-policy" },
                   { title: "Data Processing Agreement", desc: "For customers processing personal data through the service." , href: "/data-processing-agreement" },
                   { title: "AI Terms", desc: "Specific terms for AI Receptionist and AI-powered features." , href: "/ai-terms" },
-                  { title: "Recording & Consent", desc: "Call recording notice and consent requirements." , href: "/recording-consent" },
+                  { title: "Recording & Consent", desc: "Call recording notice and consent requirements." , href: "/recording-and-consent" },
                   { title: "Law Enforcement Requests", desc: "How we handle legal requests for data." , href: "/law-enforcement" },
                 ].map((p) => (
                   <a

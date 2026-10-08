@@ -113,7 +113,7 @@ export default function Teamsphone() {
                             {/* Buttons */}
 
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                                   <a href="/get-a-local-number"> <button
+                                   <a href="/get-local-number"> <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -264,7 +264,7 @@ export default function Teamsphone() {
                                 ))}
                             </div>
 
-                               <a href="/get-a-local-number"> <button
+                               <a href="/get-local-number"> <button
                                 className="mt-10 h-12 px-8 rounded-xl
                     bg-[#EB643F]
                     text-white
@@ -492,7 +492,7 @@ export default function Teamsphone() {
 
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
                                 {/* Primary */}
-                                   <a href="/get-a-local-number"> <button
+                                   <a href="/get-local-number"> <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -507,7 +507,7 @@ export default function Teamsphone() {
                                 </button></a>
 
                                 {/* Secondary */}
-                              <a href="/plans-and-pricing">    <button
+                              <a href="/pricing">    <button
                                     className="h-12 px-8 rounded-xl
                         bg-white
                         text-[#123533]

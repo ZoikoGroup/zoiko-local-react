@@ -649,7 +649,7 @@ function Aboutus() {
                 >
                   Explore ZoikoNex
                 </a>
-                <a href="/plans-and-pricing"><button className="rounded-full border border-white/25 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10">
+                <a href="/pricing"><button className="rounded-full border border-white/25 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/10">
                   View pricing
                 </button></a>
               </div>

@@ -134,7 +134,7 @@ function Localbusinessnumbers() {
               the markets you serve. Sound local. Reach anywhere.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-             <a href="/get-a-local-number"></a> <button className={coralBtn}>Get a Local Number →</button>
+             <a href="/get-local-number"></a> <button className={coralBtn}>Get a Local Number →</button>
              <a href="#"></a> <button className={outlineBtn}>How it works</button>
             </div>
             <p className="mt-5 text-sm text-gray-600 dark:text-gray-400">
@@ -196,7 +196,7 @@ function Localbusinessnumbers() {
                 </li>
               ))}
             </ul>
-           <a href="/get-a-local-number"><button className={`${coralBtn} mt-8`}>Get a Local Number →</button></a>
+           <a href="/get-local-number"><button className={`${coralBtn} mt-8`}>Get a Local Number →</button></a>
           </div>
 
           {/* What you get card */}
@@ -253,8 +253,8 @@ function Localbusinessnumbers() {
               reachable from anywhere.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-             <a href="/get-a-local-number"><button className={coralBtn}>Get a Local Number →</button></a>
-             <a href="/plans-and-pricing"><button className={outlineBtnDark}>See Pricing</button></a>
+             <a href="/get-local-number"><button className={coralBtn}>Get a Local Number →</button></a>
+             <a href="/pricing"><button className={outlineBtnDark}>See Pricing</button></a>
              <a href="/contact-sales"><button className={outlineBtnDark}>Talk to Sales</button></a>
             </div>
             <p className="mt-6 text-sm text-white/70">

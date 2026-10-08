@@ -334,7 +334,7 @@ export default function MobileApps() {
                 </li>
               ))}
             </ul>
-            <Link href="/get-a-local-number">
+            <Link href="/get-local-number">
               <button
                 type="button"
                 className="mt-8 inline-flex h-11 items-center gap-2 rounded-full border border-[#D9D2C4] bg-white px-6 text-sm font-semibold text-[#0E2A21] transition hover:border-[#0E2A21]"
@@ -611,7 +611,7 @@ export default function MobileApps() {
                   Explore AI Receptionist
                 </button>
               </Link>
-              <Link href="/plans-and-pricing">
+              <Link href="/pricing">
                 <button type="button" className={btnOutline}>
                   Compare plans
                 </button>
@@ -773,7 +773,7 @@ export default function MobileApps() {
               </ul>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Link href="/plans-and-pricing">
+                <Link href="/pricing">
                   <button type="button" className={btnOrange}>
                     Compare plans
                   </button>
@@ -856,7 +856,7 @@ export default function MobileApps() {
               <button type="button" className={btnOrange}>
                 <FiBell aria-hidden /> Get mobile app updates
               </button>
-              <Link href="/plans-and-pricing">
+              <Link href="/pricing">
                 <button
                   type="button"
                   className="inline-flex h-12 items-center justify-center rounded-full bg-white px-7 text-sm font-semibold text-[#0E2A21] transition hover:bg-[#F1EDE6]"

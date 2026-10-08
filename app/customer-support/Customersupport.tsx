@@ -116,7 +116,7 @@ const useCases: { title: string; desc: string; icon: IconType; bg: string }[] = 
 ];
 
 const platform: { name: string; desc: string; cta: string; icon: IconType; bg: string; href: string }[] = [
-  { name: "Local Numbers", desc: "Local support numbers customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]", href: "/get-a-local-number" },
+  { name: "Local Numbers", desc: "Local support numbers customers recognize.", cta: "Explore Local Numbers", icon: FiMapPin, bg: "bg-[#fbe9e3]", href: "/get-local-number" },
   { name: "Calling", desc: "Direct inbound calling with a professional identity.", cta: "Explore Calling", icon: FiPhone, bg: "bg-[#fbe9e3]", href: "/calling" },
   { name: "Video", desc: "Escalate to video when an issue needs clarity.", cta: "Explore Video", icon: FiVideo, bg: "bg-[#e3f3ee]", href: "/video" },
   { name: "AI Receptionist", desc: "Capture inquiries when no one is available.", cta: "Explore AI Receptionist", icon: FiCpu, bg: "bg-[#fdf0db]", href: "/ai-receptionist" },
@@ -197,7 +197,7 @@ function CustomerSupport() {
               <a href="local-business-number"> <button className={coralBtn}>Set Up a Support Number</button></a>
               <a href="ai-receptionist"> <button className={lightBtn}>Explore AI Receptionist</button></a>
             </div>
-            <a href="/plans-and-pricing" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">See Pricing →</a>
+            <a href="/pricing" className="mt-4 inline-block text-sm font-semibold text-[#d9603f] hover:underline">See Pricing →</a>
             <div className="mt-5 flex max-w-md items-center justify-between gap-4 rounded-2xl bg-white px-5 py-4 text-sm shadow-sm ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
               <span className="text-gray-600 dark:text-gray-400">Replacing Skype Number for customer support?</span>
               <a href="/switch-from-skype" className="shrink-0 font-semibold text-[#d9603f] hover:underline">Switch from Skype →</a>
@@ -442,7 +442,7 @@ function CustomerSupport() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <a href="/plans-and-pricing"> <button className={coralBtn}>See Pricing</button></a>
+            <a href="/pricing"> <button className={coralBtn}>See Pricing</button></a>
           </div>
         </div>
       </section>
@@ -484,7 +484,7 @@ function CustomerSupport() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
            <a href="/local-business-number"> <button className={lightBtn}>Set Up a Support Number</button></a>
             <a href="/ai-receptionist"> <button className={outlineDarkBtn}>Explore AI Receptionist</button></a>
-            <a href="/plans-and-pricing"> <button className={outlineDarkBtn}>See Pricing</button></a>
+            <a href="/pricing"> <button className={outlineDarkBtn}>See Pricing</button></a>
           </div>
           <p className="mt-6 text-sm text-white/70">
             Replacing Skype Number?{" "}

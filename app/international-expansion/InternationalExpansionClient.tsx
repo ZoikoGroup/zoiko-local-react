@@ -298,7 +298,7 @@ const platform: { title: string; desc: string; cta: string; icon: IconName; tint
     cta: "Explore Local Numbers →",
     icon: "pin",
     tint: "peach",
-    href: "/get-a-local-number"
+    href: "/get-local-number"
   },
   {
     title: "Calling",
@@ -408,12 +408,12 @@ function InternationalExpansion() {
             </p>
 
             <div className="mt-8">
-              <a href="/get-a-local-number"><button className={coralBtn}>Start Expanding with a Local Number</button></a>
+              <a href="/get-local-number"><button className={coralBtn}>Start Expanding with a Local Number</button></a>
             </div>
 
             <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3">
               <a href="/global-coverage"><button className={whiteBtn}>Explore Global Coverage</button></a>
-              <a href="/plans-and-pricing" className={orangeLink}>
+              <a href="/pricing" className={orangeLink}>
                 See Pricing →
               </a>
             </div>
@@ -554,7 +554,7 @@ function InternationalExpansion() {
             ))}
           </div>
           <div className="mt-11 text-center">
-            <a href="/get-a-local-number"> <button className={coralBtn}>Start Expanding with a Local Number</button></a>
+            <a href="/get-local-number"> <button className={coralBtn}>Start Expanding with a Local Number</button></a>
           </div>
         </div>
       </section>
@@ -658,7 +658,7 @@ function InternationalExpansion() {
               </tbody>
             </table>
             <div className="border-t border-[#f1f1f5] bg-[#fafafc] p-7 text-center dark:border-white/5 dark:bg-white/[0.02]">
-              <a href="/get-a-local-number"> <button className={coralBtn}>Create Local Presence Before You Open an Office</button></a>
+              <a href="/get-local-number"> <button className={coralBtn}>Create Local Presence Before You Open an Office</button></a>
             </div>
           </div>
         </div>
@@ -701,7 +701,7 @@ function InternationalExpansion() {
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <a href="/global-coverage"> <button className={whiteBtnGreen}>Explore Global Coverage</button></a>
             <a href="/resources"> <button className={ghostBtn}>Request a Market</button></a>
-            <a href="/plans-and-pricing"> <button className={ghostBtn}>See Pricing</button></a>
+            <a href="/pricing"> <button className={ghostBtn}>See Pricing</button></a>
           </div>
         </div>
       </section>
@@ -754,9 +754,9 @@ function InternationalExpansion() {
           </p>
 
           <div className="mt-9 flex flex-wrap justify-center gap-3">
-            <a href="/get-a-local-number"> <button className={whiteBtnGreen}>Start Expanding with a Local Number</button></a>
+            <a href="/get-local-number"> <button className={whiteBtnGreen}>Start Expanding with a Local Number</button></a>
             <a href="/global-coverage"> <button className={ghostBtn}>Explore Global Coverage</button></a>
-            <a href="/plans-and-pricing"> <button className={ghostBtn}>See Pricing</button></a>
+            <a href="/pricing"> <button className={ghostBtn}>See Pricing</button></a>
           </div>
 
           <div className="mt-7 inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-full border border-white/15 bg-white/[0.06] px-6 py-3">

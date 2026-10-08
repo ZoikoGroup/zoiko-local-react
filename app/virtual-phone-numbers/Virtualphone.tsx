@@ -99,7 +99,7 @@ export default function Virtualphone() {
                             {/* Buttons */}
 
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                                   <a href="/get-a-local-number"> <button
+                                   <a href="/get-local-number"> <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -295,7 +295,7 @@ export default function Virtualphone() {
 
                             {/* Button */}
 
-                               <a href="/get-a-local-number"> <button
+                               <a href="/get-local-number"> <button
                                 className="mt-10 h-12 px-8 rounded-xl
                     bg-[#EB643F]
                     text-white
@@ -403,7 +403,7 @@ export default function Virtualphone() {
 
                                 {/* Primary */}
 
-                                   <a href="/get-a-local-number"><button
+                                   <a href="/get-local-number"><button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white
@@ -420,7 +420,7 @@ export default function Virtualphone() {
                                 </button>
 </a> 
                                 {/* Secondary */}
-<a href="/plans-and-pricing">
+<a href="/pricing">
                                 <button
                                     className="h-12 px-8 rounded-xl
                         border border-white/20

@@ -337,7 +337,7 @@ export default function Africa() {
                                 <p className="mt-5 text-[15px] leading-7 text-gray-500 dark:text-gray-400">
                                     {market.description}
                                 </p>
-                             <a href="/get-a-local-number">   <button className="mt-8 text-[#EB643F] font-semibold flex items-center gap-2 hover:gap-3 transition-all">
+                             <a href="/get-local-number">   <button className="mt-8 text-[#EB643F] font-semibold flex items-center gap-2 hover:gap-3 transition-all">
                                     {market.action}
                                     <FiArrowRight />
                                 </button></a>
