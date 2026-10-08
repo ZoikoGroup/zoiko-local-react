@@ -623,7 +623,7 @@ export default function SouthAfricaLocalNumbers() {
             </div>
             <div className="flex shrink-0 gap-3">
               <Link
-                href="/plans-and-pricing"
+                href="/pricing"
                 className="inline-flex h-11 items-center justify-center rounded-lg bg-[#E85D3C] px-6 text-[13.5px] font-semibold text-white transition hover:bg-[#D14C2C]"
               >
                 Compare plans

@@ -473,7 +473,7 @@ export default function AboutCommunicationsGroup() {
                   Explore Zoiko Local
                 </Link>
                 <Link
-                  href="/plans-and-pricing"
+                  href="/pricing"
                   className="inline-flex h-11 items-center justify-center rounded-full border border-white/25 px-6 text-[13.5px] font-semibold text-white transition hover:bg-white/10"
                 >
                   View plans &amp; pricing
@@ -630,7 +630,7 @@ export default function AboutCommunicationsGroup() {
               </p>
 
               <Link
-                href="/get-a-local-number"
+                href="/get-local-number"
                 className="mt-6 inline-flex h-11 items-center gap-2 rounded-full bg-[#E85D3C] px-6 text-[13.5px] font-semibold text-white shadow-lg transition hover:bg-[#D14C2C]"
               >
                 Explore number availability <FiArrowRight aria-hidden />

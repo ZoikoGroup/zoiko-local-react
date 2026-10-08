@@ -1414,7 +1414,7 @@ export default function Video() {
                                 </p>
 
                                 {/* Button */}
-                                <Link href="/plans-and-pricing">
+                                <Link href="/pricing">
                                     <button
                                         className={`mt-8 w-full h-11 rounded-full text-sm font-semibold transition-all duration-300
                         ${plan.featured

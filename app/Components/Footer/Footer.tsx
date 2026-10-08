@@ -13,8 +13,8 @@ const footerSections: FooterSection[] = [
     {
         title: "Platform",
         links: [
-            { title: "Search Numbers", href: "/get-a-local-number" },
-            { title: "Pricing", href: "/plans-and-pricing" },
+            { title: "Search Numbers", href: "/get-local-number" },
+            { title: "Pricing", href: "/pricing" },
             { title: "Business Workspace", href: "/business-communications" },
             { title: "Mobile Apps", href: "/business-mobile-phone-app" },
             { title: "Status Page", href: "/status" },
@@ -56,18 +56,18 @@ const footerSections: FooterSection[] = [
             { title: "OpenPhone Alternative", href: "/openphone-alternative" },
             { title: "Teams Phone Alternative", href: "/teams-phone-alternative" },
             { title: "Virtual Phone Number", href: "/virtual-phone-numbers" },
-            { title: "Local Business Number", href: "/local-business-numbers" },
+            { title: "Local Business Number", href: "/local-business-number" },
         ],
     },
     {
         title: "Legal",
         links: [
-            { title: "Privacy Policy",href:"/privacy-policy" },
+            { title: "Privacy Policy",href:"/zoiko-local-privacy-policy" },
             { title: "Terms of Service", href: "/terms-of-service" },
             { title: "Acceptable Use Policy", href: "/acceptable-use-policy" },
             { title: "Data Processing Agreement", href: "/data-processing-agreement" },
             { title: "AI Terms", href: "/ai-terms" },
-            { title: "Recording & Consent", href: "/recording-consent" },
+            { title: "Recording & Consent", href: "/recording-and-consent" },
             { title: "Emergency Calling", href: "/emergency-calling" },
             { title: "Number Porting", href: "/number-porting" },
             { title: "Low Enforcement Requests", href: "/law-enforcement" },
@@ -206,7 +206,7 @@ export default function Footer() {
                     </p>
 
                     <div className="flex flex-wrap gap-5">
-                        <Link href="/privacy-policy">Privacy</Link>
+                        <Link href="/zoiko-local-privacy-policy">Privacy</Link>
                         <Link href="/terms-of-service">Terms</Link>
                         <Link href="/accessibility">Accessibility</Link>
                         <Link href="/status">Status</Link>

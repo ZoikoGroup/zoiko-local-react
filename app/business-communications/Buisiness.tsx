@@ -89,7 +89,7 @@ const problemCards: { title: string; desc: string; icon: IconType }[] = [
 ];
 
 const products: { name: string; desc: string; tags: string[]; icon: IconType; diff?: boolean; href?: string }[] = [
-  { name: "Local Numbers", desc: "Create presence in the markets you serve.", tags: ["Local", "Toll-free", "Porting"], icon: FiMapPin ,href: "/get-a-local-number"},
+  { name: "Local Numbers", desc: "Create presence in the markets you serve.", tags: ["Local", "Toll-free", "Porting"], icon: FiMapPin ,href: "/get-local-number"},
   { name: "Calling", desc: "Connect customers and teams.", tags: ["Inbound", "Outbound", "Routing"], icon: FiPhone ,href: "/calling"},
   { name: "Video", desc: "Move conversations face-to-face.", tags: ["Meetings", "Links", "Screen share"], icon: FiVideo ,href: "/video"},
   { name: "AI Receptionist", desc: "Capture, qualify and route.", tags: ["Answer", "Qualify", "Handoff"], diff: true, icon: FiMic ,href: "/ai-receptionist"},
@@ -168,8 +168,8 @@ const comparison = [
 ];
 
 const plans = [
-  { title: "Business Starter", desc: "Simple local presence and essential calling.", cta: "View Pricing", popular: false, href: "/plans-and-pricing" },
-  { title: "Business Growth", desc: "Teams that need routing, video and collaboration.", cta: "Compare Plans", popular: true, href: "/plans-and-pricing" },
+  { title: "Business Starter", desc: "Simple local presence and essential calling.", cta: "View Pricing", popular: false, href: "/pricing" },
+  { title: "Business Growth", desc: "Teams that need routing, video and collaboration.", cta: "Compare Plans", popular: true, href: "/pricing" },
   { title: "Business Advanced", desc: "AI Receptionist, multi-location and higher-control workflows.", cta: "Talk to Sales", popular: false, href: "/contact-sales" },
 ];
 
@@ -338,7 +338,7 @@ function Business() {
             })}
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-           <a href="/plans-and-pricing"> <button className={outlineBtn}>Compare Plans</button></a>
+           <a href="/pricing"> <button className={outlineBtn}>Compare Plans</button></a>
            <a href="/contact-sales"> <button className={outlineBtn}>Talk to Sales</button></a>
           </div>
         </div>
@@ -369,7 +369,7 @@ function Business() {
             capabilities are not implied without confirmation.
           </p>
           <div className="mt-8 flex justify-center">
-           <a href="/get-a-local-number"> <button className={coralBtn}>Explore Local Numbers</button></a>
+           <a href="/get-local-number"> <button className={coralBtn}>Explore Local Numbers</button></a>
           </div>
         </div>
       </section>

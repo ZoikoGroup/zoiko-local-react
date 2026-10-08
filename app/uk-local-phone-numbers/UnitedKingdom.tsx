@@ -218,7 +218,7 @@ export default function UnitedKingdom() {
                   Get a UK Number <FiArrowRight size={14} />
                 </button>
               </Link>
-              <Link href="/plans-and-pricing">
+              <Link href="/pricing">
                 <button className="inline-flex items-center gap-2 rounded-full border border-[#1c2b26]/20 bg-white px-7 py-3.5 text-sm font-semibold text-[#1c2b26] transition hover:bg-gray-50 dark:border-white/20 dark:bg-gray-800 dark:text-white">
                   See Pricing
                 </button>

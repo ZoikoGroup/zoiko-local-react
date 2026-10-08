@@ -107,13 +107,13 @@ export default function Home() {
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <a href="/get-a-local-number">
+                <a href="/get-local-number">
                   <button className="inline-flex items-center justify-center rounded-full bg-[#F05A2B] px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                     Get a Local Number
                     <span className="ml-2">→</span>
                   </button>
                 </a>
-                <a href="/plans-and-pricing">
+                <a href="/pricing">
                   <button className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-900 dark:text-white">
                     See Business Plans
                   </button>
@@ -602,7 +602,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
-              <a href="/plans-and-pricing">
+              <a href="/pricing">
                 <button
                   className="
             mt-8
@@ -664,7 +664,7 @@ export default function Home() {
                 ))}
               </ul>
 
-              <a href="/get-a-local-number">
+              <a href="/get-local-number">
                 <button
                   className="
             mt-8
@@ -1272,7 +1272,7 @@ export default function Home() {
 
           {/* CTA */}
           <div className="mt-12 flex justify-center">
-            <a href="/get-a-local-number">
+            <a href="/get-local-number">
               <button
                 className="
           rounded-full
@@ -1953,7 +1953,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <a href="/plans-and-pricing">
+              <a href="/pricing">
                 <button
                   className="
             mt-10
@@ -2135,7 +2135,7 @@ export default function Home() {
                 desc: "Start with your first number",
                 button: "Choose Plan",
                 dark: false,
-                href:"/plans-and-pricing",
+                href:"/pricing",
               },
               {
                 title: "Business Starter",
@@ -2143,7 +2143,7 @@ export default function Home() {
                 heading: "Choose plan",
                 desc: "Built for first business use",
                 button: "Choose Plan",
-                href:"/plans-and-pricing",
+                href:"/pricing",
                 dark: false,
               },
               {
@@ -2152,7 +2152,7 @@ export default function Home() {
                 heading: "Choose plan",
                 desc: "Running in multiple markets",
                 button: "Choose Plan",
-                href:"/plans-and-pricing",
+                href:"/pricing",
                 featured: true,
               },
               {
@@ -2471,7 +2471,7 @@ export default function Home() {
           sm:flex-row
         "
             >
-              <a href="/get-a-local-number">
+              <a href="/get-local-number">
               <button
                 className="
             flex

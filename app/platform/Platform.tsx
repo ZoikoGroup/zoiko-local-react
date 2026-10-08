@@ -95,7 +95,7 @@ export default function Platform() {
 
                             {/* Buttons */}
                             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                                <Link href="/get-a-local-number">
+                                <Link href="/get-local-number">
                                     <button className="flex items-center justify-center gap-2 rounded-2xl bg-[#F26B45] px-7 py-3.5 font-semibold text-white transition hover:bg-[#EB5D34]">
                                         Get a Local Number
                                         <FiArrowRight />
@@ -359,7 +359,7 @@ export default function Platform() {
                                 desc:
                                     "Create local presence in the markets your customers recognize.",
                                 link: "Explore Local Numbers",
-                                href: "/get-a-local-number",
+                                href: "/get-local-number",
                             },
                             {
                                 icon: FiPhone,
@@ -547,7 +547,7 @@ export default function Platform() {
 
                     {/* CTA */}
                     <div className="mt-12 flex justify-center">
-                        <Link href="/get-a-local-number">
+                        <Link href="/get-local-number">
                             <button
                                 className="
           inline-flex
@@ -850,7 +850,7 @@ export default function Platform() {
 
                     {/* CTA */}
                     <div className="mt-12 flex justify-center">
-                        <Link href="/get-a-local-number">
+                        <Link href="/get-local-number">
                             <button
                                 className="
           inline-flex
@@ -1001,7 +1001,7 @@ export default function Platform() {
                             {/* Buttons */}
                             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
 
-                                <Link href="/get-a-local-number">
+                                <Link href="/get-local-number">
                                     <button
                                         className="
               rounded-xl
@@ -1070,7 +1070,7 @@ export default function Platform() {
                                 coverage, video, reporting and multi-market setup — so the
                                 platform scales into a lasting part of how you operate.
                             </p>
-                            <Link href="/get-a-local-number">
+                            <Link href="/get-local-number">
                                 <button
                                     className="
             mt-10
@@ -1209,7 +1209,7 @@ export default function Platform() {
                             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
 
                                 {/* Primary */}
-                                <Link href="/get-a-local-number">
+                                <Link href="/get-local-number">
                                     <button
                                         className="
               inline-flex
@@ -1234,7 +1234,7 @@ export default function Platform() {
                                 </Link>
 
                                 {/* Secondary */}
-                                <Link href="/get-a-local-number">
+                                <Link href="/get-local-number">
                                     <button
                                         className="
               rounded-lg
@@ -1256,7 +1256,7 @@ export default function Platform() {
                                 </Link>
 
                                 {/* Third */}
-                                <Link href="/plans-and-pricing">
+                                <Link href="/pricing">
                                     <button
                                         className="
               rounded-lg

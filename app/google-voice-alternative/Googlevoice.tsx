@@ -101,7 +101,7 @@ export default function Googlevoice() {
                             {/* Buttons */}
 
                             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                               <a href="/get-a-local-number">
+                               <a href="/get-local-number">
                                
                                
                                <button
@@ -248,7 +248,7 @@ export default function Googlevoice() {
                                 ))}
                             </div>
 
-                           <a href="/get-a-local-number"> <button
+                           <a href="/get-local-number"> <button
                                 className="mt-10 h-12 px-8 rounded-xl
                                 bg-[#EB643F]
                                 text-white
@@ -475,7 +475,7 @@ export default function Googlevoice() {
 
                             <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
                                 {/* Primary */}
-                               <a href="/get-a-local-number"> <button
+                               <a href="/get-local-number"> <button
                                     className="h-12 px-8 rounded-xl
                         bg-[#EB643F]
                         text-white

@@ -64,7 +64,7 @@ const outcomes = [
   {
     tag: "For the growing business",
     title: "Local Numbers",
-    href: "/get-a-local-number",
+    href: "/get-local-number",
     checks: [
       "Search numbers in your market",
       "Port or activate in minutes",
@@ -152,8 +152,8 @@ const splitSections = [
       "Familiar area codes customers trust",
       "Available to UK & international accounts",
     ],
-    primaryCta: { label: "Search local numbers", href: "/get-a-local-number" },
-    secondaryCta: { label: "See pricing", href: "/plans-and-pricing" },
+    primaryCta: { label: "Search local numbers", href: "/get-local-number" },
+    secondaryCta: { label: "See pricing", href: "/pricing" },
     image: "/images/solutions/local-trust.png",
     imageAlt: "Professional working at desk",
     imageBadge: { icon: FiMapPin, label: "Local number active" },
@@ -191,7 +191,7 @@ const splitSections = [
       "Works across cities, countries, and time zones",
     ],
     primaryCta: { label: "Explore remote teams", href: "/remote-teams" },
-    secondaryCta: { label: "View plans", href: "/plans-and-pricing" },
+    secondaryCta: { label: "View plans", href: "/pricing" },
     image: "/images/solutions/team-hands.png",
     imageAlt: "Team joining hands together",
     imageBadge: { icon: FiUsers, label: "Team routing active" },
@@ -227,7 +227,7 @@ const scenarios = [
 ];
 
 const platformItems = [
-  { icon: FiMapPin,     label: "Local Numbers",   href: "/get-a-local-number" },
+  { icon: FiMapPin,     label: "Local Numbers",   href: "/get-local-number" },
   { icon: FiPhone,      label: "Calling",          href: "/calling" },
   { icon: FiVideo,      label: "Video",            href: "/video" },
   { icon: FiMic,        label: "AI Receptionist",  href: "/ai-receptionist" },
@@ -323,10 +323,10 @@ export default function Solutions() {
               ].map((c) => <Check key={c}>{c}</Check>)}
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/plans-and-pricing" className={coralBtn}>
+              <Link href="/pricing" className={coralBtn}>
                 Find your solution <FiArrowRight size={14} />
               </Link>
-              <Link href="/get-a-local-number" className={outlineBtn}>
+              <Link href="/get-local-number" className={outlineBtn}>
                 Get a local number
               </Link>
             </div>
@@ -546,7 +546,7 @@ export default function Solutions() {
             <Link href="/platform" className={coralBtn}>
               Explore the platform <FiArrowRight size={13} />
             </Link>
-            <Link href="/plans-and-pricing" className={outlineBtn}>
+            <Link href="/pricing" className={outlineBtn}>
               Compare plans
             </Link>
           </div>
@@ -578,10 +578,10 @@ export default function Solutions() {
               ].map((c) => <Check key={c}>{c}</Check>)}
             </ul>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/get-a-local-number" className={coralBtn}>
+              <Link href="/get-local-number" className={coralBtn}>
                 Start here <FiArrowRight size={13} />
               </Link>
-              <Link href="/plans-and-pricing" className={outlineBtn}>
+              <Link href="/pricing" className={outlineBtn}>
                 Compare plans
               </Link>
             </div>
@@ -656,7 +656,7 @@ export default function Solutions() {
             Start with a local number, add calling, video and AI Receptionist as you grow — one platform, every solution.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link href="/get-a-local-number" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-[14px] font-semibold text-[#d9603f] transition hover:bg-gray-50">
+            <Link href="/get-local-number" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-[14px] font-semibold text-[#d9603f] transition hover:bg-gray-50">
               Find a local number <FiArrowRight size={14} />
             </Link>
             <Link href="/contact-sales" className={outlineDark}>

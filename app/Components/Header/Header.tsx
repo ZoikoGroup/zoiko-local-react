@@ -10,7 +10,7 @@ import {
 } from "react-icons/fi";
 
 const platformItems = [
-  { title: "Local Numbers", desc: "Search, reserve & manage local presence", icon: FiMapPin, href: "/get-a-local-number" },
+  { title: "Local Numbers", desc: "Search, reserve & manage local presence", icon: FiMapPin, href: "/get-local-number" },
   { title: "Calling", desc: "Business-grade inbound & outbound voice", icon: FiPhone, href: "/calling" },
   { title: "Video", desc: "Meetings & customer video calls", icon: FiVideo, href: "/video" },
   { title: "AI Receptionist", desc: "Answer, qualify & route missed calls", icon: FiMic, badge: "NEW", href: "/ai-receptionist" },
@@ -21,7 +21,7 @@ const platformItems = [
 
 const solutionItems = [
   { title: "For Business", desc: "One communication layer for every team", icon: FiBriefcase, href: "/business-communications" },
-  { title: "Business Numbers", desc: "Local & toll-free numbers for work", icon: FiHash, href: "/local-business-numbers" },
+  { title: "Business Numbers", desc: "Local & toll-free numbers for work", icon: FiHash, href: "/local-business-number" },
   { title: "Remote Teams", desc: "Connect distributed teams anywhere", icon: FiUsers, href: "/remote-teams" },
   { title: "Diaspora Founders", desc: "Stay local in home & host markets", icon: FiGlobe, href: "/diaspora-founders" },
   { title: "International Expansion", desc: "Local presence in new markets", icon: FiTrendingUp, href: "/international-expansion" },
@@ -117,7 +117,7 @@ export default function Header() {
 
             {[
               { label: "Global Coverage", href: "/global-coverage" },
-              { label: "Plans and Pricing", href: "/plans-and-pricing" },
+              { label: "Plans and Pricing", href: "/pricing" },
               { label: "Resources", href: "/resources" },
             ].map((item) => (
               <li key={item.label}>
@@ -211,7 +211,7 @@ export default function Header() {
             {/* Regular links */}
             {[
               { label: "Global Coverage", href: "/global-coverage" },
-              { label: "Plans and Pricing", href: "/plans-and-pricing" },
+              { label: "Plans and Pricing", href: "/pricing" },
               { label: "Resources", href: "/resources" },
             ].map((item) => (
               <Link key={item.label} href={item.href} onClick={() => setOpen(false)} className="block py-3 text-base font-medium">

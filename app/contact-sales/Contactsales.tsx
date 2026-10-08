@@ -468,7 +468,7 @@ function ContactSales() {
               Request Sales Consultation <Icons.arrowRight className="h-4 w-4" />
             </button></a>
            <a href="/switch-from-skype"><button className={lightBtn}>Build My Migration Plan</button></a>
-           <a href="/get-a-local-number">  <button className={lightBtn}>Check Number Availability</button> </a>
+           <a href="/get-local-number">  <button className={lightBtn}>Check Number Availability</button> </a>
           </div>
 
           <ul className="mx-auto mt-7 flex max-w-2xl flex-wrap justify-center gap-x-6 gap-y-2">
@@ -936,7 +936,7 @@ function ContactSales() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
            <a href="/contact-sales"><button className={coralBtn}>Request Sales Consultation</button></a>
             <a href="/switch-from-skype"><button className={lightBtn}>Build My Migration Plan</button></a>
-            <a href="/get-a-local-number"><button className={outlineDarkBtn}>Check Number Availability</button></a>
+            <a href="/get-local-number"><button className={outlineDarkBtn}>Check Number Availability</button></a>
           </div>
         </div>
       </section>
