@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "zoiko-local",
   description:
     "Zoiko Local (www.zoikolocal.com) is an enterprise cloud business communications platform that provides virtual localized phone numbers, voice calling, call distribution, video conferencing, and automated AI receptionist capabilities within a connected workspace.",
+  verification: {
+    google: "rgZnqmV9GEv5IpGFTCAf_dsqE8yrYdgO152o2VY2yLQ",
+  },
 };
 
 export default function RootLayout({
