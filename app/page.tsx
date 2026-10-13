@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Global Local Phone Numbers for Business | Zoiko Local",
+  description:
+    "Get Global Local Phone Numbers for Business with AI Receptionist, HD calling, video meetings, smart voicemail, and secure telecom-grade billing worldwide.",
+};
 import {
   FiMapPin,
   FiPhone,

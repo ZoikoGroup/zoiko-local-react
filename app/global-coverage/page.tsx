@@ -1,13 +1,17 @@
+import React from 'react';
 import { GlobalCoverage } from "./Globalcoverage";
+import { Metadata } from 'next';
 
-export default function(){
+export const metadata: Metadata = {
+  title: "Global Phone Number Coverage | Zoiko Local",
+  description:
+    "Access global phone number coverage with Zoiko Local. Get local business numbers worldwide and create a trusted presence in international markets.",
+};
 
-
-
-    return(
-        
-        <>
-        <GlobalCoverage/>
-        </>
-    );
+export default function page() {
+  return (
+    <>
+      <GlobalCoverage />
+    </>
+  );
 }
