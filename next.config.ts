@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
       { source: "/privacy-policy", destination: "/zoiko-local-privacy-policy", permanent: true },
       { source: "/get-a-local-number", destination: "/get-local-number", permanent: true },
       { source: "/plans-and-pricing", destination: "/pricing", permanent: true },
+      { source: "/business", destination: "/business-communications", permanent: true },
     ];
   },
 };
