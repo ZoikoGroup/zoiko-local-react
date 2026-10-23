@@ -18,9 +18,6 @@ export const metadata: Metadata = {
   title: "Global Local Phone Numbers for Business | Zoiko Local",
   description:
     "Get Global Local Phone Numbers for Business with AI Receptionist, HD calling, video meetings, smart voicemail, and secure telecom-grade billing worldwide.",
-  verification: {
-    google: "rgZnqmV9GEv5IpGFTCAf_dsqE8yrYdgO152o2VY2yLQ",
-  },
 };
 
 export default function RootLayout({
@@ -33,6 +30,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <meta name="google-site-verification" content="rgZnqmV9GEv5IpGFTCAf_dsqE8yrYdgO152o2VY2yLQ" />
+      </head>
       <body className="min-h-full flex flex-col">
         <Header/>
         {children}
