@@ -49,6 +49,8 @@ export default function Header() {
   }, []);
 
   return (
+    <>
+    <meta name="google-site-verification" content="rgZnqmV9GEv5IpGFTCAf_dsqE8yrYdgO152o2VY2yLQ" />
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md relative">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 lg:px-8">
         {/* Logo */}
@@ -227,6 +229,7 @@ export default function Header() {
         </div>
       )}
     </header>
+    </>
   );
 }
 
