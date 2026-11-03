@@ -92,92 +92,251 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#F6F3EE] dark:bg-slate-950">
-        <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
-          <div className="grid items-center gap-16 lg:grid-cols-2">
-            {/* LEFT CONTENT */}
-            <div>
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-[#F05A2B]">
-                Global Numbers · Local Presence · AI-Native
+      <section className="relative w-full overflow-hidden bg-[#F6F3EE] dark:bg-slate-950">
+        {/* ================= 1. HERO (bg image) ================= */}
+        <div className="relative w-full min-h-[560px] pb-24 sm:min-h-[620px] lg:min-h-[640px] lg:pb-28">
+          {/* Background image (laptop, phone, globe, cards are all part of this image) */}
+          <Image
+            src="/images/homepage/bg.jpg"
+            alt="Global communications platform with laptop, phone and local number finder"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[65%_center] lg:object-right"
+          />
+
+          {/* Soft left fade so the text stays readable on small screens */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#F6F3EE] via-[#F6F3EE]/80 to-transparent lg:from-[#F6F3EE]/70 lg:via-transparent" />
+
+          {/* Left content */}
+          <div className="relative z-10 mx-auto max-w-[1440px] px-6 pb-10 pt-12 sm:px-10 lg:px-[70px] lg:pt-14">
+            <div className="max-w-[560px]">
+              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#0B5444] dark:text-emerald-300">
+                Global Communications Platform
               </p>
 
-              <h1 className="max-w-xl text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
+              <div className="mb-5 h-[3px] w-full max-w-[560px] bg-[#F05A2B]" />
+
+              <h1 className="text-[44px] font-extrabold leading-[1.02] tracking-[-0.02em] text-[#0B3D33] sm:text-[56px] lg:text-[68px]">
                 Sound Local.
                 <br />
                 <span className="text-[#F05A2B]">Stay Close.</span>
               </h1>
 
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-400">
-                Get local phone numbers for business, work, and personal life in
-                priority global markets — with calling, video, AI receptionist,
-                voicemail intelligence, and ZoikoNex-powered billing.
+              <p className="mt-5 max-w-[480px] text-[17px] leading-[1.45] text-slate-700 sm:text-lg">
+                Your global communications platform for local numbers, business
+                calls, video conversations, and AI-powered assistance.
               </p>
 
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <a href="/get-local-number">
-                  <button className="inline-flex items-center justify-center rounded-full bg-[#F05A2B] px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    Get a Local Number
-                    <span className="ml-2">→</span>
-                  </button>
+              <ul className="mt-5 space-y-2">
+                {[
+                  "Get local numbers in supported markets",
+                  "Make and receive business calls",
+                  "Meet by video, from anywhere",
+                  "Let an AI receptionist handle your calls",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-3 text-[15px] font-medium text-slate-800"
+                  >
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0B5444] text-white">
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="h-3 w-3"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 12l5 5L20 7" />
+                      </svg>
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <a
+                  href="/get-local-number"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F05A2B] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#F05A2B]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+                >
+                  Explore Local Numbers
+                  <span aria-hidden="true">→</span>
                 </a>
-                <a href="/pricing">
-                  <button className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-sm font-semibold text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-slate-900 dark:text-white">
-                    See Business Plans
-                  </button>
+                <a
+                  href="/pricing"
+                  className="inline-flex items-center justify-center rounded-full border border-[#0B5444]/40 bg-white/80 px-7 py-3.5 text-sm font-semibold text-[#0B3D33] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-xl"
+                >
+                  See Plans &amp; Pricing
                 </a>
-              </div>
-
-              <div className="mt-8 flex items-start gap-3">
-                <div className="mt-1 h-2 w-2 rounded-full bg-emerald-500" ></div>
-
-                <p className="max-w-lg text-sm text-slate-500 dark:text-slate-400">
-                  Phase 1 markets include business-friendly and high-demand launch
-                  countries. Availability and verification vary by jurisdiction.
-                </p>
-              </div>
-            </div>
-
-            {/* RIGHT SIDE */}
-            <div className="relative mx-auto flex w-full max-w-[620px] items-center justify-center">
-              {/* Top Floating Card */}
-              <div className="absolute -top-2 left-0 z-20 sm:-top-8">
-                <Image
-                  src="/images/homepage/hero-top-icon.png"
-                  alt="AI Receptionist"
-                  width={164}
-                  height={63}
-                  priority
-                  className="h-auto w-[120px] sm:w-[150px] md:w-[164px]"
-                />
-              </div>
-
-              {/* Main Card */}
-              <Image
-                src="/images/homepage/hero-pic.png"
-                alt="Find your local number"
-                width={661}
-                height={658}
-                priority
-                className="h-auto w-full max-w-[580px] object-contain"
-              />
-
-              {/* Bottom Floating Card */}
-              <div className="absolute -bottom-6 right-0 z-20 sm:-bottom-6">
-                <Image
-                  src="/images/homepage/hero-bottom-icon.png"
-                  alt="Video Ready"
-                  width={166}
-                  height={63}
-                  priority
-                  className="h-auto w-[120px] sm:w-[150px] md:w-[166px]"
-                />
               </div>
             </div>
           </div>
         </div>
+
+        {/* ================= 2. FLOATING FEATURE STRIP (overlaps image + green bar) ================= */}
+        <div className="relative z-20 mx-auto -mt-16 max-w-[1440px] px-4 sm:px-8 lg:-mt-14 lg:px-[34px]">
+          <ul className="grid grid-cols-1 gap-1 rounded-2xl bg-white p-3 shadow-[0_12px_40px_rgba(11,84,68,0.15)] sm:grid-cols-2 lg:grid-cols-5 lg:gap-0 lg:p-4">
+            {[
+              {
+                title: "Local Phone Numbers",
+                text: "Build a local presence",
+                icon: (
+                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
+                ),
+              },
+              {
+                title: "Video Conversations",
+                text: "Meet and collaborate",
+                icon: (
+                  <>
+                    <rect x="2" y="6" width="13" height="12" rx="2" />
+                    <path d="M22 8l-7 4 7 4V8z" />
+                  </>
+                ),
+              },
+              {
+                title: "AI Receptionist",
+                text: "Answer, route and assist",
+                icon: (
+                  <>
+                    <path d="M3 14v-2a9 9 0 0 1 18 0v2" />
+                    <path d="M21 15a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 2v1zM3 15a2 2 0 0 0 2 2h1v-5H5a2 2 0 0 0-2 2v1z" />
+                    <path d="M18 17v1a3 3 0 0 1-3 3h-2" />
+                  </>
+                ),
+              },
+              {
+                title: "Business Calling",
+                text: "Reliable and professional",
+                icon: (
+                  <>
+                    <circle cx="9" cy="8" r="3.5" />
+                    <path d="M2.5 20a6.5 6.5 0 0 1 13 0" />
+                    <path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5" />
+                  </>
+                ),
+              },
+              {
+                title: "Insights & Analytics",
+                text: "Track calls and performance",
+                icon: (
+                  <>
+                    <path d="M5 21V10M12 21V3M19 21v-7" />
+                  </>
+                ),
+              },
+            ].map((f, i) => (
+              <li
+                key={f.title}
+                className={`flex items-center gap-3 px-4 py-3 ${
+                  i !== 0 ? "lg:border-l lg:border-slate-200" : ""
+                }`}
+              >
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#E6F1EE] text-[#0B5444]">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    {f.icon}
+                  </svg>
+                </span>
+                <div>
+                  <p className="text-[14px] font-bold leading-tight text-[#0B3D33]">
+                    {f.title}
+                  </p>
+                  <p className="mt-0.5 text-[12px] leading-snug text-slate-500">
+                    {f.text}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ================= 3. GREEN TRUST BAR (outside image) ================= */}
+        <div className="-mt-10 bg-gradient-to-r from-[#0B5444] to-[#093F33] pt-16 pb-6 lg:-mt-12 lg:pt-[72px] lg:pb-7">
+          <ul className="mx-auto grid max-w-[1440px] grid-cols-1 gap-5 px-6 sm:grid-cols-2 sm:px-10 lg:grid-cols-4 lg:gap-0 lg:px-[34px]">
+            {[
+              {
+                title: "Business-Ready",
+                text: "For individuals, teams and enterprises",
+                icon: (
+                  <>
+                    <circle cx="12" cy="12" r="9.5" />
+                    <path d="M2.5 12h19M12 2.5c2.7 2.8 4 6 4 9.5s-1.3 6.7-4 9.5c-2.7-2.8-4-6-4-9.5s1.3-6.7 4-9.5z" />
+                  </>
+                ),
+              },
+              {
+                title: "Reliable & Secure",
+                text: "Enterprise-grade protection",
+                icon: (
+                  <>
+                    <path d="M12 2.5l8 3v6c0 5-3.3 8.5-8 10-4.7-1.5-8-5-8-10v-6l8-3z" />
+                    <path d="M8.5 12l2.5 2.5 4.5-5" />
+                  </>
+                ),
+              },
+              {
+                title: "High-Quality Calls",
+                text: "Clear, stable and global",
+                icon: <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" />,
+              },
+              {
+                title: "Trusted by Businesses",
+                text: "Across multiple industries",
+                icon: (
+                  <>
+                    <circle cx="8" cy="8" r="3" />
+                    <circle cx="17" cy="9" r="2.5" />
+                    <path d="M2 20a6 6 0 0 1 12 0M14.5 15.5A5 5 0 0 1 22 20" />
+                  </>
+                ),
+              },
+            ].map((b, i) => (
+              <li
+                key={b.title}
+                className={`flex items-center gap-4 px-2 text-white lg:px-8 ${
+                  i !== 0 ? "lg:border-l lg:border-white/20" : ""
+                }`}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-9 w-9 shrink-0"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  {b.icon}
+                </svg>
+                <div>
+                  <p className="text-[16px] font-semibold leading-tight">
+                    {b.title}
+                  </p>
+                  <p className="mt-1 text-[12px] leading-snug text-white/70">
+                    {b.text}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
       {/* Features Section */}
-      <section className="border-y border-[#D8D4CC] bg-[#F6F3EE] dark:border-slate-800 dark:bg-slate-950">
+      {/* <section className="border-y border-[#D8D4CC] bg-[#F6F3EE] dark:border-slate-800 dark:bg-slate-950">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
             {features.map((feature, index) => {
@@ -192,10 +351,11 @@ export default function Home() {
                   transition-colors duration-300
                   hover:bg-white/60
                   dark:hover:bg-slate-900
-                  ${index !== features.length - 1
+                  ${
+                    index !== features.length - 1
                       ? "border-r border-[#D8D4CC] dark:border-slate-800"
                       : ""
-                    }
+                  }
                 `}
                 >
                   <Icon
@@ -212,7 +372,7 @@ export default function Home() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Live Country Finder Section */}
       <section className="bg-[#F7F3ED] px-4 py-16 dark:bg-slate-950">
@@ -240,8 +400,8 @@ export default function Home() {
 
               <p className="mx-auto mt-3 max-w-2xl text-sm text-white/70 md:text-base">
                 Search a country or city, check live status, and start your
-                activation. Status updates as inventory and compliance approvals are
-                confirmed.
+                activation. Status updates as inventory and compliance approvals
+                are confirmed.
               </p>
             </div>
 
@@ -256,7 +416,6 @@ export default function Home() {
       shadow-[0_8px_25px_rgba(0,0,0,0.08)]
     "
               >
-
                 {/* Search Icon */}
                 <FiSearch
                   className="hidden md:block ml-4 shrink-0 text-[#6B7280]"
@@ -304,23 +463,19 @@ export default function Home() {
 
             {/* Filters */}
             <div className="mt-5 flex flex-wrap gap-2">
-              {[
-                "All Markets",
-                "Business",
-                "Individual",
-                "Available Now",
-              ].map((item, index) => (
-                <button
-                  key={item}
-                  className={`rounded-full px-3 md:px-4 py-1.5 md:py-2 text-base md:text-lg font-medium
-            ${index === 0
-                      ? "bg-white text-[#014D46]"
-                      : "bg-white/10 text-white"
-                    }`}
-                >
-                  {item}
-                </button>
-              ))}
+              {["All Markets", "Business", "Individual", "Available Now"].map(
+                (item, index) => (
+                  <button
+                    key={item}
+                    className={`rounded-full px-3 md:px-4 py-1.5 md:py-2 text-base md:text-lg font-medium
+            ${
+              index === 0 ? "bg-white text-[#014D46]" : "bg-white/10 text-white"
+            }`}
+                  >
+                    {item}
+                  </button>
+                ),
+              )}
             </div>
 
             {/* Countries Grid */}
@@ -520,10 +675,7 @@ export default function Home() {
                 >
                   <div className="mb-6 flex items-center justify-between">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#EEF4F2]">
-                      <Icon
-                        size={18}
-                        className="text-[#0D5C54]"
-                      />
+                      <Icon size={18} className="text-[#0D5C54]" />
                     </div>
 
                     <span className="text-2xl md:text-4xl font-bold text-[#EDE6DA] dark:text-slate-700">
@@ -585,12 +737,13 @@ export default function Home() {
               </p>
 
               <h3 className="text-2xl font-bold">
-                Local numbers for teams, clients, and every market you sell into.
+                Local numbers for teams, clients, and every market you sell
+                into.
               </h3>
 
               <p className="mt-4 text-sm leading-7 text-white/70">
-                Equip your team with local presence, intelligent routing, and the
-                controls serious operations need.
+                Equip your team with local presence, intelligent routing, and
+                the controls serious operations need.
               </p>
 
               <ul className="mt-8 space-y-4">
@@ -600,10 +753,7 @@ export default function Home() {
                   "AI Receptionist & compliance controls",
                   "ZoikoNex billing & usage visibility",
                 ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3"
-                  >
+                  <li key={item} className="flex items-start gap-3">
                     <FaCheck className="mt-1 text-[#7CE6C1]" />
                     <span className="text-sm">{item}</span>
                   </li>
@@ -659,10 +809,7 @@ export default function Home() {
                   "Voicemail summaries you can actually read",
                   "Simple, trusted reachability anywhere",
                 ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3"
-                  >
+                  <li key={item} className="flex items-start gap-3">
                     <FaCheck className="mt-1 text-[#0D5C54]" />
                     <span className="text-sm text-slate-700 dark:text-slate-300">
                       {item}
@@ -796,10 +943,7 @@ export default function Home() {
             "
                 >
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#EEF4F2]">
-                    <Icon
-                      size={18}
-                      className="text-[#0D5C54]"
-                    />
+                    <Icon size={18} className="text-[#0D5C54]" />
                   </div>
 
                   <h3 className="font-semibold text-[#143A36] dark:text-white">
@@ -820,7 +964,6 @@ export default function Home() {
       <section className="bg-[#EEF4F2] px-4 py-20 dark:bg-slate-900">
         <div className="mx-auto max-w-6xl">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-
             {/* Left Content */}
             <div>
               <p className="mb-3 text-[10px] font-semibold uppercase tracking-[4px] text-[#F26B45]">
@@ -845,14 +988,8 @@ export default function Home() {
                   "Capture name, reason, urgency",
                   "Route summaries to the right team",
                 ].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-start gap-3"
-                  >
-                    <FiCheckCircle
-                      className="mt-1 text-[#F26B45]"
-                      size={18}
-                    />
+                  <div key={item} className="flex items-start gap-3">
+                    <FiCheckCircle className="mt-1 text-[#F26B45]" size={18} />
 
                     <span className="text-slate-700 dark:text-slate-300">
                       {item}
@@ -894,10 +1031,7 @@ export default function Home() {
                 <div className="flex items-start justify-between">
                   <div className="flex items-start gap-3">
                     <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FCE9E2]">
-                      <FiPhoneCall
-                        size={18}
-                        className="text-[#F26B45]"
-                      />
+                      <FiPhoneCall size={18} className="text-[#F26B45]" />
                     </div>
 
                     <div>
@@ -960,9 +1094,7 @@ export default function Home() {
 
                   <div className="space-y-4 text-sm">
                     <div className="grid grid-cols-[70px_1fr] gap-3">
-                      <span className="text-slate-500">
-                        Caller
-                      </span>
+                      <span className="text-slate-500">Caller</span>
 
                       <span className="font-medium text-[#133A36] dark:text-white">
                         Amara Okonkwo
@@ -970,9 +1102,7 @@ export default function Home() {
                     </div>
 
                     <div className="grid grid-cols-[70px_1fr] gap-3">
-                      <span className="text-slate-500">
-                        Reason
-                      </span>
+                      <span className="text-slate-500">Reason</span>
 
                       <span className="font-medium text-[#133A36] dark:text-white">
                         Quote on Q3 import shipment
@@ -980,9 +1110,7 @@ export default function Home() {
                     </div>
 
                     <div className="grid grid-cols-[70px_1fr] gap-3">
-                      <span className="text-slate-500">
-                        Priority
-                      </span>
+                      <span className="text-slate-500">Priority</span>
 
                       <span className="font-medium text-[#F26B45]">
                         High — time sensitive
@@ -990,9 +1118,7 @@ export default function Home() {
                     </div>
 
                     <div className="grid grid-cols-[70px_1fr] gap-3">
-                      <span className="text-slate-500">
-                        Callback
-                      </span>
+                      <span className="text-slate-500">Callback</span>
 
                       <span className="font-medium text-[#133A36] dark:text-white">
                         Today, before 5:00 PM GMT
@@ -1000,9 +1126,7 @@ export default function Home() {
                     </div>
 
                     <div className="grid grid-cols-[70px_1fr] gap-3">
-                      <span className="text-slate-500">
-                        Suggested
-                      </span>
+                      <span className="text-slate-500">Suggested</span>
 
                       <span className="font-medium text-[#133A36] dark:text-white">
                         Assign to Sales · London
@@ -1055,20 +1179,16 @@ export default function Home() {
       dark:bg-slate-700
     "
                 >
-                  <FiShield
-                    className="mt-2.5 text-[#0D5C54]"
-                    size={26}
-                  />
+                  <FiShield className="mt-2.5 text-[#0D5C54]" size={26} />
 
                   <p className="text-xs leading-5 text-slate-500 dark:text-slate-300">
                     AI outputs are governed, auditable, and configurable —
-                    summaries and routing suggestions for review,
-                    never uncontrolled commitments.
+                    summaries and routing suggestions for review, never
+                    uncontrolled commitments.
                   </p>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -1077,7 +1197,6 @@ export default function Home() {
       <section className="bg-[#F7F3ED] px-4 py-20 dark:bg-slate-950">
         <div className="mx-auto max-w-6xl">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-
             {/* Video Call UI */}
             <div className="mx-auto w-full max-w-[500px]">
               <div
@@ -1175,8 +1294,8 @@ export default function Home() {
 
               <p className="mt-6 text-sm md:text-base text-slate-600 dark:text-slate-400">
                 Video isn't an afterthought — it's core. Jump from a call to
-                face-to-face in one tap, with meeting links your clients can join
-                from anywhere.
+                face-to-face in one tap, with meeting links your clients can
+                join from anywhere.
               </p>
 
               <div className="mt-8 space-y-4">
@@ -1186,14 +1305,8 @@ export default function Home() {
                   "Screen sharing built in",
                   "Optional summaries & transcripts",
                 ].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-start gap-3"
-                  >
-                    <FiCheck
-                      size={16}
-                      className="mt-1 text-[#0D7A6D]"
-                    />
+                  <div key={item} className="flex items-start gap-3">
+                    <FiCheck size={16} className="mt-1 text-[#0D7A6D]" />
 
                     <span className="text-slate-700 dark:text-slate-300">
                       {item}
@@ -1220,7 +1333,8 @@ export default function Home() {
             </h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-slate-500 dark:text-slate-400">
-              No paperwork mountain. Just choose, verify, and start communicating.
+              No paperwork mountain. Just choose, verify, and start
+              communicating.
             </p>
           </div>
 
@@ -1509,7 +1623,6 @@ export default function Home() {
       <section className="bg-[#EEF4F2] px-4 py-20 dark:bg-slate-900">
         <div className="mx-auto max-w-6xl">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-
             {/* Left */}
             <div>
               <p className="mb-3 text-[10px] font-semibold uppercase tracking-[4px] text-[#F26B45]">
@@ -1532,14 +1645,8 @@ export default function Home() {
                   "Usage dashboards & billing visibility",
                   "AI-handled calls tracked by team",
                 ].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-start gap-3"
-                  >
-                    <FiCheck
-                      className="mt-1 text-[#0D7A6D]"
-                      size={16}
-                    />
+                  <div key={item} className="flex items-start gap-3">
+                    <FiCheck className="mt-1 text-[#0D7A6D]" size={16} />
 
                     <span className="text-slate-700 dark:text-slate-300">
                       {item}
@@ -1628,10 +1735,11 @@ export default function Home() {
                       </p>
 
                       <h4
-                        className={`mt-2 text-2xl font-bold ${item.highlight
-                          ? "text-[#F26B45]"
-                          : "text-[#143A36] dark:text-white"
-                          }`}
+                        className={`mt-2 text-2xl font-bold ${
+                          item.highlight
+                            ? "text-[#F26B45]"
+                            : "text-[#143A36] dark:text-white"
+                        }`}
                       >
                         {item.value}
                       </h4>
@@ -1684,10 +1792,11 @@ export default function Home() {
             bg-white
             dark:bg-slate-800
 
-            ${index !== 3
-                          ? "border-b border-[#E6DDD2] dark:border-slate-700"
-                          : ""
-                        }
+            ${
+              index !== 3
+                ? "border-b border-[#E6DDD2] dark:border-slate-700"
+                : ""
+            }
           `}
                     >
                       <div className="flex items-center gap-3">
@@ -1721,7 +1830,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -1750,8 +1858,7 @@ export default function Home() {
               <h2 className="text-2xl sm:text-3xl max-w-xl font-bold leading-tight text-white md:text-4xl">
                 Cross-border communication
                 <br />
-                that has
-                to be <span className="text-[#FFC6B4]">trusted.</span>
+                that has to be <span className="text-[#FFC6B4]">trusted.</span>
               </h2>
 
               <p className="mt-6 max-w-xl text-base md:text-lg text-white/70">
@@ -1822,18 +1929,11 @@ export default function Home() {
                 hover:bg-white/10
               "
                   >
-                    <Icon
-                      size={18}
-                      className="mb-4 text-white"
-                    />
+                    <Icon size={18} className="mb-4 text-white" />
 
-                    <h3 className="font-semibold text-white">
-                      {item.title}
-                    </h3>
+                    <h3 className="font-semibold text-white">{item.title}</h3>
 
-                    <p className="mt-2 text-sm text-white/60">
-                      {item.desc}
-                    </p>
+                    <p className="mt-2 text-sm text-white/60">{item.desc}</p>
                   </div>
                 );
               })}
@@ -1846,7 +1946,6 @@ export default function Home() {
       <section className="bg-[#EFE9DF] px-4 py-20 dark:bg-slate-900">
         <div className="mx-auto max-w-6xl">
           <div className="grid items-center gap-12 lg:grid-cols-2">
-
             {/* Billing Statement Card */}
             <div
               className="
@@ -1948,10 +2047,7 @@ export default function Home() {
                   "Grace periods & dunning",
                   "Transparent statements",
                 ].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-3"
-                  >
+                  <div key={item} className="flex items-center gap-3">
                     <FiCheck className="text-[#0D7A4D]" />
 
                     <span className="text-slate-700 dark:text-slate-300">
@@ -1978,7 +2074,6 @@ export default function Home() {
                 </button>
               </a>
             </div>
-
           </div>
         </div>
       </section>
@@ -1997,8 +2092,8 @@ export default function Home() {
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-sm md:text-base text-slate-500 dark:text-slate-400">
-              People once reached for Skype to get a local number and call across
-              borders. This is what that should look like now.
+              People once reached for Skype to get a local number and call
+              across borders. This is what that should look like now.
             </p>
           </div>
 
@@ -2053,10 +2148,11 @@ export default function Home() {
             py-4
             text-sm md:text-base
 
-            ${index % 2 === 0
-                    ? "bg-[#FCFAF8] dark:bg-slate-800"
-                    : "bg-white dark:bg-slate-900"
-                  }
+            ${
+              index % 2 === 0
+                ? "bg-[#FCFAF8] dark:bg-slate-800"
+                : "bg-white dark:bg-slate-900"
+            }
           `}
               >
                 <div className="font-medium text-sm md:text-base text-[#143A36] dark:text-white">
@@ -2064,10 +2160,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex justify-center">
-                  <FiCheck
-                    className="text-[#0D7A4D]"
-                    size={18}
-                  />
+                  <FiCheck className="text-[#0D7A4D]" size={18} />
                 </div>
 
                 <div className="flex justify-center">
@@ -2094,8 +2187,8 @@ export default function Home() {
           {/* CTA */}
           <div className="mt-10 flex justify-center">
             <a href="/switch-from-skype">
-            <button
-              className="
+              <button
+                className="
           rounded-full
           bg-[#F26B45]
           px-8
@@ -2106,9 +2199,9 @@ export default function Home() {
           transition
           hover:opacity-90
         "
-            >
-              Move Beyond Skype
-            </button>
+              >
+                Move Beyond Skype
+              </button>
             </a>
           </div>
         </div>
@@ -2128,7 +2221,8 @@ export default function Home() {
             </h2>
 
             <p className="mx-auto mt-4 text-sm md:text-base max-w-2xl text-slate-500 dark:text-slate-400">
-              Pick only what you need today — talk to us when you're ready to scale.
+              Pick only what you need today — talk to us when you're ready to
+              scale.
             </p>
           </div>
 
@@ -2142,7 +2236,7 @@ export default function Home() {
                 desc: "Start with your first number",
                 button: "Choose Plan",
                 dark: false,
-                href:"/pricing",
+                href: "/pricing",
               },
               {
                 title: "Business Starter",
@@ -2150,7 +2244,7 @@ export default function Home() {
                 heading: "Choose plan",
                 desc: "Built for first business use",
                 button: "Choose Plan",
-                href:"/pricing",
+                href: "/pricing",
                 dark: false,
               },
               {
@@ -2159,7 +2253,7 @@ export default function Home() {
                 heading: "Choose plan",
                 desc: "Running in multiple markets",
                 button: "Choose Plan",
-                href:"/pricing",
+                href: "/pricing",
                 featured: true,
               },
               {
@@ -2168,7 +2262,7 @@ export default function Home() {
                 heading: "Talk to sales",
                 desc: "Custom & compliance-led",
                 button: "Talk To Sales",
-                href:"/contact-sales",
+                href: "/contact-sales",
                 dark: false,
               },
             ].map((plan) => (
@@ -2183,12 +2277,13 @@ export default function Home() {
             duration-300
             hover:-translate-y-1
 
-            ${plan.featured
-                    ? "border-[#0D5C54] bg-[#0D5C54] text-white shadow-xl"
-                    : plan.dark
-                      ? "border-[#0D5C54] bg-[#0D5C54] text-white"
-                      : "border-[#E7DDD2] bg-white dark:border-slate-700 dark:bg-slate-800"
-                  }
+            ${
+              plan.featured
+                ? "border-[#0D5C54] bg-[#0D5C54] text-white shadow-xl"
+                : plan.dark
+                  ? "border-[#0D5C54] bg-[#0D5C54] text-white"
+                  : "border-[#E7DDD2] bg-white dark:border-slate-700 dark:bg-slate-800"
+            }
           `}
               >
                 {plan.featured && (
@@ -2214,23 +2309,23 @@ export default function Home() {
                 )}
 
                 <p
-                  className={`text-xs font-medium ${plan.featured || plan.dark
-                    ? "text-white/70"
-                    : "text-slate-500"
-                    }`}
+                  className={`text-xs font-medium ${
+                    plan.featured || plan.dark
+                      ? "text-white/70"
+                      : "text-slate-500"
+                  }`}
                 >
                   {plan.title}
                 </p>
 
-                <h3 className="mt-4 text-2xl font-bold">
-                  {plan.heading}
-                </h3>
+                <h3 className="mt-4 text-2xl font-bold">{plan.heading}</h3>
 
                 <p
-                  className={`mt-3 text-sm ${plan.featured || plan.dark
-                    ? "text-white/70"
-                    : "text-slate-500"
-                    }`}
+                  className={`mt-3 text-sm ${
+                    plan.featured || plan.dark
+                      ? "text-white/70"
+                      : "text-slate-500"
+                  }`}
                 >
                   {plan.desc}
                 </p>
@@ -2242,10 +2337,7 @@ export default function Home() {
                     "Compliance controls",
                     "Advanced billing visibility",
                   ].map((feature) => (
-                    <div
-                      key={feature}
-                      className="flex items-center gap-2"
-                    >
+                    <div key={feature} className="flex items-center gap-2">
                       <FiCheck
                         size={14}
                         className={
@@ -2255,15 +2347,13 @@ export default function Home() {
                         }
                       />
 
-                      <span className="text-sm">
-                        {feature}
-                      </span>
+                      <span className="text-sm">{feature}</span>
                     </div>
                   ))}
                 </div>
-                  <a href={plan.href}>
-                <button
-                  className={`
+                <a href={plan.href}>
+                  <button
+                    className={`
               mt-8
               w-full
               rounded-full
@@ -2271,16 +2361,17 @@ export default function Home() {
               text-sm
               font-semibold
               border
-              ${plan.featured
-                      ? "bg-[#F26B45] text-white"
-                      : plan.dark
-                        ? "bg-white text-[#0D5C54]"
-                        : "bg-[#EEF4F2] text-[#0D5C54]"
-                    }
+              ${
+                plan.featured
+                  ? "bg-[#F26B45] text-white"
+                  : plan.dark
+                    ? "bg-white text-[#0D5C54]"
+                    : "bg-[#EEF4F2] text-[#0D5C54]"
+              }
             `}
-                >
-                  {plan.button}
-                </button>
+                  >
+                    {plan.button}
+                  </button>
                 </a>
               </div>
             ))}
@@ -2304,8 +2395,7 @@ export default function Home() {
             </p>
 
             <h2 className="text-3xl font-bold text-[#143A36] dark:text-white md:text-5xl">
-              Made for the way{" "}
-              <span className="text-[#F26B45]">you</span> work.
+              Made for the way <span className="text-[#F26B45]">you</span> work.
             </h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-sm text-slate-500 dark:text-slate-400">
@@ -2390,10 +2480,7 @@ export default function Home() {
                 dark:bg-slate-800
               "
                   >
-                    <Icon
-                      size={18}
-                      className="text-[#0D5C54]"
-                    />
+                    <Icon size={18} className="text-[#0D5C54]" />
                   </div>
 
                   {/* Title */}
@@ -2479,8 +2566,8 @@ export default function Home() {
         "
             >
               <a href="/get-local-number">
-              <button
-                className="
+                <button
+                  className="
             flex
             items-center
             gap-2
@@ -2496,15 +2583,15 @@ export default function Home() {
             hover:scale-[1.02]
             hover:bg-[#EB5D34]
           "
-              >
-                Get a Local Number
-                <FiArrowRight size={16} />
-              </button>
+                >
+                  Get a Local Number
+                  <FiArrowRight size={16} />
+                </button>
               </a>
 
               <a href="/contact-sales">
-              <button
-                className="
+                <button
+                  className="
             rounded-full
             bg-white
             px-7
@@ -2516,9 +2603,9 @@ export default function Home() {
             duration-300
             hover:bg-[#F4F4F4]
           "
-              >
-                Talk to Sales
-              </button>
+                >
+                  Talk to Sales
+                </button>
               </a>
             </div>
 
