@@ -2,15 +2,55 @@ name: Deploy Zoiko Local Website
 on:
   push:
     branches: [main]
+    # Changes to CI config or docs alone don't need a production deploy.
+    paths-ignore:
+      - ".github/**"
+      - "**.md"
+  # Allows re-running the deploy from the Actions tab (e.g. after fixing secrets).
+  workflow_dispatch:
+
+# Never run two deploys against the server at the same time.
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - uses: appleboy/ssh-action@v1.0.3
+      - name: Validate SSH secrets
+        env:
+          SSH_HOST: ${{ secrets.GCP_SSH_HOST }}
+          SSH_USER: ${{ secrets.GCP_SSH_USER }}
+          SSH_KEY: ${{ secrets.GCP_SSH_KEY }}
+        run: |
+          fail=0
+          [ -n "$SSH_HOST" ] || { echo "::error::Secret GCP_SSH_HOST is empty or not set"; fail=1; }
+          [ -n "$SSH_USER" ] || { echo "::error::Secret GCP_SSH_USER is empty or not set"; fail=1; }
+          [ -n "$SSH_KEY" ]  || { echo "::error::Secret GCP_SSH_KEY is empty or not set"; fail=1; }
+          [ "$fail" -eq 0 ] || exit 1
+
+          # Check the private key parses, and print its PUBLIC fingerprint so it can be
+          # compared with ~/.ssh/authorized_keys on the server (ssh-keygen -lf authorized_keys).
+          keyfile="$(mktemp)"
+          trap 'rm -f "$keyfile"' EXIT
+          printf '%s\n' "$SSH_KEY" > "$keyfile"
+          chmod 600 "$keyfile"
+          if ! ssh-keygen -y -P "" -f "$keyfile" > "$keyfile.pub" 2>/dev/null; then
+            echo "::error::GCP_SSH_KEY is not a valid unencrypted private key (paste the full key incl. BEGIN/END lines; if it has a passphrase, remove it or add a passphrase input)"
+            exit 1
+          fi
+          echo "Deploy key fingerprint: $(ssh-keygen -lf "$keyfile.pub")"
+          rm -f "$keyfile.pub"
+
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.GCP_SSH_HOST }}
           username: ${{ secrets.GCP_SSH_USER }}
           key: ${{ secrets.GCP_SSH_KEY }}
+          command_timeout: 15m
           script: |
             set -e
             cd /var/www/zoiko-local/app
