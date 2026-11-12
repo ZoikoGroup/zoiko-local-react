@@ -1,0 +1,11 @@
+export { default as ZoikoLocalHero } from "./ZoikoLocalHero";
+export { default as ExploreUSLocalNumbers } from "./ExploreUSLocalNumbers";
+export { default as HowToGetUSLocalNumber } from "./HowToGetUSLocalNumber";
+export { default as FindThePlanThatFits } from "./FindThePlanThatFits";
+export { default as KeepYourNumberAndCapabilities } from "./KeepYourNumberAndCapabilities";
+export { default as AvailableNumbersShownLive } from "./AvailableNumbersShownLive";
+export { default as BlackFridayCta } from "./BlackFridayCta";
+export { default as CallerIdentityAndSafety } from "./CallerIdentityAndSafety";
+export { default as WhyZoikoLocal } from "./WhyZoikoLocal";
+export { default as USLocalNumberFAQ } from "./USLocalNumberFAQ";
+export { default as GetStartedCta } from "./GetStartedCta";
