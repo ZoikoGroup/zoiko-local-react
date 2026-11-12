@@ -31,23 +31,6 @@ const SALE_START = new Date("2026-11-27T00:00:00").getTime();
 const SALE_END = new Date("2026-11-30T23:59:59").getTime();
 
 const OPEN_DELAY_MS = 1200;
-const STORAGE_KEY = "zl-bf-2026-popup-dismissed";
-
-function readDismissed() {
-  try {
-    return window.sessionStorage.getItem(STORAGE_KEY) === "1";
-  } catch {
-    return false;
-  }
-}
-
-function writeDismissed() {
-  try {
-    window.sessionStorage.setItem(STORAGE_KEY, "1");
-  } catch {
-    /* storage unavailable (private mode, blocked) — popup simply reappears next load */
-  }
-}
 
 function getCountdown(now: number) {
   const live = now >= SALE_START;
@@ -70,19 +53,19 @@ export default function BlackFridayPopup() {
   const [now, setNow] = useState(() => Date.now());
   const closeBtnRef = useRef<HTMLButtonElement>(null);
 
-  const onPromoPage = pathname?.startsWith(PROMO.href) ?? false;
+  const onHomePage = pathname === "/";
 
-  // Open shortly after the first visit to any page except /black-friday itself.
+  // Open shortly after every load of the home page (only while the sale hasn't ended).
   useEffect(() => {
-    if (onPromoPage || readDismissed() || Date.now() > SALE_END) return;
+    if (!onHomePage || Date.now() > SALE_END) return;
     const t = window.setTimeout(() => setOpen(true), OPEN_DELAY_MS);
-    return () => window.clearTimeout(t);
-  }, [onPromoPage]);
+    return () => {
+      window.clearTimeout(t);
+      setOpen(false);
+    };
+  }, [onHomePage]);
 
-  const close = useCallback(() => {
-    writeDismissed();
-    setOpen(false);
-  }, []);
+  const close = useCallback(() => setOpen(false), []);
 
   // While open: tick the countdown, lock scroll, focus the dialog, close on Esc.
   useEffect(() => {
@@ -107,7 +90,7 @@ export default function BlackFridayPopup() {
     };
   }, [open, close]);
 
-  if (!open || onPromoPage) return null;
+  if (!open || !onHomePage) return null;
 
   const countdown = getCountdown(now);
 
