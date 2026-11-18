@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Plus, X, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Global Local Phone Numbers for Business | Zoiko Local",
@@ -2224,11 +2225,11 @@ export default function Home() {
             </p>
 
             <h2 className="text-3xl font-bold text-[#143A36] dark:text-white md:text-4xl">
-              Find the plan that <span className="text-[#F26B45]">fits</span>
+              Find the plan that <span className="text-[#F26B45]">fits.</span>
             </h2>
 
             <p className="mx-auto mt-4 text-sm md:text-base max-w-2xl text-slate-500 dark:text-slate-400">
-              Pick only what you need today — talk to us when you're ready to
+              Pick by what you need today — talk to us when you're ready to
               scale.
             </p>
           </div>
@@ -2238,58 +2239,83 @@ export default function Home() {
             {[
               {
                 title: "Individual",
-                subtitle: "For global life travel",
+                subtitle: "For global life & travel",
                 heading: "Get started",
-                desc: "Start with your first number",
+                desc: "Self-serve activation",
+                features: [
+                  "One local number",
+                  "Calling & video",
+                  "Voicemail summaries",
+                  "Separate work & personal",
+                ],
                 button: "Choose Plan",
-                dark: false,
                 href: "/pricing",
+                featured: false,
               },
               {
                 title: "Business Starter",
-                subtitle: "For small teams",
+                subtitle: "For small teams & founders",
                 heading: "Choose plan",
-                desc: "Built for first business use",
+                desc: "Built for first hires",
+                features: [
+                  "Multiple numbers",
+                  "Team members & roles",
+                  "AI Receptionist",
+                  "Usage visibility",
+                ],
                 button: "Choose Plan",
                 href: "/pricing",
-                dark: false,
+                featured: false,
               },
               {
                 title: "Business Growth",
                 subtitle: "For scaling sales teams",
                 heading: "Choose plan",
-                desc: "Running in multiple markets",
+                desc: "Routing & controls included",
+                features: [
+                  "Everything in Starter",
+                  "Territory routing",
+                  "Compliance controls",
+                  "Advanced billing visibility",
+                ],
                 button: "Choose Plan",
                 href: "/pricing",
                 featured: true,
               },
               {
                 title: "Enterprise",
-                subtitle: "For large operations",
+                subtitle: "For multi-market operations",
                 heading: "Talk to sales",
                 desc: "Custom & compliance-led",
-                button: "Talk To Sales",
+                features: [
+                  "Everything in Growth",
+                  "Custom market coverage",
+                  "Dedicated support",
+                  "Procurement & security review",
+                ],
+                button: "Talk to Sales",
                 href: "/contact-sales",
-                dark: false,
+                featured: false,
+                isEnterprise: true,
               },
             ].map((plan) => (
               <div
                 key={plan.title}
                 className={`
             relative
-            rounded-[24px]
+            rounded-[28px]
             border
             p-6
             transition-all
             duration-300
             hover:-translate-y-1
-
+            flex
+            flex-col
+            justify-between
             ${
               plan.featured
-                ? "border-[#0D5C54] bg-[#0D5C54] text-white shadow-xl"
-                : plan.dark
-                  ? "border-[#0D5C54] bg-[#0D5C54] text-white"
-                  : "border-[#E7DDD2] bg-white dark:border-slate-700 dark:bg-slate-800"
+                ? "border-[#0D5C54] bg-[#0A4F4A] text-white shadow-2xl scale-[1.02] z-10"
+                : "border-[#E7DDD2] bg-white text-[#143A36] shadow-sm dark:border-slate-700 dark:bg-slate-800 dark:text-white"
             }
           `}
               >
@@ -2302,92 +2328,106 @@ export default function Home() {
                 -translate-x-1/2
                 rounded-full
                 bg-[#F26B45]
-                px-3
+                px-3.5
                 py-1
                 text-[10px]
-                font-semibold
+                font-bold
                 uppercase
-                tracking-wide
+                tracking-wider
                 text-white
+                shadow-md
               "
                   >
                     Most Popular
                   </span>
                 )}
 
-                <p
-                  className={`text-xs font-medium ${
-                    plan.featured || plan.dark
-                      ? "text-white/70"
-                      : "text-slate-500"
-                  }`}
-                >
-                  {plan.title}
-                </p>
+                <div>
+                  <div className="flex flex-col gap-1">
+                    <h3
+                      className={`text-lg font-bold ${
+                        plan.featured
+                          ? "text-white"
+                          : "text-[#143A36] dark:text-white"
+                      }`}
+                    >
+                      {plan.title}
+                    </h3>
+                    <p
+                      className={`text-xs ${
+                        plan.featured
+                          ? "text-white/80"
+                          : "text-slate-500 dark:text-slate-400"
+                      }`}
+                    >
+                      {plan.subtitle}
+                    </p>
+                  </div>
 
-                <h3 className="mt-4 text-2xl font-bold">{plan.heading}</h3>
+                  <div className="mt-6">
+                    <h4 className="text-2xl font-bold tracking-tight">
+                      {plan.heading}
+                    </h4>
+                    <p
+                      className={`mt-1.5 text-xs ${
+                        plan.featured
+                          ? "text-white/80"
+                          : "text-slate-500 dark:text-slate-400"
+                      }`}
+                    >
+                      {plan.desc}
+                    </p>
+                  </div>
 
-                <p
-                  className={`mt-3 text-sm ${
-                    plan.featured || plan.dark
-                      ? "text-white/70"
-                      : "text-slate-500"
-                  }`}
-                >
-                  {plan.desc}
-                </p>
-
-                <div className="mt-8 space-y-3">
-                  {[
-                    "Everything in Starter",
-                    "Territory routing",
-                    "Compliance controls",
-                    "Advanced billing visibility",
-                  ].map((feature) => (
-                    <div key={feature} className="flex items-center gap-2">
-                      <FiCheck
-                        size={14}
-                        className={
-                          plan.featured || plan.dark
-                            ? "text-white"
-                            : "text-[#0D7A4D]"
-                        }
-                      />
-
-                      <span className="text-sm">{feature}</span>
-                    </div>
-                  ))}
+                  <div className="mt-8 space-y-3.5 border-t border-slate-100/10 pt-6">
+                    {plan.features.map((feature) => (
+                      <div key={feature} className="flex items-center gap-2.5">
+                        <FiCheck
+                          size={14}
+                          className={
+                            plan.featured
+                              ? "text-[#FFC6B4] flex-shrink-0"
+                              : "text-[#0D7A4D] flex-shrink-0"
+                          }
+                        />
+                        <span className="text-xs font-medium">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <a href={plan.href}>
-                  <button
-                    className={`
-              mt-8
-              w-full
-              rounded-full
-              py-3
-              text-sm
-              font-semibold
-              border
-              ${
-                plan.featured
-                  ? "bg-[#F26B45] text-white"
-                  : plan.dark
-                    ? "bg-white text-[#0D5C54]"
-                    : "bg-[#EEF4F2] text-[#0D5C54]"
-              }
-            `}
-                  >
-                    {plan.button}
-                  </button>
-                </a>
+
+                <div className="mt-8">
+                  <a href={plan.href} className="block w-full">
+                    <button
+                      className={`
+                  w-full
+                  rounded-full
+                  py-3
+                  text-xs
+                  font-semibold
+                  transition-colors
+                  border
+                  ${
+                    plan.featured
+                      ? "bg-[#F26B45] border-transparent text-white hover:bg-[#e05a36]"
+                      : plan.isEnterprise
+                        ? "bg-[#0D5C54] border-transparent text-white hover:bg-[#094842]"
+                        : "bg-white border-[#E7DDD2] text-[#143A36] hover:bg-slate-50 dark:bg-slate-700 dark:border-slate-600 dark:text-white"
+                  }
+                `}
+                    >
+                      {plan.button}
+                    </button>
+                  </a>
+                </div>
               </div>
             ))}
           </div>
 
           {/* Footer */}
-          <p className="mt-8 text-center text-xs text-slate-500">
-            Final prices are confirmed at checkout and may depend on market,
-            verification requirements, and selected features.
+          <p className="mt-12 text-center text-xs text-slate-500 dark:text-slate-400">
+            Final prices are confirmed at checkout once approved. Plans show fit
+            and positioning, not placeholder numbers.
           </p>
         </div>
       </section>
@@ -2507,11 +2547,114 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <Faq
-        heading="Questions"
-        subHeading="Zoiko Local, answered."
-        items={faqItems}
-      />
+
+      <section className="bg-[#F3EFE8] px-4 py-20 dark:bg-slate-900">
+  <div className="mx-auto max-w-3xl">
+    {/* Header */}
+    <div className="text-center">
+      <p className="mb-3 text-xs md:text-sm font-semibold uppercase tracking-[4px] text-[#F26B45]">
+        FAQ
+      </p>
+
+      <h2 className="text-3xl font-bold text-[#143A36] dark:text-white md:text-4xl">
+        Questions, answered.
+      </h2>
+    </div>
+
+    {/* Accordion List */}
+    <div className="mt-12 space-y-4">
+      {[
+        {
+          question: "Can I get more than one number?",
+          answer:
+            "Yes. Individuals can hold a personal local number, and business plans support multiple numbers across teams, territories, and inbound lines — all managed from your workspace.",
+        },
+        {
+          question: "Does Zoiko Local support business teams?",
+          answer:
+            "Yes, Zoiko Local provides tools designed specifically for teams, including shared workspaces, role-based access control, and collaborative routing capabilities.",
+        },
+        {
+          question: "Is video calling included?",
+          answer:
+            "Yes, high-definition video calling is included across supported plans to enable seamless communication.",
+        },
+        {
+          question: "How does the AI Receptionist work?",
+          answer:
+            "The AI Receptionist automatically answers inbound calls, routes callers appropriately, and provides conversational summaries.",
+        },
+        {
+          question: "Which countries are available?",
+          answer:
+            "We support local numbers and service across multiple global markets and regions.",
+        },
+        {
+          question: "Is this a Skype replacement?",
+          answer:
+            "Zoiko Local is built for professional remote work with modern business features, local numbers, and team controls.",
+        },
+        {
+          question: "What about emergency calling?",
+          answer:
+            "Emergency calling features vary by region and number type. Please review our compliance documentation for details.",
+        },
+        {
+          question: "How are recording and transcription consent handled?",
+          answer:
+            "Built-in notice and prompt controls assist with compliance regarding local call recording and transcription regulations.",
+        },
+        {
+          question: "How does billing work?",
+          answer:
+            "Billing is handled securely online with flexible terms depending on your selected plan.",
+        },
+        {
+          question: "Can I cancel anytime?",
+          answer:
+            "Yes, you can cancel your subscription directly from your workspace settings at any time.",
+        },
+      ].map((faq, index) => (
+        <details
+          key={faq.question}
+          className="group rounded-[20px] border border-[#E7DDD2] bg-white transition-all duration-300 overflow-hidden shadow-sm dark:border-slate-700 dark:bg-slate-800"
+        >
+          <summary className="flex w-full cursor-pointer items-center justify-between p-6 text-left list-none [&::-webkit-details-marker]:hidden">
+            <span className="text-base font-bold text-[#143A36] dark:text-white md:text-lg">
+              {faq.question}
+            </span>
+
+            <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full transition-colors bg-[#EEF4F2] text-[#143A36] group-open:bg-[#F26B45] group-open:text-white dark:bg-slate-700 dark:text-slate-200">
+              <span className="block group-open:hidden">
+                <Plus size={16} />
+              </span>
+              <span className="hidden group-open:block">
+                <X size={16} />
+              </span>
+            </div>
+          </summary>
+
+          <div className="px-6 pb-6 pt-0 text-sm leading-relaxed text-slate-500 dark:text-slate-300 md:text-base">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+
+    {/* Footer Support Link */}
+    <div className="mt-12 text-center">
+      <p className="text-xs text-slate-500 dark:text-slate-400">
+        Still have questions?{" "}
+        <a
+          href="/help-center"
+          className="inline-flex items-center gap-1 font-semibold text-[#F26B45] hover:underline"
+        >
+          Visit the Help Center <ArrowRight size={12} />
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* Final CTA Section */}
       <section className="bg-[#F7F3ED] px-4 py-16 dark:bg-slate-950">
