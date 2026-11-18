@@ -50,197 +50,259 @@ export default function Header() {
 
   return (
     <>
-    <meta name="google-site-verification" content="rgZnqmV9GEv5IpGFTCAf_dsqE8yrYdgO152o2VY2yLQ" />
-    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-md relative">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 lg:px-8">
-        {/* Logo */}
-        <Link href="/" className="shrink-0">
-          <Image src="/Zoiko-Local-Logo.png" alt="Zoiko Local" width={180} height={40} priority />
-        </Link>
+      <meta name="google-site-verification" content="rgZnqmV9GEv5IpGFTCAf_dsqE8yrYdgO152o2VY2yLQ" />
+      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 text-slate-900 backdrop-blur-md dark:border-slate-800 dark:bg-slate-950/90 dark:text-slate-100">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 lg:px-8">
+          {/* Logo - remove 'dark:brightness-0 dark:invert' if your logo already has light text */}
+          <Link href="/" className="shrink-0">
+            <Image
+              src="/Zoiko-Local-Logo.png"
+              alt="Zoiko Local"
+              width={180}
+              height={40}
+              priority
+              className=""
+            />
+          </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:block">
-          <ul className="flex items-center gap-8 list-none m-0 p-0">
+          {/* Desktop Nav */}
+          <nav className="hidden lg:block">
+            <ul className="m-0 flex list-none items-center gap-8 p-0">
 
-            {/* Platform — dropdown positions relative to header, not li */}
-            <li
-              className="static"
-              onMouseEnter={() => handleEnter("platform")}
-              onMouseLeave={handleLeave}
+              {/* Platform */}
+              <li
+                className="static"
+                onMouseEnter={() => handleEnter("platform")}
+                onMouseLeave={handleLeave}
+              >
+                <button className="flex items-center gap-2 py-7 text-base font-medium text-slate-800 transition hover:text-[#F26B45] dark:text-slate-200 dark:hover:text-[#F26B45]">
+                  Platform
+                  <FiChevronDown className={`transition-transform ${activeMegaMenu === "platform" ? "rotate-180" : ""}`} />
+                </button>
+
+                {activeMegaMenu === "platform" && (
+                  <>
+                    <div className="absolute inset-x-0 top-20 h-4" />
+                    <div className="absolute left-1/2 top-[calc(5rem+16px)] -translate-x-1/2">
+                      <MegaMenu
+                        title="Platform"
+                        items={platformItems}
+                        buttonText="Start Free"
+                        buttonlink="/start-free"
+                        onClose={() => setActiveMegaMenu(null)}
+                      />
+                    </div>
+                  </>
+                )}
+              </li>
+
+              {/* Solutions */}
+              <li
+                className="static"
+                onMouseEnter={() => handleEnter("solutions")}
+                onMouseLeave={handleLeave}
+              >
+                <button className="flex items-center gap-2 py-7 text-base font-medium text-slate-800 transition hover:text-[#F26B45] dark:text-slate-200 dark:hover:text-[#F26B45]">
+                  Solutions
+                  <FiChevronDown className={`transition-transform ${activeMegaMenu === "solutions" ? "rotate-180" : ""}`} />
+                </button>
+
+                {activeMegaMenu === "solutions" && (
+                  <>
+                    <div className="absolute inset-x-0 top-20 h-4" />
+                    <div className="absolute left-1/2 top-[calc(5rem+16px)] -translate-x-1/2">
+                      <MegaMenu
+                        title="Solutions"
+                        items={solutionItems}
+                        buttonText="Talk to Sales"
+                        buttonlink="/contact-sales"
+                        onClose={() => setActiveMegaMenu(null)}
+                      />
+                    </div>
+                  </>
+                )}
+              </li>
+
+              {[
+                { label: "Global Coverage", href: "/global-coverage" },
+                { label: "Plans and Pricing", href: "/pricing" },
+                { label: "Resources", href: "/resources" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="text-base font-medium text-slate-800 transition hover:text-[#F26B45] dark:text-slate-200 dark:hover:text-[#F26B45]"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Desktop Actions */}
+          <div className="hidden items-center gap-4 lg:flex">
+            <Link
+              href="/login"
+              className="text-base font-medium text-slate-600 transition hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
             >
-              <button className="flex items-center gap-2 text-base font-medium py-7">
-                Platform
-                <FiChevronDown className={`transition-transform ${activeMegaMenu === "platform" ? "rotate-180" : ""}`} />
-              </button>
-
-              {activeMegaMenu === "platform" && (
-                <>
-                  {/* Invisible bridge — full width, covers gap between nav and dropdown */}
-                  <div className="absolute inset-x-0 top-20 h-4" />
-                  <div className="absolute left-1/2 -translate-x-1/2 top-[calc(5rem+16px)]">
-                    <MegaMenu
-                      title="Platform"
-                      items={platformItems}
-                      buttonText="Start Free"
-                      buttonlink="/start-free"
-                      onClose={() => setActiveMegaMenu(null)}
-                    />
-                  </div>
-                </>
-              )}
-            </li>
-
-            {/* Solutions — dropdown positions relative to header, not li */}
-            <li
-              className="static"
-              onMouseEnter={() => handleEnter("solutions")}
-              onMouseLeave={handleLeave}
+              Sign In
+            </Link>
+            <Link
+              href="/start-free"
+              className="rounded-full bg-[#F26B45] px-6 py-3 text-base font-semibold text-white transition hover:opacity-90"
             >
-              <button className="flex items-center gap-2 text-base font-medium py-7">
-                Solutions
-                <FiChevronDown className={`transition-transform ${activeMegaMenu === "solutions" ? "rotate-180" : ""}`} />
-              </button>
+              Start Free
+            </Link>
+          </div>
 
-              {activeMegaMenu === "solutions" && (
-                <>
-                  <div className="absolute inset-x-0 top-20 h-4" />
-                  <div className="absolute left-1/2 -translate-x-1/2 top-[calc(5rem+16px)]">
-                    <MegaMenu
-                      title="Solutions"
-                      items={solutionItems}
-                      buttonText="Talk to Sales"
-                      buttonlink="/contact-sales"
-                      onClose={() => setActiveMegaMenu(null)}
-                    />
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="text-slate-900 dark:text-slate-100 lg:hidden"
+            aria-label="Menu"
+          >
+            {open ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {open && (
+          <div className="border-t border-slate-200 bg-white text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 lg:hidden">
+            <div className="space-y-1 px-4 py-6">
+
+              {/* Platform accordion */}
+              <div>
+                <button
+                  onClick={() => setMobileExpanded(mobileExpanded === "platform" ? null : "platform")}
+                  className="flex w-full items-center justify-between py-3 text-base font-medium text-slate-900 dark:text-slate-100"
+                >
+                  Platform
+                  <FiChevronDown className={`transition-transform ${mobileExpanded === "platform" ? "rotate-180" : ""}`} />
+                </button>
+                {mobileExpanded === "platform" && (
+                  <div className="grid grid-cols-1 gap-4 pb-4 pl-2 sm:grid-cols-2">
+                    {platformItems.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <Link
+                          key={item.title}
+                          href={item.href}
+                          onClick={() => setOpen(false)}
+                          className="flex items-start gap-3 rounded-lg p-1.5 transition hover:bg-slate-100 dark:hover:bg-slate-900"
+                        >
+                          <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EEF4F2] dark:bg-slate-800">
+                            <Icon size={16} className="text-[#0D5C54] dark:text-teal-400" />
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold leading-tight text-slate-900 dark:text-slate-100">{item.title}</p>
+                            <p className="text-xs text-slate-500 dark:text-slate-400">{item.desc}</p>
+                          </div>
+                        </Link>
+                      );
+                    })}
                   </div>
-                </>
-              )}
-            </li>
+                )}
+              </div>
 
-            {[
-              { label: "Global Coverage", href: "/global-coverage" },
-              { label: "Plans and Pricing", href: "/pricing" },
-              { label: "Resources", href: "/resources" },
-            ].map((item) => (
-              <li key={item.label}>
-                <Link href={item.href} className="text-base font-medium hover:text-[#F26B45]">
+              {/* Solutions accordion */}
+              <div>
+                <button
+                  onClick={() => setMobileExpanded(mobileExpanded === "solutions" ? null : "solutions")}
+                  className="flex w-full items-center justify-between py-3 text-base font-medium text-slate-900 dark:text-slate-100"
+                >
+                  Solutions
+                  <FiChevronDown className={`transition-transform ${mobileExpanded === "solutions" ? "rotate-180" : ""}`} />
+                </button>
+                {mobileExpanded === "solutions" && (
+                  <div className="grid grid-cols-1 gap-4 pb-4 pl-2 sm:grid-cols-2">
+                    {solutionItems.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <Link
+                          key={item.title}
+                          href={item.href}
+                          onClick={() => setOpen(false)}
+                          className="flex items-start gap-3 rounded-lg p-1.5 transition hover:bg-slate-100 dark:hover:bg-slate-900"
+                        >
+                          <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EEF4F2] dark:bg-slate-800">
+                            <Icon size={16} className="text-[#0D5C54] dark:text-teal-400" />
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold leading-tight text-slate-900 dark:text-slate-100">{item.title}</p>
+                            <p className="text-xs text-slate-500 dark:text-slate-400">{item.desc}</p>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+
+              {/* Regular links */}
+              {[
+                { label: "Global Coverage", href: "/global-coverage" },
+                { label: "Plans and Pricing", href: "/pricing" },
+                { label: "Resources", href: "/resources" },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="block py-3 text-base font-medium text-slate-900 dark:text-slate-100"
+                >
                   {item.label}
                 </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+              ))}
 
-        {/* Desktop Actions */}
-        <div className="hidden items-center gap-4 lg:flex">
-          <Link href="/login" className="text-base font-medium text-muted-foreground hover:text-foreground">
-            Sign In
-          </Link>
-          <Link href="/start-free" className="rounded-full bg-[#F26B45] px-6 py-3 text-base font-semibold text-white transition hover:opacity-90">
-            Start Free
-          </Link>
-        </div>
-
-        {/* Mobile Toggle */}
-        <button onClick={() => setOpen(!open)} className="lg:hidden" aria-label="Menu">
-          {open ? <FiX size={24} /> : <FiMenu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {open && (
-        <div className="border-t border-border bg-background lg:hidden">
-          <div className="space-y-1 px-4 py-6">
-
-            {/* Platform accordion */}
-            <div>
-              <button
-                onClick={() => setMobileExpanded(mobileExpanded === "platform" ? null : "platform")}
-                className="flex w-full items-center justify-between py-3 text-base font-medium"
-              >
-                Platform
-                <FiChevronDown className={`transition-transform ${mobileExpanded === "platform" ? "rotate-180" : ""}`} />
-              </button>
-              {mobileExpanded === "platform" && (
-                <div className="grid grid-cols-2 gap-4 pb-4 pl-2">
-                  {platformItems.map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <Link key={item.title} href={item.href} onClick={() => setOpen(false)} className="flex items-start gap-2">
-                        <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EEF4F2]">
-                          <Icon size={16} className="text-[#0D5C54]" />
-                        </div>
-                        <div>
-                          <p className="text-sm font-semibold leading-tight">{item.title}</p>
-                          <p className="text-xs text-muted-foreground">{item.desc}</p>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-
-            {/* Solutions accordion */}
-            <div>
-              <button
-                onClick={() => setMobileExpanded(mobileExpanded === "solutions" ? null : "solutions")}
-                className="flex w-full items-center justify-between py-3 text-base font-medium"
-              >
-                Solutions
-                <FiChevronDown className={`transition-transform ${mobileExpanded === "solutions" ? "rotate-180" : ""}`} />
-              </button>
-              {mobileExpanded === "solutions" && (
-                <div className="grid grid-cols-2 gap-4 pb-4 pl-2">
-                  {solutionItems.map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <Link key={item.title} href={item.href} onClick={() => setOpen(false)} className="flex items-start gap-2">
-                        <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EEF4F2]">
-                          <Icon size={16} className="text-[#0D5C54]" />
-                        </div>
-                        <div>
-                          <p className="text-sm font-semibold leading-tight">{item.title}</p>
-                          <p className="text-xs text-muted-foreground">{item.desc}</p>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-
-            {/* Regular links */}
-            {[
-              { label: "Global Coverage", href: "/global-coverage" },
-              { label: "Plans and Pricing", href: "/pricing" },
-              { label: "Resources", href: "/resources" },
-            ].map((item) => (
-              <Link key={item.label} href={item.href} onClick={() => setOpen(false)} className="block py-3 text-base font-medium">
-                {item.label}
-              </Link>
-            ))}
-
-            <div className="flex flex-col gap-3 pt-4">
-              <Link href="/signin" className="rounded-lg border px-4 py-3 text-center">Sign In</Link>
-              <Link href="/signup" className="rounded-lg bg-[#F26B45] px-4 py-3 text-center font-semibold text-white">Start Free</Link>
+              <div className="flex flex-col gap-3 pt-4">
+                <Link
+                  href="/signin"
+                  onClick={() => setOpen(false)}
+                  className="rounded-lg border border-slate-300 px-4 py-3 text-center font-medium text-slate-900 dark:border-slate-700 dark:text-slate-100"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/signup"
+                  onClick={() => setOpen(false)}
+                  className="rounded-lg bg-[#F26B45] px-4 py-3 text-center font-semibold text-white"
+                >
+                  Start Free
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </header>
+        )}
+      </header>
     </>
   );
 }
 
-function MegaMenu({ title, items, buttonText, buttonlink, onClose }: { title: string; items: typeof platformItems; buttonText: string; buttonlink: string; onClose: () => void }) {
+function MegaMenu({
+  title,
+  items,
+  buttonText,
+  buttonlink,
+  onClose,
+}: {
+  title: string;
+  items: typeof platformItems;
+  buttonText: string;
+  buttonlink: string;
+  onClose: () => void;
+}) {
   return (
-    <div className="w-[min(1000px,90vw)] overflow-hidden rounded-[28px] border border-[#E5DDD4] bg-white shadow-[0_25px_80px_rgba(0,0,0,0.08)] dark:border-slate-700 dark:bg-slate-900">
+    <div className="w-[min(1000px,90vw)] overflow-hidden rounded-[28px] border border-[#E5DDD4] bg-white text-slate-900 shadow-[0_25px_80px_rgba(0,0,0,0.08)] dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100 dark:shadow-[0_25px_80px_rgba(0,0,0,0.5)]">
       <div className="p-8">
         <div className="mb-10 flex items-center justify-between">
-          <span className="text-xs font-bold uppercase tracking-[4px] text-slate-500">{title}</span>
+          <span className="text-xs font-bold uppercase tracking-[4px] text-slate-500 dark:text-slate-400">
+            {title}
+          </span>
           <Link href={`/${title.toLowerCase()}`} onClick={onClose}>
-            <button className="font-medium text-[#F26B45]">View {title} →</button>
+            <button className="font-medium text-[#F26B45] hover:underline">
+              View {title} →
+            </button>
           </Link>
         </div>
 
@@ -248,27 +310,38 @@ function MegaMenu({ title, items, buttonText, buttonlink, onClose }: { title: st
           {items.map((item) => {
             const Icon = item.icon;
             return (
-              <Link key={item.title} href={item.href} onClick={onClose} className="group block rounded-xl p-2 -m-2 transition hover:bg-[#F8F5F1]">
+              <Link
+                key={item.title}
+                href={item.href}
+                onClick={onClose}
+                className="group -m-2 block rounded-xl p-2 transition hover:bg-[#F8F5F1] dark:hover:bg-slate-800/80"
+              >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#EEF4F2] dark:bg-slate-800">
-                  <Icon size={20} className="text-[#0D5C54]" />
+                  <Icon size={20} className="text-[#0D5C54] dark:text-teal-400" />
                 </div>
-                <h4 className="mb-2 flex items-center gap-2 text-lg font-semibold">
+                <h4 className="mb-2 flex items-center gap-2 text-lg font-semibold text-slate-900 dark:text-slate-100">
                   {item.title}
                   {"badge" in item && item.badge && (
-                    <span className="rounded-full bg-[#F26B45] px-2 py-0.5 text-[10px] text-white">{item.badge}</span>
+                    <span className="rounded-full bg-[#F26B45] px-2 py-0.5 text-[10px] text-white">
+                      {item.badge}
+                    </span>
                   )}
                 </h4>
-                <p className="text-sm text-slate-500">{item.desc}</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">{item.desc}</p>
               </Link>
             );
           })}
         </div>
       </div>
 
-      <div className="flex items-center justify-between border-t border-[#E5DDD4] bg-[#F8F5F1] px-10 py-5 dark:border-slate-700 dark:bg-slate-800">
-        <p className="text-sm text-slate-600 dark:text-slate-300">Use one product or build the full stack.</p>
+      <div className="flex items-center justify-between border-t border-[#E5DDD4] bg-[#F8F5F1] px-10 py-5 dark:border-slate-800 dark:bg-slate-800/70">
+        <p className="text-sm text-slate-600 dark:text-slate-300">
+          Use one product or build the full stack.
+        </p>
         <Link href={buttonlink} onClick={onClose}>
-          <button className="rounded-full bg-[#F26B45] px-8 py-3 font-semibold text-white">{buttonText}</button>
+          <button className="rounded-full bg-[#F26B45] px-8 py-3 font-semibold text-white transition hover:opacity-90">
+            {buttonText}
+          </button>
         </Link>
       </div>
     </div>

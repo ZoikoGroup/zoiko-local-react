@@ -93,42 +93,41 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative w-full overflow-hidden bg-[#F6F3EE] dark:bg-slate-950">
-        {/* ================= 1. HERO (bg image) ================= */}
-        <div className="relative w-full min-h-[560px] pb-24 sm:min-h-[620px] lg:min-h-[640px] lg:pb-28">
-          {/* Background image (laptop, phone, globe, cards are all part of this image) */}
+        {/* ================= 1. HERO (only this block has the bg image) ================= */}
+        <div className="relative w-full pb-16 lg:h-[708px] lg:pb-0">
+          {/* Background image (laptop, phone, globe, cards are baked into it) */}
           <Image
             src="/images/homepage/bg.jpg"
             alt="Global communications platform with laptop, phone and local number finder"
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[65%_center] lg:object-right"
+            className="object-cover object-[65%_center] lg:object-[85%_center]"
           />
 
-          {/* Soft left fade so the text stays readable on small screens */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#F6F3EE] via-[#F6F3EE]/80 to-transparent lg:from-[#F6F3EE]/70 lg:via-transparent" />
+          {/* Left fade, mobile/tablet only (the desktop image is already light on the left) */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#F6F3EE] via-[#F6F3EE]/80 to-transparent lg:hidden" />
 
           {/* Left content */}
-          <div className="relative z-10 mx-auto max-w-[1440px] px-6 pb-10 pt-12 sm:px-10 lg:px-[70px] lg:pt-14">
+          <div className="relative z-10 mx-auto max-w-[1520px] px-6 pt-12 sm:px-10 lg:px-[106px] lg:pt-[65px]">
             <div className="max-w-[560px]">
-              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#0B5444] dark:text-emerald-300">
+              <p className="text-[12px] font-semibold uppercase tracking-[0.28em] text-[#0B4A3A] dark:text-[#0B4A3A] lg:text-[13px]">
                 Global Communications Platform
               </p>
+              <div className="mt-3 h-[2.5px] w-14 rounded-full bg-[#F05A2B]" />
 
-              <div className="mb-5 h-[3px] w-full max-w-[560px] bg-[#F05A2B]" />
-
-              <h1 className="text-[44px] font-extrabold leading-[1.02] tracking-[-0.02em] text-[#0B3D33] sm:text-[56px] lg:text-[68px]">
+              <h1 className="mt-5 text-[44px] font-extrabold leading-[1.06] tracking-[-0.02em] text-[#0B3D33] sm:text-[56px] lg:text-[68px]">
                 Sound Local.
                 <br />
                 <span className="text-[#F05A2B]">Stay Close.</span>
               </h1>
 
-              <p className="mt-5 max-w-[480px] text-[17px] leading-[1.45] text-slate-700 sm:text-lg">
+              <p className="mt-3.5 max-w-[440px] text-[17px] leading-[1.25] text-slate-700 sm:text-lg lg:text-[20px]">
                 Your global communications platform for local numbers, business
                 calls, video conversations, and AI-powered assistance.
               </p>
 
-              <ul className="mt-5 space-y-2">
+              <ul className="mt-5 space-y-[7px]">
                 {[
                   "Get local numbers in supported markets",
                   "Make and receive business calls",
@@ -137,7 +136,7 @@ export default function Home() {
                 ].map((item) => (
                   <li
                     key={item}
-                    className="flex items-center gap-3 text-[15px] font-medium text-slate-800"
+                    className="flex items-center gap-3 text-[16px] font-medium text-slate-800 lg:text-[18px]"
                   >
                     <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0B5444] text-white">
                       <svg
@@ -161,14 +160,14 @@ export default function Home() {
               <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
                   href="/get-local-number"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#F05A2B] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#F05A2B]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#F05A2B] px-6 text-[15px] font-semibold text-white shadow-lg shadow-[#F05A2B]/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl"
                 >
                   Explore Local Numbers
                   <span aria-hidden="true">→</span>
                 </a>
                 <a
                   href="/pricing"
-                  className="inline-flex items-center justify-center rounded-full border border-[#0B5444]/40 bg-white/80 px-7 py-3.5 text-sm font-semibold text-[#0B3D33] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-xl"
+                  className="inline-flex h-12 items-center justify-center rounded-full border border-[#0B5444]/50 bg-white/85 px-6 text-[15px] font-semibold text-[#0B3D33] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:shadow-xl"
                 >
                   See Plans &amp; Pricing
                 </a>
@@ -177,95 +176,101 @@ export default function Home() {
           </div>
         </div>
 
-        {/* ================= 2. FLOATING FEATURE STRIP (overlaps image + green bar) ================= */}
-        <div className="relative z-20 mx-auto -mt-16 max-w-[1440px] px-4 sm:px-8 lg:-mt-14 lg:px-[34px]">
-          <ul className="grid grid-cols-1 gap-1 rounded-2xl bg-white p-3 shadow-[0_12px_40px_rgba(11,84,68,0.15)] sm:grid-cols-2 lg:grid-cols-5 lg:gap-0 lg:p-4">
-            {[
-              {
-                title: "Local Phone Numbers",
-                text: "Build a local presence",
-                icon: (
-                  <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
-                ),
-              },
-              {
-                title: "Video Conversations",
-                text: "Meet and collaborate",
-                icon: (
-                  <>
-                    <rect x="2" y="6" width="13" height="12" rx="2" />
-                    <path d="M22 8l-7 4 7 4V8z" />
-                  </>
-                ),
-              },
-              {
-                title: "AI Receptionist",
-                text: "Answer, route and assist",
-                icon: (
-                  <>
-                    <path d="M3 14v-2a9 9 0 0 1 18 0v2" />
-                    <path d="M21 15a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 2v1zM3 15a2 2 0 0 0 2 2h1v-5H5a2 2 0 0 0-2 2v1z" />
-                    <path d="M18 17v1a3 3 0 0 1-3 3h-2" />
-                  </>
-                ),
-              },
-              {
-                title: "Business Calling",
-                text: "Reliable and professional",
-                icon: (
-                  <>
-                    <circle cx="9" cy="8" r="3.5" />
-                    <path d="M2.5 20a6.5 6.5 0 0 1 13 0" />
-                    <path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5" />
-                  </>
-                ),
-              },
-              {
-                title: "Insights & Analytics",
-                text: "Track calls and performance",
-                icon: (
-                  <>
-                    <path d="M5 21V10M12 21V3M19 21v-7" />
-                  </>
-                ),
-              },
-            ].map((f, i) => (
-              <li
-                key={f.title}
-                className={`flex items-center gap-3 px-4 py-3 ${
-                  i !== 0 ? "lg:border-l lg:border-slate-200" : ""
-                }`}
-              >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#E6F1EE] text-[#0B5444]">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-5 w-5"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
-                    {f.icon}
-                  </svg>
-                </span>
-                <div>
-                  <p className="text-[14px] font-bold leading-tight text-[#0B3D33]">
-                    {f.title}
-                  </p>
-                  <p className="mt-0.5 text-[12px] leading-snug text-slate-500">
-                    {f.text}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
+        {/* ================= 2. FEATURE STRIP (floating card, half on hero image / half on plain bg) =================
+      The wrapper is pulled up by half the strip height (43px desktop, 32px mobile).
+      The absolute div below starts exactly at the hero's bottom edge and paints
+      a plain background (no image) for the lower half of the strip. */}
+        <div className="relative z-20 -mt-8 pb-6 lg:-mt-[43px] lg:pb-[34px]">
+          {/* Plain background that begins where the hero image ends */}
+          <div className="absolute inset-x-0 bottom-0 top-8 bg-[#F6F3EE] dark:bg-slate-950 lg:top-[43px]" />
+
+          <div className="relative mx-auto max-w-[1440px] px-4 sm:px-8 lg:px-[30px]">
+            <ul className="grid grid-cols-1 gap-1 rounded-[18px] bg-white p-3 shadow-[0_12px_40px_rgba(11,84,68,0.15)] dark:bg-slate-900 sm:grid-cols-2 lg:h-[86px] lg:grid-cols-5 lg:items-center lg:gap-0 lg:p-0">
+              {[
+                {
+                  title: "Local Phone Numbers",
+                  text: "Build a local presence",
+                  icon: (
+                    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z" />
+                  ),
+                },
+                {
+                  title: "Video Conversations",
+                  text: "Meet and collaborate",
+                  icon: (
+                    <>
+                      <rect x="2" y="6" width="13" height="12" rx="2" />
+                      <path d="M22 8l-7 4 7 4V8z" />
+                    </>
+                  ),
+                },
+                {
+                  title: "AI Receptionist",
+                  text: "Answer, route and assist",
+                  icon: (
+                    <>
+                      <path d="M3 14v-2a9 9 0 0 1 18 0v2" />
+                      <path d="M21 15a2 2 0 0 1-2 2h-1v-5h1a2 2 0 0 1 2 2v1zM3 15a2 2 0 0 0 2 2h1v-5H5a2 2 0 0 0-2 2v1z" />
+                      <path d="M18 17v1a3 3 0 0 1-3 3h-2" />
+                    </>
+                  ),
+                },
+                {
+                  title: "Business Calling",
+                  text: "Reliable and professional",
+                  icon: (
+                    <>
+                      <circle cx="9" cy="8" r="3.5" />
+                      <path d="M2.5 20a6.5 6.5 0 0 1 13 0" />
+                      <path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5a6.5 6.5 0 0 1 3 5.5" />
+                    </>
+                  ),
+                },
+                {
+                  title: "Insights & Analytics",
+                  text: "Track calls and performance",
+                  icon: <path d="M5 21V10M12 21V3M19 21v-7" />,
+                },
+              ].map((f, i) => (
+                <li
+                  key={f.title}
+                  className={`relative flex items-center gap-3 px-4 py-3 lg:px-[18px] lg:py-0 ${
+                    i !== 0
+                      ? "lg:before:absolute lg:before:left-0 lg:before:top-1/2 lg:before:h-[54px] lg:before:w-px lg:before:-translate-y-1/2 lg:before:bg-slate-200"
+                      : ""
+                  }`}
+                >
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#E6F1EE] text-[#0B5444]">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="h-[22px] w-[22px]"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      {f.icon}
+                    </svg>
+                  </span>
+                  <div className="min-w-0">
+                    <p className="whitespace-nowrap text-[15px] font-bold leading-tight text-[#0B3D33] dark:text-white lg:text-[16px]">
+                      {f.title}
+                    </p>
+                    <p className="mt-0.5 whitespace-nowrap text-[12.5px] leading-snug text-slate-500 lg:text-[13px]">
+                      {f.text}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        {/* ================= 3. GREEN TRUST BAR (outside image) ================= */}
-        <div className="-mt-10 bg-gradient-to-r from-[#0B5444] to-[#093F33] pt-16 pb-6 lg:-mt-12 lg:pt-[72px] lg:pb-7">
-          <ul className="mx-auto grid max-w-[1440px] grid-cols-1 gap-5 px-6 sm:grid-cols-2 sm:px-10 lg:grid-cols-4 lg:gap-0 lg:px-[34px]">
+        {/* ================= 3. GREEN TRUST BAR ================= */}
+        <div className="bg-gradient-to-r from-[#0B5444] to-[#093F33] py-6 lg:py-[22px]">
+          <ul className="mx-auto grid max-w-[1440px] grid-cols-1 gap-5 px-6 sm:grid-cols-2 sm:px-10 lg:flex lg:items-center lg:justify-between lg:gap-0 lg:px-[62px]">
             {[
               {
                 title: "Business-Ready",
@@ -306,8 +311,10 @@ export default function Home() {
             ].map((b, i) => (
               <li
                 key={b.title}
-                className={`flex items-center gap-4 px-2 text-white lg:px-8 ${
-                  i !== 0 ? "lg:border-l lg:border-white/20" : ""
+                className={`flex items-center gap-4 text-white ${
+                  i !== 0
+                    ? "lg:border-l lg:border-white/20 lg:py-1 lg:pl-12"
+                    : ""
                 }`}
               >
                 <svg
@@ -323,10 +330,10 @@ export default function Home() {
                   {b.icon}
                 </svg>
                 <div>
-                  <p className="text-[16px] font-semibold leading-tight">
+                  <p className="text-[16px] font-semibold leading-tight lg:text-[18px]">
                     {b.title}
                   </p>
-                  <p className="mt-1 text-[12px] leading-snug text-white/70">
+                  <p className="mt-1 text-[12px] leading-snug text-white/70 lg:text-[13.5px]">
                     {b.text}
                   </p>
                 </div>
