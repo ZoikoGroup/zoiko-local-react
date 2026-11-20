@@ -74,7 +74,7 @@ export default function Platform() {
 
                             <p className="mt-6 max-w-xl text-[16px] leading-8 text-slate-600 dark:text-slate-400">
                                 Local numbers, business calling, video, and an AI Receptionist that
-                                answers, qualifies and captures calls when your team can't — in one
+                                answers, qualifies and captures calls when your team can&apos;t — in one
                                 workspace.
                             </p>
 

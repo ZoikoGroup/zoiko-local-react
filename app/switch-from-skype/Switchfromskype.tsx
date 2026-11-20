@@ -279,9 +279,9 @@ export default function Switchfromskype() {
                         </p>
 
                         <h2 className="mt-5 text-3xl md:text-[40px] font-bold leading-[1.15] text-[#123533] dark:text-white">
-                            Skype's gone. Your need for a local
+                            Skype&apos;s gone. Your need for a local
                             <br />
-                            number isn't.
+                            number isn&apos;t.
                         </h2>
 
                         <p className="mt-7 max-w-3xl mx-auto text-[16px] leading-8 text-[#666666] dark:text-gray-400">

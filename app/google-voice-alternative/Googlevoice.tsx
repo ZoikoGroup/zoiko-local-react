@@ -220,7 +220,7 @@ export default function Googlevoice() {
                         </h2>
 
                         <p className="mt-7 max-w-3xl mx-auto text-[16px] leading-8 text-[#666666] dark:text-gray-400">
-                           Google Voice is a capable product. Zoiko Local is built for a specific need: businesses that want a trusted local presence across markets, with calling, video, and an AI Receptionist in one workspace. Here's where it fits best.
+                           Google Voice is a capable product. Zoiko Local is built for a specific need: businesses that want a trusted local presence across markets, with calling, video, and an AI Receptionist in one workspace. Here&apos;s where it fits best.
                         </p>
                     </div>
 
@@ -377,7 +377,7 @@ export default function Googlevoice() {
 
                     <div className="mt-10 rounded-xl border-l-4 border-[#EB643F] border border-[#EB643F] dark:border-[#EB643F] bg-white dark:bg-slate-800 px-6 py-5">
                         <p className="text-sm leading-7 text-gray-500 dark:text-gray-400">
-                            Google Voice and its logo are trademarks of their respective owner. Zoiko Local is not affiliated with, endorsed by, or sponsored by Google Voice. Comparisons reflect general product positioning; review each provider's current features and terms before deciding.
+                            Google Voice and its logo are trademarks of their respective owner. Zoiko Local is not affiliated with, endorsed by, or sponsored by Google Voice. Comparisons reflect general product positioning; review each provider&apos;s current features and terms before deciding.
                         </p>
                     </div>
 

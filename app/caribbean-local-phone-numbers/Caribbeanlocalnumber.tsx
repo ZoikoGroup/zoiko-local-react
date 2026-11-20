@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
+import Image from "next/image";
 
 /**
  * Drop your own assets in /public; paths below resolve from there
@@ -19,7 +20,7 @@ function Img({
   cover?: boolean;
 }) {
   return (
-    <img src={src} alt={alt} loading="lazy" className={`${cover ? "object-cover" : "object-contain"} ${className}`} />
+    <Image src={src} alt={alt} width={40} height={40} unoptimized className={`${cover ? "object-cover" : "object-contain"} ${className}`} />
   );
 }
 
@@ -72,8 +73,6 @@ const coralBtn =
   "inline-flex items-center gap-2 rounded-full bg-[#d9603f] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#c25030]";
 const lightBtn =
   "inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#1c2b26] shadow-sm ring-1 ring-black/5 transition-colors hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:ring-white/10";
-const outlineDarkBtn =
-  "inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10";
 const outlineTealBtn =
   "inline-flex items-center gap-2 rounded-full border border-[#0f4338]/25 px-7 py-3.5 text-sm font-semibold text-[#0f4338] transition-colors hover:bg-[#0f4338]/5 dark:border-white/25 dark:text-white dark:hover:bg-white/10";
 

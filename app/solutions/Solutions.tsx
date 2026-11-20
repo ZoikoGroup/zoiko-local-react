@@ -6,7 +6,7 @@ import Link from "next/link";
 import {
   FiPhone, FiVideo, FiMic, FiMapPin, FiCheck, FiChevronDown,
   FiChevronUp, FiGlobe, FiUsers, FiBriefcase, FiHeadphones,
-  FiTrendingUp, FiUser, FiArrowRight, FiShield, FiSliders,
+  FiTrendingUp, FiArrowRight, FiShield, FiSliders,
   FiZap, FiGrid, FiSmartphone,
 } from "react-icons/fi";
 
@@ -376,10 +376,10 @@ export default function Solutions() {
         <div className="mx-auto max-w-5xl">
           <p className="text-[10.5px] font-bold uppercase tracking-[0.2em] text-[#f4a07a]">Not sure where to start?</p>
           <h2 className="mt-3 text-[22px] font-extrabold text-white">
-            Not sure where to start? Tell us what you're after — we'll point you to the right solution.
+            Not sure where to start? Tell us what you&apos;re after — we&apos;ll point you to the right solution.
           </h2>
           <p className="mt-3 max-w-xl text-[13.5px] leading-6 text-white/70">
-            Answer one question about what your business needs. We'll match you to the right product combination.
+            Answer one question about what your business needs. We&apos;ll match you to the right product combination.
           </p>
           <p className="mt-6 text-[12px] font-bold uppercase tracking-wider text-white/50">What are you trying to do?</p>
           <div className="mt-4 grid gap-3 sm:grid-cols-3">
@@ -410,7 +410,7 @@ export default function Solutions() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 text-center">
             <Eyebrow>All solutions</Eyebrow>
-            <h2 className="mt-3 text-[28px] font-extrabold dark:text-white">Pick the outcome you're after</h2>
+            <h2 className="mt-3 text-[28px] font-extrabold dark:text-white">Pick the outcome you&apos;re after</h2>
           </div>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {outcomes.map((o) => (
@@ -439,7 +439,6 @@ export default function Solutions() {
           SPLIT SECTIONS × 4
       ════════════════════════════════════════════════════════════ */}
       {splitSections.map((s) => {
-        const BadgeIcon = s.imageBadge.icon;
         const content = (
           <div className="flex flex-col justify-center px-5 py-14 sm:px-8 lg:px-12">
             <Eyebrow>{s.eyebrow}</Eyebrow>
@@ -563,11 +562,11 @@ export default function Solutions() {
             <Eyebrow>Availability & plans</Eyebrow>
             <h2 className="mt-4 text-[28px] font-extrabold leading-tight dark:text-white">
               Availability decides{" "}
-              <span className="font-serif italic font-medium text-[#d9603f]">what's possible.</span>
+              <span className="font-serif italic font-medium text-[#d9603f]">what&apos;s possible.</span>
             </h2>
             <p className="mt-4 max-w-md text-[14px] leading-7 text-gray-600 dark:text-gray-400">
               Not every product or number type is available in every country. Pricing, verification requirements and
-              feature availability all depend on your market, plan and number type. We'll always tell you what's
+              feature availability all depend on your market, plan and number type. We&apos;ll always tell you what&apos;s
               available before you commit.
             </p>
             <ul className="mt-6 space-y-2.5">

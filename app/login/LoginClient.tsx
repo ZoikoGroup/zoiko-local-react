@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import {
     FiUser,
     FiMail,
@@ -41,9 +42,12 @@ export default function LoginClient() {
 
                         {/* Logo */}
                         <div className="pt-10 flex justify-center">
-                            <img
+                            <Image
                                 src="/Zoiko-Local-Logo.png"
                                 alt="Zoiko Local"
+                                width={240}
+                                height={64}
+                                unoptimized
                                 className="w-48 md:w-60 h-14 md:h-16 object-contain"
                             />
                         </div>
@@ -271,7 +275,7 @@ export default function LoginClient() {
 
                                     <p className="mt-8 text-center text-[#8A8A8A] dark:text-gray-400">
 
-                                        Don't have an account?
+                                        Don&apos;t have an account?
 
                                         <button
                                             onClick={() => setActiveTab("register")}
@@ -526,7 +530,7 @@ export default function LoginClient() {
 
                                     <p className="mt-5 text-[17px] leading-8 text-[#8A8A8A] dark:text-gray-400">
 
-                                        Enter your email and we'll send you a reset link.
+                                        Enter your email and we&apos;ll send you a reset link.
 
                                     </p>
 

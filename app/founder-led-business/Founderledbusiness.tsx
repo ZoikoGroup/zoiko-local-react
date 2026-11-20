@@ -4,7 +4,7 @@ import { useState, type ReactNode } from "react";
 import {
   FiCheck, FiPhone, FiMapPin, FiUsers, FiClock, FiGlobe,
   FiShield, FiVideo, FiCornerDownRight, FiTrendingUp,
-  FiCpu, FiBriefcase, FiZap, FiCheckCircle, FiChevronDown,
+  FiCpu, FiZap, FiCheckCircle, FiChevronDown,
   FiUser,
 } from "react-icons/fi";
 import type { IconType } from "react-icons";

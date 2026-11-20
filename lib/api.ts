@@ -32,6 +32,7 @@ export class ApiError extends Error {
 // Replace with real fetch() calls when the backend is ready.
 
 export async function getSubscription(_token: string): Promise<Subscription> {
+  void _token;
   // TODO: Replace with real API call
   // const res = await fetch(`${BASE_URL}/api/subscription`, {
   //   headers: { Authorization: `Bearer ${_token}` },

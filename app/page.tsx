@@ -61,33 +61,6 @@ const faqItems = [
   },
 ];
 
-const features = [
-  {
-    icon: FiMapPin,
-    label: "Local presence",
-  },
-  {
-    icon: FiPhone,
-    label: "Reliable calling",
-  },
-  {
-    icon: FiVideo,
-    label: "Video-ready",
-  },
-  {
-    icon: FiMic,
-    label: "AI-native",
-  },
-  {
-    icon: FiUsers,
-    label: "Business controls",
-  },
-  {
-    icon: FiShield,
-    label: "Compliance-led",
-  },
-];
-
 export default function Home() {
   return (
     <>
@@ -977,7 +950,7 @@ export default function Home() {
               </h2>
 
               <p className="mt-6 text-base md:text-lg text-slate-600 dark:text-slate-400">
-                When you're busy or off-hours, your receptionist answers,
+                When you&apos;re busy or off-hours, your receptionist answers,
                 understands, and hands you a clean record — ready for review,
                 never out of control.
               </p>
@@ -1287,13 +1260,13 @@ export default function Home() {
               </p>
 
               <h2 className="text-2xl font-bold leading-tight text-[#143A36] dark:text-white md:text-4xl">
-                Voice when it's enough.
+                Voice when it&apos;s enough.
                 <br />
                 Video when it matters.
               </h2>
 
               <p className="mt-6 text-sm md:text-base text-slate-600 dark:text-slate-400">
-                Video isn't an afterthought — it's core. Jump from a call to
+                Video isn&apos;t an afterthought — it&apos;s core. Jump from a call to
                 face-to-face in one tap, with meeting links your clients can
                 join from anywhere.
               </p>
@@ -1630,7 +1603,7 @@ export default function Home() {
               </p>
 
               <h2 className="text-3xl font-bold leading-tight text-[#143A36] dark:text-white md:text-5xl">
-                The operating layer for your team's numbers.
+                The operating layer for your team&apos;s numbers.
               </h2>
 
               <p className="mt-6 text-slate-600 dark:text-slate-400">
@@ -2221,7 +2194,7 @@ export default function Home() {
             </h2>
 
             <p className="mx-auto mt-4 text-sm md:text-base max-w-2xl text-slate-500 dark:text-slate-400">
-              Pick only what you need today — talk to us when you're ready to
+              Pick only what you need today — talk to us when you&apos;re ready to
               scale.
             </p>
           </div>

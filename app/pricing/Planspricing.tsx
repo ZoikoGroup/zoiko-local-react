@@ -191,15 +191,6 @@ const bundlePlans = [
         button: "Contact Sales",
     },
 ];
-const estimateFields = {
-    market: "United States",
-    numberType: "Local",
-    quantity: "1",
-    users: "1",
-    calling: "Light",
-    ai: "Off",
-    migration: "New customer",
-};
 const comparisonData = [
     {
         feature: "Local numbers",
@@ -945,7 +936,7 @@ export default function Planspricing() {
 
                         <p className="mt-7 max-w-3xl mx-auto text-[16px] leading-8 text-[#666] dark:text-gray-400">
 
-                            Tell us about your needs and we'll recommend a configuration.
+                            Tell us about your needs and we&apos;ll recommend a configuration.
                             Because taxes, verification, porting and usage vary,
                             this is indicative — not a final quote.
 

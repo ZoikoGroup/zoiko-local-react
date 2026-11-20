@@ -14,12 +14,11 @@ import {
   FiExternalLink,
   FiLock,
   FiLogOut,
-  FiMessageCircle,
   FiSend,
   FiTrash2,
-  FiUser,
   FiX,
 } from "react-icons/fi";
+import Image from "next/image";
 import { ApiError } from "@/lib/api";
 import {
   createAssistantSession,
@@ -317,11 +316,14 @@ export default function AssistantWidget() {
         }
         className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#0D5C54] text-white shadow-lg transition-colors hover:bg-[#143A36] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0D5C54] dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-white"
       >
-        {open ? (
-          <FiX size={22} aria-hidden="true" />
-        ) : (
-          <FiMessageCircle size={22} aria-hidden="true" />
-        )}
+        <span className="relative flex h-full w-full items-center justify-center">
+          <Image src="/zoiko-local-icon.svg" alt="" width={40} height={40} unoptimized className="h-10 w-10 rounded-xl bg-white p-1" />
+          {open && (
+            <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[#0D5C54] shadow">
+              <FiX size={13} aria-hidden="true" />
+            </span>
+          )}
+        </span>
       </button>
 
       {open && (
@@ -333,13 +335,13 @@ export default function AssistantWidget() {
         >
           <div className="flex items-start justify-between gap-2 bg-[#0D5C54] px-4 py-3 dark:bg-slate-800">
             <div className="flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15 text-white">
-                <FiUser size={16} aria-hidden="true" />
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
+                <Image src="/zoiko-local-icon.svg" alt="" width={28} height={28} unoptimized className="h-7 w-7 rounded-lg bg-white p-0.5" />
               </span>
               <div>
                 <p className="text-sm font-bold text-white">{bootstrap.assistant_name}</p>
                 <p className="text-[11px] leading-4 text-white/80">
-                  AI assistant · answers cite Zoiko Local sources
+                  Zoiko Local Assistant · answers cite approved sources
                 </p>
               </div>
             </div>

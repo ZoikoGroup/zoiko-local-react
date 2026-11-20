@@ -180,7 +180,7 @@ export default function Virtualphone() {
                                         A <strong className="text-[#123533] dark:text-white">
                                             virtual phone number
                                         </strong>{" "}
-                                        is a phone number that isn't tied to a single
+                                        is a phone number that isn&apos;t tied to a single
                                         physical phone line or location.
 
                                         Calls are delivered over the internet to any
@@ -265,7 +265,7 @@ export default function Virtualphone() {
                         {/* Left */}
                         <div>
                             <p className="uppercase tracking-[0.35em] text-[10px] font-semibold text-[#EB643F]">
-                                Who It's For
+                                Who It&apos;s For
                             </p>
 
                             <h2 className="mt-5 text-3xl md:text-[52px] font-bold leading-[1.15] text-[#123533] dark:text-white">

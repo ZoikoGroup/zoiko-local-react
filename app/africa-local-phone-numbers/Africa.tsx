@@ -153,7 +153,7 @@ export default function Africa() {
 
                             <p className="mt-8 max-w-xl text-[17px] leading-8 text-[#666666] dark:text-gray-400">
                                 Get local numbers across African markets —
-                                build trusted presence in the continent's
+                                build trusted presence in the continent&apos;s
                                 fast-growing commercial centers.
 
                                 Sound local. Reach anywhere.
@@ -292,7 +292,7 @@ export default function Africa() {
 
                         <p className="mt-6 text-gray-500 dark:text-gray-400 leading-8">
                             Get local numbers across African markets —
-                            build trusted presence in the continent's
+                            build trusted presence in the continent&apos;s
                             fast-growing commercial centers.
                         </p>
                     </div>
@@ -516,9 +516,9 @@ export default function Africa() {
                     <p className="mt-7 max-w-2xl mx-auto text-[16px] leading-8 text-[#666666] dark:text-gray-400">
 
                         Backed by a global connectivity agreement,
-                        we're expanding across Africa by demand.
+                        we&apos;re expanding across Africa by demand.
                         Tell us the country or city you need and
-                        we'll review availability.
+                        we&apos;ll review availability.
 
                     </p>
 

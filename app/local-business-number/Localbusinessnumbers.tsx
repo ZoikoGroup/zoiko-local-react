@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
+import Image from "next/image";
 
 
 function Img({
@@ -15,7 +16,7 @@ function Img({
   cover?: boolean;
 }) {
   return (
-    <img src={src} alt={alt} loading="lazy" className={`${cover ? "object-cover" : "object-contain"} ${className}`} />
+    <Image src={src} alt={alt} width={40} height={40} unoptimized className={`${cover ? "object-cover" : "object-contain"} ${className}`} />
   );
 }
 
@@ -47,12 +48,6 @@ const outlineBtn =
   "rounded-lg border border-[#1c2b26]/20 px-6 py-3 text-sm font-semibold text-[#1c2b26] transition-colors hover:bg-black/5 dark:border-white/20 dark:text-white dark:hover:bg-white/10";
 const outlineBtnDark =
   "rounded-lg border border-white/25 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10";
-
-// ─── SHARED IMAGE PATHS ───────────────────────────────────────────────────────
-const IC = {
-  check: "/icons/check.svg",       // coral tick (left lists, hero)
-  checkTeal: "/icons/check-teal.svg", // green tick (inside dark-green cards)
-};
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 const heroChecks = ["No hardware or office required", "Calling, video & AI receptionist included"];
@@ -185,7 +180,7 @@ function Localbusinessnumbers() {
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8 dark:bg-gray-800">
         <div className="mx-auto grid max-w-6xl items-start gap-12 lg:grid-cols-2">
           <div>
-            <Eyebrow>Who it's for</Eyebrow>
+            <Eyebrow>Who it&apos;s for</Eyebrow>
             <h2 className="mt-4 text-3xl font-extrabold leading-snug dark:text-white">
               Built for businesses that need to be reachable.
             </h2>
