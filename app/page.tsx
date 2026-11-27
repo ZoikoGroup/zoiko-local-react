@@ -37,31 +37,6 @@ import {
   FiNavigation,
 } from "react-icons/fi";
 import { FaCheck, FaCircle } from "react-icons/fa";
-import Faq from "./Components/Faq";
-
-const faqItems = [
-  {
-    question: "What is Zoiko Local?",
-    answer:
-      "Zoiko Local is an enterprise business communications platform that unifies local business phone numbers, voice calling, video conferencing, intelligent call routing, and an AI Receptionist into a single workspace. It is engineered for companies requiring a recognizable local phone presence and reliable customer communication across global markets at www.zoikolocal.com.",
-  },
-  {
-    question: "Who is Zoiko Local for?",
-    answer:
-      "Zoiko Local serves commercial enterprises, remote sales teams, customer support departments, founder-led businesses, professional service firms, field service operations, import and export businesses, and multi-location companies expanding into international markets.",
-  },
-  {
-    question: "What does Zoiko Local provide?",
-    answer:
-      "Zoiko Local delivers local virtual business numbers, inbound and outbound voice calling, call forwarding, automated call routing, visual voicemail, voicemail transcription, HD video meetings, team administrative controls, and automated AI Receptionist capabilities.",
-  },
-  {
-    question: "Why Businesses Use Zoiko Local",
-    answer:
-      "Businesses deploy Zoiko Local to establish an immediate local phone presence, streamline team calling workflows, route customer calls to appropriate departments, support distributed workforces, and ensure 24/7 call capture using an automated AI Receptionist at www.zoikolocal.com.",
-  },
-];
-
 export default function Home() {
   return (
     <>
@@ -2587,7 +2562,7 @@ export default function Home() {
           answer:
             "Yes, you can cancel your subscription directly from your workspace settings at any time.",
         },
-      ].map((faq, index) => (
+      ].map((faq) => (
         <details
           key={faq.question}
           className="group rounded-[20px] border border-[#E7DDD2] bg-white transition-all duration-300 overflow-hidden shadow-sm dark:border-slate-700 dark:bg-slate-800"
