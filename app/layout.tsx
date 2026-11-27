@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import AssistantWidget from "./Components/Assistant/AssistantWidget";
+import BlackFridayPopup from "./Components/BlackFridayPopup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({
         {children}
         <Footer/>
         <AssistantWidget/>
+        <BlackFridayPopup />
         </body>
     </html>
   );
