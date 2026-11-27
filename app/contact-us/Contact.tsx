@@ -158,7 +158,7 @@ export default function Contact() {
       {/* ─── SALES PATHS ─── */}
       <section className="bg-white px-4 py-20 sm:px-6 lg:px-8 dark:bg-gray-800">
         <div className="mx-auto max-w-6xl">
-          <SectionHead eyebrow="Sales Paths" title={<>Tell us who you are — <span className="text-[#d9603f]">we'll route you right.</span></>} sub="Self-identify before the form so your request reaches the right specialist." />
+          <SectionHead eyebrow="Sales Paths" title={<>Tell us who you are — <span className="text-[#d9603f]">we&apos;ll route you right.</span></>} sub="Self-identify before the form so your request reaches the right specialist." />
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {salesPaths.map((p) => (
               <div key={p.title} className="flex flex-col rounded-2xl border border-black/5 bg-[#f3efe7] p-6 dark:border-white/10 dark:bg-gray-900">
@@ -175,7 +175,7 @@ export default function Contact() {
       {/* ─── WHY TALK TO SALES ─── */}
       <section className="bg-[#f3efe7] px-4 py-20 sm:px-6 lg:px-8 dark:bg-gray-900">
         <div className="mx-auto max-w-6xl">
-          <SectionHead eyebrow="Why Talk to Sales" title={<>Self-serve stays open. <span className="text-[#d9603f]">Sales helps when it's complex.</span></>} sub="Start on your own any time — or get a specialist when the setup is bigger or higher-value." />
+          <SectionHead eyebrow="Why Talk to Sales" title={<>Self-serve stays open. <span className="text-[#d9603f]">Sales helps when it&apos;s complex.</span></>} sub="Start on your own any time — or get a specialist when the setup is bigger or higher-value." />
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {whyTalk.map((w) => (
               <div key={w.title} className="rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10">
@@ -414,10 +414,10 @@ export default function Contact() {
         <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-[#0f2a21] p-10 text-center text-white sm:p-16">
           <div aria-hidden className="pointer-events-none absolute -right-16 top-0 h-72 w-72 rounded-full bg-[#d9603f]/15 blur-3xl" />
           <div className="relative">
-            <Eyebrow>Let's Build It Together</Eyebrow>
-            <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">Let's design the right Zoiko Local setup for your business.</h2>
+            <Eyebrow>Let&apos;s Build It Together</Eyebrow>
+            <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">Let&apos;s design the right Zoiko Local setup for your business.</h2>
             <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/70">
-              Whether you're replacing Skype, expanding into new markets, or building a smarter call-handling workflow,
+              Whether you&apos;re replacing Skype, expanding into new markets, or building a smarter call-handling workflow,
               Zoiko Local Sales can help you choose the right path.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">

@@ -639,7 +639,7 @@ function Aboutus() {
               <Eyebrow light>Infrastructure</Eyebrow>
               <h2 className="mt-3 text-3xl font-extrabold">Powered by ZoikoNex</h2>
               <p className="mt-4 text-sm leading-relaxed text-white/70">
-                Zoiko Local runs on ZoikoNex — the group's platform for identity, charging, compliance and
+                Zoiko Local runs on ZoikoNex — the group&apos;s platform for identity, charging, compliance and
                 communication at scale.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">

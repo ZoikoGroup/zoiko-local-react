@@ -17,7 +17,6 @@ import {
   FiGlobe,
   FiLock,
   FiChevronDown,
-  FiAlertCircle,
 } from "react-icons/fi";
 import { FaLinkedin, FaXTwitter, FaInstagram } from "react-icons/fa6";
 

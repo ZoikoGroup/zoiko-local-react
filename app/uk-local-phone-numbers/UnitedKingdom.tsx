@@ -397,7 +397,7 @@ export default function UnitedKingdom() {
             </h2>
             <p className="mt-4 text-[14px] leading-7 text-gray-600 dark:text-gray-400">
               Your UK number rings your team wherever they are — in London, remote, or on the other side of the world.
-              Set business hours, configure routing, and let the AI Receptionist handle calls when no one's available.
+              Set business hours, configure routing, and let the AI Receptionist handle calls when no one&apos;s available.
             </p>
             <ul className="mt-6 space-y-2.5">
               {[
@@ -429,7 +429,7 @@ export default function UnitedKingdom() {
             </h2>
             <p className="mt-4 text-[14px] leading-7 text-gray-600 dark:text-gray-400">
               Emergency calling support (999 / 112) via Zoiko Local depends on your plan and device. Zoiko Local is not
-              a substitute for traditional emergency services where compliant emergency access isn't available on your
+              a substitute for traditional emergency services where compliant emergency access isn&apos;t available on your
               plan.
             </p>
             <ul className="mt-5 space-y-2.5">
@@ -457,7 +457,7 @@ export default function UnitedKingdom() {
                 <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">Featured</p>
                 <h3 className="mt-2 text-[20px] font-extrabold leading-tight text-white">
                   Teach your kids emergency info with{" "}
-                  <span className="text-[#f4a07a]">Sesame Street's Let's Get Ready App.</span>
+                  <span className="text-[#f4a07a]">Sesame Street&apos;s Let&apos;s Get Ready App.</span>
                 </h3>
                 <button className="mt-5 rounded-full bg-[#d9603f] px-6 py-2.5 text-[13px] font-semibold text-white transition hover:bg-[#c25030]">
                   Learn more about 999 on call
@@ -564,7 +564,7 @@ export default function UnitedKingdom() {
               //     href={`/countries/${c.code}`}
               //     className="flex items-center gap-2 rounded-full border border-[#e8e2d8] bg-[#f7f4ee] px-4 py-2 text-[13px] font-medium text-[#1c2b26] transition hover:border-[#d9603f]/40 hover:bg-[#fdf3ee] dark:border-gray-700 dark:bg-gray-800 dark:text-white"
               //   >
-              <span className="flex items-center gap-2 rounded-full border border-[#e8e2d8] bg-[#f7f4ee] px-4 py-2 text-[13px] font-medium text-[#1c2b26] transition hover:border-[#d9603f]/40 hover:bg-[#fdf3ee] dark:border-gray-700 dark:bg-gray-800 dark:text-white">{c.flag} {c.name}</span>
+              <span key={c.code} className="flex items-center gap-2 rounded-full border border-[#e8e2d8] bg-[#f7f4ee] px-4 py-2 text-[13px] font-medium text-[#1c2b26] transition hover:border-[#d9603f]/40 hover:bg-[#fdf3ee] dark:border-gray-700 dark:bg-gray-800 dark:text-white">{c.flag} {c.name}</span>
               //   </a>
             ))}
           </div>

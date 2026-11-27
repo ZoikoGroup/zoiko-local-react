@@ -4,7 +4,7 @@ import Image from 'next/image';
 import {
     FiMapPin,
     FiExternalLink, FiPhoneCall, FiVideo,
-    FiMic, FiSettings, FiClock, FiSend,
+    FiMic, FiClock, FiSend,
     FiUsers, FiPlus, FiInfo,
     FiArrowRight,
     FiCheck, FiCreditCard, FiUser,
@@ -279,7 +279,7 @@ export default function Startfree() {
                         </h2>
 
                         <p className="mx-auto mt-6 max-w-2xl text-[17px] leading-8 text-slate-500 dark:text-slate-400">
-                            Pick a path and we'll route you to the right setup —
+                            Pick a path and we&apos;ll route you to the right setup —
                             no one-size-fits-all signup.
                         </p>
 
@@ -450,7 +450,7 @@ export default function Startfree() {
 
                         <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-8 text-slate-500 dark:text-slate-400">
                             Tell us where your business wants a presence.
-                            We'll show available number options and setup paths.
+                            We&apos;ll show available number options and setup paths.
                         </p>
 
                     </div>
@@ -710,7 +710,7 @@ export default function Startfree() {
                             <br />
 
                             <span className="italic text-[#E95F33]">
-                                when you're ready.
+                                when you&apos;re ready.
                             </span>
                         </h2>
 
@@ -877,7 +877,7 @@ export default function Startfree() {
 
                         <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-8 text-slate-500 dark:text-slate-400">
                             We only ask what improves routing and activation.
-                            Skip anything you're not ready to share.
+                            Skip anything you&apos;re not ready to share.
                         </p>
 
                     </div>
@@ -1379,7 +1379,7 @@ export default function Startfree() {
                         <h2 className="text-[30px] font-bold max-w-2xl leading-tight text-[#143A36] dark:text-white md:text-[40px]">
                             Want Zoiko Local to answer{" "}
                             <span className="italic text-center text-[#F26B45]">
-                                when your team can't?
+                                when your team can&apos;t?
                             </span>
                         </h2>
 

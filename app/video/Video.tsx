@@ -789,7 +789,7 @@ export default function Video() {
 
                                 <span className="text-[#EB643F]">
 
-                                    {" "}isn't enough.
+                                    {" "}isn&apos;t enough.
 
                                 </span>
 

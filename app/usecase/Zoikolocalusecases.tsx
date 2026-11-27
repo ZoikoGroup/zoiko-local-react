@@ -354,7 +354,7 @@ function ZoikoLocalUseCases() {
             <h2 className="text-3xl font-extrabold sm:text-4xl">Ready to choose your path to <span className="text-[#d9603f]">local presence?</span></h2>
             <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/70">
               Find the solution that fits your business, get a local number your customers recognize, and scale into
-              calling, video, routing, and AI Receptionist when you're ready.
+              calling, video, routing, and AI Receptionist when you&apos;re ready.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <button className={coralBtn}>Find Your Solution <FiArrowRight /></button>

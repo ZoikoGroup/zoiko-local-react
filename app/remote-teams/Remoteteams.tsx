@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
+import Image from "next/image";
 
 /**
  * Drop your own assets in /public; paths below resolve from there
@@ -19,7 +20,7 @@ function Img({
   cover?: boolean;
 }) {
   return (
-    <img src={src} alt={alt} loading="lazy" className={`${cover ? "object-cover" : "object-contain"} ${className}`} />
+    <Image src={src} alt={alt} width={40} height={40} unoptimized className={`${cover ? "object-cover" : "object-contain"} ${className}`} />
   );
 }
 

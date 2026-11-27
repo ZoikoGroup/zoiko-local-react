@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Read Zoiko Local terms of service covering subscriptions, billing, local numbers, emergency calling, AI features, recordings, disputes, and user rights.",
 };
 
-export default function () {
+export default function TermsPage() {
   return (
     <>
       <TermsOfService />

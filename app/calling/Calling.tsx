@@ -883,9 +883,9 @@ export default function Calling() {
 
                     <p className="mt-7 text-gray-500 dark:text-gray-400 leading-8">
 
-                        Outbound calls shouldn't look random or unfamiliar. Make
+                        Outbound calls shouldn&apos;t look random or unfamiliar. Make
                         professional calls using an assigned local number where
-                        supported, so customers recognize who's calling and why.
+                        supported, so customers recognize who&apos;s calling and why.
 
                     </p>
 
@@ -937,7 +937,7 @@ export default function Calling() {
 
                             <p className="mt-6 text-gray-500 dark:text-gray-400 leading-8">
 
-                                Calls shouldn't stop at one desk or one unavailable
+                                Calls shouldn&apos;t stop at one desk or one unavailable
                                 person. Forward to mobile, desktop, a department,
                                 another location, fallback number, or your AI
                                 Receptionist after no answer.

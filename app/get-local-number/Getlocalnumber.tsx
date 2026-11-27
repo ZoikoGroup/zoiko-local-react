@@ -11,7 +11,7 @@ import {
     FiUsers,
     FiGlobe,
     FiMic, FiUser,
-    FiHome, FiSquare,
+    FiHome,
     FiCalendar, FiUserCheck,
     FiLock,
     FiActivity,
@@ -24,7 +24,6 @@ import {
     FiPhoneForwarded,
 } from "react-icons/fi";
 import Faq from '../Components/Faq';
-import Link from 'next/link';
 
 const steps = [
     "Search",
@@ -844,7 +843,7 @@ export default function Getlocalnumber() {
                         </h2>
 
                         <p className="mt-6 text-base md:text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                            Each option shows what it's best for, what setup it needs,
+                            Each option shows what it&apos;s best for, what setup it needs,
                             expected activation timing and any verification note.
                         </p>
 
@@ -1097,8 +1096,8 @@ export default function Getlocalnumber() {
                             <FiInfo className="mt-1 text-[#0E6760] flex-shrink-0" />
 
                             <p>
-                                Number availability changes. We use "where available" and
-                                "subject to verification" rather than promising universal
+                                Number availability changes. We use &quot;where available&quot; and
+                                &quot;subject to verification&quot; rather than promising universal
                                 instant activation.
                             </p>
 

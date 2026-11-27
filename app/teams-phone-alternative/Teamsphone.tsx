@@ -236,7 +236,7 @@ export default function Teamsphone() {
                             Zoiko Local is built for a specific need:
                             businesses that want a trusted local presence across
                             markets, with calling, video, and an AI Receptionist
-                            in one workspace. Here's where it fits best.
+                            in one workspace. Here&apos;s where it fits best.
                         </p>
                     </div>
 

@@ -109,7 +109,7 @@ export default function Contactsupport() {
 
                             <h1 className="mt-5 text-4xl md:text-[58px] leading-[1.08] font-bold text-[#123533] dark:text-white">
 
-                                We're here to
+                                We&apos;re here to
 
                                 <span className="text-[#EB643F] italic">
 
@@ -123,7 +123,7 @@ export default function Contactsupport() {
 
                                 Get help with your numbers, account, billing,
                                 porting, or anything technical. Choose the option
-                                that fits and we'll point you to the fastest route.
+                                that fits and we&apos;ll point you to the fastest route.
                                 Sound local. Reach anywhere.
 
                             </p>
@@ -383,7 +383,7 @@ export default function Contactsupport() {
                             <p className="mt-7 text-[16px] leading-8 text-white/75 max-w-2xl mx-auto">
 
                                 However you need help — numbers, account, billing,
-                                porting, or setup — we'll get you to the right place.
+                                porting, or setup — we&apos;ll get you to the right place.
 
                             </p>
 

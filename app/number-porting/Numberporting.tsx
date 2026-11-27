@@ -233,7 +233,7 @@ export default function Numberporting() {
 
                         <p className="mt-7 text-[17px] leading-8 text-[#666666] dark:text-gray-400">
                             Your number is on your website, cards, listings,
-                            and in your customers' phones. Porting preserves
+                            and in your customers&apos; phones. Porting preserves
                             that continuity while you upgrade everything around it.
                         </p>
                     </div>

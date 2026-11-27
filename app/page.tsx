@@ -37,58 +37,6 @@ import {
   FiNavigation,
 } from "react-icons/fi";
 import { FaCheck, FaCircle } from "react-icons/fa";
-import Faq from "./Components/Faq";
-
-const faqItems = [
-  {
-    question: "What is Zoiko Local?",
-    answer:
-      "Zoiko Local is an enterprise business communications platform that unifies local business phone numbers, voice calling, video conferencing, intelligent call routing, and an AI Receptionist into a single workspace. It is engineered for companies requiring a recognizable local phone presence and reliable customer communication across global markets at www.zoikolocal.com.",
-  },
-  {
-    question: "Who is Zoiko Local for?",
-    answer:
-      "Zoiko Local serves commercial enterprises, remote sales teams, customer support departments, founder-led businesses, professional service firms, field service operations, import and export businesses, and multi-location companies expanding into international markets.",
-  },
-  {
-    question: "What does Zoiko Local provide?",
-    answer:
-      "Zoiko Local delivers local virtual business numbers, inbound and outbound voice calling, call forwarding, automated call routing, visual voicemail, voicemail transcription, HD video meetings, team administrative controls, and automated AI Receptionist capabilities.",
-  },
-  {
-    question: "Why Businesses Use Zoiko Local",
-    answer:
-      "Businesses deploy Zoiko Local to establish an immediate local phone presence, streamline team calling workflows, route customer calls to appropriate departments, support distributed workforces, and ensure 24/7 call capture using an automated AI Receptionist at www.zoikolocal.com.",
-  },
-];
-
-const features = [
-  {
-    icon: FiMapPin,
-    label: "Local presence",
-  },
-  {
-    icon: FiPhone,
-    label: "Reliable calling",
-  },
-  {
-    icon: FiVideo,
-    label: "Video-ready",
-  },
-  {
-    icon: FiMic,
-    label: "AI-native",
-  },
-  {
-    icon: FiUsers,
-    label: "Business controls",
-  },
-  {
-    icon: FiShield,
-    label: "Compliance-led",
-  },
-];
-
 export default function Home() {
   return (
     <>
@@ -985,7 +933,7 @@ export default function Home() {
               </h2>
 
               <p className="mt-6 text-base md:text-lg text-slate-600 dark:text-slate-400">
-                When you're busy or off-hours, your receptionist answers,
+                When you&apos;re busy or off-hours, your receptionist answers,
                 understands, and hands you a clean record — ready for review,
                 never out of control.
               </p>
@@ -1295,13 +1243,13 @@ export default function Home() {
               </p>
 
               <h2 className="text-2xl font-bold leading-tight text-[#143A36] dark:text-white md:text-4xl">
-                Voice when it's enough.
+                Voice when it&apos;s enough.
                 <br />
                 Video when it matters.
               </h2>
 
               <p className="mt-6 text-sm md:text-base text-slate-600 dark:text-slate-400">
-                Video isn't an afterthought — it's core. Jump from a call to
+                Video isn&apos;t an afterthought — it&apos;s core. Jump from a call to
                 face-to-face in one tap, with meeting links your clients can
                 join from anywhere.
               </p>
@@ -1638,7 +1586,7 @@ export default function Home() {
               </p>
 
               <h2 className="text-3xl font-bold leading-tight text-[#143A36] dark:text-white md:text-5xl">
-                The operating layer for your team's numbers.
+                The operating layer for your team&apos;s numbers.
               </h2>
 
               <p className="mt-6 text-slate-600 dark:text-slate-400">
@@ -2229,7 +2177,7 @@ export default function Home() {
             </h2>
 
             <p className="mx-auto mt-4 text-sm md:text-base max-w-2xl text-slate-500 dark:text-slate-400">
-              Pick by what you need today — talk to us when you're ready to
+              Pick only what you need today — talk to us when you&apos;re ready to
               scale.
             </p>
           </div>
@@ -2614,7 +2562,7 @@ export default function Home() {
           answer:
             "Yes, you can cancel your subscription directly from your workspace settings at any time.",
         },
-      ].map((faq, index) => (
+      ].map((faq) => (
         <details
           key={faq.question}
           className="group rounded-[20px] border border-[#E7DDD2] bg-white transition-all duration-300 overflow-hidden shadow-sm dark:border-slate-700 dark:bg-slate-800"

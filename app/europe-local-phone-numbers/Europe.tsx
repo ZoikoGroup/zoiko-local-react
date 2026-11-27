@@ -544,9 +544,9 @@ export default function Europe() {
                         <p className="mt-6 max-w-3xl mx-auto text-[17px] leading-8 text-gray-500 dark:text-gray-400">
 
                             Backed by a global connectivity agreement,
-                            we're expanding across Europe by demand.
+                            we&apos;re expanding across Europe by demand.
                             Tell us the country or city you need and
-                            we'll review availability.
+                            we&apos;ll review availability.
 
                         </p>
 

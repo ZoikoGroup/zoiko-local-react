@@ -197,14 +197,6 @@ const lightBtn =
   "inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#1c2b26] shadow-sm ring-1 ring-black/5 transition-colors hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:ring-white/10";
 const outlineDarkBtn =
   "inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10";
-const outlineTealBtn =
-  "inline-flex items-center gap-2 rounded-full border border-[#0f4338]/25 px-7 py-3.5 text-sm font-semibold text-[#0f4338] transition-colors hover:bg-[#0f4338]/5 dark:border-white/25 dark:text-white dark:hover:bg-white/10";
-
-const cardOnDark = "rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-white/[0.04] dark:ring-white/10";
-const cardOnLight = "rounded-2xl bg-white p-6 ring-1 ring-black/5 dark:bg-gray-800 dark:ring-white/10";
-
-const darkBand = "bg-[#0d100f] px-4 py-20 sm:px-6 lg:px-8 dark:bg-gray-950";
-
 /** Icon chip: tinted rounded-xl square holding a 20px stroke icon. */
 function IconChip({
   icon: IconCmp,
@@ -445,7 +437,11 @@ function ContactSales() {
   const toggleHelp = (label: string) =>
     setNeedHelp((prev) => {
       const next = new Set(prev);
-      next.has(label) ? next.delete(label) : next.add(label);
+      if (next.has(label)) {
+        next.delete(label);
+      } else {
+        next.add(label);
+      }
       return next;
     });
 

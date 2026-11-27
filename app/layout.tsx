@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
+import AssistantWidget from "./Components/Assistant/AssistantWidget";
 import BlackFridayPopup from "./Components/BlackFridayPopup";
 
 const geistSans = Geist({
@@ -35,6 +36,7 @@ export default function RootLayout({
         <Header/>
         {children}
         <Footer/>
+        <AssistantWidget/>
         <BlackFridayPopup />
         </body>
     </html>

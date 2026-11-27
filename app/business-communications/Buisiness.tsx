@@ -1,6 +1,5 @@
 "use client";
 
-import { Link } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import type { IconType } from "react-icons";
 import {
@@ -8,14 +7,14 @@ import {
   FiPhone, FiPhoneOff, FiPhoneForwarded,
   FiVideo, FiMic, FiCpu,
   FiMapPin, FiGlobe, FiGrid,
-  FiClock, FiUser, FiUserCheck, FiUsers,
-  FiShield, FiLock,
-  FiFileText, FiFile,
+  FiClock, FiUser, FiUserCheck,
+  FiShield,
+  FiFileText,
   FiSend, FiTrendingUp, FiBarChart2,
   FiCalendar, FiTool, FiShoppingCart,
   FiHome, FiBookOpen, FiTruck,
   FiCreditCard, FiInfo, FiExternalLink,
-  FiCornerDownRight, FiNavigation,
+  FiCornerDownRight,
 } from "react-icons/fi";
 
 // ─── ICON WRAPPER ─────────────────────────────────────────────────────────────

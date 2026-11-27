@@ -397,7 +397,7 @@ export default function Aireceptionist() {
 
                             <p className="mt-8 max-w-xl text-[16px] leading-8 text-gray-500 dark:text-gray-400">
 
-                                Zoiko Local's AI Receptionist answers, qualifies,
+                                Zoiko Local&apos;s AI Receptionist answers, qualifies,
                                 routes and captures customer calls — connected
                                 to your local numbers, call history and team
                                 workflows. Stay professional and responsive
@@ -580,7 +580,7 @@ export default function Aireceptionist() {
 
                                         <div className="rounded-2xl bg-[#EB643F] px-5 py-3 text-white text-sm">
 
-                                            I'd like pricing and availability.
+                                            I&apos;d like pricing and availability.
 
                                         </div>
 
@@ -596,7 +596,7 @@ export default function Aireceptionist() {
 
                                         <div className="rounded-2xl bg-[#EEF3F2] dark:bg-slate-700 px-5 py-4 text-sm leading-7 text-[#123533] dark:text-white">
 
-                                            Got it. I'll connect you to the right
+                                            Got it. I&apos;ll connect you to the right
                                             team and capture your details in case
                                             the line is busy.
 
@@ -1077,7 +1077,7 @@ export default function Aireceptionist() {
 
                         <p className="mt-7 leading-8 text-gray-500 dark:text-gray-400">
 
-                            Customers don't only call during business hours.
+                            Customers don&apos;t only call during business hours.
                             Capture the call, understand the request, set
                             expectations, and turn every conversation into a
                             clear next step — an appointment, a structured
