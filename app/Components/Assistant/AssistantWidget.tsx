@@ -11,9 +11,11 @@ import {
 } from "react";
 import {
   FiAlertTriangle,
+  FiArrowRight,
   FiExternalLink,
   FiLock,
   FiLogOut,
+  FiMessageSquare,
   FiSend,
   FiTrash2,
   FiX,
@@ -37,6 +39,51 @@ type Turn =
   | { role: "assistant"; response: AssistantMessageResponse };
 
 const MAX_TEXT = 2000;
+
+const FALLBACK_BOOTSTRAP: Bootstrap = {
+  enabled: true,
+  assistant_name: "Zoiko Local Assistant",
+  ai_disclosure:
+    "This assistant is automated and uses approved Zoiko Local data. It is not a live agent and cannot place calls, change your account, take payments, or confirm live number availability.",
+  safety_notice:
+    "Zoiko Local numbers are not a replacement for emergency calling. In an emergency, contact your local emergency number (such as 911, 112, or 999) directly.",
+  content_version: "offline-fallback",
+  supported_locales: ["en-US"],
+  default_locale: "en-US",
+  privacy_url: "/zoiko-local-privacy-policy",
+  actions: [
+    {
+      intent_id: "NUMBER_DISCOVERY",
+      title: "Find a local number",
+      description: "Explore countries, number types and verification before buying.",
+    },
+    {
+      intent_id: "RECEPTIONIST_OVERVIEW",
+      title: "Explore the AI Receptionist",
+      description: "What the AI Receptionist can answer, route and hand off.",
+    },
+    {
+      intent_id: "CALLING_OVERVIEW",
+      title: "How calling works",
+      description: "Cloud calling from your browser or app on a local number.",
+    },
+    {
+      intent_id: "PLANS_OVERVIEW",
+      title: "Plans & pricing",
+      description: "Current approved plan prices and what affects your total.",
+    },
+    {
+      intent_id: "ACTIVATION_GUIDE",
+      title: "Get started",
+      description: "From free account to an activated number and first call.",
+    },
+    {
+      intent_id: "CONTACT_HANDOFF",
+      title: "Talk to a person",
+      description: "Route to the sales or support team for anything human.",
+    },
+  ],
+};
 
 function newClientMessageId(): string {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
@@ -162,7 +209,9 @@ export default function AssistantWidget() {
       .then((payload) => {
         if (!cancelled) setBootstrap(payload);
       })
-      .catch(() => undefined);
+      .catch(() => {
+        if (!cancelled) setBootstrap(FALLBACK_BOOTSTRAP);
+      });
     return () => {
       cancelled = true;
     };
@@ -318,11 +367,9 @@ export default function AssistantWidget() {
       >
         <span className="relative flex h-full w-full items-center justify-center">
           <Image src="/zoiko-local-icon.svg" alt="" width={40} height={40} unoptimized className="h-10 w-10 rounded-xl bg-white p-1" />
-          {open && (
-            <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[#0D5C54] shadow">
-              <FiX size={13} aria-hidden="true" />
-            </span>
-          )}
+          <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[#0D5C54] shadow">
+            {open ? <FiX size={13} aria-hidden="true" /> : <FiMessageSquare size={12} aria-hidden="true" />}
+          </span>
         </span>
       </button>
 
@@ -474,8 +521,8 @@ export default function AssistantWidget() {
           </div>
 
           <div className="border-t border-[#E5DDD3] bg-white p-3 dark:border-slate-700 dark:bg-slate-900">
-            {showQuickStarts && (
-              <div className="mb-2 flex flex-wrap gap-2">
+            {showQuickStarts && bootstrap.actions.length > 0 && (
+              <div className="mb-2 flex flex-wrap gap-2" aria-label="Suggested questions">
                 {bootstrap.actions.map((action) => (
                   <button
                     key={action.intent_id}
@@ -484,23 +531,25 @@ export default function AssistantWidget() {
                     onClick={() =>
                       sendWithUserTurn(action.title, { intent_id: action.intent_id })
                     }
-                    className="min-h-[44px] rounded-full border border-[#0D5C54]/40 px-3 py-1.5 text-xs font-semibold text-[#0D5C54] transition-colors hover:bg-[#EEF4F2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0D5C54] dark:border-teal-300/40 dark:text-teal-300 dark:hover:bg-slate-800"
+                    className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-[#0D5C54]/40 px-3 py-1.5 text-xs font-semibold text-[#0D5C54] transition-colors hover:bg-[#EEF4F2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0D5C54] dark:border-teal-300/40 dark:text-teal-300 dark:hover:bg-slate-800"
                   >
+                    <FiMessageSquare size={13} aria-hidden="true" />
                     {action.title}
                   </button>
                 ))}
               </div>
             )}
             {currentSuggestions.length > 0 && (
-              <div className="mb-2 flex flex-wrap gap-2">
+              <div className="mb-2 flex flex-wrap gap-2" aria-label="Follow-up suggestions">
                 {currentSuggestions.map((suggestion) => (
                   <button
                     key={`${suggestion.kind}-${suggestion.value}`}
                     type="button"
                     onClick={() => handleSuggestion(suggestion)}
-                    className="min-h-[44px] rounded-full border border-[#0D5C54]/40 px-3 py-1.5 text-xs font-semibold text-[#0D5C54] transition-colors hover:bg-[#EEF4F2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0D5C54] dark:border-teal-300/40 dark:text-teal-300 dark:hover:bg-slate-800"
+                    className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-[#0D5C54]/40 px-3 py-1.5 text-xs font-semibold text-[#0D5C54] transition-colors hover:bg-[#EEF4F2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0D5C54] dark:border-teal-300/40 dark:text-teal-300 dark:hover:bg-slate-800"
                   >
                     {suggestion.label}
+                    <FiArrowRight size={13} aria-hidden="true" />
                   </button>
                 ))}
               </div>
